@@ -50,10 +50,15 @@ The booking and contact forms have no backend in this static build: submitting o
 client with a pre-filled message to `booking@vision-studios.net`. Point `form.booking-form` at a form
 service (Formspree, Netlify Forms, your own endpoint) in `src/static/app.js` when hosting.
 
-## Notes
+## SEO & performance
 
-- Tailwind is loaded from the Play CDN to match the reference exactly; for production, compile the classes
-  with the Tailwind CLI and drop the CDN `<script>` in `src/templates/helpers.mjs`.
-- Images are the originals from the WordPress media library. Some are 2560 px wide; run them through an
-  image optimiser before shipping if page weight matters.
-- Maps are Google Maps embeds using the same queries the source site uses.
+The build ships the same standard as the WordPress theme (see `README-wordpress.md`): compiled Tailwind
+(no CDN), self-hosted woff2 fonts with preload, inline SVG icons, deferred JS, responsive `srcset` images
+generated at build time with `cwebp` (640 / 1024 / 1600 px variants — install the `webp` package; without it
+the originals are served), LCP hero preload with `imagesrcset`, on-demand studio slides, click-to-load
+Google Maps, per-page meta description / canonical / Open Graph / Twitter tags, JSON-LD (Organization,
+WebSite, WebPage, LocalBusiness per studio and city, CollectionPage, NewsArticle, BreadcrumbList), visible
+breadcrumbs, `noindex` 404, sitemap and robots.txt. `npm run seo:audit -- http://localhost:4173 / /london/`
+checks a build; Lighthouse scores 100 on desktop for performance, accessibility, best practices and SEO.
+
+Maps use the same Google Maps queries as the source site.

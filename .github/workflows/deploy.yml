@@ -22,6 +22,8 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22
+      - name: Install cwebp for responsive image variants
+        run: sudo apt-get update -q && sudo apt-get install -y -q webp
       - name: Build site
         env:
           SITE_URL: https://${{ github.repository_owner }}.github.io

@@ -3,18 +3,21 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { execFileSync } from 'node:child_process'
+import { generateVariants } from './images.mjs'
 import { renderHome } from '../src/templates/home.mjs'
 import { renderCity } from '../src/templates/city.mjs'
 import { renderStudio } from '../src/templates/studio.mjs'
-import { renderNewsIndex, renderPost, renderAbout, renderContact, renderGallery, render404 } from '../src/templates/pages.mjs'
+import { renderNewsIndex, renderPost, renderAbout, renderContact, renderGallery, render404, renderStudios } from '../src/templates/pages.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DIST = path.join(ROOT, 'dist')
-const BASE_URL = (process.env.SITE_URL || '').replace(/\/$/, '')
+// Absolute origin for canonical / sitemap / Open Graph URLs. Set SITE_URL in production (the deploy workflow does).
+const BASE_URL = (process.env.SITE_URL || 'http://localhost:4173').replace(/\/$/, '')
 // Sub-path when hosted under e.g. https://user.github.io/repo/ — set BASE_PATH=/repo. Empty for a root domain.
 const BASE_PATH = (process.env.BASE_PATH || '').replace(/\/$/, '')
 /** Prefix every root-relative URL in rendered HTML with BASE_PATH. */
-const rebase = (html) => BASE_PATH ? html.replace(/((?:href|src|content|data-src|url)="|url=)\/(?!\/)/g, `$1${BASE_PATH}/`).replace(/"(\/static\/[^"]+)"/g, `"${BASE_PATH}$1"`) : html
+const rebase = (html) => BASE_PATH ? html.replace(/((?:href|src|content|data-src|url|imagesrcset|srcset)="|url=)\/(?!\/)/g, `$1${BASE_PATH}/`).replace(/, \/static\//g, `, ${BASE_PATH}/static/`).replace(/"(\/static\/[^"]+)"/g, `"${BASE_PATH}$1"`) : html
 
 async function readJson(name) { return JSON.parse(await fs.readFile(path.join(ROOT, 'data', name), 'utf8')) }
 
@@ -30,6 +33,9 @@ async function main() {
   await fs.rm(DIST, { recursive: true, force: true })
   await fs.mkdir(DIST, { recursive: true })
   await fs.cp(path.join(ROOT, 'src/static'), path.join(DIST, 'static'), { recursive: true })
+  // Compile Tailwind (utilities used in templates + custom rules) into one small stylesheet.
+  execFileSync('npx', ['-y', 'tailwindcss@3.4.17', '-c', 'tailwind.config.js', '-i', 'src/tailwind.input.css', '-o', path.join(DIST, 'static/app.css'), '--minify'], { cwd: ROOT, stdio: 'ignore' })
+  await fs.rm(path.join(DIST, 'static/style.css'), { force: true })
 
   const pages = []
   const emit = async (p, html) => {
@@ -38,11 +44,12 @@ async function main() {
     await fs.writeFile(file, rebase(html))
     if (p.endsWith('/')) pages.push(p)
   }
-  const ctx = (p) => ({ data, path: p, baseUrl: BASE_URL, basePath: BASE_PATH })
+  const ctx = (p) => ({ data, path: p, baseUrl: BASE_URL, basePath: BASE_PATH, srcDir: path.join(ROOT, 'src') })
 
   await emit('/', renderHome(ctx('/')))
   for (const c of data.cities) await emit(`/${c.slug}/`, renderCity(c, ctx(`/${c.slug}/`)))
   for (const s of data.studios) await emit(`/studios/${s.slug}/`, renderStudio(s, ctx(`/studios/${s.slug}/`)))
+  await emit('/studios/', renderStudios(ctx('/studios/')))
   await emit('/news/', renderNewsIndex(ctx('/news/')))
   for (const n of data.news) await emit(`/news/${n.slug}/`, renderPost(n, ctx(`/news/${n.slug}/`)))
   await emit('/about/', renderAbout(ctx('/about/')))
@@ -63,8 +70,9 @@ async function main() {
   await fs.writeFile(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map((p) => `  <url><loc>${BASE_URL}${BASE_PATH}${p}</loc></url>`).join('\n')}\n</urlset>\n`)
   // GitHub Pages reads the custom domain from a CNAME file at the site root.
   if (process.env.CNAME_DOMAIN) await fs.writeFile(path.join(DIST, 'CNAME'), process.env.CNAME_DOMAIN + '\n')
+  const variants = generateVariants(DIST)
   await fs.writeFile(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${BASE_URL}${BASE_PATH}/sitemap.xml\n`)
-  console.log(`Built ${pages.length} pages + ${Object.keys(redirects).length} redirects → dist/`)
+  console.log(`Built ${pages.length} pages + ${Object.keys(redirects).length} redirects → dist/ (${variants} responsive image variants generated)`)
 }
 
 main().catch((e) => { console.error(e); process.exit(1) })
