@@ -55,8 +55,8 @@ export function footer(ctx) {
 
 export function layout(ctx, { title, description, body, image, jsonLd }) {
   const site = ctx.data.site
-  const canonical = (ctx.baseUrl || '') + ctx.path
-  const ogImage = image ? (ctx.baseUrl || '') + image : ''
+  const canonical = (ctx.baseUrl || '') + (ctx.basePath || '') + ctx.path
+  const ogImage = image ? (ctx.baseUrl || '') + (ctx.basePath || '') + image : ''
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
