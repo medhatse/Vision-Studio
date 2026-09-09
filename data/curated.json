@@ -1,0 +1,66 @@
+{
+  "_comment": "Hand-maintained presentation data layered on top of the fetched vision-studios.net content. fetch-data.mjs never overwrites this file.",
+  "hero": {
+    "eyebrowLeft": "25+ Years — 4 Cities",
+    "eyebrowCenter": "Broadcast · Film · Podcast",
+    "eyebrowRight": "51.5074° N / -0.1278° W",
+    "image": "/static/img/remote/2025/11/1.webp",
+    "imageAlt": "Broadcast news set at Vision Studios Dublin"
+  },
+  "stats": [
+    { "value": "25+", "label": "Years of Experience" },
+    { "value": "215", "label": "Sq. Mt. Flagship Studio" },
+    { "value": "4", "label": "Capital Cities" },
+    { "value": "99.9%", "label": "Uptime Guarantee" }
+  ],
+  "cities": {
+    "london":   { "country": "United Kingdom", "tag": "HQ · Kendal Avenue", "image": "/static/img/remote/2024/05/PHOTO-2023-04-29-18-24-59-2.webp", "phone": "+44 (0) 7920 745134", "phoneHref": "+447920745134", "address": "Vision Studios, Kendal Avenue, London W3 0XA", "mapQuery": "Vision Studios, Kendal Avenue, London W3 0XA", "coords": "51.5138° N / -0.2871° W" },
+    "dublin":   { "country": "Ireland", "tag": "Dundrum · IT Media", "image": "/static/img/remote/2025/11/3.webp", "phone": "+353 (0) 8961 14641", "phoneHref": "+353896114641", "address": "IT Media Limited, 3rd Floor North, North Block, Rockfields, Dundrum, Dublin D16 W7W3", "mapQuery": "IT Media Limited 3rd Floor North, North Block Rockfields Dundrum Dublin D16 W7W3", "coords": "53.2894° N / -6.2432° W" },
+    "paris":    { "country": "France", "tag": "Broadcast Suite", "image": "/static/img/remote/2024/05/Paris-5.webp", "phone": "+353 (0) 8961 14641", "phoneHref": "+353896114641", "address": "Paris, France", "mapQuery": "Paris, France", "coords": "48.8566° N / 2.3522° E" },
+    "istanbul": { "country": "Türkiye", "tag": "Media City · Bağcılar", "image": "/static/img/remote/2024/05/Media-City-studio-1-1.webp", "phone": "+90 212 988 10 45", "phoneHref": "+902129881045", "address": "Mahmutbey Mah. 2623. Sk. No: 3, İç Kapı No: 11, Bağcılar / İstanbul", "mapQuery": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul", "coords": "41.0082° N / 28.9784° E" }
+  },
+  "studioTags": {
+    "london-studio-1": "Flagship · Podcast-ready",
+    "london-studio-2": "Compact broadcast studio",
+    "dublin-studio": "LED video wall · Jimmy jib",
+    "paris-studio": "BlackMagic 4-cam suite",
+    "istanbul-dtl-room": "Direct-To-Link live feeds",
+    "istanbul-studio-1": "Flagship · 72-screen video wall",
+    "istanbul-studio-2": "Ground-floor soundstage",
+    "istanbul-studio-3": "Blank-canvas build space",
+    "istanbul-studio-4": "First-floor studio",
+    "istanbul-studio-5": "36-screen video wall",
+    "istanbul-studio-6": "Sony 4K · Audio isolated",
+    "istanbul-studio-7": "Office-set · SDI & NDI",
+    "istanbul-studio-8": "Sony HSC-100R studio",
+    "istanbul-studio-9": "Sony HSC-100R studio"
+  },
+  "services": [
+    { "icon": "fa-tower-broadcast", "title": "Broadcast Service", "description": "Cutting-edge broadcast services combining state-of-the-art technology with personalised support for seamless transmission and maximum impact.", "source": "cities" },
+    { "icon": "fa-camera-retro", "title": "Equipment Hire", "description": "Professional cameras and lenses, lighting, audio gear and post-production tools to support every stage of your production workflow.", "source": "cities" },
+    { "icon": "fa-people-group", "title": "Crew Hire", "description": "Directors, cinematographers, producers, sound engineers and post-production specialists, on call across all four cities.", "source": "cities" },
+    { "icon": "fa-pen-ruler", "title": "Bespoke Set Design", "description": "Our set designer team takes custom sets from the initial design concept through manufacturing and installation.", "source": "about" },
+    { "icon": "fa-satellite-dish", "title": "Direct-To-Link Feeds", "description": "Live feeds from SNG to internet streaming protocols including TVU, LiveU, RTMP and SRT, backed by generator and UPS power.", "source": "istanbul-dtl-room" },
+    { "icon": "fa-microphone-lines", "title": "Podcast & Radio", "description": "Podcast mics, wireless neck microphones and in-ear monitors for podcasts, radio shows and audio interviews.", "source": "london-studio-1" }
+  ],
+  "why": [
+    { "title": "25+ Years of Experience", "description": "A reputation built on the quality of our facilities and our customer service." },
+    { "title": "Four Capital Cities", "description": "London, Dublin, Paris and Istanbul — one consistent production standard." },
+    { "title": "State-of-the-Art Equipment", "description": "Sony, Grass Valley and BlackMagic broadcast cameras, DMX-512 lighting grids and LED video walls." },
+    { "title": "Full Gallery Control Rooms", "description": "Professionally designed control rooms with Auto-Q systems and digital audio mixers." },
+    { "title": "24/7 Reliability", "description": "Generator and UPS backup power with a 99.9% uptime guarantee." }
+  ],
+  "gallery": [
+    { "image": "/static/img/remote/2024/05/PHOTO-2023-04-29-18-24-59-2.webp", "alt": "Presenters on the broadcast set at Vision Studios London", "span": 1 },
+    { "image": "/static/img/remote/2024/05/4Z9A7807-Edit-scaled-1.webp", "alt": "Talk show set at Istanbul Studio 4", "span": 1 },
+    { "image": "/static/img/remote/2025/11/2.webp", "alt": "News desk with LED backdrop at Vision Studios Dublin", "span": 2 },
+    { "image": "/static/img/remote/2024/05/Media-City-studio-1-1.webp", "alt": "Video wall set at Istanbul Studio 1", "span": 2 },
+    { "image": "/static/img/remote/2024/05/Paris-3.webp", "alt": "Broadcast set at Vision Studios Paris", "span": 1 },
+    { "image": "/static/img/remote/2024/05/4Z9A7518-scaled-1.webp", "alt": "Office-style set at Istanbul Studio 7", "span": 1 }
+  ],
+  "clientNames": {
+    "news central": "News Central", "Aljazeera Mubasher": "Al Jazeera Mubasher", "DMA Media": "DMA Media", "afrosport": "Afrosport",
+    "Sette Sette Design": "Sette Sette Design", "Aljazeera": "Al Jazeera", "Barclays_12": "Barclays", "tv-one": "TV One",
+    "Al zaytouna TV": "Zaitouna TV", "Yanga": "Yanga TV"
+  }
+}

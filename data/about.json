@@ -1,0 +1,45 @@
+{
+  "heading": "About Us",
+  "who": [
+    "Vision Studios, your premier destination for high-quality broadcast studio rentals in London, Dublin, Paris and Istanbul. We are proud to offer fully equipped, modern studios for a wide range of broadcast productions."
+  ],
+  "experience": [
+    "With over 25 years of experience in the industry, we have built a reputation for excellence in both the quality of our facilities and our customer service. Our knowledgeable and friendly staff are always on hand to help you make the most of our studios, whether you are producing live news broadcasts, television shows, corporate advertising or other types of broadcast content."
+  ],
+  "vision": [
+    "Our vision is to be the leading provider of broadcast studio rentals in the world. We aim to set the standard for quality, innovation, and excellence in the industry, providing our clients with cutting-edge technology and world-class facilities that meet their every need. We strive to be a company that is not only successful but also socially responsible, using our resources to support the creative arts and to make a positive impact on the communities where we operate. Ultimately, our vision is to help our clients tell their stories in a way that inspires, entertains, and informs audiences around the world."
+  ],
+  "mission": [
+    "At Vision Studios, our mission is to provide our clients with the highest-quality broadcast studio rentals in the industry. We strive to be a reliable and trusted partner to broadcasters, television producers, and other creative professionals, offering them state-of-the-art facilities, top-notch equipment, and exceptional customer service. Our goal is to help our clients bring their creative visions to life by providing them with the tools they need to produce exceptional content."
+  ],
+  "team": [
+    "Technical Support",
+    "Broadcast Engineer",
+    "Technical Crew"
+  ],
+  "cards": [
+    {
+      "href": "",
+      "image": "/static/img/remote/2024/05/4Z9A7701-1-scaled-1.webp",
+      "title": "Bespoke Productions",
+      "description": "If you need a custom set design for your production, our experienced set designer team can work with you to create a set that meets your exact specifications. We can handle everything from the initial design concept to the final manufacturing and installation of your set."
+    },
+    {
+      "href": "",
+      "image": "/static/img/remote/2024/05/Media-City-studio-4-1.webp",
+      "title": "Studio Showcase",
+      "description": "We invite you to come and experience our broadcast studios for yourself and see why so many creative professionals choose our studios as their go-to destination for high-quality studio spaces. Contact us today to schedule a tour or to learn more about our rental options in London, Dublin, and Istanbul."
+    },
+    {
+      "href": "",
+      "image": "/static/img/remote/2024/05/4Z9A7518-scaled-1.webp",
+      "title": "Creative Community",
+      "description": "At Vision Studios, we are more than just a studio rental company – we are a community of creatives who share a passion for excellence in all aspects of our work. We are proud to have created a space where broadcasters and professionals can come together to collaborate, share ideas, and support one another in the pursuit of their goals."
+    }
+  ],
+  "images": [
+    "/static/img/remote/2024/05/4Z9A7701-1-scaled-1.webp",
+    "/static/img/remote/2024/05/Media-City-studio-4-1.webp",
+    "/static/img/remote/2024/05/4Z9A7518-scaled-1.webp"
+  ]
+}

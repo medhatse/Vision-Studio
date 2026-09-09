@@ -1,0 +1,168 @@
+[
+  {
+    "slug": "london",
+    "name": "London",
+    "heading": "Our TV & Production studios in London",
+    "studioCards": [
+      {
+        "slug": "london-studio-1",
+        "image": "/static/img/remote/2024/05/PHOTO-2023-04-29-18-24-59-2.webp"
+      },
+      {
+        "slug": "london-studio-2",
+        "image": "/static/img/remote/2024/05/PHOTO-2023-04-27-14-43-03-4.webp"
+      }
+    ],
+    "studioBlurbs": [
+      {
+        "title": "London Studio 1",
+        "description": "This studio is suitable for film and television productions, live events and broadcasts, music videos and performances, podcasts and radio shows, as well as corporate videos and presentations."
+      },
+      {
+        "title": "London Studio 2",
+        "description": "These studios are suitable for television broadcasting, film production, photography, live events, and virtual streaming. With professional-grade equipment and versatile setups, they cater to a wide range of creative endeavors in the broadcasting, film, photography, and entertainment industries."
+      }
+    ],
+    "services": [],
+    "sourceUrl": "https://vision-studios.net/london/"
+  },
+  {
+    "slug": "dublin",
+    "name": "Dublin",
+    "heading": "Our TV & Production studios in Dublin",
+    "studioCards": [
+      {
+        "slug": "dublin-studio",
+        "image": "/static/img/remote/2024/05/PHOTO-2023-04-27-00-37-33.webp"
+      }
+    ],
+    "studioBlurbs": [
+      {
+        "title": "Dublin Studio",
+        "description": "This studio setup is suitable for television broadcasting, live streaming events, film production, virtual events, photography sessions, and podcast/radio production. Its advanced equipment allows for high-quality production across various multimedia formats."
+      }
+    ],
+    "services": [
+      {
+        "title": "Broadcast Service",
+        "description": "At Vision Studios, we offer cutting-edge broadcast services designed to elevate your content delivery and engage your target audience like never before. Our comprehensive suite of broadcast solutions combines state-of-the-art technology with personalized support to ensure seamless transmission and maximum impact for your message."
+      },
+      {
+        "title": "Equipment Hire",
+        "description": "At Vision Studios, we recognize that having access to the right media production equipment is crucial for bringing your creative vision to life. From professional cameras and lenses to lighting equipment, audio gear, and post-production tools, our extensive inventory features a comprehensive range of equipment to support every aspect of your media production workflow. Whether you're working on a film, television show, commercial, documentary, or any other type of project, we've got the equipment you need to make it a success."
+      },
+      {
+        "title": "Crew Hire",
+        "description": "At Vision Studios, we understand that assembling the right team is essential for bringing your creative vision to life. From directors and cinematographers to producers, sound engineers, and post-production specialists, our network includes talented individuals with diverse skills and expertise across all aspects of media production. Whether you're working on a film, television show, commercial, documentary, or any other type of project, we've got the crew members you need to bring your vision to fruition."
+      }
+    ],
+    "sourceUrl": "https://vision-studios.net/dublin/"
+  },
+  {
+    "slug": "paris",
+    "name": "Paris",
+    "heading": "Our TV & Production studios in Paris",
+    "studioCards": [
+      {
+        "slug": "paris-studio",
+        "image": "/static/img/remote/2024/05/tvstu_canal-22-paris-6.webp"
+      }
+    ],
+    "studioBlurbs": [
+      {
+        "title": "Paris Studio",
+        "description": "This studio setup is suitable for television broadcasting, live streaming events, film production, virtual events, photography sessions, and podcast/radio production. Its advanced equipment allows for high-quality production across various multimedia formats."
+      }
+    ],
+    "services": [
+      {
+        "title": "Broadcast Service",
+        "description": "At Vision Studios, we offer cutting-edge broadcast services designed to elevate your content delivery and engage your target audience like never before. Our comprehensive suite of broadcast solutions combines state-of-the-art technology with personalized support to ensure seamless transmission and maximum impact for your message."
+      },
+      {
+        "title": "Equipment Hire",
+        "description": "At Vision Studios, we recognize that having access to the right media production equipment is crucial for bringing your creative vision to life. From professional cameras and lenses to lighting equipment, audio gear, and post-production tools, our extensive inventory features a comprehensive range of equipment to support every aspect of your media production workflow. Whether you're working on a film, television show, commercial, documentary, or any other type of project, we've got the equipment you need to make it a success."
+      },
+      {
+        "title": "Crew Hire",
+        "description": "At Vision Studios, we understand that assembling the right team is essential for bringing your creative vision to life. From directors and cinematographers to producers, sound engineers, and post-production specialists, our network includes talented individuals with diverse skills and expertise across all aspects of media production. Whether you're working on a film, television show, commercial, documentary, or any other type of project, we've got the crew members you need to bring your vision to fruition."
+      }
+    ],
+    "sourceUrl": "https://vision-studios.net/paris/"
+  },
+  {
+    "slug": "istanbul",
+    "name": "Istanbul",
+    "heading": "Our TV & Production studios in Istanbul",
+    "studioCards": [
+      {
+        "slug": "istanbul-dtl-room",
+        "image": "/static/img/remote/2024/05/DTL-3-scaled-2.webp"
+      },
+      {
+        "slug": "istanbul-studio-1",
+        "image": "/static/img/remote/2024/05/4Z9A7687-scaled-1.webp"
+      },
+      {
+        "slug": "istanbul-studio-2",
+        "image": "/static/img/remote/2024/05/Studio-B-7-1024x768-1.webp"
+      },
+      {
+        "slug": "istanbul-studio-3",
+        "image": "/static/img/remote/2024/05/STUDIO-C-2-scaled-1.webp"
+      },
+      {
+        "slug": "istanbul-studio-4",
+        "image": "/static/img/remote/2024/05/4Z9A7807-Edit-scaled-1.webp"
+      },
+      {
+        "slug": "istanbul-studio-5",
+        "image": "/static/img/remote/2024/05/44cac8a0-d596-4d82-b608-863ba0ad8d0a.webp"
+      },
+      {
+        "slug": "istanbul-studio-6",
+        "image": "/static/img/remote/2024/05/Deposit-Studio-2-5.webp"
+      },
+      {
+        "slug": "istanbul-studio-7",
+        "image": "/static/img/remote/2024/05/4Z9A7528-scaled-1.webp"
+      }
+    ],
+    "studioBlurbs": [
+      {
+        "title": "Istanbul DTL Room",
+        "description": "This studio is used for Direct-To-Link (DTL)"
+      },
+      {
+        "title": "Istanbul Studio 1",
+        "description": "This studio is suitable for television and film production, live streaming, online video content creation, photography, broadcasting, podcasting, and virtual events. It offers a fully-equipped space with professional-grade cameras, lighting, audio equipment, and advanced technology for a wide range of multimedia production needs."
+      },
+      {
+        "title": "Istanbul Studio 2",
+        "description": "This studio is equipped for various multimedia productions, including film shoots, broadcasts, and live events. It features high-quality cameras, lighting, audio equipment, and a control room for monitoring. With a spacious shooting area, LED screen backdrop, and versatile lighting options, it offers flexibility for different creative needs."
+      },
+      {
+        "title": "Istanbul Studio 3",
+        "description": "This studio is ideal for photography, videography, art creation, dance practice, or hosting workshops. In addition to ability of customizing lighting setups for various shoots, special effects, and ambiance control."
+      },
+      {
+        "title": "Istanbul Studio 4",
+        "description": "In this studio, you can create various types of content including live broadcasts, podcasts, music recordings, videos for promotions or education, virtual events, product demonstrations, and photography sessions. The professional equipment allows for high-quality production across different media formats."
+      },
+      {
+        "title": "Istanbul Studio 5",
+        "description": "This studio offers endless possibilities for creative endeavours. From producing commercial videos and hosting live broadcasts to conducting photo shoots and offering podcasting facilities, the studio serves as a versatile hub for content creation and professional ventures."
+      },
+      {
+        "title": "Istanbul Studio 6",
+        "description": "It is ideal for diverse purposes such as film production, live streaming, virtual events, photography sessions, podcast recording, educational videos, art exhibitions, product demonstrations, and event space rental. Its versatility and high-quality setup cater to a wide range of creative and professional endeavors."
+      },
+      {
+        "title": "Istanbul Studio 7",
+        "description": "This studio is a versatile space perfect for film and TV production, live broadcasting, photography, virtual events, podcasts, and educational content creation. With advanced technology, flexible design, and aesthetic appeal, it caters to a wide range of multimedia production needs."
+      }
+    ],
+    "services": [],
+    "sourceUrl": "https://vision-studios.net/istanbul/"
+  }
+]

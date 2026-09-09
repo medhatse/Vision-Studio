@@ -1,0 +1,121 @@
+{
+  "title": "THE VISION STUDIOS",
+  "tagline": "Premier Broadcast Studios Rentals in Four Iconic Cities",
+  "intro": [
+    "\"Where Can You Find the Best Broadcast Studio Rentals in London, Dublin, Paris and Istanbul?\"",
+    "Welcome to Vision Studios, your premier destination for top-notch broadcast studio rentals in four of the world’s most vibrant cities: London, Dublin, Paris, and Istanbul. Whether you’re producing a live television show, filming a commercial, hosting a virtual event, or recording a podcast, Vision Studios offers state-of-the-art facilities and unparalleled service to meet all your broadcasting needs. Our strategically located studios are equipped with the latest technology and designed to provide a professional, seamless experience from start to finish."
+  ],
+  "whyChoose": [
+    {
+      "title": "Creative design services",
+      "description": "Our set designer team can work with you to create a custom studio set that perfectly complements your brand and message. From concept to completion, we'll work closely with you to bring your vision to life."
+    },
+    {
+      "title": "Prime Locations",
+      "description": "Situated in the bustling cities of London, Dublin, Paris, and Istanbul, our studios offer convenient access to local amenities and transport links, making it easy for you and your team to reach us."
+    },
+    {
+      "title": "Competitive Pricing",
+      "description": "We offer competitive rates without compromising on quality, ensuring that you get the best value for your investment."
+    },
+    {
+      "title": "State-of-the-Art Equipment",
+      "description": "Each of our studios is outfitted with cutting-edge technology, including high-definition cameras, advanced lighting systems, and superior audio equipment. Our commitment to quality ensures that your production will look and sound exceptional."
+    },
+    {
+      "title": "Best rated Technical crew",
+      "description": "Our highly trained technical crew, including broadcast engineers and IT engineers, are experts in their fields and are dedicated to ensuring that your production runs smoothly and seamlessly."
+    }
+  ],
+  "facilities": [
+    {
+      "city": "Paris",
+      "country": "France",
+      "image": "/static/img/remote/2024/07/Untitled-design.webp"
+    },
+    {
+      "city": "Istanbul",
+      "country": "Turkey",
+      "image": "https://media.istockphoto.com/id/1394387045/photo/turkish-flag-over-bosphorus-boats-mosques-and-minarets-of-istanbul-turkey.webp?b=1&#038;s=170667a&#038;w=0&#038;k=20&#038;c=EuDEnKV4_RS9G8RzndEpWdn-f8xqO8ohxbugUUWm3tU="
+    },
+    {
+      "city": "Dublin",
+      "country": "Ireland",
+      "image": "https://images.unsplash.com/photo-1549918864-48ac978761a4?ixlib=rb-4.0.3&#038;ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHVibGlufGVufDB8fDB8fHww&#038;w=1000&#038;q=80"
+    },
+    {
+      "city": "London",
+      "country": "UK",
+      "image": "https://images.unsplash.com/photo-1520986606214-8b456906c813?ixlib=rb-4.0.3&#038;ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGxvbmRvbnxlbnwwfHwwfHx8MA%3D%3D&#038;w=1000&#038;q=80"
+    }
+  ],
+  "sustainability": [
+    "Committed To Keep People Healthy & Safe",
+    "At Vision Studios, we prioritize the health and safety of our clients, staff, and guests. We have implemented strict sanitation and social distancing protocols to protect against COVID-19 and regularly sanitize and disinfect our facilities. By keeping people healthy and safe, we create a positive and productive environment that fosters creativity and collaboration."
+  ],
+  "bestPractices": [
+    "At Vision Studios, we are committed to following best practices in the broadcast industry. We prioritize quality, safety, and professionalism in all aspects of our operations and adhere to strict safety protocols. We also prioritize sustainability and environmental responsibility by using energy-efficient equipment and employing eco-friendly practices. By following best practices, we provide high-quality services and make a positive impact on the world around us."
+  ],
+  "counters": [
+    {
+      "label": "Yearly Productions",
+      "prefix": "+",
+      "value": 1000,
+      "suffix": ""
+    },
+    {
+      "label": "Successful Projects​",
+      "prefix": "",
+      "value": 128,
+      "suffix": ""
+    },
+    {
+      "label": "Years of experience​",
+      "prefix": "",
+      "value": 25,
+      "suffix": ""
+    }
+  ],
+  "clients": [
+    {
+      "name": "news central",
+      "logo": "/static/img/remote/2024/05/newscentral.webp"
+    },
+    {
+      "name": "Aljazeera Mubasher",
+      "logo": "/static/img/remote/2024/05/logo-aljazeera-mubasher.webp"
+    },
+    {
+      "name": "DMA Media",
+      "logo": "/static/img/remote/2024/05/DMA-Media-Mobile-Logo-Full-Text.webp"
+    },
+    {
+      "name": "afrosport",
+      "logo": "/static/img/remote/2024/05/afrosport-logo-2.webp"
+    },
+    {
+      "name": "Sette Sette Design",
+      "logo": "/static/img/remote/2024/05/WhatsApp-Image-2023-06-06-at-12.01.57-1.webp"
+    },
+    {
+      "name": "Aljazeera",
+      "logo": "/static/img/remote/2024/05/logo-aljazeera.webp"
+    },
+    {
+      "name": "Barclays_12",
+      "logo": "/static/img/remote/2024/05/Barclays_12.webp"
+    },
+    {
+      "name": "tv-one",
+      "logo": "/static/img/remote/2024/05/tv-one.webp"
+    },
+    {
+      "name": "Al zaytouna TV",
+      "logo": "/static/img/remote/2024/05/zaitouna-onglet-logo-03.webp"
+    },
+    {
+      "name": "Yanga",
+      "logo": "/static/img/remote/2024/05/logo-yanga.webp"
+    }
+  ]
+}

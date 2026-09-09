@@ -1,0 +1,14 @@
+{
+  "name": "vision-studios-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static marketing site for Vision Studios (London · Dublin · Paris · Istanbul), generated from content pulled from vision-studios.net",
+  "type": "module",
+  "scripts": {
+    "fetch": "node scripts/fetch-data.mjs",
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs && node scripts/serve.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": { "node": ">=18" }
+}

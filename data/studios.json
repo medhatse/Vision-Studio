@@ -1,0 +1,963 @@
+[
+  {
+    "slug": "dublin-studio",
+    "title": "Dublin Studio",
+    "city": "dublin",
+    "areaSqm": 144,
+    "specs": [
+      "144 sq. mt. studio area.",
+      "Fully decorated.",
+      "Huge LED screen, Fully controlled.",
+      "3 Groups, 2×2 video wall screens (55-inch).",
+      "18 sq. mt. gallery control room.",
+      "4 x Sony Full HD cameras with professional CCU.",
+      "4 x Pedestal tripods, Robotic Heads.",
+      "1 x Auto-Q system, Controls 2 auto-Q reflectors.",
+      "LED studio lightning controlled by DMX-512 lightning console.",
+      "Ceiling studio Lightning grid (Dynamic).",
+      "Digital Audio Mixer.",
+      "8 x wireless Neck microphone and wireless Hand microphones."
+    ],
+    "highlights": [
+      "144sq mt studio area",
+      "Fully decorated",
+      "Huge LED screen, Fully controlled",
+      "4 x sony Full HD cameras",
+      "1 x jimmy jip (3m to 7m length)",
+      "Digital Audio Mixer"
+    ],
+    "useCasesHeading": "",
+    "useCases": [],
+    "gallery": [
+      "/static/img/remote/2025/10/3-scaled.webp",
+      "/static/img/remote/2025/11/1.webp",
+      "/static/img/remote/2025/11/2.webp",
+      "/static/img/remote/2025/11/3.webp",
+      "/static/img/remote/2025/11/4.webp",
+      "/static/img/remote/2025/11/5.webp",
+      "/static/img/remote/2025/11/6.webp",
+      "/static/img/remote/2025/11/7.webp",
+      "/static/img/remote/2025/11/8.webp",
+      "/static/img/remote/2025/11/9.webp",
+      "/static/img/remote/2025/11/10.webp",
+      "/static/img/remote/2025/11/11.webp",
+      "/static/img/remote/2025/11/12.webp"
+    ],
+    "carousel": [
+      {
+        "image": "/static/img/remote/2024/05/Deposit-Studio-1-8.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-1.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-2.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-3.webp",
+        "alt": "Production Studios"
+      }
+    ],
+    "floorPlan": "/static/img/remote/2024/05/dublin-Layoutl.webp",
+    "contact": {
+      "phone": "+353 (0) 8961 14641",
+      "address": "IT Media Limited 3rd Floor North, North Block Rockfields Dundrum Dublin D16 W7W3"
+    },
+    "address": "IT Media Limited 3rd Floor North, North Block Rockfields  Dundrum Dublin D16 W7W3",
+    "sourceUrl": "https://vision-studios.net/dublin-studio/",
+    "modified": "2025-11-04T14:16:12"
+  },
+  {
+    "slug": "istanbul-dtl-room",
+    "title": "Istanbul DTL Room",
+    "city": "istanbul",
+    "areaSqm": null,
+    "specs": [],
+    "highlights": [
+      "Supports all kind of live feeds techniques from SNG to internet streaming protocols like TVU, LiveU, RTMP, SRT, .... etc",
+      "1 camera with a custom background",
+      "Generator and UPS electricity"
+    ],
+    "useCasesHeading": "",
+    "useCases": [],
+    "gallery": [
+      "/static/img/remote/2024/05/DTL-3-scaled-2.webp",
+      "/static/img/remote/2024/05/DTL-1-scaled-1.webp"
+    ],
+    "carousel": [
+      {
+        "image": "/static/img/remote/2024/05/Deposit-Studio-1-8.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-1.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-2.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-3.webp",
+        "alt": "Production Studios"
+      }
+    ],
+    "floorPlan": "",
+    "contact": {
+      "phone": "+90 212 988 10 45",
+      "address": "MAHMUTBEY MAH. 2623. SK. NO: 3 İÇ KAPI NO: 11 BAĞCILAR/ İSTANBUL"
+    },
+    "address": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul",
+    "sourceUrl": "https://vision-studios.net/istanbul-dtl-room/",
+    "modified": "2024-06-02T22:33:24"
+  },
+  {
+    "slug": "istanbul-studio-1",
+    "title": "Istanbul Studio 1",
+    "city": "istanbul",
+    "areaSqm": 215,
+    "specs": [
+      "215 sq. mt. studio area.",
+      "Fully decorated.",
+      "Full Isolated with professional audio isolation.",
+      "72 Total number of video wall screens between 55-inch and 46-inch, all colored calibrated.",
+      "18 sq. mt. gallery control room, professionally designed upon modular workflow.",
+      "4 x Sony Full HD cameras with professional CCU (Model HDC-P1) with CCU control.",
+      "3 x heavy duty Pedestal tripods.",
+      "1 x jimmy jip (length can be from 3m to 7m length).",
+      "1 x Auto-Q system, Controls 2 auto-Q reflectors installed on the main cameras.",
+      "2 x 4-channel playout system.",
+      "2 x 1-channel CG system for on-air graphics.",
+      "TV standard cool light LED studio lightning controlled by DMX-512 lightning console.",
+      "Dynamic Ceiling studio Lightning grid.",
+      "32-input channel Digital Audio Mixer.",
+      "8 x wireless Neck microphone and wireless Hand microphones.",
+      "18 sq. mt. studio reception area.",
+      "24/7 generator and UPS electric supply with 99,9% uptime guarantee."
+    ],
+    "highlights": [
+      "215sq mt studio area",
+      "Fully decorated",
+      "18 sq. mt. gallery control room, professionally designed upon modular workflow",
+      "4 x Sony Full HD cameras with professional CCU (Model HDC-P1) with CCU control",
+      "24/7 generator and UPS electric supply with 99,9% uptime guarantee",
+      "Full Isolated with professional audio isolation"
+    ],
+    "useCasesHeading": "",
+    "useCases": [],
+    "gallery": [
+      "/static/img/remote/2024/05/Media-City-studio-1-1.webp",
+      "/static/img/remote/2024/05/4Z9A7727-1-scaled-1.webp",
+      "/static/img/remote/2024/05/4Z9A7717-scaled-1.webp",
+      "/static/img/remote/2024/05/4Z9A7711-scaled-1.webp",
+      "/static/img/remote/2024/05/4Z9A7701-1-scaled-1.webp",
+      "/static/img/remote/2024/05/Media-City-studio-1-7.webp",
+      "/static/img/remote/2024/05/4Z9A7687-scaled-1.webp",
+      "/static/img/remote/2024/05/4Z9A7678-1-scaled-1.webp",
+      "/static/img/remote/2024/05/Media-City-studio-1-4.webp",
+      "/static/img/remote/2024/05/Media-City-studio-1-2.webp",
+      "/static/img/remote/2024/05/4Z9A7867.webp",
+      "/static/img/remote/2024/05/Media-City-studio-1-3.webp",
+      "/static/img/remote/2024/05/Media-City-studio-1-8.webp"
+    ],
+    "carousel": [
+      {
+        "image": "/static/img/remote/2024/05/Deposit-Studio-1-8.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-1.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-2.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-3.webp",
+        "alt": "Production Studios"
+      }
+    ],
+    "floorPlan": "/static/img/remote/2024/05/Drawing.webp",
+    "contact": {
+      "phone": "+90 212 988 10 45",
+      "address": "MAHMUTBEY MAH. 2623. SK. NO: 3 İÇ KAPI NO: 11 BAĞCILAR/"
+    },
+    "address": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul",
+    "sourceUrl": "https://vision-studios.net/istanbul-studio-1/",
+    "modified": "2024-06-02T22:33:16"
+  },
+  {
+    "slug": "istanbul-studio-2",
+    "title": "Istanbul Studio 2",
+    "city": "istanbul",
+    "areaSqm": 185,
+    "specs": [
+      "185 sq. mt. ground floor studio area.",
+      "18 sq. mt. gallery control room.",
+      "20 sq. mt. Total area of LED screen.",
+      "4 x Grass-Vally Full HD cameras with professional CCU.",
+      "3 x Pedestal tripods.",
+      "1 x Auto-Q system.",
+      "1 x jimmy jip (3m to 7m length).",
+      "LED studio lightning controlled by DMX-512 lightning console.",
+      "Ceiling studio Lightning grid (Dynamic).",
+      "Digital Audio Mixer.",
+      "6 x wireless Neck microphone and wireless Hand microphones.",
+      "18 sq. mt. studio reception area.",
+      "Generator and UPS electricity."
+    ],
+    "highlights": [
+      "185 sq mt studio area",
+      "18 sq. mt. gallery control room",
+      "20 sq. mt. Total area of LED screen",
+      "4 x Grass-Vally Full HD cameras with professional CCU.",
+      "Generator and UPS electricity",
+      "Digital Audio Mixer"
+    ],
+    "useCasesHeading": "",
+    "useCases": [],
+    "gallery": [
+      "/static/img/remote/2024/05/Media-City-studio-2-1_1920x1080.webp",
+      "/static/img/remote/2024/05/Media-City-studio-2-2_1920x1080.webp",
+      "/static/img/remote/2024/05/PHOTO-2022-04-11-19-02-58_1920x1080.webp",
+      "/static/img/remote/2024/05/PHOTO-2022-04-11-19-02-58-2_1_1920x1080.webp",
+      "/static/img/remote/2024/05/PHOTO-2022-04-11-19-02-58-3_1_1920x1080.webp",
+      "/static/img/remote/2024/05/Studio-B-2-1024x768-1_1_1920x1080.webp",
+      "/static/img/remote/2024/05/Studio-B-4-1024x768-1_1_1920x1080.webp",
+      "/static/img/remote/2024/05/Studio-B-7-1024x768-1_1_1920x1080.webp"
+    ],
+    "carousel": [
+      {
+        "image": "/static/img/remote/2024/05/Deposit-Studio-1-8.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-1.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-2.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-3.webp",
+        "alt": "Production Studios"
+      }
+    ],
+    "floorPlan": "/static/img/remote/2024/05/Drawing-1.webp",
+    "contact": {
+      "phone": "+90 212 988 10 45",
+      "address": "MAHMUTBEY MAH. 2623. SK. NO: 3 İÇ KAPI NO: 11 BAĞCILAR/"
+    },
+    "address": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul",
+    "sourceUrl": "https://vision-studios.net/istanbul-studio-2/",
+    "modified": "2024-05-28T09:36:48"
+  },
+  {
+    "slug": "istanbul-studio-3",
+    "title": "Istanbul Studio 3",
+    "city": "istanbul",
+    "areaSqm": 175,
+    "specs": [
+      "175 sq. mt. ground floor studio area.",
+      "Free for building any customized decoration.",
+      "Generator electricity.",
+      "14 sq. mt. studio reception area.",
+      "Ceiling studio Lightning grid (Dynamic)."
+    ],
+    "highlights": [
+      "175sq mt studio area",
+      "Free for building any customized decoration.",
+      "14 sq. mt. studio reception area.",
+      "Generator and UPS electricity",
+      "Ceiling studio Lightning grid (Dynamic)"
+    ],
+    "useCasesHeading": "",
+    "useCases": [],
+    "gallery": [
+      "/static/img/remote/2024/05/PHOTO-2023-04-25-21-52-42_1920x1080.webp",
+      "/static/img/remote/2024/05/PHOTO-2023-04-25-21-52-42-2_1920x1080.webp",
+      "/static/img/remote/2024/05/STUDIO-C-2-scaled_1920x1080.webp",
+      "/static/img/remote/2024/05/STUDIO-C-3-scaled_1920x1080.webp"
+    ],
+    "carousel": [
+      {
+        "image": "/static/img/remote/2024/05/Deposit-Studio-1-8.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-1.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-2.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-3.webp",
+        "alt": "Production Studios"
+      }
+    ],
+    "floorPlan": "/static/img/remote/2024/05/Drawing3-Media-city-st-3.webp",
+    "contact": {
+      "phone": "+90 212 988 10 45",
+      "address": "MAHMUTBEY MAH. 2623. SK. NO: 3 İÇ KAPI NO: 11 BAĞCILAR/"
+    },
+    "address": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul",
+    "sourceUrl": "https://vision-studios.net/istanbul-studio-3/",
+    "modified": "2024-05-28T09:38:04"
+  },
+  {
+    "slug": "istanbul-studio-4",
+    "title": "Istanbul Studio 4",
+    "city": "istanbul",
+    "areaSqm": 37.5,
+    "specs": [
+      "37.5 sq. mt. first floor studio area.",
+      "28 sq. mt. gallery control room.",
+      "3 x Sony HD camera with professional CCU.",
+      "3 x Pedestal tripods.",
+      "1 x Auto-Q system.",
+      "Digital Audio Mixer.",
+      "4 x wireless Neck microphone and wireless Hand microphones."
+    ],
+    "highlights": [
+      "37.5 sq mt studio area",
+      "28 sq. mt. gallery control room",
+      "1 x Auto-Q system",
+      "3 x Sony HD camera with professional CCU",
+      "Generator and UPS electricity",
+      "Digital Audio Mixer"
+    ],
+    "useCasesHeading": "",
+    "useCases": [],
+    "gallery": [
+      "/static/img/remote/2024/05/Media-City-studio-4-2.webp",
+      "/static/img/remote/2024/05/Media-City-studio-4-1.webp",
+      "/static/img/remote/2024/05/4Z9A7825-Edit-scaled-1.webp",
+      "/static/img/remote/2024/05/4Z9A7821-Edit-scaled-1.webp",
+      "/static/img/remote/2024/05/4Z9A7807-Edit-scaled-1.webp",
+      "/static/img/remote/2024/05/4Z9A7787-Edit-scaled-1.webp",
+      "/static/img/remote/2024/05/4Z9A7763-Edit-Edit-scaled-1.webp"
+    ],
+    "carousel": [
+      {
+        "image": "/static/img/remote/2024/05/Deposit-Studio-1-8.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-1.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-2.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-3.webp",
+        "alt": "Production Studios"
+      }
+    ],
+    "floorPlan": "",
+    "contact": {
+      "phone": "+90 212 988 10 45",
+      "address": "MAHMUTBEY MAH. 2623. SK. NO: 3 İÇ KAPI NO: 11 BAĞCILAR/"
+    },
+    "address": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul",
+    "sourceUrl": "https://vision-studios.net/istanbul-studio-4/",
+    "modified": "2024-06-02T22:33:09"
+  },
+  {
+    "slug": "istanbul-studio-5",
+    "title": "Istanbul Studio 5",
+    "city": "istanbul",
+    "areaSqm": 196,
+    "specs": [
+      "196 sq. mt. studio area.",
+      "Fully decorated.",
+      "36 Total video wall screens (55-inch, and 46-inch).",
+      "18 sq. mt. gallery control room.",
+      "4 x Sony Full HD cameras with professional CCU.",
+      "3 x Pedestal tripods.",
+      "1 x Auto-Q system, Controls 2 auto-Q reflectors.",
+      "1 x jimmy jip (3m to 7m length).",
+      "LED studio lightning controlled by DMX-512 lightning console.",
+      "Ceiling studio Lightning grid (Dynamic).",
+      "Digital Audio Mixer.",
+      "10 x wireless Neck microphone and wireless Hand microphones.",
+      "56 sq. mt. studio reception area.",
+      "generator and UPS electric supply."
+    ],
+    "highlights": [
+      "196sq mt studio area",
+      "Fully decorated",
+      "36 Total Video Wall Screen",
+      "4 x Sony Full HD cameras with professional CCU",
+      "generator and UPS electric supply",
+      "10 x wireless Neck microphone and wireless Hand microphones"
+    ],
+    "useCasesHeading": "",
+    "useCases": [],
+    "gallery": [
+      "/static/img/remote/2024/05/Deposit-Studio-1-1-2.webp",
+      "/static/img/remote/2024/05/d7dad04f-48c6-4deb-88b3-391043a7910c.webp",
+      "/static/img/remote/2024/05/cef2f6f5-2807-4986-b847-a879a975007a.webp",
+      "/static/img/remote/2024/05/a79f8717-cdc2-49aa-9d91-f10771392409.webp",
+      "/static/img/remote/2024/05/bbeb21a6-86ba-4cd6-8345-fff69f24cac6.webp",
+      "/static/img/remote/2024/05/4320297d-d34f-4515-8ecc-3f6435c66b75.webp",
+      "/static/img/remote/2024/05/786536c9-de7b-42e8-8f6a-398aaebd233b.webp",
+      "/static/img/remote/2024/05/27524bad-c8c5-4229-895b-cfecb708a6ce.webp",
+      "/static/img/remote/2024/05/44cac8a0-d596-4d82-b608-863ba0ad8d0a.webp",
+      "/static/img/remote/2024/05/9aaefb73-6b6e-4d2f-b8a2-077eef7ec94e.webp",
+      "/static/img/remote/2024/05/4Z9A7225-scaled-1.webp",
+      "/static/img/remote/2024/05/4b9fb66d-3f53-49e0-b0c1-c36ad421c929.webp",
+      "/static/img/remote/2024/05/00eae355-a358-4893-b602-6a24d8bfeadf.webp",
+      "/static/img/remote/2024/05/0dada463-c5c2-4f86-b7ad-25b68c49b96b.webp"
+    ],
+    "carousel": [
+      {
+        "image": "/static/img/remote/2024/05/Deposit-Studio-1-8.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-1.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-2.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-3.webp",
+        "alt": "Production Studios"
+      }
+    ],
+    "floorPlan": "/static/img/remote/elementor/thumbs/Deposite-Studio-2-qnww0v1guf95i1ivy8ze5p6iu60tjos57kj8nu95dc.webp",
+    "contact": {
+      "phone": "+90 212 988 10 45",
+      "address": "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, 34490, A1 Blok, 34494 İkitelli Osb/Başakşehir/İstanbul"
+    },
+    "address": "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, 34490, A1 Blok, 34494 İkitelli Osb/Başakşehir/İstanbul",
+    "sourceUrl": "https://vision-studios.net/istanbul-studio-5/",
+    "modified": "2024-05-28T09:51:52"
+  },
+  {
+    "slug": "istanbul-studio-6",
+    "title": "Istanbul Studio 6",
+    "city": "istanbul",
+    "areaSqm": 196,
+    "specs": [
+      "196 sq. mt. studio area",
+      "Fully decorated, Fully isolated with TV standard audio isloation",
+      "10 Total number of video wall screens all 55-inch",
+      "18 sq. mt. gallery control room",
+      "4 x Sony 4K cameras (Model Sony PXW-FS7)",
+      "3 x Pedestal proped tripods",
+      "1 x Auto-Q system, Controls 2 auto-Q reflectors",
+      "1 x jimmy jip (3m to 7m length)",
+      "LED studio lightning controlled by DMX-512 lightning console",
+      "Dynamic ceiling studio Lightning grid",
+      "23-channel input digital Audio Mixer",
+      "8 x wireless Neck microphone and wireless Hand microphones",
+      "56 sq. mt. studio reception area",
+      "24/7 generator and UPS electric supply with a 99,9% up time guarantee"
+    ],
+    "highlights": [
+      "196sq mt studio area",
+      "Fully decorated",
+      "LED studio lightning controlled by DMX-512 lightning console",
+      "4 x sony 4k cameras",
+      "24/7 generator and UPS electric supply with a 99,9% up time guarantee",
+      "23-channel input digital Audio Mixer"
+    ],
+    "useCasesHeading": "",
+    "useCases": [],
+    "gallery": [
+      "/static/img/remote/2024/05/Deposit-Studio-2-1.webp",
+      "/static/img/remote/2024/05/4Z9A7348-scaled-2.webp",
+      "/static/img/remote/2024/05/Deposit-Studio-2-5.webp",
+      "/static/img/remote/2024/05/Deposit-Studio-2-6-1.webp",
+      "/static/img/remote/2024/05/q11-scaled-1.webp"
+    ],
+    "carousel": [
+      {
+        "image": "/static/img/remote/2024/05/Deposit-Studio-1-8.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-1.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-2.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-3.webp",
+        "alt": "Production Studios"
+      }
+    ],
+    "floorPlan": "/static/img/remote/elementor/thumbs/st1-Deposite-qnwudlbtwi49f7m81mo9xnm6di5m6rhge7n19q4tps.webp",
+    "contact": {
+      "phone": "+90 212 988 10 45",
+      "address": "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, 34490, A1 Blok, 34494 İkitelli Osb/Başakşehir/İstanbul"
+    },
+    "address": "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, 34490, A1 Blok, 34494 İkitelli Osb/Başakşehir/İstanbul",
+    "sourceUrl": "https://vision-studios.net/istanbul-studio-6/",
+    "modified": "2024-06-02T22:33:03"
+  },
+  {
+    "slug": "istanbul-studio-7",
+    "title": "Istanbul Studio 7",
+    "city": "istanbul",
+    "areaSqm": 196,
+    "specs": [
+      "196 sq. mt. studio area.",
+      "Fully decorated with stage inside the office area, merging between woody and glassy decor.",
+      "Dynamic ceiling studio Lightning grid.",
+      "24/7 generator and UPS electric supply with a 99,9% up time guarantee.",
+      "The whole place is ready to accept both SDI and NDI video inputs and outputs standards, analog and digital audio standards.",
+      "Input/output outlets available in different places (front, back, down, and up) to give the art director the mobility and flexibility to put the cameras anywhere without having problem with the cables appearing in camera shots.",
+      "Different shooting areas , give totally different feelings.",
+      "Modular sitting tables, chairs for presenters."
+    ],
+    "highlights": [
+      "196 sq mt studio area",
+      "Fully decorated",
+      "Dynamic ceiling studio Lightning grid",
+      "Different shooting areas , give totally different feelings",
+      "24/7 generator and UPS electric supply with a 99,9% up time guarantee",
+      "Input/output outlets available in different places"
+    ],
+    "useCasesHeading": "",
+    "useCases": [],
+    "gallery": [
+      "/static/img/remote/2024/05/4Z9A7528-scaled-1.webp",
+      "/static/img/remote/2024/05/4Z9A7518-scaled-1.webp",
+      "/static/img/remote/2024/05/4Z9A7565-Edit-scaled-1.webp"
+    ],
+    "carousel": [
+      {
+        "image": "/static/img/remote/2024/05/Deposit-Studio-1-8.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-1.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-2.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-3.webp",
+        "alt": "Production Studios"
+      }
+    ],
+    "floorPlan": "",
+    "contact": {
+      "phone": "+90 212 988 10 45",
+      "address": "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, 34490, A1 Blok, 34494 İkitelli Osb/Başakşehir/İstanbul"
+    },
+    "address": "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, 34490, A1 Blok, 34494 İkitelli Osb/Başakşehir/İstanbul",
+    "sourceUrl": "https://vision-studios.net/istanbul-studio-7/",
+    "modified": "2024-06-02T22:32:58"
+  },
+  {
+    "slug": "istanbul-studio-8",
+    "title": "Istanbul Studio 8",
+    "city": "istanbul",
+    "areaSqm": 90,
+    "specs": [],
+    "highlights": [
+      "90 sq mt studio area",
+      "Ceiling studio Lightning grid (Dynamic)",
+      "LED studio lightning controlled by DMX-512 lightning console",
+      "4 x Sony HSC 100R cameras with professional CCU",
+      "Generator and UPS electricity",
+      "Digital Audio Mixer"
+    ],
+    "useCasesHeading": "This studio are suitable for a wide range of creative endeavors and productions, including:",
+    "useCases": [
+      {
+        "title": "Film and Television Productions",
+        "description": "With high-quality cameras, professional lighting, and audio equipment, this studio is perfect for shooting films, TV shows, and commercials.",
+        "image": ""
+      },
+      {
+        "title": "Live Events and Broadcasts",
+        "description": "The flexible space and advanced technology make it suitable for hosting live events, talk shows, interviews, and broadcasts.",
+        "image": ""
+      },
+      {
+        "title": "Music Videos and Performances",
+        "description": "The professional-grade audio equipment and versatile lighting options make this studio an excellent choice for recording music videos and capturing live performances.",
+        "image": ""
+      },
+      {
+        "title": "Podcasts and Radio Shows",
+        "description": "With podcast mics, wireless neck microphones, and in-ear monitors, this studio is great for recording podcasts, radio shows, and audio interviews.",
+        "image": ""
+      },
+      {
+        "title": "Corporate Videos and Presentations",
+        "description": "The professional setup and control room make it ideal for producing corporate videos, training sessions, and presentations with high-quality visuals and audio.",
+        "image": ""
+      }
+    ],
+    "gallery": [
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.39_53933146_1_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.38_ee9f4545_1_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.38_71dea32f_1_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.38_9b18e2a5_1_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.37_d6754ef9_1_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.40_eb64835d_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.40_18685566_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.39_fcc5b4f1_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.39_dfb08c87_1920x1080.webp"
+    ],
+    "carousel": [
+      {
+        "image": "/static/img/remote/2024/05/tvstu_canal-22-paris-6.webp",
+        "alt": "Paris Studio"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Paris-5.webp",
+        "alt": "Paris Studio"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Paris-3.webp",
+        "alt": "Paris Studio"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Media-City-studio-1-8.webp",
+        "alt": "Media city studio in istanbul"
+      }
+    ],
+    "floorPlan": "",
+    "contact": {
+      "phone": "+90 212 988 10 45",
+      "address": ""
+    },
+    "address": "Göztepe, İSTOÇ Oto Ticaret Mrk., 34214 Bağcılar/İstanbul",
+    "sourceUrl": "https://vision-studios.net/istanbul-studio-8/",
+    "modified": "2024-06-17T11:37:57"
+  },
+  {
+    "slug": "istanbul-studio-9",
+    "title": "Istanbul Studio 9",
+    "city": "istanbul",
+    "areaSqm": 90,
+    "specs": [],
+    "highlights": [
+      "90 sq mt studio area",
+      "Ceiling studio Lightning grid (Dynamic)",
+      "LED studio lightning controlled by DMX-512 lightning console",
+      "4 x Sony HSC 100R cameras with professional CCU",
+      "Generator and UPS electricity",
+      "Digital Audio Mixer"
+    ],
+    "useCasesHeading": "This studio are suitable for a wide range of creative endeavors and productions, including:",
+    "useCases": [
+      {
+        "title": "Film and Television Productions",
+        "description": "With high-quality cameras, professional lighting, and audio equipment, this studio is perfect for shooting films, TV shows, and commercials.",
+        "image": ""
+      },
+      {
+        "title": "Live Events and Broadcasts",
+        "description": "The flexible space and advanced technology make it suitable for hosting live events, talk shows, interviews, and broadcasts.",
+        "image": ""
+      },
+      {
+        "title": "Music Videos and Performances",
+        "description": "The professional-grade audio equipment and versatile lighting options make this studio an excellent choice for recording music videos and capturing live performances.",
+        "image": ""
+      },
+      {
+        "title": "Podcasts and Radio Shows",
+        "description": "With podcast mics, wireless neck microphones, and in-ear monitors, this studio is great for recording podcasts, radio shows, and audio interviews.",
+        "image": ""
+      },
+      {
+        "title": "Corporate Videos and Presentations",
+        "description": "The professional setup and control room make it ideal for producing corporate videos, training sessions, and presentations with high-quality visuals and audio.",
+        "image": ""
+      }
+    ],
+    "gallery": [
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.32_fae63e7d_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.33_2452dcae_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.34_0dc5eff0_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.34_53867e70_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.34_0849166f_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.35_6ce70934_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.35_8f80d5d6_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.36_1b2640b9_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.37_f7895a52_1920x1080.webp",
+      "/static/img/remote/2024/05/WhatsApp_Image_2024-05-16_at_22.55.32_795d4dfd_1920x1080.webp"
+    ],
+    "carousel": [
+      {
+        "image": "/static/img/remote/2024/05/tvstu_canal-22-paris-6.webp",
+        "alt": "Paris Studio"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Paris-5.webp",
+        "alt": "Paris Studio"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Paris-3.webp",
+        "alt": "Paris Studio"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Media-City-studio-1-8.webp",
+        "alt": "Media city studio in istanbul"
+      }
+    ],
+    "floorPlan": "",
+    "contact": {
+      "phone": "+90 212 988 10 45",
+      "address": ""
+    },
+    "address": "Göztepe, İSTOÇ Oto Ticaret Mrk., 34214 Bağcılar/İstanbul",
+    "sourceUrl": "https://vision-studios.net/istanbul-studio-9/",
+    "modified": "2024-06-17T11:37:31"
+  },
+  {
+    "slug": "london-studio-1",
+    "title": "London Studio 1",
+    "city": "london",
+    "areaSqm": 110,
+    "specs": [
+      "110 sq. mt. studio.",
+      "18 sq. mt. gallery control room.",
+      "4 x Sony HSC 100R cameras with professional CCU.",
+      "4 x Pedestal tripods with Robotic head.",
+      "3 x Auto-Q system.",
+      "LED studio lightning controlled by DMX-512 lightning console.",
+      "Ceiling studio Lightning grid (Dynamic).",
+      "Digital Audio Mixer.",
+      "8 x wireless Neck microphone.",
+      "6 podcast mic.",
+      "2 in ear monitor.",
+      "Generator and UPS electricity."
+    ],
+    "highlights": [
+      "110 sq mt studio area",
+      "Ceiling studio Lightning grid (Dynamic)",
+      "LED studio lightning controlled by DMX-512 lightning console",
+      "4 x Sony HSC 100R cameras with professional CCU",
+      "Generator and UPS electricity",
+      "Digital Audio Mixer"
+    ],
+    "useCasesHeading": "This studio is ideal for a wide range of productions, including:",
+    "useCases": [
+      {
+        "title": "Film and Television Productions",
+        "description": "With high-quality cameras, professional lighting, and audio equipment, this studio is perfect for shooting films, TV shows, and commercials.",
+        "image": ""
+      },
+      {
+        "title": "Live Events and Broadcasts",
+        "description": "The flexible space and advanced technology make it suitable for hosting live events, talk shows, interviews, and broadcasts.",
+        "image": ""
+      },
+      {
+        "title": "Music Videos and Performances",
+        "description": "The professional-grade audio equipment and versatile lighting options make this studio an excellent choice for recording music videos and capturing live performances.",
+        "image": ""
+      },
+      {
+        "title": "Podcasts and Radio Shows",
+        "description": "With podcast mics, wireless neck microphones, and in-ear monitors, this studio is great for recording podcasts, radio shows, and audio interviews.",
+        "image": ""
+      },
+      {
+        "title": "Corporate Videos and Presentations",
+        "description": "The professional setup and control room make it ideal for producing corporate videos, training sessions, and presentations with high-quality visuals and audio.",
+        "image": ""
+      }
+    ],
+    "gallery": [
+      "/static/img/remote/2024/05/PHOTO-2023-04-29-18-24-59-2.webp",
+      "/static/img/remote/2024/05/PHOTO-2023-04-29-18-24-59-4.webp",
+      "/static/img/remote/2024/05/PHOTO-2023-04-29-18-24-59.webp",
+      "/static/img/remote/2024/05/PHOTO-2023-04-29-18-24-59-5.webp",
+      "/static/img/remote/2024/05/PHOTO-2023-04-29-18-24-59-3.webp"
+    ],
+    "carousel": [
+      {
+        "image": "/static/img/remote/2024/05/7.webp",
+        "alt": "Funny hands"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Iresh-Production1-e1708468884604.webp",
+        "alt": "Production Studio"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Iresh-Production2-e1708468961894.webp",
+        "alt": "Production Studio"
+      }
+    ],
+    "floorPlan": "/static/img/remote/2024/05/Hiwar-ST-1-scaled-1.webp",
+    "contact": {
+      "phone": "+44 (0) 7920 745134",
+      "address": "Vision Studios, Kendal Avenue, London W3 0XA"
+    },
+    "address": "vm cloud",
+    "sourceUrl": "https://vision-studios.net/london-studio-1/",
+    "modified": "2026-03-13T21:52:44"
+  },
+  {
+    "slug": "london-studio-2",
+    "title": "London Studio 2",
+    "city": "london",
+    "areaSqm": 61,
+    "specs": [
+      "61 sq. mt. studio.",
+      "15 sq. mt. gallery control room.",
+      "3 x Sony HSC 100R cameras with professional CCU.",
+      "3 x Pedestal tripods with Robotic head.",
+      "2 x Auto-Q system.",
+      "LED studio lightning controlled by DMX-512 lightning console.",
+      "Ceiling studio Lightning grid (Dynamic).",
+      "Digital Audio Mixer.",
+      "5 x wireless Neck microphone.",
+      "2 in ear monitor.",
+      "Generator and UPS electricity."
+    ],
+    "highlights": [
+      "61sq mt studio area",
+      "LED studio lightning controlled by DMX-512 lightning console",
+      "Ceiling studio Lightning grid (Dynamic)",
+      "3 x Sony HSC 100R cameras with professional CCU",
+      "Generator and UPS electricity",
+      "Digital Audio Mixer"
+    ],
+    "useCasesHeading": "This studio are suitable for a wide range of creative endeavors and productions, including:",
+    "useCases": [
+      {
+        "title": "Television Broadcasting",
+        "description": "Equipped with professional-grade Sony HSC 100R cameras, CCU, robotic tripod heads, and digital audio mixers, these studios are ideal for live TV broadcasts, talk shows, news programs, and interviews.",
+        "image": ""
+      },
+      {
+        "title": "Film Production",
+        "description": "The versatile setups and high-quality equipment make these studios perfect for filming commercials, short films, documentaries, and feature-length movies.",
+        "image": ""
+      },
+      {
+        "title": "Photography",
+        "description": "Adjustable LED studio lighting controlled by DMX-512 lighting consoles allows for precise lighting conditions, making the studios ideal for photography sessions, fashion shoots, and product photography.",
+        "image": ""
+      },
+      {
+        "title": "Live Events and Performances",
+        "description": "Wireless neck microphones, in-ear monitors, and a dynamic audio mixer make these studios well-suited for hosting live events, concerts, and performances with clear, crisp audio quality.",
+        "image": ""
+      },
+      {
+        "title": "Virtual Events and Streaming",
+        "description": "These studios are perfect for producing high-quality virtual conferences, webinars, and live streams, leveraging professional equipment and reliable power backup systems.",
+        "image": ""
+      }
+    ],
+    "gallery": [
+      "/static/img/remote/2024/05/PHOTO-2023-04-27-14-43-03_1_1920x1080.webp",
+      "/static/img/remote/2024/05/PHOTO-2023-04-27-14-43-03-2_1920x1080.webp",
+      "/static/img/remote/2024/05/PHOTO-2023-04-27-14-43-03-3_1920x1080.webp",
+      "/static/img/remote/2024/05/PHOTO-2023-04-27-14-43-03-4_1920x1080.webp",
+      "/static/img/remote/2024/05/PHOTO-2023-04-27-14-43-02_1_1920x1080.webp",
+      "/static/img/remote/2024/05/PHOTO-2023-04-27-14-43-02-2_1_1920x1080.webp",
+      "/static/img/remote/2024/05/PHOTO-2023-04-27-14-43-02-3_1_1920x1080.webp",
+      "/static/img/remote/2024/05/PHOTO-2023-04-27-14-43-02-4_1_1920x1080.webp"
+    ],
+    "carousel": [
+      {
+        "image": "/static/img/remote/2024/05/7.webp",
+        "alt": "Funny hands"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Iresh-Production1-e1708468884604.webp",
+        "alt": "Production Studio"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Iresh-Production2-e1708468961894.webp",
+        "alt": "Production Studio"
+      }
+    ],
+    "floorPlan": "",
+    "contact": {
+      "phone": "+44 (0) 7920 745134",
+      "address": "Vision Studios, Kendal Avenue, London W3 0XA"
+    },
+    "address": "vm cloud",
+    "sourceUrl": "https://vision-studios.net/london-studio-2/",
+    "modified": "2024-05-28T12:32:43"
+  },
+  {
+    "slug": "paris-studio",
+    "title": "Paris Studio",
+    "city": "paris",
+    "areaSqm": 84,
+    "specs": [
+      "84 sq. mt. studio area.",
+      "Fully decorated.",
+      "LED video wall screens.",
+      "10 sq. mt. gallery control room.",
+      "4 x BlackMagic Full HD cameras.",
+      "1 x Auto-Q system, Controls 2 auto-Q reflectors.",
+      "1 x jimmy jip (3m to 7m length).",
+      "LED studio lightning controlled by DMX-512 lightning console.",
+      "Ceiling studio Lightning grid (Dynamic).",
+      "Digital Audio Mixer.",
+      "8 x wireless Neck microphone and wireless Hand microphones."
+    ],
+    "highlights": [
+      "84sq mt studio area",
+      "Fully decorated",
+      "LED video wall screens",
+      "4 x BlackMagic Full HD cameras",
+      "1 x jimmy jip (3m to 7m length)",
+      "8 x wireless Neck microphone and wireless Hand microphones"
+    ],
+    "useCasesHeading": "",
+    "useCases": [],
+    "gallery": [
+      "/static/img/remote/2024/05/Paris-5_1920x1079.webp",
+      "/static/img/remote/2024/05/Paris-3_1920x1079.webp",
+      "/static/img/remote/2024/05/tvstu_canal-22-paris-6_1920x1079.webp"
+    ],
+    "carousel": [
+      {
+        "image": "/static/img/remote/2024/05/Deposit-Studio-1-8.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-1.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-2.webp",
+        "alt": "Production Studios"
+      },
+      {
+        "image": "/static/img/remote/2024/05/Vipro-3.webp",
+        "alt": "Production Studios"
+      }
+    ],
+    "floorPlan": "",
+    "contact": {
+      "phone": "+3530896114641",
+      "address": ""
+    },
+    "address": "",
+    "sourceUrl": "https://vision-studios.net/paris-studio/",
+    "modified": "2024-06-02T22:32:34"
+  }
+]

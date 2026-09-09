@@ -1,0 +1,19 @@
+{
+  "name": "Vision Studios",
+  "origin": "https://vision-studios.net",
+  "email": "booking@vision-studios.net",
+  "social": {
+    "instagram": "https://www.instagram.com/visionstudioslondon/",
+    "linkedin": "https://www.linkedin.com/company/vision-studios-london/"
+  },
+  "hq": {
+    "address": "Vision Studios, Kendal Avenue, London W3 0XA",
+    "locality": "Kendal Avenue",
+    "region": "London",
+    "postalCode": "W3 0XA",
+    "country": "UK"
+  },
+  "openingHours": "Mon–Sun 09:00–17:00",
+  "logo": "/static/img/remote/2024/05/logo_vision-removebg-preview-e1695908610989-150x150-1.png",
+  "fetchedAt": "2026-09-09T19:36:51.970Z"
+}
