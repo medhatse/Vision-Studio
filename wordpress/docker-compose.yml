@@ -1,0 +1,44 @@
+# Local WordPress for developing/testing the Vision Studios theme.
+#   docker compose up -d           → http://localhost:8080
+#   see ../README-wordpress.md for install + import commands
+services:
+  db:
+    image: mariadb:11
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: wordpress
+      MARIADB_ROOT_PASSWORD: root
+    volumes: [db:/var/lib/mysql]
+  wordpress:
+    image: wordpress:6.8-php8.3-apache
+    depends_on: [db]
+    ports: ["127.0.0.1:8080:80"]
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_MEMORY_LIMIT', '512M');
+        define('WP_MAX_MEMORY_LIMIT', '1024M');
+    volumes:
+      - wp:/var/www/html
+      - ./vision-studios-theme:/var/www/html/wp-content/themes/vision-studios
+  cli:
+    image: wordpress:cli-2.11-php8.3
+    depends_on: [db, wordpress]
+    user: "33:33"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    volumes:
+      - wp:/var/www/html
+      - ./vision-studios-theme:/var/www/html/wp-content/themes/vision-studios
+    entrypoint: ["wp"]
+    command: ["--info"]
+volumes:
+  db:
+  wp:

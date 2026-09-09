@@ -1,0 +1,13 @@
+/*
+Theme Name: Vision Studios
+Theme URI: https://github.com/medhatse/Vision-Studio
+Author: Vision Studios
+Description: Dark, editorial theme for Vision Studios — broadcast & production studios in London, Dublin, Paris and Istanbul. Adds a Studio post type with a City taxonomy, Services and Clients, a content importer and Contact Form 7 styling.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.8
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+Text Domain: vision-studios
+*/
+/* Styles are compiled into assets/app.css (Tailwind). This file only carries the theme header. */

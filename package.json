@@ -2,13 +2,21 @@
   "name": "vision-studios-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Static marketing site for Vision Studios (London · Dublin · Paris · Istanbul), generated from content pulled from vision-studios.net",
+  "description": "Vision Studios website: static generator + WordPress theme, both fed by content pulled from vision-studios.net",
   "type": "module",
   "scripts": {
     "fetch": "node scripts/fetch-data.mjs",
     "build": "node scripts/build.mjs",
     "dev": "node scripts/build.mjs && node scripts/serve.mjs",
-    "serve": "node scripts/serve.mjs"
+    "serve": "node scripts/serve.mjs",
+    "theme:css": "cd wordpress && npx -y tailwindcss@3.4.17 -c tailwind.config.js -i tailwind.input.css -o vision-studios-theme/assets/app.css --minify",
+    "theme:import-data": "node scripts/build-wp-import.mjs",
+    "theme:zip": "npm run theme:import-data && npm run theme:css && cd wordpress && rm -f vision-studios-theme.zip && zip -qr vision-studios-theme.zip vision-studios-theme -x '*.DS_Store' && ls -la vision-studios-theme.zip",
+    "wp:up": "cd wordpress && docker compose up -d",
+    "wp:down": "cd wordpress && docker compose down",
+    "wp:import": "cd wordpress && docker compose run --rm --entrypoint sh cli -c 'php -d memory_limit=1024M /usr/local/bin/wp vs import --posts'"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }

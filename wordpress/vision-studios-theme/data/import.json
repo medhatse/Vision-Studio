@@ -1,0 +1,1131 @@
+{
+ "generated": "2026-09-09T21:55:29.076Z",
+ "options": {
+  "email": "booking@vision-studios.net",
+  "instagram": "https://www.instagram.com/visionstudioslondon/",
+  "linkedin": "https://www.linkedin.com/company/vision-studios-london/",
+  "phone_uk": "+44 (0) 7920 745134",
+  "phone_eu": "+353 (0) 8961 14641",
+  "phone_tr": "+90 212 988 10 45",
+  "hq_address": "Vision Studios, Kendal Avenue, London W3 0XA",
+  "opening_hours": "Mon–Sun 09:00–17:00",
+  "hero_image": "https://vision-studios.net/wp-content/uploads/2025/11/1.webp",
+  "hero_left": "25+ Years — 4 Cities",
+  "hero_center": "Broadcast · Film · Podcast",
+  "hero_right": "51.5074° N / -0.1278° W",
+  "hero_intro": "Premier Broadcast Studios Rentals in Four Iconic Cities. Fully equipped, modern studios for live news, TV shows, corporate advertising, virtual events and podcasts.",
+  "stat1_value": "25+",
+  "stat1_label": "Years of Experience",
+  "stat2_value": "215",
+  "stat2_label": "Sq. Mt. Flagship Studio",
+  "stat3_value": "4",
+  "stat3_label": "Capital Cities",
+  "stat4_value": "99.9%",
+  "stat4_label": "Uptime Guarantee",
+  "counter1_value": 1000,
+  "counter1_label": "Yearly Productions",
+  "counter1_suffix": "+",
+  "counter2_value": 128,
+  "counter2_label": "Successful Projects",
+  "counter2_suffix": "",
+  "counter3_value": 25,
+  "counter3_label": "Years of experience",
+  "counter3_suffix": "",
+  "why_intro": "At Vision Studios, our mission is to provide our clients with the highest-quality broadcast studio rentals in the industry. We strive to be a reliable and trusted partner to broadcasters, television producers, and other creative professionals, offering them state-of-the-art facilities, top-notch equipment, and exceptional customer service. Our goal is to help our clients bring their creative visions to life by providing them with the tools they need to produce exceptional content.",
+  "choose_intro": "Welcome to Vision Studios, your premier destination for top-notch broadcast studio rentals in four of the world’s most vibrant cities: London, Dublin, Paris, and Istanbul. Whether you’re producing a live television show, filming a commercial, hosting a virtual event, or recording a podcast, Vision Studios offers state-of-the-art facilities and unparalleled service to meet all your broadcasting needs. Our strategically located studios are equipped with the latest technology and designed to provide a professional, seamless experience from start to finish."
+ },
+ "cities": [
+  {
+   "slug": "london",
+   "name": "London",
+   "heading": "Our TV & Production studios in London",
+   "country": "United Kingdom",
+   "tagline": "HQ · Kendal Avenue",
+   "phone": "+44 (0) 7920 745134",
+   "address": "Vision Studios, Kendal Avenue, London W3 0XA",
+   "map_query": "Vision Studios, Kendal Avenue, London W3 0XA",
+   "coords": "51.5138° N / -0.2871° W",
+   "image": "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-29-18-24-59-2.webp"
+  },
+  {
+   "slug": "dublin",
+   "name": "Dublin",
+   "heading": "Our TV & Production studios in Dublin",
+   "country": "Ireland",
+   "tagline": "Dundrum · IT Media",
+   "phone": "+353 (0) 8961 14641",
+   "address": "IT Media Limited, 3rd Floor North, North Block, Rockfields, Dundrum, Dublin D16 W7W3",
+   "map_query": "IT Media Limited 3rd Floor North, North Block Rockfields Dundrum Dublin D16 W7W3",
+   "coords": "53.2894° N / -6.2432° W",
+   "image": "https://vision-studios.net/wp-content/uploads/2025/11/3.webp"
+  },
+  {
+   "slug": "paris",
+   "name": "Paris",
+   "heading": "Our TV & Production studios in Paris",
+   "country": "France",
+   "tagline": "Broadcast Suite",
+   "phone": "+353 (0) 8961 14641",
+   "address": "Paris, France",
+   "map_query": "Paris, France",
+   "coords": "48.8566° N / 2.3522° E",
+   "image": "https://vision-studios.net/wp-content/uploads/2024/05/Paris-5.webp"
+  },
+  {
+   "slug": "istanbul",
+   "name": "Istanbul",
+   "heading": "Our TV & Production studios in Istanbul",
+   "country": "Türkiye",
+   "tagline": "Media City · Bağcılar",
+   "phone": "+90 212 988 10 45",
+   "address": "Mahmutbey Mah. 2623. Sk. No: 3, İç Kapı No: 11, Bağcılar / İstanbul",
+   "map_query": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul",
+   "coords": "41.0082° N / 28.9784° E",
+   "image": "https://vision-studios.net/wp-content/uploads/2024/05/Media-City-studio-1-1.webp"
+  }
+ ],
+ "studios": [
+  {
+   "slug": "london-studio-1",
+   "title": "London Studio 1",
+   "city": "london",
+   "order": 1,
+   "excerpt": "This studio is suitable for film and television productions, live events and broadcasts, music videos and performances, podcasts and radio shows, as well as corporate videos and presentations.",
+   "tagline": "Flagship · Podcast-ready",
+   "area": 110,
+   "specs": "110 sq. mt. studio.\n18 sq. mt. gallery control room.\n4 x Sony HSC 100R cameras with professional CCU.\n4 x Pedestal tripods with Robotic head.\n3 x Auto-Q system.\nLED studio lightning controlled by DMX-512 lightning console.\nCeiling studio Lightning grid (Dynamic).\nDigital Audio Mixer.\n8 x wireless Neck microphone.\n6 podcast mic.\n2 in ear monitor.\nGenerator and UPS electricity.",
+   "highlights": "110 sq mt studio area\nCeiling studio Lightning grid (Dynamic)\nLED studio lightning controlled by DMX-512 lightning console\n4 x Sony HSC 100R cameras with professional CCU\nGenerator and UPS electricity\nDigital Audio Mixer",
+   "use_cases_heading": "This studio is ideal for a wide range of productions, including:",
+   "use_cases": "Film and Television Productions | With high-quality cameras, professional lighting, and audio equipment, this studio is perfect for shooting films, TV shows, and commercials.\nLive Events and Broadcasts | The flexible space and advanced technology make it suitable for hosting live events, talk shows, interviews, and broadcasts.\nMusic Videos and Performances | The professional-grade audio equipment and versatile lighting options make this studio an excellent choice for recording music videos and capturing live performances.\nPodcasts and Radio Shows | With podcast mics, wireless neck microphones, and in-ear monitors, this studio is great for recording podcasts, radio shows, and audio interviews.\nCorporate Videos and Presentations | The professional setup and control room make it ideal for producing corporate videos, training sessions, and presentations with high-quality visuals and audio.",
+   "gallery": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-29-18-24-59-2.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-29-18-24-59-4.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-29-18-24-59.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-29-18-24-59-5.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-29-18-24-59-3.webp"
+   ],
+   "floor_plan": "https://vision-studios.net/wp-content/uploads/2024/05/Hiwar-ST-1-scaled-1.webp",
+   "phone": "+44 (0) 7920 745134",
+   "address": "",
+   "map_query": ""
+  },
+  {
+   "slug": "london-studio-2",
+   "title": "London Studio 2",
+   "city": "london",
+   "order": 2,
+   "excerpt": "These studios are suitable for television broadcasting, film production, photography, live events, and virtual streaming. With professional-grade equipment and versatile setups, they cater to a wide range of creative endeavors in the broadcasting, film, photography, and entertainment industries.",
+   "tagline": "Compact broadcast studio",
+   "area": 61,
+   "specs": "61 sq. mt. studio.\n15 sq. mt. gallery control room.\n3 x Sony HSC 100R cameras with professional CCU.\n3 x Pedestal tripods with Robotic head.\n2 x Auto-Q system.\nLED studio lightning controlled by DMX-512 lightning console.\nCeiling studio Lightning grid (Dynamic).\nDigital Audio Mixer.\n5 x wireless Neck microphone.\n2 in ear monitor.\nGenerator and UPS electricity.",
+   "highlights": "61sq mt studio area\nLED studio lightning controlled by DMX-512 lightning console\nCeiling studio Lightning grid (Dynamic)\n3 x Sony HSC 100R cameras with professional CCU\nGenerator and UPS electricity\nDigital Audio Mixer",
+   "use_cases_heading": "This studio are suitable for a wide range of creative endeavors and productions, including:",
+   "use_cases": "Television Broadcasting | Equipped with professional-grade Sony HSC 100R cameras, CCU, robotic tripod heads, and digital audio mixers, these studios are ideal for live TV broadcasts, talk shows, news programs, and interviews.\nFilm Production | The versatile setups and high-quality equipment make these studios perfect for filming commercials, short films, documentaries, and feature-length movies.\nPhotography | Adjustable LED studio lighting controlled by DMX-512 lighting consoles allows for precise lighting conditions, making the studios ideal for photography sessions, fashion shoots, and product photography.\nLive Events and Performances | Wireless neck microphones, in-ear monitors, and a dynamic audio mixer make these studios well-suited for hosting live events, concerts, and performances with clear, crisp audio quality.\nVirtual Events and Streaming | These studios are perfect for producing high-quality virtual conferences, webinars, and live streams, leveraging professional equipment and reliable power backup systems.",
+   "gallery": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-27-14-43-03_1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-27-14-43-03-2_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-27-14-43-03-3_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-27-14-43-03-4_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-27-14-43-02_1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-27-14-43-02-2_1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-27-14-43-02-3_1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-27-14-43-02-4_1_1920x1080.webp"
+   ],
+   "floor_plan": "",
+   "phone": "+44 (0) 7920 745134",
+   "address": "",
+   "map_query": ""
+  },
+  {
+   "slug": "dublin-studio",
+   "title": "Dublin Studio",
+   "city": "dublin",
+   "order": 3,
+   "excerpt": "This studio setup is suitable for television broadcasting, live streaming events, film production, virtual events, photography sessions, and podcast/radio production. Its advanced equipment allows for high-quality production across various multimedia formats.",
+   "tagline": "LED video wall · Jimmy jib",
+   "area": 144,
+   "specs": "144 sq. mt. studio area.\nFully decorated.\nHuge LED screen, Fully controlled.\n3 Groups, 2×2 video wall screens (55-inch).\n18 sq. mt. gallery control room.\n4 x Sony Full HD cameras with professional CCU.\n4 x Pedestal tripods, Robotic Heads.\n1 x Auto-Q system, Controls 2 auto-Q reflectors.\nLED studio lightning controlled by DMX-512 lightning console.\nCeiling studio Lightning grid (Dynamic).\nDigital Audio Mixer.\n8 x wireless Neck microphone and wireless Hand microphones.",
+   "highlights": "144sq mt studio area\nFully decorated\nHuge LED screen, Fully controlled\n4 x sony Full HD cameras\n1 x jimmy jip (3m to 7m length)\nDigital Audio Mixer",
+   "use_cases_heading": "",
+   "use_cases": "",
+   "gallery": [
+    "https://vision-studios.net/wp-content/uploads/2025/10/3-scaled.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/11/1.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/11/2.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/11/3.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/11/4.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/11/5.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/11/6.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/11/7.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/11/8.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/11/9.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/11/10.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/11/11.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/11/12.webp"
+   ],
+   "floor_plan": "https://vision-studios.net/wp-content/uploads/2024/05/dublin-Layoutl.webp",
+   "phone": "+353 (0) 8961 14641",
+   "address": "IT Media Limited 3rd Floor North, North Block Rockfields Dundrum Dublin D16 W7W3",
+   "map_query": "IT Media Limited 3rd Floor North, North Block Rockfields  Dundrum Dublin D16 W7W3"
+  },
+  {
+   "slug": "paris-studio",
+   "title": "Paris Studio",
+   "city": "paris",
+   "order": 4,
+   "excerpt": "This studio setup is suitable for television broadcasting, live streaming events, film production, virtual events, photography sessions, and podcast/radio production. Its advanced equipment allows for high-quality production across various multimedia formats.",
+   "tagline": "BlackMagic 4-cam suite",
+   "area": 84,
+   "specs": "84 sq. mt. studio area.\nFully decorated.\nLED video wall screens.\n10 sq. mt. gallery control room.\n4 x BlackMagic Full HD cameras.\n1 x Auto-Q system, Controls 2 auto-Q reflectors.\n1 x jimmy jip (3m to 7m length).\nLED studio lightning controlled by DMX-512 lightning console.\nCeiling studio Lightning grid (Dynamic).\nDigital Audio Mixer.\n8 x wireless Neck microphone and wireless Hand microphones.",
+   "highlights": "84sq mt studio area\nFully decorated\nLED video wall screens\n4 x BlackMagic Full HD cameras\n1 x jimmy jip (3m to 7m length)\n8 x wireless Neck microphone and wireless Hand microphones",
+   "use_cases_heading": "",
+   "use_cases": "",
+   "gallery": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/Paris-5_1920x1079.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Paris-3_1920x1079.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/tvstu_canal-22-paris-6_1920x1079.webp"
+   ],
+   "floor_plan": "",
+   "phone": "+3530896114641",
+   "address": "",
+   "map_query": ""
+  },
+  {
+   "slug": "istanbul-dtl-room",
+   "title": "Istanbul DTL Room",
+   "city": "istanbul",
+   "order": 5,
+   "excerpt": "This studio is used for Direct-To-Link (DTL)",
+   "tagline": "Direct-To-Link live feeds",
+   "area": "",
+   "specs": "",
+   "highlights": "Supports all kind of live feeds techniques from SNG to internet streaming protocols like TVU, LiveU, RTMP, SRT, .... etc\n1 camera with a custom background\nGenerator and UPS electricity",
+   "use_cases_heading": "",
+   "use_cases": "",
+   "gallery": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/DTL-3-scaled-2.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/DTL-1-scaled-1.webp"
+   ],
+   "floor_plan": "",
+   "phone": "+90 212 988 10 45",
+   "address": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul",
+   "map_query": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul"
+  },
+  {
+   "slug": "istanbul-studio-1",
+   "title": "Istanbul Studio 1",
+   "city": "istanbul",
+   "order": 6,
+   "excerpt": "This studio is suitable for television and film production, live streaming, online video content creation, photography, broadcasting, podcasting, and virtual events. It offers a fully-equipped space with professional-grade cameras, lighting, audio equipment, and advanced technology for a wide range of multimedia production needs.",
+   "tagline": "Flagship · 72-screen video wall",
+   "area": 215,
+   "specs": "215 sq. mt. studio area.\nFully decorated.\nFull Isolated with professional audio isolation.\n72 Total number of video wall screens between 55-inch and 46-inch, all colored calibrated.\n18 sq. mt. gallery control room, professionally designed upon modular workflow.\n4 x Sony Full HD cameras with professional CCU (Model HDC-P1) with CCU control.\n3 x heavy duty Pedestal tripods.\n1 x jimmy jip (length can be from 3m to 7m length).\n1 x Auto-Q system, Controls 2 auto-Q reflectors installed on the main cameras.\n2 x 4-channel playout system.\n2 x 1-channel CG system for on-air graphics.\nTV standard cool light LED studio lightning controlled by DMX-512 lightning console.\nDynamic Ceiling studio Lightning grid.\n32-input channel Digital Audio Mixer.\n8 x wireless Neck microphone and wireless Hand microphones.\n18 sq. mt. studio reception area.\n24/7 generator and UPS electric supply with 99,9% uptime guarantee.",
+   "highlights": "215sq mt studio area\nFully decorated\n18 sq. mt. gallery control room, professionally designed upon modular workflow\n4 x Sony Full HD cameras with professional CCU (Model HDC-P1) with CCU control\n24/7 generator and UPS electric supply with 99,9% uptime guarantee\nFull Isolated with professional audio isolation",
+   "use_cases_heading": "",
+   "use_cases": "",
+   "gallery": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/Media-City-studio-1-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7727-1-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7717-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7711-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7701-1-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Media-City-studio-1-7.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7687-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7678-1-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Media-City-studio-1-4.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Media-City-studio-1-2.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7867.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Media-City-studio-1-3.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Media-City-studio-1-8.webp"
+   ],
+   "floor_plan": "https://vision-studios.net/wp-content/uploads/2024/05/Drawing.webp",
+   "phone": "+90 212 988 10 45",
+   "address": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul",
+   "map_query": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul"
+  },
+  {
+   "slug": "istanbul-studio-2",
+   "title": "Istanbul Studio 2",
+   "city": "istanbul",
+   "order": 7,
+   "excerpt": "This studio is equipped for various multimedia productions, including film shoots, broadcasts, and live events. It features high-quality cameras, lighting, audio equipment, and a control room for monitoring. With a spacious shooting area, LED screen backdrop, and versatile lighting options, it offers flexibility for different creative needs.",
+   "tagline": "Ground-floor soundstage",
+   "area": 185,
+   "specs": "185 sq. mt. ground floor studio area.\n18 sq. mt. gallery control room.\n20 sq. mt. Total area of LED screen.\n4 x Grass-Vally Full HD cameras with professional CCU.\n3 x Pedestal tripods.\n1 x Auto-Q system.\n1 x jimmy jip (3m to 7m length).\nLED studio lightning controlled by DMX-512 lightning console.\nCeiling studio Lightning grid (Dynamic).\nDigital Audio Mixer.\n6 x wireless Neck microphone and wireless Hand microphones.\n18 sq. mt. studio reception area.\nGenerator and UPS electricity.",
+   "highlights": "185 sq mt studio area\n18 sq. mt. gallery control room\n20 sq. mt. Total area of LED screen\n4 x Grass-Vally Full HD cameras with professional CCU.\nGenerator and UPS electricity\nDigital Audio Mixer",
+   "use_cases_heading": "",
+   "use_cases": "",
+   "gallery": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/Media-City-studio-2-1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Media-City-studio-2-2_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2022-04-11-19-02-58_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2022-04-11-19-02-58-2_1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2022-04-11-19-02-58-3_1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Studio-B-2-1024x768-1_1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Studio-B-4-1024x768-1_1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Studio-B-7-1024x768-1_1_1920x1080.webp"
+   ],
+   "floor_plan": "https://vision-studios.net/wp-content/uploads/2024/05/Drawing-1.webp",
+   "phone": "+90 212 988 10 45",
+   "address": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul",
+   "map_query": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul"
+  },
+  {
+   "slug": "istanbul-studio-3",
+   "title": "Istanbul Studio 3",
+   "city": "istanbul",
+   "order": 8,
+   "excerpt": "This studio is ideal for photography, videography, art creation, dance practice, or hosting workshops. In addition to ability of customizing lighting setups for various shoots, special effects, and ambiance control.",
+   "tagline": "Blank-canvas build space",
+   "area": 175,
+   "specs": "175 sq. mt. ground floor studio area.\nFree for building any customized decoration.\nGenerator electricity.\n14 sq. mt. studio reception area.\nCeiling studio Lightning grid (Dynamic).",
+   "highlights": "175sq mt studio area\nFree for building any customized decoration.\n14 sq. mt. studio reception area.\nGenerator and UPS electricity\nCeiling studio Lightning grid (Dynamic)",
+   "use_cases_heading": "",
+   "use_cases": "",
+   "gallery": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-25-21-52-42_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-25-21-52-42-2_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/STUDIO-C-2-scaled_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/STUDIO-C-3-scaled_1920x1080.webp"
+   ],
+   "floor_plan": "https://vision-studios.net/wp-content/uploads/2024/05/Drawing3-Media-city-st-3.webp",
+   "phone": "+90 212 988 10 45",
+   "address": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul",
+   "map_query": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul"
+  },
+  {
+   "slug": "istanbul-studio-4",
+   "title": "Istanbul Studio 4",
+   "city": "istanbul",
+   "order": 9,
+   "excerpt": "In this studio, you can create various types of content including live broadcasts, podcasts, music recordings, videos for promotions or education, virtual events, product demonstrations, and photography sessions. The professional equipment allows for high-quality production across different media formats.",
+   "tagline": "First-floor studio",
+   "area": 37.5,
+   "specs": "37.5 sq. mt. first floor studio area.\n28 sq. mt. gallery control room.\n3 x Sony HD camera with professional CCU.\n3 x Pedestal tripods.\n1 x Auto-Q system.\nDigital Audio Mixer.\n4 x wireless Neck microphone and wireless Hand microphones.",
+   "highlights": "37.5 sq mt studio area\n28 sq. mt. gallery control room\n1 x Auto-Q system\n3 x Sony HD camera with professional CCU\nGenerator and UPS electricity\nDigital Audio Mixer",
+   "use_cases_heading": "",
+   "use_cases": "",
+   "gallery": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/Media-City-studio-4-2.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Media-City-studio-4-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7825-Edit-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7821-Edit-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7807-Edit-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7787-Edit-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7763-Edit-Edit-scaled-1.webp"
+   ],
+   "floor_plan": "",
+   "phone": "+90 212 988 10 45",
+   "address": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul",
+   "map_query": "Mahmutbey, 2623 Sokak No 3, 34218 Bağcılar/İstanbul"
+  },
+  {
+   "slug": "istanbul-studio-5",
+   "title": "Istanbul Studio 5",
+   "city": "istanbul",
+   "order": 10,
+   "excerpt": "This studio offers endless possibilities for creative endeavours. From producing commercial videos and hosting live broadcasts to conducting photo shoots and offering podcasting facilities, the studio serves as a versatile hub for content creation and professional ventures.",
+   "tagline": "36-screen video wall",
+   "area": 196,
+   "specs": "196 sq. mt. studio area.\nFully decorated.\n36 Total video wall screens (55-inch, and 46-inch).\n18 sq. mt. gallery control room.\n4 x Sony Full HD cameras with professional CCU.\n3 x Pedestal tripods.\n1 x Auto-Q system, Controls 2 auto-Q reflectors.\n1 x jimmy jip (3m to 7m length).\nLED studio lightning controlled by DMX-512 lightning console.\nCeiling studio Lightning grid (Dynamic).\nDigital Audio Mixer.\n10 x wireless Neck microphone and wireless Hand microphones.\n56 sq. mt. studio reception area.\ngenerator and UPS electric supply.",
+   "highlights": "196sq mt studio area\nFully decorated\n36 Total Video Wall Screen\n4 x Sony Full HD cameras with professional CCU\ngenerator and UPS electric supply\n10 x wireless Neck microphone and wireless Hand microphones",
+   "use_cases_heading": "",
+   "use_cases": "",
+   "gallery": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/Deposit-Studio-1-1-2.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/d7dad04f-48c6-4deb-88b3-391043a7910c.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/cef2f6f5-2807-4986-b847-a879a975007a.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/a79f8717-cdc2-49aa-9d91-f10771392409.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/bbeb21a6-86ba-4cd6-8345-fff69f24cac6.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4320297d-d34f-4515-8ecc-3f6435c66b75.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/786536c9-de7b-42e8-8f6a-398aaebd233b.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/27524bad-c8c5-4229-895b-cfecb708a6ce.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/44cac8a0-d596-4d82-b608-863ba0ad8d0a.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/9aaefb73-6b6e-4d2f-b8a2-077eef7ec94e.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7225-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4b9fb66d-3f53-49e0-b0c1-c36ad421c929.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/00eae355-a358-4893-b602-6a24d8bfeadf.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/0dada463-c5c2-4f86-b7ad-25b68c49b96b.webp"
+   ],
+   "floor_plan": "https://vision-studios.net/wp-content/uploads/elementor/thumbs/Deposite-Studio-2-qnww0v1guf95i1ivy8ze5p6iu60tjos57kj8nu95dc.webp",
+   "phone": "+90 212 988 10 45",
+   "address": "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, 34490, A1 Blok, 34494 İkitelli Osb/Başakşehir/İstanbul",
+   "map_query": "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, 34490, A1 Blok, 34494 İkitelli Osb/Başakşehir/İstanbul"
+  },
+  {
+   "slug": "istanbul-studio-6",
+   "title": "Istanbul Studio 6",
+   "city": "istanbul",
+   "order": 11,
+   "excerpt": "It is ideal for diverse purposes such as film production, live streaming, virtual events, photography sessions, podcast recording, educational videos, art exhibitions, product demonstrations, and event space rental. Its versatility and high-quality setup cater to a wide range of creative and professional endeavors.",
+   "tagline": "Sony 4K · Audio isolated",
+   "area": 196,
+   "specs": "196 sq. mt. studio area\nFully decorated, Fully isolated with TV standard audio isloation\n10 Total number of video wall screens all 55-inch\n18 sq. mt. gallery control room\n4 x Sony 4K cameras (Model Sony PXW-FS7)\n3 x Pedestal proped tripods\n1 x Auto-Q system, Controls 2 auto-Q reflectors\n1 x jimmy jip (3m to 7m length)\nLED studio lightning controlled by DMX-512 lightning console\nDynamic ceiling studio Lightning grid\n23-channel input digital Audio Mixer\n8 x wireless Neck microphone and wireless Hand microphones\n56 sq. mt. studio reception area\n24/7 generator and UPS electric supply with a 99,9% up time guarantee",
+   "highlights": "196sq mt studio area\nFully decorated\nLED studio lightning controlled by DMX-512 lightning console\n4 x sony 4k cameras\n24/7 generator and UPS electric supply with a 99,9% up time guarantee\n23-channel input digital Audio Mixer",
+   "use_cases_heading": "",
+   "use_cases": "",
+   "gallery": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/Deposit-Studio-2-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7348-scaled-2.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Deposit-Studio-2-5.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Deposit-Studio-2-6-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/q11-scaled-1.webp"
+   ],
+   "floor_plan": "https://vision-studios.net/wp-content/uploads/elementor/thumbs/st1-Deposite-qnwudlbtwi49f7m81mo9xnm6di5m6rhge7n19q4tps.webp",
+   "phone": "+90 212 988 10 45",
+   "address": "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, 34490, A1 Blok, 34494 İkitelli Osb/Başakşehir/İstanbul",
+   "map_query": "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, 34490, A1 Blok, 34494 İkitelli Osb/Başakşehir/İstanbul"
+  },
+  {
+   "slug": "istanbul-studio-7",
+   "title": "Istanbul Studio 7",
+   "city": "istanbul",
+   "order": 12,
+   "excerpt": "This studio is a versatile space perfect for film and TV production, live broadcasting, photography, virtual events, podcasts, and educational content creation. With advanced technology, flexible design, and aesthetic appeal, it caters to a wide range of multimedia production needs.",
+   "tagline": "Office-set · SDI & NDI",
+   "area": 196,
+   "specs": "196 sq. mt. studio area.\nFully decorated with stage inside the office area, merging between woody and glassy decor.\nDynamic ceiling studio Lightning grid.\n24/7 generator and UPS electric supply with a 99,9% up time guarantee.\nThe whole place is ready to accept both SDI and NDI video inputs and outputs standards, analog and digital audio standards.\nInput/output outlets available in different places (front, back, down, and up) to give the art director the mobility and flexibility to put the cameras anywhere without having problem with the cables appearing in camera shots.\nDifferent shooting areas , give totally different feelings.\nModular sitting tables, chairs for presenters.",
+   "highlights": "196 sq mt studio area\nFully decorated\nDynamic ceiling studio Lightning grid\nDifferent shooting areas , give totally different feelings\n24/7 generator and UPS electric supply with a 99,9% up time guarantee\nInput/output outlets available in different places",
+   "use_cases_heading": "",
+   "use_cases": "",
+   "gallery": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7528-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7518-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7565-Edit-scaled-1.webp"
+   ],
+   "floor_plan": "",
+   "phone": "+90 212 988 10 45",
+   "address": "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, 34490, A1 Blok, 34494 İkitelli Osb/Başakşehir/İstanbul",
+   "map_query": "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, 34490, A1 Blok, 34494 İkitelli Osb/Başakşehir/İstanbul"
+  },
+  {
+   "slug": "istanbul-studio-8",
+   "title": "Istanbul Studio 8",
+   "city": "istanbul",
+   "order": 13,
+   "excerpt": "",
+   "tagline": "Sony HSC-100R studio",
+   "area": 90,
+   "specs": "",
+   "highlights": "90 sq mt studio area\nCeiling studio Lightning grid (Dynamic)\nLED studio lightning controlled by DMX-512 lightning console\n4 x Sony HSC 100R cameras with professional CCU\nGenerator and UPS electricity\nDigital Audio Mixer",
+   "use_cases_heading": "This studio are suitable for a wide range of creative endeavors and productions, including:",
+   "use_cases": "Film and Television Productions | With high-quality cameras, professional lighting, and audio equipment, this studio is perfect for shooting films, TV shows, and commercials.\nLive Events and Broadcasts | The flexible space and advanced technology make it suitable for hosting live events, talk shows, interviews, and broadcasts.\nMusic Videos and Performances | The professional-grade audio equipment and versatile lighting options make this studio an excellent choice for recording music videos and capturing live performances.\nPodcasts and Radio Shows | With podcast mics, wireless neck microphones, and in-ear monitors, this studio is great for recording podcasts, radio shows, and audio interviews.\nCorporate Videos and Presentations | The professional setup and control room make it ideal for producing corporate videos, training sessions, and presentations with high-quality visuals and audio.",
+   "gallery": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.39_53933146_1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.38_ee9f4545_1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.38_71dea32f_1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.38_9b18e2a5_1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.37_d6754ef9_1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.40_eb64835d_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.40_18685566_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.39_fcc5b4f1_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.39_dfb08c87_1920x1080.webp"
+   ],
+   "floor_plan": "",
+   "phone": "+90 212 988 10 45",
+   "address": "Göztepe, İSTOÇ Oto Ticaret Mrk., 34214 Bağcılar/İstanbul",
+   "map_query": "Göztepe, İSTOÇ Oto Ticaret Mrk., 34214 Bağcılar/İstanbul"
+  },
+  {
+   "slug": "istanbul-studio-9",
+   "title": "Istanbul Studio 9",
+   "city": "istanbul",
+   "order": 14,
+   "excerpt": "",
+   "tagline": "Sony HSC-100R studio",
+   "area": 90,
+   "specs": "",
+   "highlights": "90 sq mt studio area\nCeiling studio Lightning grid (Dynamic)\nLED studio lightning controlled by DMX-512 lightning console\n4 x Sony HSC 100R cameras with professional CCU\nGenerator and UPS electricity\nDigital Audio Mixer",
+   "use_cases_heading": "This studio are suitable for a wide range of creative endeavors and productions, including:",
+   "use_cases": "Film and Television Productions | With high-quality cameras, professional lighting, and audio equipment, this studio is perfect for shooting films, TV shows, and commercials.\nLive Events and Broadcasts | The flexible space and advanced technology make it suitable for hosting live events, talk shows, interviews, and broadcasts.\nMusic Videos and Performances | The professional-grade audio equipment and versatile lighting options make this studio an excellent choice for recording music videos and capturing live performances.\nPodcasts and Radio Shows | With podcast mics, wireless neck microphones, and in-ear monitors, this studio is great for recording podcasts, radio shows, and audio interviews.\nCorporate Videos and Presentations | The professional setup and control room make it ideal for producing corporate videos, training sessions, and presentations with high-quality visuals and audio.",
+   "gallery": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.32_fae63e7d_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.33_2452dcae_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.34_0dc5eff0_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.34_53867e70_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.34_0849166f_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.35_6ce70934_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.35_8f80d5d6_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.36_1b2640b9_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.37_f7895a52_1920x1080.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp_Image_2024-05-16_at_22.55.32_795d4dfd_1920x1080.webp"
+   ],
+   "floor_plan": "",
+   "phone": "+90 212 988 10 45",
+   "address": "Göztepe, İSTOÇ Oto Ticaret Mrk., 34214 Bağcılar/İstanbul",
+   "map_query": "Göztepe, İSTOÇ Oto Ticaret Mrk., 34214 Bağcılar/İstanbul"
+  }
+ ],
+ "services": [
+  {
+   "title": "Broadcast Service",
+   "icon": "fa-tower-broadcast",
+   "type": "service",
+   "order": 1,
+   "excerpt": "Cutting-edge broadcast services combining state-of-the-art technology with personalised support for seamless transmission and maximum impact.",
+   "content": "At Vision Studios, we offer cutting-edge broadcast services designed to elevate your content delivery and engage your target audience like never before. Our comprehensive suite of broadcast solutions combines state-of-the-art technology with personalized support to ensure seamless transmission and maximum impact for your message."
+  },
+  {
+   "title": "Equipment Hire",
+   "icon": "fa-camera-retro",
+   "type": "service",
+   "order": 2,
+   "excerpt": "Professional cameras and lenses, lighting, audio gear and post-production tools to support every stage of your production workflow.",
+   "content": "At Vision Studios, we recognize that having access to the right media production equipment is crucial for bringing your creative vision to life. From professional cameras and lenses to lighting equipment, audio gear, and post-production tools, our extensive inventory features a comprehensive range of equipment to support every aspect of your media production workflow. Whether you're working on a film, television show, commercial, documentary, or any other type of project, we've got the equipment you need to make it a success."
+  },
+  {
+   "title": "Crew Hire",
+   "icon": "fa-people-group",
+   "type": "service",
+   "order": 3,
+   "excerpt": "Directors, cinematographers, producers, sound engineers and post-production specialists, on call across all four cities.",
+   "content": "At Vision Studios, we understand that assembling the right team is essential for bringing your creative vision to life. From directors and cinematographers to producers, sound engineers, and post-production specialists, our network includes talented individuals with diverse skills and expertise across all aspects of media production. Whether you're working on a film, television show, commercial, documentary, or any other type of project, we've got the crew members you need to bring your vision to fruition."
+  },
+  {
+   "title": "Bespoke Set Design",
+   "icon": "fa-pen-ruler",
+   "type": "service",
+   "order": 4,
+   "excerpt": "Our set designer team takes custom sets from the initial design concept through manufacturing and installation.",
+   "content": "Our set designer team takes custom sets from the initial design concept through manufacturing and installation."
+  },
+  {
+   "title": "Direct-To-Link Feeds",
+   "icon": "fa-satellite-dish",
+   "type": "service",
+   "order": 5,
+   "excerpt": "Live feeds from SNG to internet streaming protocols including TVU, LiveU, RTMP and SRT, backed by generator and UPS power.",
+   "content": "Live feeds from SNG to internet streaming protocols including TVU, LiveU, RTMP and SRT, backed by generator and UPS power."
+  },
+  {
+   "title": "Podcast & Radio",
+   "icon": "fa-microphone-lines",
+   "type": "service",
+   "order": 6,
+   "excerpt": "Podcast mics, wireless neck microphones and in-ear monitors for podcasts, radio shows and audio interviews.",
+   "content": "Podcast mics, wireless neck microphones and in-ear monitors for podcasts, radio shows and audio interviews."
+  },
+  {
+   "title": "25+ Years of Experience",
+   "icon": "",
+   "type": "reason",
+   "order": 1,
+   "excerpt": "A reputation built on the quality of our facilities and our customer service.",
+   "content": "A reputation built on the quality of our facilities and our customer service."
+  },
+  {
+   "title": "Four Capital Cities",
+   "icon": "",
+   "type": "reason",
+   "order": 2,
+   "excerpt": "London, Dublin, Paris and Istanbul — one consistent production standard.",
+   "content": "London, Dublin, Paris and Istanbul — one consistent production standard."
+  },
+  {
+   "title": "State-of-the-Art Equipment",
+   "icon": "",
+   "type": "reason",
+   "order": 3,
+   "excerpt": "Sony, Grass Valley and BlackMagic broadcast cameras, DMX-512 lighting grids and LED video walls.",
+   "content": "Sony, Grass Valley and BlackMagic broadcast cameras, DMX-512 lighting grids and LED video walls."
+  },
+  {
+   "title": "Full Gallery Control Rooms",
+   "icon": "",
+   "type": "reason",
+   "order": 4,
+   "excerpt": "Professionally designed control rooms with Auto-Q systems and digital audio mixers.",
+   "content": "Professionally designed control rooms with Auto-Q systems and digital audio mixers."
+  },
+  {
+   "title": "24/7 Reliability",
+   "icon": "",
+   "type": "reason",
+   "order": 5,
+   "excerpt": "Generator and UPS backup power with a 99.9% uptime guarantee.",
+   "content": "Generator and UPS backup power with a 99.9% uptime guarantee."
+  }
+ ],
+ "clients": [
+  {
+   "name": "News Central",
+   "logo": "https://vision-studios.net/wp-content/uploads/2024/05/newscentral.webp",
+   "order": 1
+  },
+  {
+   "name": "Al Jazeera Mubasher",
+   "logo": "https://vision-studios.net/wp-content/uploads/2024/05/logo-aljazeera-mubasher.webp",
+   "order": 2
+  },
+  {
+   "name": "DMA Media",
+   "logo": "https://vision-studios.net/wp-content/uploads/2024/05/DMA-Media-Mobile-Logo-Full-Text.webp",
+   "order": 3
+  },
+  {
+   "name": "Afrosport",
+   "logo": "https://vision-studios.net/wp-content/uploads/2024/05/afrosport-logo-2.webp",
+   "order": 4
+  },
+  {
+   "name": "Sette Sette Design",
+   "logo": "https://vision-studios.net/wp-content/uploads/2024/05/WhatsApp-Image-2023-06-06-at-12.01.57-1.webp",
+   "order": 5
+  },
+  {
+   "name": "Al Jazeera",
+   "logo": "https://vision-studios.net/wp-content/uploads/2024/05/logo-aljazeera.webp",
+   "order": 6
+  },
+  {
+   "name": "Barclays",
+   "logo": "https://vision-studios.net/wp-content/uploads/2024/05/Barclays_12.webp",
+   "order": 7
+  },
+  {
+   "name": "TV One",
+   "logo": "https://vision-studios.net/wp-content/uploads/2024/05/tv-one.webp",
+   "order": 8
+  },
+  {
+   "name": "Zaitouna TV",
+   "logo": "https://vision-studios.net/wp-content/uploads/2024/05/zaitouna-onglet-logo-03.webp",
+   "order": 9
+  },
+  {
+   "name": "Yanga TV",
+   "logo": "https://vision-studios.net/wp-content/uploads/2024/05/logo-yanga.webp",
+   "order": 10
+  }
+ ],
+ "pages": {
+  "about": {
+   "excerpt": "Vision Studios, your premier destination for high-quality broadcast studio rentals in London, Dublin, Paris and Istanbul. We are proud to offer fully equipped, modern studios for a wide range of broadcast productions.",
+   "image": "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7701-1-scaled-1.webp",
+   "blocks": [
+    [
+     "h2",
+     "25+ Years of Experience"
+    ],
+    [
+     "p",
+     "With over 25 years of experience in the industry, we have built a reputation for excellence in both the quality of our facilities and our customer service. Our knowledgeable and friendly staff are always on hand to help you make the most of our studios, whether you are producing live news broadcasts, television shows, corporate advertising or other types of broadcast content."
+    ],
+    [
+     "h2",
+     "Our Vision"
+    ],
+    [
+     "p",
+     "Our vision is to be the leading provider of broadcast studio rentals in the world. We aim to set the standard for quality, innovation, and excellence in the industry, providing our clients with cutting-edge technology and world-class facilities that meet their every need. We strive to be a company that is not only successful but also socially responsible, using our resources to support the creative arts and to make a positive impact on the communities where we operate. Ultimately, our vision is to help our clients tell their stories in a way that inspires, entertains, and informs audiences around the world."
+    ],
+    [
+     "h2",
+     "Our Mission"
+    ],
+    [
+     "p",
+     "At Vision Studios, our mission is to provide our clients with the highest-quality broadcast studio rentals in the industry. We strive to be a reliable and trusted partner to broadcasters, television producers, and other creative professionals, offering them state-of-the-art facilities, top-notch equipment, and exceptional customer service. Our goal is to help our clients bring their creative visions to life by providing them with the tools they need to produce exceptional content."
+    ],
+    [
+     "h2",
+     "More About Us"
+    ],
+    [
+     "p",
+     "In addition to our state-of-the-art equipment and well-maintained facilities, we offer a wide range of services to meet all your production needs. Our team of:"
+    ],
+    [
+     "ul",
+     [
+      "Technical Support",
+      "Broadcast Engineer",
+      "Technical Crew"
+     ]
+    ],
+    [
+     "p",
+     "are experts in their fields and will ensure that your broadcast runs smoothly from start to finish."
+    ],
+    [
+     "h3",
+     "Bespoke Productions"
+    ],
+    [
+     "p",
+     "If you need a custom set design for your production, our experienced set designer team can work with you to create a set that meets your exact specifications. We can handle everything from the initial design concept to the final manufacturing and installation of your set."
+    ],
+    [
+     "h3",
+     "Studio Showcase"
+    ],
+    [
+     "p",
+     "We invite you to come and experience our broadcast studios for yourself and see why so many creative professionals choose our studios as their go-to destination for high-quality studio spaces. Contact us today to schedule a tour or to learn more about our rental options in London, Dublin, and Istanbul."
+    ],
+    [
+     "h3",
+     "Creative Community"
+    ],
+    [
+     "p",
+     "At Vision Studios, we are more than just a studio rental company – we are a community of creatives who share a passion for excellence in all aspects of our work. We are proud to have created a space where broadcasters and professionals can come together to collaborate, share ideas, and support one another in the pursuit of their goals."
+    ],
+    [
+     "h2",
+     "Committed To Keep People Healthy & Safe"
+    ],
+    [
+     "p",
+     "At Vision Studios, we prioritize the health and safety of our clients, staff, and guests. We have implemented strict sanitation and social distancing protocols to protect against COVID-19 and regularly sanitize and disinfect our facilities. By keeping people healthy and safe, we create a positive and productive environment that fosters creativity and collaboration."
+    ],
+    [
+     "h2",
+     "We Follow Best Practices"
+    ],
+    [
+     "p",
+     "At Vision Studios, we are committed to following best practices in the broadcast industry. We prioritize quality, safety, and professionalism in all aspects of our operations and adhere to strict safety protocols. We also prioritize sustainability and environmental responsibility by using energy-efficient equipment and employing eco-friendly practices. By following best practices, we provide high-quality services and make a positive impact on the world around us."
+    ]
+   ]
+  },
+  "contact": {
+   "excerpt": "Connect with our team of friendly and knowledgeable professionals today to unlock the full potential of your next project.",
+   "blocks": [
+    [
+     "p",
+     "Experience award-winning content creation services, where creativity meets innovation. Discover our dynamic virtual and hybrid event solutions, seamlessly blending digital engagement with real-world experiences. Explore our expertise in on-location streaming, bringing your events to life wherever you are. And immerse yourself in the cutting-edge technology of our state-of-the-art broadcast studios."
+    ]
+   ]
+  },
+  "gallery": {
+   "excerpt": "",
+   "blocks": []
+  }
+ },
+ "posts": [
+  {
+   "slug": "documentary-filmmaking-at-vision-studios",
+   "title": "Documentary Filmmaking at Vision Studios",
+   "date": "2025-07-09",
+   "excerpt": "The Art of Documentary Filmmaking at Vision Studios At Vision Studios, documentary filmmaking reaches new heights through a precise fusion…",
+   "image": "https://vision-studios.net/wp-content/uploads/2025/07/AlArabi-1-scaled.jpg.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2025/07/Araby-Documentary-film-5.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/Araby-Documentary-film-4.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/AlArabi-1-scaled.jpg.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "The Art of Documentary Filmmaking at Vision Studios",
+    "At Vision Studios, documentary filmmaking reaches new heights through a precise fusion of storytelling and technical mastery. The creative team designed an intimate interview environment using a deep black backdrop to draw focus solely onto the subject. Using the Alexa camera, they captured every nuance with striking clarity, and a thoughtfully placed video projector layered visual interest into the scene.",
+    "Cinematic dolly movements added subtle motion, enriching the visual rhythm without distracting from the message. Expert lighting sculpted each face with care, emphasising emotion and depth. Under the direction of a visionary filmmaker, these carefully orchestrated elements transformed simple interviews into deeply engaging and emotionally resonant narratives, all part of an upcoming documentary destined to captivate."
+   ]
+  },
+  {
+   "slug": "joe-live-event-with-human-appeal-produced-at-vision-studio-istanbul",
+   "title": "JOE Live Event with Human Appeal | Produced at Vision Studio Istanbul",
+   "date": "2025-07-09",
+   "excerpt": "We recently hosted a live event for the JOE team in collaboration with Human Appeal at Vision Studio in Istanbul.…",
+   "image": "https://vision-studios.net/wp-content/uploads/2025/07/666webp.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2025/07/666webp.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "We recently hosted a live event for the JOE team in collaboration with Human Appeal at Vision Studio in Istanbul. Our production team created a compact, efficient setup using VMIX and VMIX-Calls technology. The main presenter, JOE, and his guests connected remotely via VMIX calls, delivering a seamless and professional broadcast. If you’re seeking 24/7 technical support and a fully equipped location for your live productions, contact us at Vision Studio in Istanbul today. We provide ready-made sets and customizable solutions for live events of any size, backed by stable power and high-speed internet to ensure your broadcast runs smoothly."
+   ]
+  },
+  {
+   "slug": "valens-research-live-broadcast-vision-studios-istanbul",
+   "title": "Valens Research Live Broadcast | Vision Studios Istanbul",
+   "date": "2025-07-09",
+   "excerpt": "We’re excited to share that on May 23, Vision Studios proudly hosted Valens Eurasia in Istanbul Studio 2 for the…",
+   "image": "https://vision-studios.net/wp-content/uploads/2025/07/Screenshot-2023-06-12-171229.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2025/07/Screenshot-2023-06-12-172516.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/Screenshot-2023-06-12-171601.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/Screenshot-2023-06-12-171452.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/Screenshot-2023-06-12-171335.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/Screenshot-2023-06-12-171229.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/Screenshot-2023-06-12-170858.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/Screenshot-2023-06-12-170823.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/Screenshot-2023-06-12-170734.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "We’re excited to share that on May 23, Vision Studios proudly hosted Valens Eurasia in Istanbul Studio 2 for the production of multiple shows. Our skilled engineering and operations teams collaborated closely with Valens to record over 8 hours of high-quality footage. We delivered the raw recordings, fully prepared for their team’s video editing and graphic integration. Looking forward to welcoming Valens Eurasia back soon — wishing you all great success with your projects!"
+   ]
+  },
+  {
+   "slug": "dentist-talk-show-smiles-science-solutions",
+   "title": "Dentist Talk Show | Smiles, Science & Solutions",
+   "date": "2025-07-09",
+   "excerpt": "We are pleased to announce that on March 23, Vision Studios hosted a live webinar in Istanbul Studio 2 for…",
+   "image": "https://vision-studios.net/wp-content/uploads/2025/07/Screenshot-2023-06-12-165058.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2025/07/Screenshot-2023-06-12-165250.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/Screenshot-2023-06-12-165058.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "We are pleased to announce that on March 23, Vision Studios hosted a live webinar in Istanbul Studio 2 for one of Turkey’s leading dental hospitals. Expert doctors presented in English to a global, English-speaking audience via a live stream on an international webinar platform."
+   ]
+  },
+  {
+   "slug": "behind-the-scenes-aldatmak-episode-sketches-vision-studios",
+   "title": "Behind the Scenes: Aldatmak Episode Sketches | Vision Studios",
+   "date": "2025-07-08",
+   "excerpt": "An exciting day of filming unfolded at Vision Studios in Istanbul, where the acclaimed team at TIMS&B Productions brought the…",
+   "image": "https://vision-studios.net/wp-content/uploads/2025/07/231.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2025/07/Screenshot-2023-12-04-at-7.35.03_PM.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/231.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "An exciting day of filming unfolded at Vision Studios in Istanbul, where the acclaimed team at TIMS&B Productions brought the hit TV series “Aldatmak” to life. Shot in Studio 2, one of our most advanced and versatile spaces, the production made full use of Vision Studios’ dynamic interiors, adaptable sets, and high-end technical capabilities. As broadcast on aTV, one of Turkey’s top networks, Aldatmak has already captivated millions—garnering over 300 million views on YouTube. The seamless collaboration between TIMS&B’s creative vision and Vision Studios’ cutting-edge infrastructure resulted in a compelling shoot that elevates the viewer experience. With its richly detailed scenes and high production value, this episode sets a new benchmark in Turkish television drama. Step behind the scenes at Vision Studios Istanbul and discover why Aldatmak continues to make waves both on screen and online."
+   ]
+  },
+  {
+   "slug": "the-polluted-pays-powerful-environmental-clip-vision-studios",
+   "title": "The Polluted Pays | Powerful Environmental Clip | Vision Studios",
+   "date": "2025-07-08",
+   "excerpt": "Greenpeace has released a powerful video clip titled “Polluted Pays,” filmed at Vision Studios in Istanbul, highlighting the studio’s cutting-edge…",
+   "image": "https://vision-studios.net/wp-content/uploads/2025/07/3.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2025/07/8.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/7.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/5.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/3.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/1-2.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "Greenpeace has released a powerful video clip titled “Polluted Pays,” filmed at Vision Studios in Istanbul, highlighting the studio’s cutting-edge facilities and the creativity of its talented team. The video artfully combines impressive indoor scenes—showcasing state-of-the-art studios and flexible set designs—with captivating outdoor shots of Vision Studios’ expansive grounds and parking areas. Featuring innovative set decorations crafted by Basel and Ali’s creative team, the production raises the bar for visual storytelling. This project demonstrates Vision Studios’ exceptional capability to deliver compelling and diverse content in both indoor and outdoor environments, making it a premier destination for high-quality video production in Istanbul."
+   ]
+  },
+  {
+   "slug": "vision-studios-istanbul-al-shabakah-aj360-production",
+   "title": "Vision Studios Istanbul | Al Shabakah (AJ360) Production",
+   "date": "2025-07-08",
+   "excerpt": "🎥 Go behind the scenes of Al Shabakah (AJ360)—filmed at Vision Studios Istanbul, where innovation meets world-class production. Our fully…",
+   "image": "https://vision-studios.net/wp-content/uploads/2025/07/10.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2025/07/Image-2.jpg",
+    "https://vision-studios.net/wp-content/uploads/2025/07/15.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/14.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/13.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/12.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/11.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/10.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/9.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/3-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/4-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/7-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/1-1.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "🎥 Go behind the scenes of Al Shabakah (AJ360)—filmed at Vision Studios Istanbul, where innovation meets world-class production. Our fully equipped Studio 2 in Istanbul and cutting-edge recording facilities have powered the creation of this acclaimed program, episode after episode. Whether you’re producing a TV show, podcast, or branded content, Vision Studios offers the ideal environment for high-quality, seamless production. Looking to rent a studio in Istanbul? Our versatile spaces, expert crew, and industry-grade technology make Vision Studios the go-to choice for professionals across the region. Bring your next project to life—right here in the heart of Istanbul."
+   ]
+  },
+  {
+   "slug": "yali-capkini-filmed-at-vision-studios-studio-2-istanbul",
+   "title": "Yalı Çapkını | Filmed at Vision Studios’ Studio 2, Istanbul",
+   "date": "2025-07-08",
+   "excerpt": "Step into the world of Yalı Çapkını, filmed at Vision Studios’ Studio 2 in Istanbul—where creativity meets cutting-edge production. This…",
+   "image": "https://vision-studios.net/wp-content/uploads/2025/07/WhatsApp-Image-2024-09-04-at-18.57.21_3f7d230b.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2025/07/WhatsApp-Image-2024-09-04-at-18.57.21_3f7d230b.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/WhatsApp-Image-2024-09-04-at-18.57.20_0611ace0.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/WhatsApp-Image-2024-09-04-at-18.55.27_c865c2c7-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/WhatsApp-Image-2024-09-04-at-18.57.01_a229a5f4.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "Step into the world of Yalı Çapkını, filmed at Vision Studios’ Studio 2 in Istanbul—where creativity meets cutting-edge production. This captivating TV series was brought to life using our advanced lighting systems, HD cameras, and professional-grade equipment, delivering cinematic visuals with exceptional clarity. Shot entirely at our Istanbul facility, Yalı Çapkını reflects the seamless collaboration between creative storytelling and technical precision. Vision Studios’ versatile spaces, combined with expert in-house support, make Istanbul Studio 2 the ideal environment for high-end television production. Discover why leading directors and producers choose Vision Studios for reliable, high-quality filming in the heart of Istanbul.",
+    "Your Content of the post will be here"
+   ]
+  },
+  {
+   "slug": "vision-studios-top-choice-for-tv-series-production-in-istanbul",
+   "title": "Vision Studios – Top Choice for TV Series Production in Istanbul",
+   "date": "2025-07-08",
+   "excerpt": "Vision Studios’ Studio 2 in Istanbul is a top choice for professional TV series production. Our spacious 185 m² soundstage…",
+   "image": "https://vision-studios.net/wp-content/uploads/2025/07/photo_2024-10-24-21.21.49.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2025/07/photo_2024-10-24-21.21.49.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/photo_2024-10-24-21.21.39.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/photo_2024-10-24-21.21.28.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/2024-10-24-21.19.02.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "Vision Studios’ Studio 2 in Istanbul is a top choice for professional TV series production. Our spacious 185 m² soundstage is fully equipped with advanced lighting systems, 4K high-definition cameras, and professional-grade audio equipment to ensure every scene is filmed with stunning clarity and quality. Designed to support a wide range of productions, Studio 2 offers flexible set-building options, perfect for creating immersive environments tailored to your project’s needs. Filmed entirely in Istanbul, productions benefit from Vision Studios’ cutting-edge technology, including soundproofing, DMX lighting control, and reliable infrastructure with backup power and redundant internet connections. Our experienced production team provides full technical support, ensuring smooth workflows from pre-production through post-production. Whether you are producing drama, documentary, or branded content, Vision Studios Studio 2 delivers the professional environment and technical expertise essential for high-end TV series production. Choose Vision Studios Istanbul for a seamless, creative, and technically advanced filming experience."
+   ]
+  },
+  {
+   "slug": "rock-paper-scissors",
+   "title": "Rock Paper Scissors",
+   "date": "2025-07-08",
+   "excerpt": "Step into the captivating world of the TV series Taş Kağıt Makas, brought to life at Vision Studios. To make…",
+   "image": "https://vision-studios.net/wp-content/uploads/2025/07/photo_2024-10-24-22.03.39.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2025/07/photo_2024-10-24-22.03.39.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/photo_2024-10-24-22.03.26.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/photo_2024-10-24-22.02.27.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/photo_2024-10-24-22.02.11.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/photo_2024-10-24-22.01.45.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "Step into the captivating world of the TV series Taş Kağıt Makas, brought to life at Vision Studios. To make this an exciting project, we improved our state-of-the-art studios, such as Istanbul Studio 2. State-of-the-art lighting systems, high-definition cameras, and professional-grade equipment enabled us to capture every scene with stunning cinematic quality.",
+    "Filmed entirely at our Istanbul-based studios, Taş Kağıt Makas is a testament to the seamless blend of technical expertise and creative storytelling. From detailed set construction to efficient production workflows, Vision Studios provided the perfect environment for bringing this series to life.",
+    "Discover why Vision Studios is the top choice for high-end TV production in Istanbul—where innovation, craftsmanship, and creativity come together.",
+    "Your Content of the post will be here"
+   ]
+  },
+  {
+   "slug": "where-sound-meets-thought",
+   "title": "“Where Sound Meets Thought”",
+   "date": "2025-07-03",
+   "excerpt": "At Vision Studios, we’re passionate about producing high-quality, impactful content — and “Where Sound Meets Thought”, created in collaboration with…",
+   "image": "https://vision-studios.net/wp-content/uploads/2025/07/6.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2025/07/6.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/4.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/1.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "At Vision Studios, we’re passionate about producing high-quality, impactful content — and “Where Sound Meets Thought”, created in collaboration with Echo Productions, is a standout example. In Istanbul’s Studio 3, our dedicated black box production space designed specifically for audio and video storytelling, we created this interesting podcast. With its adaptable setup, premium acoustics, and sleek visual design, Studio 2 provided the perfect creative environment for immersive, engaging conversations. We filmed each episode, featuring industry leaders, influencers, and cultural voices, with multi-camera setups, dynamic lighting, and professional-grade sound equipment. Our soundproofing and audio processing systems ensured crystal-clear recordings, while our production team supported every stage — from pre-production through final editing. Why Studio 3? It’s the go-to space in Istanbul for podcasters, content creators, and media professionals looking to elevate their work. Whether you’re launching a video podcast, recording interviews, or producing branded content, Studio 3 offers the flexibility and technical edge to make it happen. Thinking of launching your show? Let’s bring your voice to life — only at Vision Studios, Istanbul. Vision Studios delivers high-quality, impactful content, and our expertise is exemplified by “Where Sound Meets Thought,” created in partnership with Echo Productions.",
+    "This compelling podcast was expertly crafted in Studio 3, our state-of-the-art black box production space specifically designed for audio and video storytelling. With its versatile setup, exceptional acoustics, and sleek visual design, Studio 3 is the ultimate environment for creating immersive and engaging conversations. Each episode showcases industry leaders, influencers, and cultural voices, all captured using multi-camera setups, dynamic lighting, and professional-grade sound equipment. Our advanced soundproofing and audio processing systems guarantee crystal-clear recordings, and our dedicated production team is there to support you at every stage, from pre-production to final editing. Why choose Studio 3? It is the premier destination in Istanbul for podcasters, content creators, and media professionals ready to elevate their work. Whether you’re launching a video podcast, recording interviews, or producing branded content, Studio 3 provides the flexibility and technical edge to turn your vision into reality. Ready to launch your own show? Let’s bring your voice to life — only at Vision Studios, Istanbul.",
+    "Your Content of the post will be here"
+   ]
+  },
+  {
+   "slug": "once-upon-a-time-in-istanbul",
+   "title": "“Once Upon a Time in Istanbul”",
+   "date": "2025-07-03",
+   "excerpt": "We recently had the pleasure of hosting the filming of the renowned TV series “Burada Olma Seher” at Vision Studios’…",
+   "image": "https://vision-studios.net/wp-content/uploads/2025/07/AV1A9041_4_11zon.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2025/07/AV1A9041_4_11zon.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/AV1A9044_5_11zon.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/AV1A9092_1_11zon.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/AV1A9094_11zon.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/AV1A9132_3_11zon.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/07/AV1A9157_11zon.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/06/Screen-Shot-2025-06-30-at-23.35.17.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/06/Screen-Shot-2025-06-30-at-23.40.56.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/06/Screen-Shot-2025-06-30-at-23.41.40.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/06/Screen-Shot-2025-06-30-at-23.43.55.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/06/Screen-Shot-2025-06-30-at-23.42.59.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/06/PHOTO-2025-05-12-20-42-27.jpg"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "We recently had the pleasure of hosting the filming of the renowned TV series “Burada Olma Seher” at Vision Studios’ Studio 2 in Istanbul. Because it’s purpose-built for high-end productions and fully equipped, our studio space always brings ambitious creative visions to life. Filming began with the construction of an authentically detailed early-20th-century Istanbul set on our expansive 185 m² soundstage. This generous space allowed the art department to build multiple street scenes and interior rooms side by side — streamlining transitions and ensuring visual continuity across every shot.",
+    "The cinematography team captured the magic using advanced P4K production cameras, prized for their exceptional clarity and flexibility. High-quality Rode microphones, paired with the cameras, enabled the recording of every scene with professional-grade audio that matched the stunning visuals. At Vision Studios, all essential production gear is readily available, ensuring a smooth, one-stop filming experience. To support uninterrupted shooting, we provided on-site generators and UPS backup systems, alongside main and redundant internet connections — delivering 99% operational reliability. This infrastructure eliminated delays and safeguarded the production timeline from unexpected disruptions. At Vision Studios, we don’t just host productions — we help bring them to life."
+   ]
+  },
+  {
+   "slug": "behind-the-scenes-of-aldatmak-at-vision-studios",
+   "title": "Behind the Scenes of “ALDATMAK” at Vision Studios",
+   "date": "2025-06-24",
+   "excerpt": "An exciting day of production took place at Vision Studios in Istanbul, where Studio 2 transformed into the set of…",
+   "image": "https://vision-studios.net/wp-content/uploads/2025/06/Screenshot-2025-06-24-at-4.25.20_PM.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2025/06/Screenshot-2025-06-24-at-4.25.20_PM.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/06/Screenshot-2025-06-24-at-4.25.01_PM.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/06/Screenshot-2025-06-24-at-4.24.51_PM.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/06/Screenshot-2025-06-24-at-4.24.33_PM.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/06/Screenshot-2025-06-24-at-4.24.12_PM.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/06/Screenshot-2025-06-24-at-4.23.55_PM.webp",
+    "https://vision-studios.net/wp-content/uploads/2025/06/Screenshot-2025-06-24-at-4.23.36_PM.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "An exciting day of production took place at Vision Studios in Istanbul, where Studio 2 transformed into the set of the gripping TV drama ALDATMAK. Produced by the renowned TIMS&B Productions and aired on aTV, the series has captivated audiences, reaching over 300 million views on YouTube. The studio’s adaptable rooms and atmospheric corridors were integral in creating an intense and visually compelling episode. With cutting-edge equipment and the creative force of TIMS&B, Vision Studios continues to be the heart of premium Turkish television. Don’t miss this electrifying episode—watch ALDATMAK and join the conversation."
+   ]
+  },
+  {
+   "slug": "exclusive-shoot-with-joe-cole-at-vision-studios-london",
+   "title": "Exclusive Shoot with Joe Cole at Vision Studios London",
+   "date": "2024-09-24",
+   "excerpt": "We had a great time welcoming former Chelsea and England star Joe Cole to our studio in London for a…",
+   "image": "https://vision-studios.net/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-17-at-15.12.55_4b92d59a.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-17-at-15.12.55_4b92d59a.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-17-at-15.12.55_a9bc4be3.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-17-at-15.12.55_bb6b4af2.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/09/WhatsApp-Image-2024-09-17-at-15.12.55_f92ee0b4.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "We had a great time welcoming former Chelsea and England star Joe Cole to our studio in London for a special shoot. It was great working with Oranges & Lemons to help bring it to life.",
+    "Why Film at Vision Studios?",
+    "Located in the heart of London, Vision Studios offers state-of-the-art facilities ideal for high-quality productions. With a reputation for excellence in TV production, Vision Studios is equipped with everything you need to create stunning visuals and seamless narratives.",
+    "Versatile studio spaces: From large-scale productions to intimate talk shows, Vision Studios has the perfect setting for any type of TV program.",
+    "Advanced equipment: Featuring the latest in 4K cameras, professional lighting setups, and soundproofed stages, Vision Studios ensures every scene is captured perfectly.",
+    "Post-production services: After filming, our team offers editing, color grading, and audio post-production to make sure each episode is flawless.",
+    "London: A Global Hub for Film and TV Production",
+    "Shooting in London brings a wealth of opportunities. With its vibrant culture, iconic architecture, and deep media infrastructure, London is the ideal location for both local and international productions. Vision Studios, with its central location and world-class facilities, stands at the heart of this bustling production environment.",
+    "Partner with Vision Studios for Your Next Production",
+    "Looking to produce your next TV series in London? Vision Studios offers an unparalleled blend of studio space, technical expertise, and post-production services. Whether you’re working on a drama, a reality show, or a live broadcast, our facilities will elevate your production to new heights.",
+    "Get in touch with Vision Studios today to learn more about our studio rental services and discover how we can help bring your next TV project to life in London."
+   ]
+  },
+  {
+   "slug": "vision-studios-creates-gripping-greenpeace-video-for-domino",
+   "title": "Vision Studios Creates Gripping Greenpeace Video for Domino",
+   "date": "2024-05-11",
+   "excerpt": "Major international studio and facilities enterprise Vision Studios was chosen by Domino Productions to host a powerful four minute video for Greenpeace MENA",
+   "image": "https://vision-studios.net/wp-content/uploads/2024/05/Screenshot-2024-01-03-at-11.18.14.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/Screenshot-2024-01-03-at-11.18.14.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Greenpeace-MENA-PR-Image.webp"
+   ],
+   "videos": [
+    "https://youtu.be/G130f3NNFSU?si=Sut9uVYPFrQ655N"
+   ],
+   "paragraphs": [
+    "Major international studio and facilities enterprise Vision Studios was chosen by Domino Productions to host a powerful four minute video for Greenpeace MENA. The production was hosted in the MediaCity Studios in Istanbul.",
+    "The video is a rap battle between an industrialist and an environmentalist, arguing about the way that energy exploitation has a hugely unfair impact on the poorer countries of the global south. The video smoothly transitions between the television studio, boardroom, and city streets. All in Arabic, it is aimed at the Middle East and North Africa region.",
+    "Vision Studios has fully equipped broadcast studios in London, Dublin, Paris and Istanbul. Available for long-term rent or for one-off projects, they are fully crewed and equipped with the latest technology. Operating for 25 years, Vision Studios serves more than 1000 productions each year.",
+    "“I had worked with Vision Studios in Istanbul, Dublin and London,” said Ali Shehata, the project’s producer at Domino Production. “I knew the sort of quality they could deliver. The Istanbul MediaCity location gave us a lot of options in one place, including many locations as well as the studio set. If you work in media production, you should collaborate with Vision Studios.”",
+    "Gerard Kirwan, Director of Sales at Vision Studios added “We have huge experience in video production, so we work very comfortably with creative businesses like Domino Production. Our in-house technical, design and craft services support them, so we deliver the best results, on time and on budget. This video for Greenpeace MENA looks and sounds great – it is a really arresting way to get over an important message.”",
+    "Domino Production is based in Istanbul, Turkey and Doha, Qatar. Greenpeace MENA is the newest element in the Greenpeace network, which now numbers 27 independent national and regional organisations working with the joint co-ordinating organisation, Greenpeace International.",
+    "You can watch the video in full here."
+   ]
+  },
+  {
+   "slug": "studio-c-in-media-city-facility-transforms-into-high-tech-hub-for-aj-tv-channel-documentary-production",
+   "title": "Istanbul Studio 1 in Media City Facility Transforms into High-Tech Hub for AJ-TV Channel documentary production",
+   "date": "2024-05-11",
+   "excerpt": "In a groundbreaking two-day production extravaganza, Media City Studio-C located in the heart of Istanbul has undergone a remarkable transformation",
+   "image": "https://vision-studios.net/wp-content/uploads/2024/05/STUDIO-C-2-scaled-1.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/STUDIO-C-2-scaled-1.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Vipro-2.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Vipro-1.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "In a groundbreaking two-day production extravaganza, Istanbul studio 3 located in the heart of Istanbul has undergone a remarkable transformation, turning into a high-tech hub for AJ-TV channel documentary film production. The studio was abuzz with activity as a talented team worked tirelessly to create a state-of-the-art cyber decoration and fill the space with related equipment, setting the stage for a series of exclusive interviews conducted both over the internet and on-site.",
+    "The transformation process began with the meticulous setup of an innovative cyber decoration, designed to enhance the visual appeal of the studio and create an immersive environment for viewers. The studio was adorned with an array of high-tech equipment, including powerful PCs, sleek screens, dynamic videowalls, and ergonomic tables, all strategically placed to optimize the production workflow.",
+    "The production, spanning two days, was a testament to the dedication and expertise of the creative team behind the scenes. Their collective efforts culminated in the seamless integration of technology, creating a space where ideas and innovation converged. The result is set to be unveiled in an upcoming documentary show that promises viewers an unparalleled glimpse into the world of cutting-edge television production.",
+    "What sets this production apart is the combination of remote and on-site interviews, showcasing the versatility of modern technology. Utilizing the power of the internet, the production team seamlessly connected with individuals from various locations, breaking down geographical barriers and bringing diverse perspectives to the forefront. Simultaneously, on-site interviews added a personal touch, capturing the essence of the subjects in their natural environment.",
+    "This ambitious venture not only highlights the technical prowess of MCC Studio but also underscores AJJJJ TV channel’s commitment to delivering engaging and innovative content to its audience. The documentary show, set to air soon, promises viewers an insightful and visually stunning experience, offering a behind-the-scenes look at the making of a cutting-edge television program.",
+    "Stay tuned to AJ-TV channel for the premiere of this groundbreaking documentary, where technology, creativity, and talent converge to redefine the future of television production."
+   ]
+  },
+  {
+   "slug": "hosting-funny-hands-productions-inside-vision-studios",
+   "title": "Hosting Funny Hands Productions Inside Vision Studios",
+   "date": "2024-05-11",
+   "excerpt": "We are absolutely thrilled to announce our collaboration with Funny Hands Productions, a remarkable event that unfolded on July 13, 2021, within the exceptional confines of our London Studio at London Studio 1",
+   "image": "https://vision-studios.net/wp-content/uploads/2024/05/7.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/7.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/6-min.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Funny-Hands1-min.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/2-1-min.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/3-min.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/5-min.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "We are absolutely thrilled to announce our collaboration with Funny Hands Productions, a remarkable event that unfolded on July 13, 2021, within the exceptional confines of our London Studio at London studio 1.",
+    "This partnership signifies our unwavering commitment to offering creative professionals a top-tier studio experience, one that transcends the ordinary and elevates their creative endeavors to new heights. Our London Studio, a masterpiece in itself, was meticulously designed to provide an immersive environment for content creation. It is equipped with the latest and most cutting-edge technology available in the industry, ensuring that every aspect of the production is seamless and of the highest quality.",
+    "Our dedicated and highly skilled team played a pivotal role in ensuring the success of this collaboration. Their expertise and unwavering dedication ensured that Funny Hands Productions had all the support and resources necessary to execute their vision flawlessly.",
+    "This collaboration is not just an isolated event; it is a testament to our ongoing dedication to nurturing creativity and driving innovation in the ever-evolving world of media and broadcasting. We firmly believe that such partnerships pave the way for groundbreaking content and foster a culture of excellence.",
+    "As we reflect on this achievement, we look forward to an exciting future filled with more dynamic collaborations, pushing the boundaries of what is possible in the world of media and broadcasting. Stay tuned for more remarkable ventures and transformative experiences as we continue on this exciting journey together."
+   ]
+  },
+  {
+   "slug": "hosting-an-irish-podcast-inside-it-media",
+   "title": "Hosting an Irish Podcast inside IT Media",
+   "date": "2024-05-11",
+   "excerpt": "We’re delighted to announce our hosting of the Irish Podcast program, IT Media, right here in the vibrant city of Dublin.",
+   "image": "https://vision-studios.net/wp-content/uploads/2024/05/Iresh-Production1-e1708468884604.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/Iresh-Production1-e1708468884604.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Iresh-Production2-e1708468961894.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Iresh-Production3.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Iresh-Production.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "We’re delighted to announce our hosting of the Irish Podcast program, IT Media, right here in the vibrant city of Dublin. The Irish Podcast found its home in our dedicated Dublin Studio, where it now thrives and continues to provide engaging and informative content to its audience.",
+    "This collaboration marks another exciting chapter in our commitment to supporting and facilitating creative ventures in the world of media and broadcasting. We look forward to more enriching partnerships and the continued success of IT Media in our Dublin Studio.The Irish Podcast was hosted in Dublin Studio."
+   ]
+  },
+  {
+   "slug": "hosting-al-wataniya-tv-inside-media-city-for-training",
+   "title": "Hosting Al Wataniya TV inside Media City for training",
+   "date": "2024-05-11",
+   "excerpt": "We are thrilled to announce that MediaCity in Istanbul is playing host to Al Wataniya TV for an extensive and invaluable training program.",
+   "image": "https://vision-studios.net/wp-content/uploads/2024/05/1637-892-max11111111-min.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/1637-892-max11111111-min.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/1635-883-max-min.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/1629-882-max-min.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/1623-876-max-min.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/1616-883-max-min.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/1424-850-max-min.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "We are thrilled to announce that MediaCity in Istanbul is playing host to Al Wataniya TV for an extensive and invaluable training program. Over the course of 10 days, we are dedicated to providing comprehensive technical training to nearly 150 employees from Al Wataniya TV. This initiative, conducted in collaboration with Ajwaa Media LB, is a testament to our commitment to enhancing their skills and capabilities.",
+    "Within the dynamic environment of Istanbul studio 1 and the bustling newsroom at MediaCity, our expert technical team will lead this training effort. Their wealth of knowledge and hands-on experience will be leveraged to empower Al Wataniya TV’s staff with the latest techniques and best practices in broadcasting.",
+    "As part of this comprehensive training, we are conducting complete show rehearsals. These rehearsals serve as a vital component of the learning process, ensuring that the trainees are well-prepared to excel in their roles. Our goal is to foster a seamless and successful training experience that equips Al Wataniya TV’s team with the skills and expertise needed to thrive in the competitive world of media and broadcasting.",
+    "This collaboration represents a significant step forward in MediaCity’s commitment to nurturing talent and promoting excellence within the industry. We are excited to witness the growth and development of Al Wataniya TV’s employees as they embark on this enriching training journey with us. Together, we are shaping the future of media professionals, and we look forward to the success and innovation that will undoubtedly result from this partnership."
+   ]
+  },
+  {
+   "slug": "hosting-al-jazeera-mubasher-inside-media-city",
+   "title": "Hosting Al Jazeera Mubasher inside Media City",
+   "date": "2024-05-11",
+   "excerpt": "We are delighted to share that we are now hosting our valued client, AJMubasher, within the vibrant MediaCity in Istanbul.",
+   "image": "https://vision-studios.net/wp-content/uploads/2024/05/Screenshot-2023-06-12-185250-min.webp",
+   "images": [
+    "https://vision-studios.net/wp-content/uploads/2024/05/Screenshot-2023-06-12-185250-min.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Screenshot-2023-06-12-185129-min.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Screenshot-2023-06-12-185046-min.webp",
+    "https://vision-studios.net/wp-content/uploads/2024/05/Screenshot-2023-06-12-184904-min.webp"
+   ],
+   "videos": [],
+   "paragraphs": [
+    "We are delighted to share that we are now hosting our valued client, AJMubasher, within the vibrant MediaCity in Istanbul.",
+    "In addition to this exciting partnership, MediaCity will also facilitate a Digital Transmission Link (DTL) connection from Istanbul to the Al Jazeera Media Center in Doha. This collaboration will enable seamless communication and content exchange between the two locations.",
+    "Commencing from September 2021, our services will be conducted from Istanbul studio 4 and the dedicated DTL Rooms at our state-of-the-art facility. This marks a significant step in our commitment to providing top-notch services to AJMubasher and enhancing our capabilities to serve their broadcasting needs effectively. We are excited about this new chapter in our partnership and look forward to delivering exceptional content and services together."
+   ]
+  }
+ ],
+ "legacy_pages": [
+  "london-studio-1",
+  "london-studio-2",
+  "dublin-studio",
+  "paris-studio",
+  "istanbul-dtl-room",
+  "istanbul-studio-1",
+  "istanbul-studio-2",
+  "istanbul-studio-3",
+  "istanbul-studio-4",
+  "istanbul-studio-5",
+  "istanbul-studio-6",
+  "istanbul-studio-7",
+  "istanbul-studio-8",
+  "istanbul-studio-9",
+  "london",
+  "dublin",
+  "paris",
+  "istanbul",
+  "about-us",
+  "contact-us",
+  "blogs",
+  "the-vision-studios"
+ ]
+}
