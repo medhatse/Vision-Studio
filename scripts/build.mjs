@@ -61,6 +61,8 @@ async function main() {
   await fs.writeFile(path.join(DIST, '_redirects'), Object.entries(redirects).map(([f, t]) => `${f} ${t} 301`).join('\n') + '\n')
 
   await fs.writeFile(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map((p) => `  <url><loc>${BASE_URL}${BASE_PATH}${p}</loc></url>`).join('\n')}\n</urlset>\n`)
+  // GitHub Pages reads the custom domain from a CNAME file at the site root.
+  if (process.env.CNAME_DOMAIN) await fs.writeFile(path.join(DIST, 'CNAME'), process.env.CNAME_DOMAIN + '\n')
   await fs.writeFile(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${BASE_URL}${BASE_PATH}/sitemap.xml\n`)
   console.log(`Built ${pages.length} pages + ${Object.keys(redirects).length} redirects → dist/`)
 }
