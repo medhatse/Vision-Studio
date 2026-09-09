@@ -219,7 +219,7 @@ add_action( 'wp_head', function () {
 	} elseif ( is_tax( 'city' ) ) {
 		$t = get_queried_object();
 		$graph[] = [
-			'@type' => 'CollectionPage', 'name' => wp_get_document_title(), 'url' => get_term_link( $t ), 'description' => vs_seo_description(),
+			'@type' => 'CollectionPage', 'name' => wp_specialchars_decode( wp_get_document_title(), ENT_QUOTES ), 'url' => get_term_link( $t ), 'description' => vs_seo_description(),
 			'mainEntity' => [ '@type' => 'ItemList', 'itemListElement' => array_map( fn( $s, $i ) => [ '@type' => 'ListItem', 'position' => $i + 1, 'url' => get_permalink( $s ), 'name' => $s->post_title ], vs_city_studios( $t ), array_keys( vs_city_studios( $t ) ) ) ],
 		];
 	}
