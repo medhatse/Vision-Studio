@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let menuOpen = false
   const setMenu = (open) => {
     menuOpen = open
-    menuToggle.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>'
+    menuToggle.querySelector('.menu-icon-open').hidden = open
+    menuToggle.querySelector('.menu-icon-close').hidden = !open
     menuToggle.setAttribute('aria-expanded', String(open))
     mobileMenu.style.maxHeight = open ? mobileMenu.scrollHeight + 'px' : '0px'
   }
@@ -62,11 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = [...slider.querySelectorAll('.hero-slide')]
     const dots = [...slider.querySelectorAll('.hero-dot')]
     let current = 0, timer
+    const load = (s) => { if (s && s.dataset.src && !s.querySelector('img')) { const im = new Image(); im.src = s.dataset.src; im.alt = s.dataset.alt || ''; im.className = 'w-full h-full object-cover'; im.decoding = 'async'; s.appendChild(im) } }
     const show = (i) => {
       current = (i + slides.length) % slides.length
+      load(slides[current]); load(slides[(current + 1) % slides.length])
       slides.forEach((s, j) => { s.classList.toggle('opacity-100', j === current); s.classList.toggle('opacity-0', j !== current) })
-      dots.forEach((d, j) => { d.classList.toggle('bg-accent', j === current); d.classList.toggle('bg-white/30', j !== current) })
+      dots.forEach((d, j) => d.classList.toggle('is-active', j === current))
     }
+    setTimeout(() => load(slides[1]), 2500)
     const play = () => { clearInterval(timer); if (slides.length > 1) timer = setInterval(() => show(current + 1), 5000) }
     dots.forEach((d) => d.addEventListener('click', () => { show(Number(d.dataset.goto)); play() }))
     play()
@@ -95,6 +99,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Escape') close(); if (e.key === 'ArrowRight') step(1); if (e.key === 'ArrowLeft') step(-1)
     })
   }
+
+  // Map facade: load the Google Maps iframe on demand
+  document.querySelectorAll('.vs-map').forEach((box) => box.querySelector('button').addEventListener('click', () => {
+    const f = document.createElement('iframe')
+    f.src = box.dataset.src; f.title = box.dataset.title || 'Map'; f.loading = 'lazy'; f.referrerPolicy = 'no-referrer-when-downgrade'
+    f.className = 'grayscale invert-[.9] contrast-[.9]'
+    box.innerHTML = ''; box.appendChild(f)
+  }))
 
   // Gallery filters
   const filters = document.querySelectorAll('.gallery-filter')

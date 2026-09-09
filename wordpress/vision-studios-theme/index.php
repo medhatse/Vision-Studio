@@ -3,7 +3,7 @@
 get_header();
 $first = have_posts() ? get_posts( [ 'posts_per_page' => 1 ] )[0] ?? null : null;
 $total = (int) wp_count_posts()->publish;
-echo vs_page_hero( esc_html__( 'Our News.', 'vision-studios' ), __( 'Productions, live events and behind-the-scenes stories from our studios in London, Dublin, Paris and Istanbul.', 'vision-studios' ), $first ? (string) get_the_post_thumbnail_url( $first, 'vs-wide' ) : '', sprintf( _n( '%d story', '%d stories', $total, 'vision-studios' ), $total ) ); // phpcs:ignore
+echo vs_page_hero( esc_html__( 'Our News.', 'vision-studios' ), __( 'Productions, live events and behind-the-scenes stories from our studios in London, Dublin, Paris and Istanbul.', 'vision-studios' ), $first ? get_post_thumbnail_id( $first ) : 0, sprintf( _n( '%d story', '%d stories', $total, 'vision-studios' ), $total ) ); // phpcs:ignore
 ?>
 <section class="bg-black py-20"><div class="max-w-7xl mx-auto px-6 lg:px-10">
 <?php if ( $first && ! is_paged() ) : ?>

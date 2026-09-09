@@ -11,7 +11,7 @@ for (const p of paths) {
   const title = attr(head, /<title>([\s\S]*?)<\/title>/).trim()
   const desc = attr(head, /<meta name="description" content="([^"]*)"/)
   const canonical = attr(head, /rel="canonical" href="([^"]+)"/)
-  const robots = attr(head, /<meta name=.robots. content="([^"]*)"/)
+  const robots = attr(head, /<meta name=['"]robots['"] content=['"]([^'"]*)['"]/)
   const og = (head.match(/property="og:/g) || []).length
   const h1 = (html.match(/<h1[\s>]/g) || []).length
   const imgs = html.match(/<img [^>]*>/g) || []
@@ -29,7 +29,9 @@ for (const p of paths) {
     if (noAlt) issues.push(`${noAlt} img without alt`)
     if (!og) issues.push('no Open Graph')
     if (types.includes('INVALID-JSON')) issues.push('invalid JSON-LD')
-    if (!/<link rel=['"]preconnect['"]/.test(head)) issues.push('no preconnect')
+    const thirdParty = [...head.matchAll(/<link[^>]+(?:stylesheet|preload)[^>]+href="(https?:\/\/[^"/]+)/g)].map((m) => m[1]).filter((o) => !base.startsWith(o))
+    if (thirdParty.length && !/<link rel=['"]preconnect['"]/.test(head)) issues.push('third-party CSS without preconnect: ' + [...new Set(thirdParty)].join(', '))
+    if (/fonts\.googleapis\.com|cdnjs|jsdelivr|unpkg/.test(head)) issues.push('render-blocking third-party resource in <head>')
   } else if (res.status === 404 && !/noindex/.test(robots)) issues.push('404 page not noindex')
   problems += issues.length
   console.log(`${res.status} ${p.padEnd(40)} h1=${h1} imgs=${imgs.length} ld=[${types.join(', ')}]${issues.length ? '\n      ! ' + issues.join('; ') : ''}`)

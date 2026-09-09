@@ -15,6 +15,7 @@ require VS_DIR . '/inc/template-tags.php';
 require VS_DIR . '/inc/redirects.php';
 require VS_DIR . '/inc/importer.php';
 require VS_DIR . '/inc/seo.php';
+require VS_DIR . '/inc/icons.php';
 
 add_action( 'after_setup_theme', function () {
 	add_theme_support( 'title-tag' );
@@ -30,20 +31,16 @@ add_action( 'after_setup_theme', function () {
 } );
 
 add_action( 'wp_enqueue_scripts', function () {
-	wp_enqueue_style( 'vs-fonts', 'https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap', [], null );
-	wp_enqueue_style( 'vs-fontawesome', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css', [], '6.4.0' );
 	wp_enqueue_style( 'vs-app', VS_URI . '/assets/app.css', [], VS_VERSION );
-	wp_enqueue_script( 'vs-app', VS_URI . '/assets/app.js', [], VS_VERSION, true );
+	wp_enqueue_script( 'vs-app', VS_URI . '/assets/app.js', [], VS_VERSION, [ 'strategy' => 'defer', 'in_footer' => true ] );
 } );
 
-// Resource hints for the font CDN.
-add_filter( 'wp_resource_hints', function ( $urls, $relation ) {
-	if ( 'preconnect' === $relation ) {
-		$urls[] = 'https://fonts.googleapis.com';
-		$urls[] = [ 'href' => 'https://fonts.gstatic.com', 'crossorigin' ];
+// Preload the two fonts used above the fold (self-hosted, latin woff2).
+add_action( 'wp_head', function () {
+	foreach ( [ 'Anton-400', 'Inter-var' ] as $f ) {
+		echo '<link rel="preload" href="' . esc_url( VS_URI . '/assets/fonts/' . $f . '.woff2' ) . '" as="font" type="font/woff2" crossorigin/>' . "\n";
 	}
-	return $urls;
-}, 10, 2 );
+}, 2 );
 
 // Make the Studio archive / city archive use sensible ordering and show everything.
 add_action( 'pre_get_posts', function ( WP_Query $q ) {

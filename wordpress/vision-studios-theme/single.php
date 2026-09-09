@@ -2,7 +2,7 @@
 /** Single news post. */
 get_header();
 the_post();
-echo vs_page_hero( esc_html( get_the_title() ), '', (string) get_the_post_thumbnail_url( null, 'vs-wide' ), get_the_date() ); // phpcs:ignore
+echo vs_page_hero( esc_html( get_the_title() ), '', get_post_thumbnail_id(), get_the_date() ); // phpcs:ignore
 $prev = get_previous_post();
 $next = get_next_post();
 ?>

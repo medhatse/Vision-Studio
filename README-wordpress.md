@@ -78,7 +78,13 @@ What the theme does on its own (verified with `npm run seo:audit -- <site url>`)
 - JSON-LD: `Organization` + `WebSite`, `LocalBusiness`/`Place` for every studio (address, phone, photos,
   amenities), `CollectionPage` + `ItemList` for cities, `NewsArticle` for posts, `BreadcrumbList` everywhere
 - Descriptive `alt` text on all images, responsive `srcset` + lazy loading, width/height attributes (no CLS)
-- Compiled CSS (no Tailwind CDN), font preconnect, emoji/RSD/wlwmanifest/shortlink cruft removed
+- Compiled CSS (no Tailwind CDN), self-hosted woff2 fonts with preload (no Google Fonts request — also
+  avoids the EU GDPR issue with Google Fonts), inline SVG icons (no Font Awesome CDN), deferred JS,
+  emoji/RSD/wlwmanifest/shortlink cruft removed
+- LCP hero image preloaded; studio hero slides after the first load on demand; Google Maps is a
+  click-to-load facade (the map iframe is ~1 MB of JavaScript); YouTube embeds are lazy
+- Robots directives through WordPress's `wp_robots` API; `og:image` with dimensions and alt;
+  favicon fallback; WCAG AA text contrast; 24 px tap targets on slider controls
 - Studios and Cities included in the core XML sitemap; attachment pages 301 to their parent;
   search / 404 / paginated archives `noindex`; old page URLs 301 to the new ones
 - 404 page with navigation back into the site
@@ -95,6 +101,12 @@ cannot generate. After activating the theme:
 4. Rank Math → **General → Breadcrumbs** can stay off (the theme renders its own).
 5. Re-submit `sitemap_index.xml` in Google Search Console after the switch and watch the Coverage report
    for the redirected old URLs.
+
+**Lighthouse** (local WordPress 6.8, WP_DEBUG on, no caching plugin): home, studio, city, gallery, news
+and contact pages score 100 / 100 / 100 / 100 (performance, accessibility, best practices, SEO) on the
+desktop preset and 100 on SEO / accessibility / best practices on the mobile preset. Re-run on the live
+host with `npx lighthouse https://vision-studios.net --preset=desktop` — hosting, caching and Cloudflare
+settings decide the final mobile performance number.
 
 Not covered by a theme (do these on the host): HTTPS, a caching/CDN layer (Cloudflare is already in front),
 WebP originals (already the case) and a page-speed check with PageSpeed Insights after launch.

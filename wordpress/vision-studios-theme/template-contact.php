@@ -7,12 +7,12 @@ the_post();
 $email   = vs_opt( 'email' );
 $regions = array_filter( [ __( 'United Kingdom', 'vision-studios' ) => vs_opt( 'phone_uk' ), __( 'Europe', 'vision-studios' ) => vs_opt( 'phone_eu' ), __( 'Turkey', 'vision-studios' ) => vs_opt( 'phone_tr' ) ] );
 $cities  = vs_cities();
-echo vs_page_hero( __( 'Contact<br/><span class="text-accent">Vision Studios.</span>', 'vision-studios' ), get_the_excerpt(), (string) ( get_the_post_thumbnail_url( null, 'vs-wide' ) ?: vs_city_image( $cities[0] ?? null, 'vs-wide' ) ), __( 'Get In Touch', 'vision-studios' ) ); // phpcs:ignore
+echo vs_page_hero( __( 'Contact<br/><span class="text-accent">Vision Studios.</span>', 'vision-studios' ), get_the_excerpt(), get_post_thumbnail_id() ?: vs_city_image_id( $cities[0] ?? null ), __( 'Get In Touch', 'vision-studios' ) ); // phpcs:ignore
 ?>
 <section class="bg-black py-20"><div class="max-w-7xl mx-auto px-6 lg:px-10">
 <?php if ( get_the_content() ) : ?><div class="fade-up prose-vs max-w-3xl mb-12"><?php the_content(); ?></div><?php endif; ?>
 <div class="grid md:grid-cols-3 gap-4">
-<?php foreach ( $regions as $label => $phone ) : ?><div class="fade-up border border-white/10 p-6"><p class="font-mono-tag text-[10px] uppercase tracking-[0.2em] text-accent mb-3"><?php echo esc_html( $label ); ?></p><p class="font-display uppercase text-2xl"><a href="<?php echo esc_attr( vs_tel( $phone ) ); ?>" class="hover:text-accent"><?php echo esc_html( $phone ); ?></a></p><p class="text-white/60 text-sm mt-2"><a href="mailto:<?php echo esc_attr( $email ); ?>" class="hover:text-accent"><?php echo esc_html( $email ); ?></a></p></div><?php endforeach; ?>
+<?php foreach ( $regions as $label => $phone ) : ?><div class="fade-up border border-white/10 p-6"><p class="font-mono-tag text-xs lg:text-[10px] uppercase tracking-[0.2em] text-accent mb-3"><?php echo esc_html( $label ); ?></p><p class="font-display uppercase text-2xl"><a href="<?php echo esc_attr( vs_tel( $phone ) ); ?>" class="hover:text-accent"><?php echo esc_html( $phone ); ?></a></p><p class="text-white/60 text-sm mt-2"><a href="mailto:<?php echo esc_attr( $email ); ?>" class="hover:text-accent"><?php echo esc_html( $email ); ?></a></p></div><?php endforeach; ?>
 </div></div></section>
 <section class="bg-black py-20 border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14">
 <div class="fade-up"><?php echo vs_eyebrow( __( 'Send A Message', 'vision-studios' ) ) . vs_h2( __( 'Start A<br/><span class="text-accent">Conversation.</span>', 'vision-studios' ) ); // phpcs:ignore ?><p class="text-white/60 mt-6 max-w-md"><?php esc_html_e( 'Tell us about your production and where you would like to shoot. We reply within a working day.', 'vision-studios' ); ?></p>

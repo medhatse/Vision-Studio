@@ -53,24 +53,27 @@ function vs_import_attachment( string $url, array &$cache ): int {
 	if ( isset( $cache[ $url ] ) ) {
 		return $cache[ $url ];
 	}
-	$candidates = array_unique( [ $url, str_replace( 'http://', 'https://', $url ), preg_replace( '/-scaled(?=\.\w+$)/', '', $url ), preg_replace( '/(?=\.\w+$)/', '-scaled', $url, 1 ) ] );
-	$id = 0;
-	foreach ( $candidates as $c ) {
-		$id = (int) attachment_url_to_postid( $c );
-		if ( $id ) {
-			break;
+	// 1. Downloaded by a previous run of this importer (exact source URL).
+	$q  = get_posts( [ 'post_type' => 'attachment', 'post_status' => 'inherit', 'posts_per_page' => 1, 'meta_key' => '_vs_source_url', 'meta_value' => $url, 'fields' => 'ids' ] );
+	$id = $q ? (int) $q[0] : 0;
+	// 2. Already in this site's media library under the same URL (the live vision-studios.net case).
+	if ( ! $id ) {
+		foreach ( array_unique( [ $url, str_replace( 'http://', 'https://', $url ), preg_replace( '/-scaled(?=\.\w+$)/', '', $url ), preg_replace( '/(?=\.\w+$)/', '-scaled', $url, 1 ) ] ) as $c ) {
+			$id = (int) attachment_url_to_postid( $c );
+			if ( $id ) {
+				break;
+			}
 		}
 	}
-	if ( ! $id ) {
-		// Match on file name inside the media library (covers sites whose upload URL differs).
-		$name = wp_basename( $url );
-		$q = get_posts( [ 'post_type' => 'attachment', 'post_status' => 'inherit', 'posts_per_page' => 1, 'meta_query' => [ [ 'key' => '_wp_attached_file', 'value' => $name, 'compare' => 'LIKE' ] ] ] );
-		$id = $q ? (int) $q[0]->ID : 0;
-	}
-	if ( ! $id ) {
-		// Already downloaded by a previous run?
-		$q = get_posts( [ 'post_type' => 'attachment', 'post_status' => 'inherit', 'posts_per_page' => 1, 'meta_key' => '_vs_source_url', 'meta_value' => $url ] );
-		$id = $q ? (int) $q[0]->ID : 0;
+	// 3. Same upload path (year/month/file) on a site served from another domain — exact match only.
+	if ( ! $id && preg_match( '#/wp-content/uploads/(.+)$#', $url, $m ) ) {
+		foreach ( array_unique( [ $m[1], preg_replace( '/-scaled(?=\.\w+$)/', '', $m[1] ), preg_replace( '/(?=\.\w+$)/', '-scaled', $m[1], 1 ) ] ) as $rel ) {
+			$q = get_posts( [ 'post_type' => 'attachment', 'post_status' => 'inherit', 'posts_per_page' => 1, 'meta_key' => '_wp_attached_file', 'meta_value' => $rel, 'fields' => 'ids' ] );
+			if ( $q ) {
+				$id = (int) $q[0];
+				break;
+			}
+		}
 	}
 	if ( ! $id ) {
 		require_once ABSPATH . 'wp-admin/includes/media.php';
