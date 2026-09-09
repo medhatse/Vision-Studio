@@ -11,7 +11,7 @@ if ( ! $hero_img && $cities ) {
 $studio_count = (int) wp_count_posts( 'studio' )->publish;
 ?>
 <section id="top" class="relative min-h-screen flex flex-col justify-end overflow-hidden">
-<?php if ( $hero_img ) : ?><img src="<?php echo esc_url( $hero_img ); ?>" alt="" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high"/><?php endif; ?>
+<?php if ( $hero_img ) : ?><img src="<?php echo esc_url( $hero_img ); ?>" alt="<?php esc_attr_e( 'Broadcast studio set at Vision Studios', 'vision-studios' ); ?>" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high"/><?php endif; ?>
 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30"></div><div class="grain-overlay"></div>
 <div class="relative z-10 max-w-7xl w-full mx-auto px-6 lg:px-10 pt-40 pb-16">
 <div class="flex items-center justify-between font-mono-tag text-[11px] uppercase tracking-[0.2em] text-white/60 mb-6"><span><?php echo esc_html( vs_opt( 'hero_left' ) ); ?></span><span class="hidden sm:inline text-accent"><?php echo esc_html( vs_opt( 'hero_center' ) ); ?></span><span class="hidden sm:inline"><?php echo esc_html( vs_opt( 'hero_right' ) ); ?></span></div>
@@ -32,7 +32,7 @@ $studio_count = (int) wp_count_posts( 'studio' )->publish;
 	$max = max( array_map( fn( $s ) => (float) vs_meta( $s->ID, 'area', 0 ), $cs ) ?: [ 0 ] );
 	?>
 <a href="<?php echo esc_url( get_term_link( $c ) ); ?>" class="group fade-up img-zoom relative aspect-[3/4] block overflow-hidden bg-white/5">
-<img src="<?php echo esc_url( vs_city_image( $c ) ); ?>" alt="<?php echo esc_attr( $c->name ); ?>" loading="lazy" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"/>
+<img src="<?php echo esc_url( vs_city_image( $c ) ); ?>" alt="<?php echo esc_attr( sprintf( __( 'Vision Studios %1$s, %2$s', 'vision-studios' ), $c->name, vs_term_meta( $c->term_id, 'country' ) ) ); ?>" loading="lazy" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
 <div class="absolute bottom-0 left-0 p-4"><p class="font-mono-tag text-[10px] uppercase tracking-[0.15em] text-accent mb-1"><?php echo esc_html( vs_term_meta( $c->term_id, 'tagline', vs_term_meta( $c->term_id, 'country' ) ) ); ?></p><h3 class="font-display uppercase text-2xl leading-none"><?php echo esc_html( $c->name ); ?></h3><p class="font-mono-tag text-[10px] text-white/50 mt-1"><?php echo esc_html( sprintf( _n( '%1$d studio · up to %2$s sq. mt.', '%1$d studios · up to %2$s sq. mt.', count( $cs ), 'vision-studios' ), count( $cs ), $max ) ); ?></p></div></a>
 <?php endforeach; ?>
@@ -57,7 +57,7 @@ if ( $gallery_studios ) : ?>
 <div class="fade-up flex items-end justify-between mb-10 flex-wrap gap-4"><div><?php echo vs_eyebrow( __( 'Gallery', 'vision-studios' ) ) . vs_h2( __( 'From Behind The Lens.', 'vision-studios' ) ); // phpcs:ignore ?></div><?php echo vs_btn( vs_page_url( 'gallery' ), __( 'View All', 'vision-studios' ), 'ghost' ); // phpcs:ignore ?></div>
 <div class="grid md:grid-cols-4 gap-3">
 <?php foreach ( $gallery_studios as $i => $s ) : $ids = vs_studio_gallery_ids( $s->ID ); $src = vs_img_url( $ids[ $i % 2 ] ?? $ids[0] ?? 0, 'vs-wide' ); if ( ! $src ) { continue; } ?>
-<button type="button" data-lightbox="home" data-src="<?php echo esc_url( $src ); ?>" data-caption="<?php echo esc_attr( $s->post_title ); ?>" class="fade-up img-zoom relative aspect-[4/3] overflow-hidden bg-white/5 md:col-span-<?php echo (int) $spans[ $i ]; ?> text-left"><img src="<?php echo esc_url( $src ); ?>" alt="<?php echo esc_attr( $s->post_title ); ?>" loading="lazy" class="absolute inset-0 w-full h-full object-cover grayscale"/></button>
+<button type="button" data-lightbox="home" data-src="<?php echo esc_url( $src ); ?>" data-caption="<?php echo esc_attr( $s->post_title ); ?>" class="fade-up img-zoom relative aspect-[4/3] overflow-hidden bg-white/5 md:col-span-<?php echo (int) $spans[ $i ]; ?> text-left"><img src="<?php echo esc_url( $src ); ?>" alt="<?php echo esc_attr( sprintf( __( '%s broadcast set', 'vision-studios' ), $s->post_title ) ); ?>" loading="lazy" class="absolute inset-0 w-full h-full object-cover grayscale"/></button>
 <?php endforeach; ?>
 </div></div></section>
 <?php endif; ?>
@@ -82,7 +82,7 @@ if ( $gallery_studios ) : ?>
 <section id="trusted-by" class="bg-black py-20 border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10">
 <div class="fade-up flex items-center justify-between mb-8 flex-wrap gap-2"><p class="font-mono-tag text-xs uppercase tracking-[0.25em] text-white/50"><?php esc_html_e( 'Trusted By Broadcasters & Brands', 'vision-studios' ); ?></p><p class="font-mono-tag text-xs uppercase tracking-[0.25em] text-white/30"><?php esc_html_e( 'Some of Our Clients', 'vision-studios' ); ?></p></div>
 <div class="fade-up grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 border border-white/10">
-<?php foreach ( $clients as $c ) : ?><div class="client-logo flex items-center justify-center h-28 p-6 border-white/10 [&:not(:nth-child(5n))]:border-r [&:not(:nth-last-child(-n+5))]:border-b sm:[&:not(:nth-child(3n))]:border-r"><?php echo get_the_post_thumbnail( $c, 'medium', [ 'class' => 'max-h-14 max-w-full object-contain opacity-70 grayscale transition-all duration-300', 'title' => $c->post_title, 'loading' => 'lazy' ] ); ?></div><?php endforeach; ?>
+<?php foreach ( $clients as $c ) : ?><div class="client-logo flex items-center justify-center h-28 p-6 border-white/10 [&:not(:nth-child(5n))]:border-r [&:not(:nth-last-child(-n+5))]:border-b sm:[&:not(:nth-child(3n))]:border-r"><?php echo get_the_post_thumbnail( $c, 'medium', [ 'class' => 'max-h-14 max-w-full object-contain opacity-70 grayscale transition-all duration-300', 'title' => $c->post_title, 'alt' => sprintf( __( '%s logo', 'vision-studios' ), $c->post_title ), 'loading' => 'lazy' ] ); ?></div><?php endforeach; ?>
 </div></div></section>
 <?php endif; ?>
 

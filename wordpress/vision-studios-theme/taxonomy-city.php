@@ -17,7 +17,7 @@ $others  = array_filter( vs_cities(), fn( $c ) => $c->term_id !== $cid );
 $email   = vs_opt( 'email' );
 ?>
 <section class="relative min-h-[70vh] flex flex-col justify-end overflow-hidden">
-<?php if ( $hero ) : ?><img src="<?php echo esc_url( $hero ); ?>" alt="" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high"/><?php endif; ?>
+<?php if ( $hero ) : ?><img src="<?php echo esc_url( $hero ); ?>" alt="<?php echo esc_attr( sprintf( __( 'Vision Studios %s', 'vision-studios' ), $term->name ) ); ?>" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high"/><?php endif; ?>
 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30"></div><div class="grain-overlay"></div>
 <div class="relative z-10 max-w-7xl w-full mx-auto px-6 lg:px-10 pt-40 pb-16">
 <div class="flex items-center justify-between font-mono-tag text-[11px] uppercase tracking-[0.2em] text-white/60 mb-6"><span><?php echo esc_html( vs_term_meta( $cid, 'tagline' ) ); ?></span><span class="hidden sm:inline text-accent"><?php echo esc_html( $country ); ?></span><span class="hidden sm:inline"><?php echo esc_html( vs_term_meta( $cid, 'coords' ) ); ?></span></div>
@@ -25,12 +25,13 @@ $email   = vs_opt( 'email' );
 <p class="mt-6 max-w-xl text-white/70"><?php echo esc_html( sprintf( _n( '%d studio', '%d studios', count( $studios ), 'vision-studios' ), count( $studios ) ) . ( $address ? ' · ' . $address : '' ) ); ?></p>
 <?php if ( $term->description ) : ?><p class="mt-4 max-w-xl text-white/60 text-sm"><?php echo esc_html( $term->description ); ?></p><?php endif; ?>
 </div></section>
+<?php echo vs_breadcrumbs(); // phpcs:ignore ?>
 
 <section class="bg-black py-16 lg:py-24"><div class="max-w-7xl mx-auto px-6 lg:px-10">
 <div class="fade-up mb-4"><?php echo vs_eyebrow( sprintf( __( 'Our Studios In %s', 'vision-studios' ), $term->name ) ) . vs_h2( __( 'Choose Your Space.', 'vision-studios' ), 'max-w-3xl' ); // phpcs:ignore ?></div>
 <?php foreach ( $studios as $i => $s ) : $img = vs_img_url( vs_studio_gallery_ids( $s->ID )[0] ?? 0, 'vs-wide' ); ?>
 <article class="fade-up grid md:grid-cols-2 gap-8 items-center py-12 <?php echo $i ? 'border-t border-white/10' : ''; ?>">
-<a href="<?php echo esc_url( get_permalink( $s ) ); ?>" class="group img-zoom relative aspect-[16/10] block overflow-hidden bg-white/5 <?php echo $i % 2 ? 'md:order-2' : ''; ?>"><img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( $s->post_title ); ?>" loading="lazy" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"/></a>
+<a href="<?php echo esc_url( get_permalink( $s ) ); ?>" class="group img-zoom relative aspect-[16/10] block overflow-hidden bg-white/5 <?php echo $i % 2 ? 'md:order-2' : ''; ?>"><?php echo wp_get_attachment_image( vs_studio_gallery_ids( $s->ID )[0] ?? 0, 'vs-wide', false, [ 'alt' => $s->post_title . ', ' . $term->name, 'loading' => 'lazy', 'class' => 'absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500' ] ); ?></a>
 <div><p class="font-mono-tag text-[10px] uppercase tracking-[0.2em] text-accent mb-2"><?php echo esc_html( vs_meta( $s->ID, 'tagline' ) ); ?></p><h3 class="font-display uppercase text-3xl leading-none"><a href="<?php echo esc_url( get_permalink( $s ) ); ?>" class="hover:text-accent"><?php echo esc_html( $s->post_title ); ?></a></h3>
 <p class="text-white/60 text-sm mt-4 leading-relaxed"><?php echo esc_html( $s->post_excerpt ?: wp_trim_words( wp_strip_all_tags( $s->post_content ), 40 ) ); ?></p>
 <ul class="mt-5 grid sm:grid-cols-2 gap-x-6 gap-y-1 font-mono-tag text-[11px] text-white/50"><?php foreach ( array_slice( vs_lines( vs_meta( $s->ID, 'highlights' ) ), 0, 4 ) as $h ) : ?><li class="flex gap-2"><span class="text-accent">—</span><?php echo esc_html( $h ); ?></li><?php endforeach; ?></ul>

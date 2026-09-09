@@ -14,7 +14,8 @@
     "theme:zip": "npm run theme:import-data && npm run theme:css && cd wordpress && rm -f vision-studios-theme.zip && zip -qr vision-studios-theme.zip vision-studios-theme -x '*.DS_Store' && ls -la vision-studios-theme.zip",
     "wp:up": "cd wordpress && docker compose up -d",
     "wp:down": "cd wordpress && docker compose down",
-    "wp:import": "cd wordpress && docker compose run --rm --entrypoint sh cli -c 'php -d memory_limit=1024M /usr/local/bin/wp vs import --posts'"
+    "wp:import": "cd wordpress && docker compose run --rm --entrypoint sh cli -c 'php -d memory_limit=1024M /usr/local/bin/wp vs import --posts'",
+    "seo:audit": "node scripts/seo-audit.mjs"
   },
   "engines": {
     "node": ">=18"

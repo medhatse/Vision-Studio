@@ -146,6 +146,11 @@ function vs_run_import( array $opts = [] ): array {
 		foreach ( [ 'tagline', 'area', 'specs', 'highlights', 'use_cases_heading', 'use_cases', 'phone', 'address', 'map_query' ] as $k ) {
 			update_post_meta( $id, "_vs_$k", $s[ $k ] );
 		}
+		foreach ( array_values( $gallery ) as $gi => $aid ) {
+			if ( ! get_post_meta( $aid, '_wp_attachment_image_alt', true ) ) {
+				update_post_meta( $aid, '_wp_attachment_image_alt', sprintf( '%s — photo %d', $s['title'], $gi + 1 ) );
+			}
+		}
 		update_post_meta( $id, '_vs_gallery', implode( ',', $gallery ) );
 		update_post_meta( $id, '_vs_floor_plan', $img( $s['floor_plan'] ) );
 		if ( $gallery ) {
@@ -167,6 +172,7 @@ function vs_run_import( array $opts = [] ): array {
 		$id = vs_import_upsert( [ 'post_type' => 'vs_client', 'post_name' => sanitize_title( $c['name'] ), 'post_title' => $c['name'], 'post_status' => 'publish', 'menu_order' => $c['order'] ] );
 		if ( $logo = $img( $c['logo'] ) ) {
 			set_post_thumbnail( $id, $logo );
+			update_post_meta( $logo, '_wp_attachment_image_alt', $c['name'] . ' logo' );
 		}
 	}
 	$report[] = sprintf( __( '%d client logos.', 'vision-studios' ), count( $data['clients'] ) );
@@ -176,7 +182,7 @@ function vs_run_import( array $opts = [] ): array {
 		'home'    => [ __( 'Home', 'vision-studios' ), '', [], '' ],
 		'about'   => [ __( 'About Us', 'vision-studios' ), 'template-about.php', $data['pages']['about']['blocks'], $data['pages']['about']['excerpt'], $data['pages']['about']['image'] ?? '' ],
 		'contact' => [ __( 'Contact Us', 'vision-studios' ), 'template-contact.php', $data['pages']['contact']['blocks'], $data['pages']['contact']['excerpt'] ],
-		'gallery' => [ __( 'Gallery', 'vision-studios' ), 'template-gallery.php', [], '' ],
+		'gallery' => [ __( 'Gallery', 'vision-studios' ), 'template-gallery.php', [], __( 'Photographs from every Vision Studios broadcast and production studio in London, Dublin, Paris and Istanbul.', 'vision-studios' ) ],
 		'news'    => [ __( 'News', 'vision-studios' ), '', [], '' ],
 	];
 	$page_ids = [];

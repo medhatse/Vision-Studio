@@ -79,27 +79,26 @@ function vs_studio_card( WP_Post $s, string $ratio = 'aspect-[3/4]' ): string {
 	$tag   = vs_meta( $s->ID, 'tagline', $city ? $city->name : '' );
 	$area  = vs_meta( $s->ID, 'area' );
 	$sub   = $area ? sprintf( __( '%s sq. mt. studio', 'vision-studios' ), $area ) : ( vs_lines( vs_meta( $s->ID, 'highlights' ) )[0] ?? '' );
-	$img   = vs_img_url( vs_studio_gallery_ids( $s->ID )[0] ?? 0, 'vs-card' );
-	return '<a href="' . esc_url( get_permalink( $s ) ) . '" class="group fade-up img-zoom relative ' . esc_attr( $ratio ) . ' block overflow-hidden bg-white/5">'
-		. '<img src="' . esc_url( $img ) . '" alt="' . esc_attr( $s->post_title ) . '" loading="lazy" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"/>'
+	$img   = wp_get_attachment_image( vs_studio_gallery_ids( $s->ID )[0] ?? 0, 'vs-card', false, [ 'alt' => sprintf( __( '%1$s, %2$s', 'vision-studios' ), $s->post_title, $city ? $city->name : '' ), 'loading' => 'lazy', 'class' => 'absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500' ] );
+	return '<a href="' . esc_url( get_permalink( $s ) ) . '" class="group fade-up img-zoom relative ' . esc_attr( $ratio ) . ' block overflow-hidden bg-white/5">' . $img
 		. '<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>'
 		. '<div class="absolute bottom-0 left-0 p-4"><p class="font-mono-tag text-[10px] uppercase tracking-[0.15em] text-accent mb-1">' . esc_html( $tag ) . '</p><h3 class="font-display uppercase text-2xl leading-none">' . esc_html( $s->post_title ) . '</h3><p class="font-mono-tag text-[10px] text-white/50 mt-1">' . esc_html( $sub ) . '</p></div></a>';
 }
 
 function vs_news_card( WP_Post $p ): string {
-	$img = get_the_post_thumbnail_url( $p, 'vs-thumb' );
+	$img = get_the_post_thumbnail( $p, 'vs-thumb', [ 'alt' => $p->post_title, 'loading' => 'lazy', 'class' => 'absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500' ] );
 	return '<a href="' . esc_url( get_permalink( $p ) ) . '" class="group fade-up block">'
-		. '<div class="img-zoom relative aspect-[16/10] overflow-hidden bg-white/5">' . ( $img ? '<img src="' . esc_url( $img ) . '" alt="' . esc_attr( $p->post_title ) . '" loading="lazy" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"/>' : '' ) . '</div>'
+		. '<div class="img-zoom relative aspect-[16/10] overflow-hidden bg-white/5">' . $img . '</div>'
 		. '<p class="font-mono-tag text-[10px] uppercase tracking-[0.2em] text-white/40 mt-4">' . esc_html( get_the_date( '', $p ) ) . '</p>'
 		. '<h3 class="font-display uppercase text-xl leading-tight mt-2 group-hover:text-accent transition-colors">' . esc_html( $p->post_title ) . '</h3>'
 		. '<p class="text-white/60 text-sm mt-2 line-clamp-3">' . esc_html( wp_strip_all_tags( get_the_excerpt( $p ) ) ) . '</p></a>';
 }
 
-function vs_page_hero( string $title_html, string $sub, string $image, string $eyebrow ): string {
+function vs_page_hero( string $title_html, string $sub, string $image, string $eyebrow, string $alt = '' ): string {
 	return '<section class="relative min-h-[55vh] flex flex-col justify-end overflow-hidden">'
-		. ( $image ? '<img src="' . esc_url( $image ) . '" alt="" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high"/>' : '' )
+		. ( $image ? '<img src="' . esc_url( $image ) . '" alt="' . esc_attr( $alt ?: wp_strip_all_tags( $title_html ) ) . '" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high"/>' : '' )
 		. '<div class="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/40"></div><div class="grain-overlay"></div>'
-		. '<div class="relative z-10 max-w-7xl w-full mx-auto px-6 lg:px-10 pt-40 pb-14">' . vs_eyebrow( $eyebrow ) . '<h1 class="font-display uppercase leading-[0.95] text-[clamp(2.4rem,7vw,5rem)]">' . wp_kses_post( $title_html ) . '</h1>' . ( $sub ? '<p class="mt-6 max-w-2xl text-white/70">' . esc_html( $sub ) . '</p>' : '' ) . '</div></section>';
+		. '<div class="relative z-10 max-w-7xl w-full mx-auto px-6 lg:px-10 pt-40 pb-14">' . vs_eyebrow( $eyebrow ) . '<h1 class="font-display uppercase leading-[0.95] text-[clamp(2.4rem,7vw,5rem)]">' . wp_kses_post( $title_html ) . '</h1>' . ( $sub ? '<p class="mt-6 max-w-2xl text-white/70">' . esc_html( $sub ) . '</p>' : '' ) . '</div></section>' . vs_breadcrumbs();
 }
 
 function vs_cta_band( string $heading = '', string $text = '' ): string {

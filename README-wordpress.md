@@ -66,3 +66,35 @@ Admin: http://localhost:8080/wp-admin (admin / admin).
 
 `npm run fetch` pulls fresh content from vision-studios.net; `npm run theme:import-data` rebuilds
 `data/import.json` inside the theme. Re-running the importer updates existing items instead of duplicating.
+
+## SEO
+
+What the theme does on its own (verified with `npm run seo:audit -- <site url>`):
+
+- One `<h1>` per page, semantic `<main>` / `<article>` / `<nav>` landmarks, skip link, visible breadcrumbs
+- Descriptive `<title>` per view (studio: "Istanbul Studio 1 — TV Studio Hire in Istanbul | Vision Studios")
+- Meta description generated from studio specs, city description, page/post excerpts
+- Canonical URLs, Open Graph and Twitter Card tags with a share image on every page
+- JSON-LD: `Organization` + `WebSite`, `LocalBusiness`/`Place` for every studio (address, phone, photos,
+  amenities), `CollectionPage` + `ItemList` for cities, `NewsArticle` for posts, `BreadcrumbList` everywhere
+- Descriptive `alt` text on all images, responsive `srcset` + lazy loading, width/height attributes (no CLS)
+- Compiled CSS (no Tailwind CDN), font preconnect, emoji/RSD/wlwmanifest/shortlink cruft removed
+- Studios and Cities included in the core XML sitemap; attachment pages 301 to their parent;
+  search / 404 / paginated archives `noindex`; old page URLs 301 to the new ones
+- 404 page with navigation back into the site
+
+With **Rank Math** (already installed on vision-studios.net) the theme lets the plugin own titles, meta
+tags, sitemaps and Organization schema, and only adds the studio / city / breadcrumb schema Rank Math
+cannot generate. After activating the theme:
+
+1. Rank Math → **Titles & Meta → Studios**: enable "Show in search results", set the title template to
+   `%title% — TV Studio Hire in %primary_taxonomy_terms% %sep% %sitename%` (or leave the theme title).
+2. Rank Math → **Titles & Meta → Cities** (taxonomy): show in search results; template
+   `%term% TV & Production Studios for Hire %sep% %sitename%`.
+3. Rank Math → **Sitemap Settings**: include Studios and Cities; exclude Services and Clients.
+4. Rank Math → **General → Breadcrumbs** can stay off (the theme renders its own).
+5. Re-submit `sitemap_index.xml` in Google Search Console after the switch and watch the Coverage report
+   for the redirected old URLs.
+
+Not covered by a theme (do these on the host): HTTPS, a caching/CDN layer (Cloudflare is already in front),
+WebP originals (already the case) and a page-speed check with PageSpeed Insights after launch.
