@@ -96,12 +96,22 @@ add_filter( 'rank_math/opengraph/facebook/image', fn( $i ) => $i ?: vs_seo_image
 add_filter( 'rank_math/opengraph/twitter/image', fn( $i ) => $i ?: vs_seo_image() );
 add_filter( 'wpseo_metadesc', fn( $d ) => trim( (string) $d ) ?: vs_seo_description() );
 
-// Make sure Rank Math includes Studios and Cities in its XML sitemap even before the settings page is saved.
-add_filter( 'option_rank-math-options-sitemap', function ( $opts ) {
-	if ( ! is_array( $opts ) ) {
-		return $opts;
+// Rank Math loads its options before the theme, so write the sitemap settings into its option once
+// (studios + cities in, services + clients out) and clear its sitemap cache.
+add_action( 'admin_init', function () {
+	if ( ! defined( 'RANK_MATH_VERSION' ) || get_option( 'vs_rank_math_sitemap_v1' ) ) {
+		return;
 	}
-	return array_merge( $opts, [ 'pt_studio_sitemap' => 'on', 'tax_city_sitemap' => 'on', 'pt_vs_service_sitemap' => 'off', 'pt_vs_client_sitemap' => 'off' ] );
+	$opts = get_option( 'rank-math-options-sitemap', [] );
+	if ( ! is_array( $opts ) ) {
+		$opts = [];
+	}
+	update_option( 'rank-math-options-sitemap', array_merge( $opts, [ 'pt_studio_sitemap' => 'on', 'tax_city_sitemap' => 'on', 'pt_vs_service_sitemap' => 'off', 'pt_vs_client_sitemap' => 'off' ] ) );
+	update_option( 'vs_rank_math_sitemap_v1', 1 );
+	if ( class_exists( '\RankMath\Sitemap\Cache' ) && method_exists( '\RankMath\Sitemap\Cache', 'invalidate_storage' ) ) {
+		\RankMath\Sitemap\Cache::invalidate_storage();
+	}
+	flush_rewrite_rules();
 } );
 
 // ----- <title> -----
