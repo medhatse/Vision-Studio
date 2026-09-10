@@ -14,7 +14,7 @@ for (const p of paths) {
   const robots = attr(head, /<meta name=['"]robots['"] content=['"]([^'"]*)['"]/)
   const og = (head.match(/property="og:/g) || []).length
   const h1 = (html.match(/<h1[\s>]/g) || []).length
-  const imgs = html.match(/<img [^>]*>/g) || []
+  const imgs = html.match(/<img[\s>][^>]*>/g) || []
   const noAlt = imgs.filter((i) => !/\balt=/.test(i)).length // alt="" is valid for decorative images
   const types = []
   for (const m of html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {

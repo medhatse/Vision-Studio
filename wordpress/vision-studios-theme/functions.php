@@ -53,6 +53,12 @@ add_action( 'pre_get_posts', function ( WP_Query $q ) {
 	}
 } );
 
+// Elementor / PRO Elements: declare theme-managed locations so the Theme Builder's header and footer
+// templates are not injected over the theme's own header.php / footer.php.
+add_action( 'elementor/theme/register_locations', function ( $manager ) {
+	$manager->register_all_core_location();
+} );
+
 // Body class for the dark canvas.
 add_filter( 'body_class', fn( $c ) => array_merge( $c, [ 'bg-black', 'text-white', 'antialiased' ] ) );
 
