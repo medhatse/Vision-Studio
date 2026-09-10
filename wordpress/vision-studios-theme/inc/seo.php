@@ -96,6 +96,14 @@ add_filter( 'rank_math/opengraph/facebook/image', fn( $i ) => $i ?: vs_seo_image
 add_filter( 'rank_math/opengraph/twitter/image', fn( $i ) => $i ?: vs_seo_image() );
 add_filter( 'wpseo_metadesc', fn( $d ) => trim( (string) $d ) ?: vs_seo_description() );
 
+// Make sure Rank Math includes Studios and Cities in its XML sitemap even before the settings page is saved.
+add_filter( 'option_rank-math-options-sitemap', function ( $opts ) {
+	if ( ! is_array( $opts ) ) {
+		return $opts;
+	}
+	return array_merge( $opts, [ 'pt_studio_sitemap' => 'on', 'tax_city_sitemap' => 'on', 'pt_vs_service_sitemap' => 'off', 'pt_vs_client_sitemap' => 'off' ] );
+} );
+
 // ----- <title> -----
 add_filter( 'document_title_parts', function ( array $parts ) {
 	if ( vs_seo_plugin_active() ) {
