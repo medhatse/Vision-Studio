@@ -91,10 +91,19 @@ function vs_seo_canonical(): string {
 
 // With Rank Math active, fill in a description / share image wherever Rank Math has none of its own
 // (imported studios, cities and pages have no per-item SEO meta yet).
-add_filter( 'rank_math/frontend/description', fn( $d ) => trim( (string) $d ) ?: vs_seo_description() );
+/** Use a plugin-supplied description only when it is usable (50–160 chars); trim long ones, replace empty/short ones. */
+function vs_seo_description_guard( $d ): string {
+	$d = trim( preg_replace( '/\s+/', ' ', wp_strip_all_tags( (string) $d ) ) );
+	if ( mb_strlen( $d ) > 160 ) {
+		$cut = mb_substr( $d, 0, 155 );
+		return preg_replace( '/\s+\S*$/u', '', $cut ) . '…';
+	}
+	return mb_strlen( $d ) < 50 ? vs_seo_description() : $d;
+}
+add_filter( 'rank_math/frontend/description', 'vs_seo_description_guard' );
 add_filter( 'rank_math/opengraph/facebook/image', fn( $i ) => $i ?: vs_seo_image() );
 add_filter( 'rank_math/opengraph/twitter/image', fn( $i ) => $i ?: vs_seo_image() );
-add_filter( 'wpseo_metadesc', fn( $d ) => trim( (string) $d ) ?: vs_seo_description() );
+add_filter( 'wpseo_metadesc', 'vs_seo_description_guard' );
 
 // Rank Math loads its options before the theme, so write the sitemap settings into its option once
 // (studios + cities in, services + clients out) and clear its sitemap cache.
