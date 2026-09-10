@@ -89,6 +89,13 @@ function vs_seo_canonical(): string {
 	return '';
 }
 
+// With Rank Math active, fill in a description / share image wherever Rank Math has none of its own
+// (imported studios, cities and pages have no per-item SEO meta yet).
+add_filter( 'rank_math/frontend/description', fn( $d ) => trim( (string) $d ) ?: vs_seo_description() );
+add_filter( 'rank_math/opengraph/facebook/image', fn( $i ) => $i ?: vs_seo_image() );
+add_filter( 'rank_math/opengraph/twitter/image', fn( $i ) => $i ?: vs_seo_image() );
+add_filter( 'wpseo_metadesc', fn( $d ) => trim( (string) $d ) ?: vs_seo_description() );
+
 // ----- <title> -----
 add_filter( 'document_title_parts', function ( array $parts ) {
 	if ( vs_seo_plugin_active() ) {
