@@ -16,11 +16,11 @@ function vs_h2( string $html, string $extra = '' ): string {
 	return '<h2 class="font-display uppercase text-[clamp(2rem,5vw,3.5rem)] leading-[0.95] ' . esc_attr( $extra ) . '">' . wp_kses_post( $html ) . '</h2>';
 }
 function vs_btn( string $href, string $label, string $style = 'primary' ): string {
-	$cls = match ( $style ) {
+	$styles = [
 		'white' => 'inline-flex items-center gap-2 bg-white text-black ' . VS_MONO . ' text-xs px-6 py-4',
 		'ghost' => 'nav-link inline-flex items-center gap-2 ' . VS_MONO . ' text-xs text-white/70',
-		default => 'btn-primary inline-flex items-center gap-2 bg-accent text-black ' . VS_MONO . ' text-xs px-6 py-4',
-	};
+	];
+	$cls = $styles[ $style ] ?? 'btn-primary inline-flex items-center gap-2 bg-accent text-black ' . VS_MONO . ' text-xs px-6 py-4';
 	return '<a href="' . esc_url( $href ) . '" class="' . $cls . '">' . esc_html( $label ) . ' ' . vs_arrow() . '</a>';
 }
 function vs_tel( string $phone ): string {

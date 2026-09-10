@@ -32,7 +32,7 @@ add_action( 'after_setup_theme', function () {
 
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'vs-app', VS_URI . '/assets/app.css', [], VS_VERSION );
-	wp_enqueue_script( 'vs-app', VS_URI . '/assets/app.js', [], VS_VERSION, [ 'strategy' => 'defer', 'in_footer' => true ] );
+	wp_enqueue_script( 'vs-app', VS_URI . '/assets/app.js', [], VS_VERSION, version_compare( get_bloginfo( 'version' ), '6.3', '>=' ) ? [ 'strategy' => 'defer', 'in_footer' => true ] : true );
 } );
 
 // Preload the two fonts used above the fold (self-hosted, latin woff2).

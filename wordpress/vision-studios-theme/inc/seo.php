@@ -294,7 +294,7 @@ add_action( 'wp_head', function () {
 	$clean = function ( $v ) use ( &$clean ) {
 		if ( is_array( $v ) ) {
 			$v = array_map( $clean, array_filter( $v, fn( $x ) => null !== $x && '' !== $x && [] !== $x ) );
-			return array_is_list( $v ) ? array_values( $v ) : $v;
+			return array_keys( $v ) === range( 0, count( $v ) - 1 ) || [] === $v ? array_values( $v ) : $v;
 		}
 		return $v;
 	};

@@ -68,7 +68,8 @@ add_action( 'customize_register', function ( WP_Customize_Manager $wp ) {
 				$wp->add_control( "vs_$key", [ 'section' => "vs_$sid", 'type' => 'hidden', 'description' => $label ] );
 				continue;
 			}
-			$sanitize = match ( $type ) { 'url' => 'esc_url_raw', 'image', 'number' => 'absint', 'textarea' => 'wp_kses_post', default => 'sanitize_text_field' };
+			$sanitizers = [ 'url' => 'esc_url_raw', 'image' => 'absint', 'number' => 'absint', 'textarea' => 'wp_kses_post' ];
+			$sanitize   = $sanitizers[ $type ] ?? 'sanitize_text_field';
 			$wp->add_setting( "vs_$key", [ 'default' => $default, 'sanitize_callback' => $sanitize ] );
 			if ( 'image' === $type ) {
 				$wp->add_control( new WP_Customize_Media_Control( $wp, "vs_$key", [ 'label' => $label, 'section' => "vs_$sid", 'mime_type' => 'image' ] ) );
