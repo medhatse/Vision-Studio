@@ -8,8 +8,8 @@
  */
 defined( 'ABSPATH' ) || exit;
 
-function vs_rm_set_post( int $id, string $keyword, string $title, string $description, array &$report ): void {
-	if ( '' === trim( (string) get_post_meta( $id, 'rank_math_focus_keyword', true ) ) ) {
+function vs_rm_set_post( int $id, string $keyword, string $title, string $description, array &$report, bool $force_keyword = false ): void {
+	if ( $force_keyword || '' === trim( (string) get_post_meta( $id, 'rank_math_focus_keyword', true ) ) ) {
 		update_post_meta( $id, 'rank_math_focus_keyword', $keyword );
 		$report['keywords']++;
 	}
@@ -51,16 +51,20 @@ add_action( 'admin_init', function () {
 	if ( empty( $_GET['vs_seo_fill'] ) || ! current_user_can( 'manage_options' ) || ! defined( 'RANK_MATH_VERSION' ) ) {
 		return;
 	}
-	$report = [ 'keywords' => 0, 'titles' => 0, 'descriptions' => 0 ];
+	$report = [ 'keywords' => 0, 'titles' => 0, 'descriptions' => 0, 'renamed' => [], 'fixed' => [] ];
 	$site   = get_bloginfo( 'name' );
+	// Rank Math's "keyword in title" test looks at the post title, not the SEO title, so every keyword below
+	// is a phrase contained in the post title. force=1 re-applies keywords the fill wrote earlier.
+	$force  = ! empty( $_GET['force'] );
 
-	// Studios: "<City> TV studio hire" appears verbatim in the SEO title.
+	// Studios: "<City> studio" is in every title ("Istanbul Studio 1"); the DTL room falls back to its title.
 	foreach ( get_posts( [ 'post_type' => 'studio', 'posts_per_page' => -1, 'post_status' => 'publish' ] ) as $s ) {
 		$city  = vs_studio_city( $s->ID );
 		$cname = $city ? $city->name : 'London';
 		$specs = vs_lines( vs_meta( $s->ID, 'specs' ) ?: vs_meta( $s->ID, 'highlights' ) );
 		$desc  = $s->post_excerpt ?: sprintf( '%s for hire in %s: %s', $s->post_title, $cname, implode( ' ', array_slice( $specs, 0, 4 ) ) );
-		vs_rm_set_post( $s->ID, strtolower( $cname . ' TV studio hire' ), sprintf( '%s: %s TV Studio Hire | %s', $s->post_title, $cname, $site ), vs_rm_desc( $desc ), $report );
+		$kw    = false !== stripos( $s->post_title, $cname . ' studio' ) ? strtolower( $cname . ' studio' ) : strtolower( $s->post_title );
+		vs_rm_set_post( $s->ID, $kw, sprintf( '%s: %s TV Studio Hire | %s', $s->post_title, $cname, $site ), vs_rm_desc( $desc ), $report, $force );
 	}
 
 	// Cities: "TV studios in <City>".
@@ -70,27 +74,40 @@ add_action( 'admin_init', function () {
 		vs_rm_set_term( (int) $t->term_id, strtolower( 'TV studios in ' . $t->name ), sprintf( 'TV Studios in %s for Hire | %s', $t->name, $site ), vs_rm_desc( $desc ), $report );
 	}
 
-	// Theme pages.
+	// Theme pages: [ keyword, post title containing it, SEO title, description ]. Page titles only show in
+	// the admin, breadcrumbs and the browser title, so they can carry the keyword.
 	$pages = [
-		'home'           => [ 'broadcast studio hire', 'Broadcast Studio Hire in London, Dublin, Paris & Istanbul | ' . $site, vs_opt( 'choose_intro' ) ?: vs_opt( 'hero_intro' ) ],
-		'about'          => [ 'about Vision Studios', 'About Vision Studios: 25 Years of Broadcast Studio Hire', '' ],
-		'contact'        => [ 'contact Vision Studios', 'Contact Vision Studios: Book a TV Studio in London, Dublin, Paris or Istanbul', '' ],
-		'gallery'        => [ 'TV studio gallery', 'TV Studio Gallery: Our Broadcast Studios in Pictures | ' . $site, 'Photographs from every Vision Studios broadcast and production studio in London, Dublin, Paris and Istanbul.' ],
-		'news'           => [ 'Vision Studios news', 'Vision Studios News: Productions, Live Events and Behind the Scenes', 'Productions, live events and behind-the-scenes stories from Vision Studios in London, Dublin, Paris and Istanbul.' ],
-		'privacy-policy' => [ 'privacy policy', 'Privacy Policy | ' . $site, 'How Vision Studios collects, uses and protects personal data submitted through its website and booking forms.' ],
-		'terms'          => [ 'terms of studio hire', 'Terms of Studio Hire | ' . $site, 'The terms that apply to every studio booking with Vision Studios in London, Dublin, Paris and Istanbul.' ],
+		'home'           => [ 'broadcast studio hire', 'Broadcast Studio Hire', 'Broadcast Studio Hire in London, Dublin, Paris & Istanbul | ' . $site, vs_opt( 'choose_intro' ) ?: vs_opt( 'hero_intro' ) ],
+		'about'          => [ 'about Vision Studios', 'About Vision Studios', 'About Vision Studios: 25 Years of Broadcast Studio Hire', '' ],
+		'contact'        => [ 'contact Vision Studios', 'Contact Vision Studios', 'Contact Vision Studios: Book a TV Studio in London, Dublin, Paris or Istanbul', '' ],
+		'gallery'        => [ 'TV studio gallery', 'TV Studio Gallery', 'TV Studio Gallery: Our Broadcast Studios in Pictures | ' . $site, 'Photographs from every Vision Studios broadcast and production studio in London, Dublin, Paris and Istanbul.' ],
+		'news'           => [ 'Vision Studios news', 'Vision Studios News', 'Vision Studios News: Productions, Live Events and Behind the Scenes', 'Productions, live events and behind-the-scenes stories from Vision Studios in London, Dublin, Paris and Istanbul.' ],
+		'privacy-policy' => [ 'privacy policy', 'Privacy Policy', 'Privacy Policy | ' . $site, 'How Vision Studios collects, uses and protects personal data submitted through its website and booking forms.' ],
+		'terms'          => [ 'terms of studio hire', 'Terms of Studio Hire', 'Terms of Studio Hire | ' . $site, 'The terms that apply to every studio booking with Vision Studios in London, Dublin, Paris and Istanbul.' ],
 	];
-	foreach ( $pages as $slug => [ $kw, $title, $desc ] ) {
+	foreach ( $pages as $slug => $row ) {
 		$p = get_page_by_path( $slug );
-		if ( $p ) {
-			vs_rm_set_post( $p->ID, $kw, $title, vs_rm_desc( $desc ?: ( $p->post_excerpt ?: wp_trim_words( wp_strip_all_tags( $p->post_content ), 26, '' ) ) ), $report );
+		if ( ! $p ) {
+			continue;
 		}
+		if ( false === stripos( $p->post_title, $row[0] ) && $p->post_title !== $row[1] ) {
+			wp_update_post( [ 'ID' => $p->ID, 'post_title' => $row[1] ] );
+			$report['renamed'][] = $p->post_title . ' → ' . $row[1];
+		}
+		vs_rm_set_post( $p->ID, $row[0], $row[2], vs_rm_desc( $row[3] ?: ( $p->post_excerpt ?: wp_trim_words( wp_strip_all_tags( $p->post_content ), 26, '' ) ) ), $report, $force );
 	}
 
-	// Posts: the title's main phrase is the keyword, so the "keyword in title" check passes.
+	// Posts: the title's main phrase is the keyword, so the "keyword in title" check passes. A keyword set
+	// by hand that is not in the title is replaced too (and reported), otherwise Rank Math keeps flagging it.
 	foreach ( get_posts( [ 'post_type' => 'post', 'posts_per_page' => -1, 'post_status' => 'publish' ] ) as $p ) {
-		$kw = strtolower( trim( preg_split( '/\s*[|:—–]\s*/u', $p->post_title )[0] ) );
-		vs_rm_set_post( $p->ID, $kw, '', vs_rm_desc( $p->post_excerpt ?: wp_trim_words( wp_strip_all_tags( strip_shortcodes( $p->post_content ) ), 26, '' ) ), $report );
+		$kw      = strtolower( trim( preg_split( '/\s*[|:—–]\s*/u', $p->post_title )[0] ) );
+		$current = trim( (string) get_post_meta( $p->ID, 'rank_math_focus_keyword', true ) );
+		$primary = trim( explode( ',', $current )[0] );
+		$mismatch = '' !== $primary && false === stripos( $p->post_title, $primary );
+		if ( $mismatch ) {
+			$report['fixed'][] = $p->post_title . ': "' . $primary . '" → "' . $kw . '"';
+		}
+		vs_rm_set_post( $p->ID, $kw, '', vs_rm_desc( $p->post_excerpt ?: wp_trim_words( wp_strip_all_tags( strip_shortcodes( $p->post_content ) ), 26, '' ) ), $report, $mismatch );
 	}
 
 	// Internal post types (LinkedIn auto-publish copies, theme services/clients/testimonials): no SEO controls,
@@ -110,6 +127,6 @@ add_action( 'admin_init', function () {
 	}
 
 	header( 'Content-Type: text/plain' );
-	printf( "focus keywords set: %d\nSEO titles set: %d\ndescriptions set: %d\nSEO controls disabled for: %s\n", $report['keywords'], $report['titles'], $report['descriptions'], $changed ? implode( ', ', $changed ) : 'nothing new' );
+	printf( "focus keywords set: %d\nSEO titles set: %d\ndescriptions set: %d\nSEO controls disabled for: %s\npages renamed: %s\npost keywords replaced: %s\n", $report['keywords'], $report['titles'], $report['descriptions'], $changed ? implode( ', ', $changed ) : 'nothing new', $report['renamed'] ? implode( '; ', $report['renamed'] ) : 'none', $report['fixed'] ? implode( '; ', $report['fixed'] ) : 'none' );
 	exit;
 } );
