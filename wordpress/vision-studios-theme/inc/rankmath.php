@@ -124,10 +124,10 @@ add_action( 'admin_init', function () {
 	// Posts: the title's main phrase is the keyword, so the "keyword in title" check passes. A keyword set
 	// by hand that is not in the title is replaced too (and reported), otherwise Rank Math keeps flagging it.
 	foreach ( get_posts( [ 'post_type' => 'post', 'posts_per_page' => -1, 'post_status' => 'publish' ] ) as $p ) {
-		$kw      = strtolower( trim( preg_split( '/\s*[|:—–]\s*/u', $p->post_title )[0] ) );
+		$kw      = strtolower( trim( preg_split( '/\s*[|:—–]\s*/u', $p->post_title )[0], " \"'“”‘’" ) );
 		$current = trim( (string) get_post_meta( $p->ID, 'rank_math_focus_keyword', true ) );
 		$primary = trim( explode( ',', $current )[0] );
-		$mismatch = '' !== $primary && false === stripos( $p->post_title, $primary );
+		$mismatch = '' !== $primary && ( false === stripos( $p->post_title, $primary ) || preg_match( '/["“”]/u', $primary ) );
 		if ( $mismatch ) {
 			$report['fixed'][] = $p->post_title . ': "' . $primary . '" → "' . $kw . '"';
 		}
