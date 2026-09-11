@@ -345,6 +345,7 @@ add_action( 'template_redirect', function () {
 	if ( '/llms.txt' !== wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ) ) {
 		return;
 	}
+	status_header( 200 ); // WordPress has already decided this URL is a 404.
 	header( 'Content-Type: text/plain; charset=utf-8' );
 	header( 'Cache-Control: public, max-age=86400' );
 	$lines   = [ '# ' . get_bloginfo( 'name' ), '', '> ' . ( vs_opt( 'hero_intro' ) ?: get_bloginfo( 'description' ) ), '', 'Broadcast and production studio hire in London, Dublin, Paris and Istanbul. Booking: ' . vs_opt( 'email' ) . '.', '', '## Cities', '' ];
