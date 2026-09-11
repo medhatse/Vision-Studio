@@ -174,3 +174,36 @@ add_filter( 'shortcode_atts_wpcf7', function ( $out, $pairs, $atts ) {
 	}
 	return $out;
 }, 10, 3 );
+
+// ----- Contact Form 7 + reCAPTCHA: load on demand -----
+// Google's reCAPTCHA script is the heaviest asset on studio pages and only matters once someone reaches
+// the booking form. Take it (and CF7's reCAPTCHA glue) out of the normal load and inject both when the
+// form scrolls near the viewport or the visitor interacts with the page.
+add_action( 'wp_enqueue_scripts', function () {
+	if ( is_admin() ) {
+		return;
+	}
+	$scripts = wp_scripts();
+	if ( empty( $scripts->registered['google-recaptcha'] ) || empty( $scripts->registered['wpcf7-recaptcha'] ) ) {
+		return;
+	}
+	$api    = $scripts->registered['google-recaptcha']->src;
+	$glue   = $scripts->registered['wpcf7-recaptcha']->src;
+	$before = $scripts->get_data( 'wpcf7-recaptcha', 'before' );
+	$inline = is_array( $before ) ? implode( "\n", array_filter( $before, 'is_string' ) ) : (string) $before;
+	wp_dequeue_script( 'google-recaptcha' );
+	wp_dequeue_script( 'wpcf7-recaptcha' );
+	add_action( 'wp_footer', function () use ( $api, $glue, $inline ) {
+		?>
+<script>
+(function(){var done=false,api=<?php echo wp_json_encode( $api ); ?>,glue=<?php echo wp_json_encode( $glue ); ?>;
+function add(src,cb){var s=document.createElement('script');s.src=src;s.async=true;s.onload=cb||null;document.head.appendChild(s);}
+function load(){if(done)return;done=true;<?php echo $inline ? 'try{' . $inline . '}catch(e){}' : ''; ?>add(api,function(){add(glue);});}
+var forms=document.querySelectorAll('.wpcf7');if(!forms.length)return;
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){load();io.disconnect();}});},{rootMargin:'600px'});forms.forEach(function(f){io.observe(f);});}else{load();}
+['pointerdown','keydown','touchstart'].forEach(function(ev){window.addEventListener(ev,load,{once:true,passive:true});});
+})();
+</script>
+		<?php
+	}, 99 );
+}, 200 );
