@@ -4,7 +4,13 @@
  */
 defined( 'ABSPATH' ) || exit;
 
-define( 'VS_VERSION', '1.0.0' );
+define( 'VS_VERSION', '1.1.0' );
+
+if ( ! function_exists( 'str_starts_with' ) ) { // PHP < 8
+	function str_starts_with( $haystack, $needle ) {
+		return '' === $needle || 0 === strpos( $haystack, $needle );
+	}
+}
 define( 'VS_DIR', get_template_directory() );
 define( 'VS_URI', get_template_directory_uri() );
 
@@ -16,6 +22,7 @@ require VS_DIR . '/inc/redirects.php';
 require VS_DIR . '/inc/importer.php';
 require VS_DIR . '/inc/seo.php';
 require VS_DIR . '/inc/icons.php';
+require VS_DIR . '/inc/compat.php';
 
 add_action( 'after_setup_theme', function () {
 	add_theme_support( 'title-tag' );
