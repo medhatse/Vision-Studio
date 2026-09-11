@@ -54,7 +54,7 @@ $gallery_studios = get_posts( [ 'post_type' => 'studio', 'posts_per_page' => 6, 
 $spans = [ 1, 1, 2, 2, 1, 1 ];
 if ( $gallery_studios ) : ?>
 <section id="gallery" class="bg-black py-24 lg:py-32 border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10">
-<div class="fade-up flex items-end justify-between mb-10 flex-wrap gap-4"><div><?php echo vs_eyebrow( __( 'Gallery', 'vision-studios' ) ) . vs_h2( __( 'From Behind The Lens.', 'vision-studios' ) ); // phpcs:ignore ?></div><?php echo vs_btn( vs_page_url( 'gallery' ), __( 'View All', 'vision-studios' ), 'ghost' ); // phpcs:ignore ?></div>
+<div class="fade-up flex items-end justify-between mb-10 flex-wrap gap-4"><div><?php echo vs_eyebrow( __( 'Gallery', 'vision-studios' ) ) . vs_h2( __( 'From Behind The Lens.', 'vision-studios' ) ); // phpcs:ignore ?></div><?php echo vs_btn( vs_page_url( 'gallery' ), __( 'View the full gallery', 'vision-studios' ), 'ghost' ); // phpcs:ignore ?></div>
 <div class="grid md:grid-cols-4 gap-3">
 <?php foreach ( $gallery_studios as $i => $s ) : $ids = vs_studio_gallery_ids( $s->ID ); $src = vs_img_url( $ids[ $i % 2 ] ?? $ids[0] ?? 0, 'vs-wide' ); if ( ! $src ) { continue; } ?>
 <button type="button" data-lightbox="home" data-src="<?php echo esc_url( $src ); ?>" data-caption="<?php echo esc_attr( $s->post_title ); ?>" class="fade-up img-zoom relative aspect-[4/3] overflow-hidden bg-white/5 md:col-span-<?php echo (int) $spans[ $i ]; ?> text-left"><img src="<?php echo esc_url( $src ); ?>" alt="<?php echo esc_attr( sprintf( __( '%s broadcast set', 'vision-studios' ), $s->post_title ) ); ?>" loading="lazy" class="absolute inset-0 w-full h-full object-cover grayscale"/></button>

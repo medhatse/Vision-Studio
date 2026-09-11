@@ -14,7 +14,7 @@
 <li><a href="<?php echo esc_url( vs_page_url( 'contact' ) ); ?>" class="hover:text-accent"><?php esc_html_e( 'Contact', 'vision-studios' ); ?></a></li>
 </ul></div>
 <div><p class="font-mono-tag text-xs lg:text-[11px] uppercase tracking-[0.2em] text-white/55 mb-4"><?php esc_html_e( 'Get In Touch', 'vision-studios' ); ?></p><ul class="space-y-2 text-sm text-white/70">
-<li><a href="mailto:<?php echo esc_attr( $vs_email ); ?>" class="hover:text-accent"><?php echo esc_html( $vs_email ); ?></a></li>
+<li><!--email_off--><a href="mailto:<?php echo esc_attr( $vs_email ); ?>" class="hover:text-accent"><?php echo esc_html( $vs_email ); ?></a><!--/email_off--></li>
 <?php foreach ( [ 'phone_uk' => __( 'United Kingdom', 'vision-studios' ), 'phone_eu' => __( 'Europe', 'vision-studios' ), 'phone_tr' => __( 'Turkey', 'vision-studios' ) ] as $k => $label ) : if ( $p = vs_opt( $k ) ) : ?>
 <li><a href="<?php echo esc_attr( vs_tel( $p ) ); ?>" class="hover:text-accent"><?php echo esc_html( $label . ' · ' . $p ); ?></a></li>
 <?php endif; endforeach; ?>

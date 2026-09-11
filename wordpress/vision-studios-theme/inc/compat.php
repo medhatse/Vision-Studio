@@ -301,3 +301,66 @@ add_filter( 'wpcf7_spam', function ( $spam ) {
 add_action( 'wp_head', function () {
 	echo '<style>.vs-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}</style>' . "\n";
 }, 6 );
+
+// ----- Content hygiene for imported / Elementor posts -----
+// Old page URLs inside post content → the new structure (avoids link-to-redirect warnings), dead editor
+// placeholders unwrapped, and Elementor posts that carry their own <h1> get it demoted so each page has one.
+add_filter( 'the_content', function ( $html ) {
+	if ( ! is_string( $html ) || '' === $html ) {
+		return $html;
+	}
+	$host = preg_quote( wp_parse_url( home_url(), PHP_URL_HOST ), '#' );
+	static $map = null;
+	if ( null === $map ) {
+		$map = [ 'about-us' => vs_page_url( 'about' ), 'contact-us' => vs_page_url( 'contact' ), 'blogs' => vs_news_url() ];
+		foreach ( get_posts( [ 'post_type' => 'studio', 'posts_per_page' => -1, 'fields' => 'ids' ] ) as $sid ) {
+			$map[ get_post_field( 'post_name', $sid ) ] = get_permalink( $sid );
+		}
+		foreach ( vs_cities() as $c ) {
+			$map[ $c->slug ] = get_term_link( $c );
+		}
+	}
+	$html = preg_replace_callback( '#href="https?://' . $host . '/([a-z0-9-]+)/?(?:[?\#][^"]*)?"#i', function ( $m ) use ( $map ) {
+		return isset( $map[ $m[1] ] ) ? 'href="' . esc_url( $map[ $m[1] ] ) . '"' : $m[0];
+	}, $html );
+	$html = preg_replace( '#<a\s[^>]*href="[^"]*_wp_link_placeholder[^"]*"[^>]*>(.*?)</a>#is', '$1', $html );
+	if ( is_singular( 'post' ) && function_exists( 'vs_is_elementor_view' ) && vs_is_elementor_view() ) {
+		$html = preg_replace( '#<h1(\s[^>]*)?>#i', '<h2$1>', $html );
+		$html = preg_replace( '#</h1>#i', '</h2>', $html );
+	}
+	return $html;
+}, 20 );
+
+// Cloudflare's "Email Address Obfuscation" rewrites mailto links into /cdn-cgi/l/email-protection, which
+// crawlers see as a 404. These markers tell Cloudflare to leave the wrapped markup alone.
+function vs_email_off( string $html ): string {
+	return '<!--email_off-->' . $html . '<!--/email_off-->';
+}
+add_filter( 'the_content', function ( $html ) {
+	return is_string( $html ) && false !== strpos( $html, 'mailto:' ) ? preg_replace( '#(<a\s[^>]*href="mailto:[^"]*"[^>]*>.*?</a>)#is', '<!--email_off-->$1<!--/email_off-->', $html ) : $html;
+}, 21 );
+
+// /llms.txt — a plain-text guide for AI search crawlers (same idea as robots.txt).
+add_action( 'template_redirect', function () {
+	if ( '/llms.txt' !== wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ) ) {
+		return;
+	}
+	header( 'Content-Type: text/plain; charset=utf-8' );
+	header( 'Cache-Control: public, max-age=86400' );
+	$lines   = [ '# ' . get_bloginfo( 'name' ), '', '> ' . ( vs_opt( 'hero_intro' ) ?: get_bloginfo( 'description' ) ), '', 'Broadcast and production studio hire in London, Dublin, Paris and Istanbul. Booking: ' . vs_opt( 'email' ) . '.', '', '## Cities', '' ];
+	foreach ( vs_cities() as $c ) {
+		$lines[] = '- [' . $c->name . ' studios](' . get_term_link( $c ) . '): ' . count( vs_city_studios( $c ) ) . ' studios, ' . vs_term_meta( $c->term_id, 'address' );
+	}
+	$lines[] = ''; $lines[] = '## Studios'; $lines[] = '';
+	foreach ( get_posts( [ 'post_type' => 'studio', 'posts_per_page' => -1, 'orderby' => [ 'menu_order' => 'ASC', 'title' => 'ASC' ] ] ) as $s ) {
+		$area = vs_meta( $s->ID, 'area' );
+		$lines[] = '- [' . $s->post_title . '](' . get_permalink( $s ) . '): ' . ( $area ? $area . ' sq. mt., ' : '' ) . implode( '; ', array_slice( vs_lines( vs_meta( $s->ID, 'highlights' ) ), 0, 3 ) );
+	}
+	$lines[] = ''; $lines[] = '## Pages'; $lines[] = '';
+	foreach ( [ 'about' => 'About Vision Studios', 'contact' => 'Contact and booking', 'gallery' => 'Photo gallery' ] as $slug => $label ) {
+		$lines[] = '- [' . $label . '](' . vs_page_url( $slug ) . ')';
+	}
+	$lines[] = '- [News](' . vs_news_url() . ')';
+	echo implode( "\n", $lines ), "\n";
+	exit;
+} );

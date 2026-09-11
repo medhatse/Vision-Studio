@@ -124,7 +124,7 @@ function vs_cta_band( string $heading = '', string $text = '' ): string {
 	$text    = $text ?: vs_opt( 'cta_text' );
 	return '<section id="contact" class="bg-black py-24 lg:py-32 border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-10 items-center">'
 		. '<h2 class="fade-up font-display uppercase text-[clamp(2.4rem,7vw,4.5rem)] leading-[0.95]">' . wp_kses_post( $heading ) . '</h2>'
-		. '<div class="fade-up"><p class="text-white/70 max-w-md mb-6">' . esc_html( $text ) . '</p><div class="flex flex-wrap gap-4">' . vs_btn( vs_page_url( 'contact' ), __( 'Start a Booking', 'vision-studios' ), 'white' ) . vs_btn( 'mailto:' . vs_opt( 'email' ), vs_opt( 'email' ), 'ghost' ) . '</div></div></div></section>';
+		. '<div class="fade-up"><p class="text-white/70 max-w-md mb-6">' . esc_html( $text ) . '</p><div class="flex flex-wrap gap-4">' . vs_btn( vs_page_url( 'contact' ), __( 'Start a Booking', 'vision-studios' ), 'white' ) . vs_email_off( vs_btn( 'mailto:' . vs_opt( 'email' ), vs_opt( 'email' ), 'ghost' ) ) . '</div></div></div></section>';
 }
 
 function vs_map( string $query, string $title ): string {

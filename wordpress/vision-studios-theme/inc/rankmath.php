@@ -147,6 +147,38 @@ add_action( 'admin_init', function () {
 			}
 		}
 	}
+	// Titles over ~65 characters get cut off in search results: shorten the two long page titles and drop
+	// the site-name suffix from long post titles.
+	$short = [ 'home' => 'Broadcast Studio Hire | London, Dublin, Paris & Istanbul', 'contact' => 'Contact Vision Studios | Book a TV Studio' ];
+	foreach ( $short as $slug => $title ) {
+		$p = get_page_by_path( $slug );
+		if ( $p && mb_strlen( (string) get_post_meta( $p->ID, 'rank_math_title', true ) ) > 65 ) {
+			update_post_meta( $p->ID, 'rank_math_title', $title );
+			$report['titles']++;
+		}
+	}
+	foreach ( get_posts( [ 'post_type' => 'post', 'posts_per_page' => -1, 'post_status' => 'publish' ] ) as $p ) {
+		if ( '' === trim( (string) get_post_meta( $p->ID, 'rank_math_title', true ) ) && mb_strlen( $p->post_title . ' - ' . $site ) > 65 ) {
+			update_post_meta( $p->ID, 'rank_math_title', $p->post_title );
+			$report['titles']++;
+		}
+	}
+
+	// The News category archive: a real description instead of Rank Math's 48-character default.
+	$news_cat = get_term_by( 'slug', 'news', 'category' );
+	if ( $news_cat && '' === trim( (string) get_term_meta( $news_cat->term_id, 'rank_math_description', true ) ) ) {
+		update_term_meta( $news_cat->term_id, 'rank_math_description', 'Productions, live events and behind-the-scenes stories from Vision Studios in London, Dublin, Paris and Istanbul.' );
+		$report['descriptions']++;
+	}
+
+	// The LinkedIn auto-publish category archive is an internal duplicate: keep it out of the index.
+	foreach ( get_terms( [ 'taxonomy' => 'category', 'hide_empty' => false ] ) as $cat ) {
+		if ( preg_match( '/linke?d?in/i', $cat->slug . ' ' . $cat->name ) && ! in_array( 'noindex', (array) get_term_meta( $cat->term_id, 'rank_math_robots', true ), true ) ) {
+			update_term_meta( $cat->term_id, 'rank_math_robots', [ 'noindex', 'follow' ] );
+			$changed[] = 'noindex category ' . $cat->slug;
+		}
+	}
+
 	// Site-wide fallback share image, and no "Article by Person" schema on ordinary pages (the theme and
 	// Rank Math's Local SEO already describe them as WebPage / Place).
 	if ( $hero_id && empty( $opts['open_graph_image_id'] ) ) {
