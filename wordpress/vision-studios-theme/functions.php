@@ -14,6 +14,11 @@ if ( ! function_exists( 'str_starts_with' ) ) { // PHP < 8
 define( 'VS_DIR', get_template_directory() );
 define( 'VS_URI', get_template_directory_uri() );
 
+// Elementor's post rendering (REST API, editor) exceeds the host's 128M limit; raise it when PHP allows.
+if ( (int) ini_get( 'memory_limit' ) > 0 && (int) ini_get( 'memory_limit' ) < 256 ) {
+	@ini_set( 'memory_limit', '256M' ); // phpcs:ignore
+}
+
 require VS_DIR . '/inc/post-types.php';
 require VS_DIR . '/inc/meta-boxes.php';
 require VS_DIR . '/inc/customizer.php';
