@@ -213,7 +213,7 @@ add_action( 'wp_print_footer_scripts', function () {
 <script>
 (function(){var done=false,srcs=<?php echo wp_json_encode( array_values( array_filter( $order ) ) ); ?>;
 function add(i){if(i>=srcs.length)return;var s=document.createElement('script');s.src=srcs[i];s.async=true;s.onload=function(){add(i+1);};document.head.appendChild(s);}
-function load(){if(done)return;done=true;try{<?php echo $inline; // phpcs:ignore ?>}catch(e){}add(0);}
+function load(){if(done)return;done=true;var d=<?php echo wp_json_encode( $inline ); ?>;if(d){var t=document.createElement('script');t.text=d;document.head.appendChild(t);}add(0);}
 var forms=document.querySelectorAll('.wpcf7');if(!forms.length)return;
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){load();io.disconnect();}});},{rootMargin:'600px'});forms.forEach(function(f){io.observe(f);});}else{load();}
 ['pointerdown','keydown','touchstart'].forEach(function(ev){window.addEventListener(ev,load,{once:true,passive:true});});
@@ -221,3 +221,66 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es
 </script>
 	<?php
 }, 1 );
+
+// ----- Front-end weight -----
+// jQuery is only needed by plugin scripts that print in the footer; loading it in <head> blocks the first
+// paint. Move it (and jquery-migrate) to the footer on the front end.
+add_action( 'wp_enqueue_scripts', function () {
+	if ( is_admin() ) {
+		return;
+	}
+	foreach ( [ 'jquery', 'jquery-core', 'jquery-migrate' ] as $h ) {
+		wp_scripts()->add_data( $h, 'group', 1 );
+	}
+	// The theme styles page content itself (prose-vs); the block-library stylesheet is unused on every view.
+	foreach ( [ 'wp-block-library', 'wp-block-library-theme', 'global-styles', 'classic-theme-styles' ] as $h ) {
+		wp_dequeue_style( $h );
+	}
+}, 100 );
+
+// ----- Image sizes for media uploaded before the theme -----
+// WordPress only creates a theme's custom sizes (vs-card / vs-wide / vs-thumb) at upload time, so images
+// that were already in the library fall back to the full-size file. Admin-only, batched:
+// /wp-admin/?vs_regen=1&offset=0  (processes 15 attachments per request; follow the "next" link)
+add_action( 'admin_init', function () {
+	if ( ! isset( $_GET['vs_regen'] ) || ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	require_once ABSPATH . 'wp-admin/includes/image.php';
+	set_time_limit( 120 );
+	$offset = max( 0, (int) ( $_GET['offset'] ?? 0 ) );
+	$per    = 15;
+	$ids    = [];
+	foreach ( get_posts( [ 'post_type' => [ 'studio', 'vs_client', 'vs_testimonial', 'page', 'post' ], 'posts_per_page' => -1, 'post_status' => 'any', 'fields' => 'ids' ] ) as $pid ) {
+		$ids = array_merge( $ids, array_map( 'intval', explode( ',', (string) get_post_meta( $pid, '_vs_gallery', true ) ) ), [ (int) get_post_thumbnail_id( $pid ), (int) get_post_meta( $pid, '_vs_floor_plan', true ) ] );
+	}
+	foreach ( get_terms( [ 'taxonomy' => 'city', 'hide_empty' => false ] ) as $t ) {
+		$ids[] = (int) get_term_meta( $t->term_id, '_vs_image', true );
+	}
+	$ids   = array_values( array_unique( array_filter( $ids ) ) );
+	$batch = array_slice( $ids, $offset, $per );
+	header( 'Content-Type: text/plain' );
+	echo 'attachments: ', count( $ids ), " | batch from ", $offset, "\n";
+	foreach ( $batch as $aid ) {
+		$file = get_attached_file( $aid );
+		if ( ! $file || ! file_exists( $file ) ) {
+			echo $aid, ': missing file', "\n";
+			continue;
+		}
+		$meta = wp_get_attachment_metadata( $aid );
+		if ( ! empty( $meta['sizes']['vs-wide'] ) || ! empty( $meta['sizes']['vs-card'] ) ) {
+			echo $aid, ': already has theme sizes', "\n";
+			continue;
+		}
+		$new = wp_generate_attachment_metadata( $aid, $file );
+		if ( is_wp_error( $new ) || empty( $new ) ) {
+			echo $aid, ': failed', "\n";
+			continue;
+		}
+		wp_update_attachment_metadata( $aid, $new );
+		echo $aid, ': ', implode( ', ', array_keys( $new['sizes'] ?? [] ) ), "\n";
+	}
+	$next = $offset + $per;
+	echo $next < count( $ids ) ? 'next: ' . admin_url( '?vs_regen=1&offset=' . $next ) : 'done', "\n";
+	exit;
+} );
