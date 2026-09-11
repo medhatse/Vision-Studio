@@ -141,3 +141,25 @@ add_action( 'transition_post_status', function ( $new, $old, $post ) {
 }, 10, 3 );
 add_action( 'customize_save_after', 'vs_purge_nginx_cache' );
 add_action( 'after_switch_theme', 'vs_purge_nginx_cache' );
+
+// Admin-only manual purge with a report: /wp-admin/?vs_cache_purge=1
+add_action( 'admin_init', function () {
+	if ( empty( $_GET['vs_cache_purge'] ) || ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	header( 'Content-Type: text/plain' );
+	$dir = VS_NGINX_CACHE_PATH;
+	echo 'cache dir: ', $dir, ' | exists: ', is_dir( $dir ) ? 'yes' : 'no', ' | writable: ', is_writable( $dir ) ? 'yes' : 'no', "\n";
+	if ( is_dir( $dir ) ) {
+		$before = 0;
+		foreach ( new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ) ) as $f ) {
+			if ( $f->isFile() ) {
+				$before++;
+			}
+		}
+		echo 'files before: ', $before, "\n";
+		echo 'deleted: ', vs_purge_nginx_cache(), "\n";
+	}
+	echo 'php user id: ', function_exists( 'posix_geteuid' ) ? posix_geteuid() : 'n/a', ' | dir owner id: ', is_dir( $dir ) ? fileowner( $dir ) : 'n/a', ' | perms: ', is_dir( $dir ) ? substr( sprintf( '%o', fileperms( $dir ) ), -4 ) : 'n/a', "\n";
+	exit;
+} );
