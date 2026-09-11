@@ -165,3 +165,12 @@ add_action( 'admin_init', function () {
 	echo 'php user id: ', function_exists( 'posix_geteuid' ) ? posix_geteuid() : 'n/a', ' | dir owner id: ', is_dir( $dir ) ? fileowner( $dir ) : 'n/a', ' | perms: ', is_dir( $dir ) ? substr( sprintf( '%o', fileperms( $dir ) ), -4 ) : 'n/a', "\n";
 	exit;
 } );
+
+// Contact Form 7 drops unknown shortcode attributes; allow "studio" through so
+// "[text studio default:shortcode_attr]" is prefilled with the studio being booked.
+add_filter( 'shortcode_atts_wpcf7', function ( $out, $pairs, $atts ) {
+	if ( isset( $atts['studio'] ) ) {
+		$out['studio'] = sanitize_text_field( $atts['studio'] );
+	}
+	return $out;
+}, 10, 3 );
