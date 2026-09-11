@@ -30,18 +30,9 @@ installing on the existing vision-studios.net WordPress. It adds:
 
 - **Forms**: create two Contact Form 7 forms (booking and contact) and paste their shortcodes in
   **Appearance → Customize → Vision Studios → Forms**. Until then the forms open the visitor's mail client.
-  A booking form template:
-  ```
-  <label><span>Your name *</span>[text* your-name]</label>
-  <label><span>Your email *</span>[email* your-email]</label>
-  <label><span>Company</span>[text company]</label>
-  <label><span>Phone</span>[tel phone]</label>
-  <label><span>Check-in</span>[date checkin]</label>
-  <label><span>Check-out</span>[date checkout]</label>
-  <label><span>Studio</span>[text studio]</label>
-  <label><span>Message</span>[textarea message]</label>
-  [submit "Send booking request"]
-  ```
+  The studio page passes its name to the form as a shortcode attribute, so a
+  `[text studio default:shortcode_attr]` field in the booking form is prefilled with the studio being booked.
+  On vision-studios.net the existing "Booking Form" (id 744) and "Contact Page form" (id 743) are used.
 - **Menu**: the header shows Studios / Services / Gallery / News / About / Contact by default. Assign a
   menu to the *Primary navigation* location to override it.
 - **Editing**: studios are edited under **Studios** (gallery order = hero slider order). City details are

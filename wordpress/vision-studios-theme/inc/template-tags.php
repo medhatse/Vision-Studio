@@ -137,6 +137,10 @@ function vs_map( string $query, string $title ): string {
 function vs_form( string $which, string $studio = '' ): string {
 	$shortcode = vs_opt( 'booking' === $which ? 'cf7_booking' : 'cf7_contact' );
 	if ( $shortcode && shortcode_exists( 'contact-form-7' ) ) {
+		// Pass the studio name to Contact Form 7 so a "[text studio default:shortcode_attr]" field is prefilled.
+		if ( $studio && false === strpos( $shortcode, 'studio=' ) ) {
+			$shortcode = preg_replace( '/\]$/', ' studio="' . esc_attr( $studio ) . '"]', trim( $shortcode ) );
+		}
 		return '<div class="fade-up wpcf7-wrap">' . do_shortcode( $shortcode ) . '</div>';
 	}
 	$f = fn( $name, $label, $type = 'text', $req = false ) => '<label class="block"><span>' . esc_html( $label ) . ( $req ? ' *' : '' ) . '</span><input name="' . $name . '" type="' . $type . '"' . ( $req ? ' required' : '' ) . '/></label>';
