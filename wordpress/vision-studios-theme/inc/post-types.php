@@ -40,6 +40,17 @@ function vs_register_post_types(): void {
 		'show_in_rest' => true,
 	] );
 
+	register_post_type( 'vs_testimonial', [
+		'labels'       => [ 'name' => __( 'Testimonials', 'vision-studios' ), 'singular_name' => __( 'Testimonial', 'vision-studios' ), 'add_new_item' => __( 'Add New Testimonial', 'vision-studios' ), 'menu_name' => __( 'Testimonials', 'vision-studios' ) ],
+		'description'  => __( 'Title = person\'s name, Excerpt = role and company, Content = the quote. Shown on the home page when at least one is published.', 'vision-studios' ),
+		'public'       => false,
+		'show_ui'      => true,
+		'menu_icon'    => 'dashicons-format-quote',
+		'menu_position'=> 8,
+		'supports'     => [ 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes' ],
+		'show_in_rest' => true,
+	] );
+
 	register_post_type( 'vs_client', [
 		'labels'       => [ 'name' => __( 'Clients', 'vision-studios' ), 'singular_name' => __( 'Client', 'vision-studios' ), 'add_new_item' => __( 'Add New Client', 'vision-studios' ), 'menu_name' => __( 'Clients', 'vision-studios' ) ],
 		'public'       => false,

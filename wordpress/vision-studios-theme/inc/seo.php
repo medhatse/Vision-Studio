@@ -115,7 +115,7 @@ add_action( 'admin_init', function () {
 	if ( ! is_array( $opts ) ) {
 		$opts = [];
 	}
-	update_option( 'rank-math-options-sitemap', array_merge( $opts, [ 'pt_studio_sitemap' => 'on', 'tax_city_sitemap' => 'on', 'pt_vs_service_sitemap' => 'off', 'pt_vs_client_sitemap' => 'off' ] ) );
+	update_option( 'rank-math-options-sitemap', array_merge( $opts, [ 'pt_studio_sitemap' => 'on', 'tax_city_sitemap' => 'on', 'pt_vs_service_sitemap' => 'off', 'pt_vs_client_sitemap' => 'off', 'pt_vs_testimonial_sitemap' => 'off' ] ) );
 	update_option( 'vs_rank_math_sitemap_v1', 1 );
 	if ( class_exists( '\RankMath\Sitemap\Cache' ) && method_exists( '\RankMath\Sitemap\Cache', 'invalidate_storage' ) ) {
 		\RankMath\Sitemap\Cache::invalidate_storage();

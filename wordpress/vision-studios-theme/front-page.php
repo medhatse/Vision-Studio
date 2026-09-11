@@ -78,6 +78,14 @@ if ( $gallery_studios ) : ?>
 </div></div></section>
 <?php endif; ?>
 
+<?php $quotes = get_posts( [ 'post_type' => 'vs_testimonial', 'posts_per_page' => 3, 'orderby' => [ 'menu_order' => 'ASC', 'date' => 'DESC' ] ] ); if ( $quotes ) : ?>
+<section id="testimonials" class="bg-black py-24 lg:py-32 border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10">
+<div class="fade-up mb-12"><?php echo vs_eyebrow( __( 'What Clients Say', 'vision-studios' ) ) . vs_h2( __( 'In Their Words.', 'vision-studios' ) ); // phpcs:ignore ?></div>
+<div class="grid md:grid-cols-3 gap-px bg-white/10">
+<?php foreach ( $quotes as $q ) : ?><blockquote class="fade-up bg-black p-8 flex flex-col gap-6"><p class="text-white/80 leading-relaxed text-lg">“<?php echo esc_html( wp_strip_all_tags( $q->post_content ) ); ?>”</p><footer class="mt-auto flex items-center gap-4"><?php echo get_the_post_thumbnail( $q, [ 48, 48 ], [ 'class' => 'w-12 h-12 rounded-full object-cover grayscale', 'loading' => 'lazy' ] ); ?><div><p class="font-display uppercase"><?php echo esc_html( $q->post_title ); ?></p><p class="font-mono-tag text-xs lg:text-[10px] uppercase tracking-[0.15em] text-white/55"><?php echo esc_html( $q->post_excerpt ); ?></p></div></footer></blockquote><?php endforeach; ?>
+</div></div></section>
+<?php endif; ?>
+
 <?php $clients = get_posts( [ 'post_type' => 'vs_client', 'posts_per_page' => -1, 'orderby' => [ 'menu_order' => 'ASC', 'title' => 'ASC' ] ] ); if ( $clients ) : ?>
 <section id="trusted-by" class="bg-black py-20 border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10">
 <div class="fade-up flex items-center justify-between mb-8 flex-wrap gap-2"><p class="font-mono-tag text-xs uppercase tracking-[0.25em] text-white/50"><?php esc_html_e( 'Trusted By Broadcasters & Brands', 'vision-studios' ); ?></p><p class="font-mono-tag text-xs uppercase tracking-[0.25em] text-white/50"><?php esc_html_e( 'Some of Our Clients', 'vision-studios' ); ?></p></div>
