@@ -28,6 +28,7 @@ require VS_DIR . '/inc/importer.php';
 require VS_DIR . '/inc/seo.php';
 require VS_DIR . '/inc/icons.php';
 require VS_DIR . '/inc/compat.php';
+require VS_DIR . '/inc/rankmath.php';
 
 add_action( 'after_setup_theme', function () {
 	add_theme_support( 'title-tag' );
