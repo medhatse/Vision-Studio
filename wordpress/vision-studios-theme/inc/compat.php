@@ -296,6 +296,7 @@ add_action( 'admin_init', function () {
 	echo 'opcache extension: ', extension_loaded( 'Zend OPcache' ) ? 'loaded' : 'MISSING', ' | opcache.enable=', ini_get( 'opcache.enable' ), ' | status: ', $oc ? ( $oc['opcache_enabled'] ? 'enabled, ' . $oc['opcache_statistics']['num_cached_scripts'] . ' scripts cached, hit rate ' . round( $oc['opcache_statistics']['opcache_hit_rate'] ) . '%' : 'disabled' ) : 'n/a', "\n";
 	echo 'time to admin_init: ', timer_stop( 0, 3 ), 's | db queries so far: ', get_num_queries(), ' | peak memory: ', round( memory_get_peak_usage() / 1048576 ), 'M', "\n";
 	echo 'opcache limits: memory ', ini_get( 'opcache.memory_consumption' ), 'M | max files ', ini_get( 'opcache.max_accelerated_files' ), ' | used ', $oc ? round( $oc['memory_usage']['used_memory'] / 1048576 ) . 'M' : 'n/a', ' | wasted ', $oc ? round( $oc['memory_usage']['current_wasted_percentage'] ) . '%' : 'n/a', "\n";
+	echo 'php.ini: memory_limit ', ini_get( 'memory_limit' ), ' | display_errors ', ini_get( 'display_errors' ) ?: 'off', ' | timezone ', ini_get( 'date.timezone' ), "\n";
 	echo 'object cache: ', wp_using_ext_object_cache() ? 'persistent' : 'none (default)', "\n";
 	$t = microtime( true ); wp_remote_get( 'https://www.google.com/generate_204', [ 'timeout' => 5 ] ); echo 'outbound http test: ', round( microtime( true ) - $t, 2 ), 's', "\n";
 	$t = microtime( true ); global $wpdb; $wpdb->get_var( 'SELECT COUNT(*) FROM ' . $wpdb->posts ); echo 'db roundtrip: ', round( ( microtime( true ) - $t ) * 1000 ), 'ms', "\n";
