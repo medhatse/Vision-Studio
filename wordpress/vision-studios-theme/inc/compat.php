@@ -6,7 +6,9 @@ defined( 'ABSPATH' ) || exit;
 
 /** True when the current singular view was built with Elementor (news posts on vision-studios.net). */
 function vs_is_elementor_view(): bool {
-	if ( ! is_singular() || ! class_exists( '\Elementor\Plugin' ) ) {
+	// The theme renders the front page and the studio/city/news/about/contact/gallery pages itself, even when
+	// an old Elementor page with the same slug was reused by the importer.
+	if ( ! is_singular() || is_front_page() || is_page() || ! class_exists( '\Elementor\Plugin' ) ) {
 		return false;
 	}
 	$doc = \Elementor\Plugin::$instance->documents->get( get_queried_object_id() );
