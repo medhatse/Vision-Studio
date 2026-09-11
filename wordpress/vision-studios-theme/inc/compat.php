@@ -287,3 +287,17 @@ add_action( 'admin_init', function () {
 	echo 'active plugins: ', implode( ', ', array_map( fn( $p ) => dirname( $p ), (array) get_option( 'active_plugins' ) ) ), "\n";
 	exit;
 } );
+
+// ----- Contact Form 7 honeypot -----
+// Baseline spam protection that needs no keys: a hidden field real visitors never fill in. Submissions
+// with it filled are marked as spam (CF7 shows its spam message and sends nothing). reCAPTCHA can be
+// re-added to the forms on top of this once keys are configured under Contact → Integration.
+add_filter( 'wpcf7_form_elements', function ( $html ) {
+	return $html . '<span class="vs-hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="vs_website" value="" tabindex="-1" autocomplete="off"/></label></span>';
+} );
+add_filter( 'wpcf7_spam', function ( $spam ) {
+	return $spam || ! empty( $_POST['vs_website'] ); // phpcs:ignore
+} );
+add_action( 'wp_head', function () {
+	echo '<style>.vs-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}</style>' . "\n";
+}, 6 );
