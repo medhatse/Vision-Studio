@@ -38,6 +38,22 @@ function vs_rm_set_term( int $id, string $keyword, string $title, string $descri
 	}
 }
 
+/** Share image for Rank Math (post meta rank_math_facebook_image / _id), only when none is set. */
+function vs_rm_set_post_image( int $id, int $attachment, array &$report ): void {
+	if ( $attachment && '' === trim( (string) get_post_meta( $id, 'rank_math_facebook_image_id', true ) ) ) {
+		update_post_meta( $id, 'rank_math_facebook_image', (string) wp_get_attachment_image_url( $attachment, 'full' ) );
+		update_post_meta( $id, 'rank_math_facebook_image_id', $attachment );
+		$report['images']++;
+	}
+}
+function vs_rm_set_term_image( int $id, int $attachment, array &$report ): void {
+	if ( $attachment && '' === trim( (string) get_term_meta( $id, 'rank_math_facebook_image_id', true ) ) ) {
+		update_term_meta( $id, 'rank_math_facebook_image', (string) wp_get_attachment_image_url( $attachment, 'full' ) );
+		update_term_meta( $id, 'rank_math_facebook_image_id', $attachment );
+		$report['images']++;
+	}
+}
+
 /** Trim to a sensible meta-description length on a word boundary. */
 function vs_rm_desc( string $text ): string {
 	$text = trim( preg_replace( '/\s+/', ' ', wp_strip_all_tags( $text ) ) );
@@ -51,7 +67,7 @@ add_action( 'admin_init', function () {
 	if ( empty( $_GET['vs_seo_fill'] ) || ! current_user_can( 'manage_options' ) || ! defined( 'RANK_MATH_VERSION' ) ) {
 		return;
 	}
-	$report = [ 'keywords' => 0, 'titles' => 0, 'descriptions' => 0, 'renamed' => [], 'fixed' => [] ];
+	$report = [ 'keywords' => 0, 'titles' => 0, 'descriptions' => 0, 'images' => 0, 'renamed' => [], 'fixed' => [] ];
 	$site   = get_bloginfo( 'name' );
 	// Rank Math's "keyword in title" test looks at the post title, not the SEO title, so every keyword below
 	// is a phrase contained in the post title. force=1 re-applies keywords the fill wrote earlier.
@@ -65,6 +81,7 @@ add_action( 'admin_init', function () {
 		$desc  = $s->post_excerpt ?: sprintf( '%s for hire in %s: %s', $s->post_title, $cname, implode( ' ', array_slice( $specs, 0, 4 ) ) );
 		$kw    = false !== stripos( $s->post_title, $cname . ' studio' ) ? strtolower( $cname . ' studio' ) : strtolower( $s->post_title );
 		vs_rm_set_post( $s->ID, $kw, sprintf( '%s: %s TV Studio Hire | %s', $s->post_title, $cname, $site ), vs_rm_desc( $desc ), $report, $force );
+		vs_rm_set_post_image( $s->ID, (int) ( vs_studio_gallery_ids( $s->ID )[0] ?? 0 ), $report );
 	}
 
 	// Cities: "TV studios in <City>".
@@ -72,6 +89,12 @@ add_action( 'admin_init', function () {
 		$names = implode( ', ', wp_list_pluck( vs_city_studios( $t ), 'post_title' ) );
 		$desc  = $t->description ? wp_trim_words( wp_strip_all_tags( $t->description ), 26, '' ) : sprintf( 'Fully equipped broadcast and production studios for hire in %s: %s.', $t->name, $names );
 		vs_rm_set_term( (int) $t->term_id, strtolower( 'TV studios in ' . $t->name ), sprintf( 'TV Studios in %s for Hire | %s', $t->name, $site ), vs_rm_desc( $desc ), $report );
+		vs_rm_set_term_image( (int) $t->term_id, vs_city_image_id( $t ), $report );
+	}
+	$hero_id = (int) vs_opt( 'hero_image' );
+	if ( ! $hero_id || ! wp_attachment_is_image( $hero_id ) ) {
+		$cities  = vs_cities();
+		$hero_id = $cities ? vs_city_image_id( $cities[1] ?? $cities[0] ) : 0;
 	}
 
 	// Theme pages: [ keyword, post title containing it, SEO title, description ]. Page titles only show in
@@ -95,6 +118,7 @@ add_action( 'admin_init', function () {
 			$report['renamed'][] = $p->post_title . ' → ' . $row[1];
 		}
 		vs_rm_set_post( $p->ID, $row[0], $row[2], vs_rm_desc( $row[3] ?: ( $p->post_excerpt ?: wp_trim_words( wp_strip_all_tags( $p->post_content ), 26, '' ) ) ), $report, $force );
+		vs_rm_set_post_image( $p->ID, (int) get_post_thumbnail_id( $p ) ?: $hero_id, $report );
 	}
 
 	// Posts: the title's main phrase is the keyword, so the "keyword in title" check passes. A keyword set
@@ -108,6 +132,7 @@ add_action( 'admin_init', function () {
 			$report['fixed'][] = $p->post_title . ': "' . $primary . '" → "' . $kw . '"';
 		}
 		vs_rm_set_post( $p->ID, $kw, '', vs_rm_desc( $p->post_excerpt ?: wp_trim_words( wp_strip_all_tags( strip_shortcodes( $p->post_content ) ), 26, '' ) ), $report, $mismatch );
+		vs_rm_set_post_image( $p->ID, (int) get_post_thumbnail_id( $p ), $report );
 	}
 
 	// Internal post types (LinkedIn auto-publish copies, theme services/clients/testimonials): no SEO controls,
@@ -122,11 +147,22 @@ add_action( 'admin_init', function () {
 			}
 		}
 	}
+	// Site-wide fallback share image, and no "Article by Person" schema on ordinary pages (the theme and
+	// Rank Math's Local SEO already describe them as WebPage / Place).
+	if ( $hero_id && empty( $opts['open_graph_image_id'] ) ) {
+		$opts['open_graph_image']    = (string) wp_get_attachment_image_url( $hero_id, 'full' );
+		$opts['open_graph_image_id'] = $hero_id;
+		$changed[] = 'default share image';
+	}
+	if ( ( $opts['pt_page_default_rich_snippet'] ?? '' ) !== 'off' ) {
+		$opts['pt_page_default_rich_snippet'] = 'off';
+		$changed[] = 'page schema: none';
+	}
 	if ( $changed ) {
 		update_option( 'rank-math-options-titles', $opts );
 	}
 
 	header( 'Content-Type: text/plain' );
-	printf( "focus keywords set: %d\nSEO titles set: %d\ndescriptions set: %d\nSEO controls disabled for: %s\npages renamed: %s\npost keywords replaced: %s\n", $report['keywords'], $report['titles'], $report['descriptions'], $changed ? implode( ', ', $changed ) : 'nothing new', $report['renamed'] ? implode( '; ', $report['renamed'] ) : 'none', $report['fixed'] ? implode( '; ', $report['fixed'] ) : 'none' );
+	printf( "focus keywords set: %d\nSEO titles set: %d\ndescriptions set: %d\nshare images set: %d\noptions changed: %s\npages renamed: %s\npost keywords replaced: %s\n", $report['keywords'], $report['titles'], $report['descriptions'], $report['images'], $changed ? implode( ', ', $changed ) : 'nothing new', $report['renamed'] ? implode( '; ', $report['renamed'] ) : 'none', $report['fixed'] ? implode( '; ', $report['fixed'] ) : 'none' );
 	exit;
 } );

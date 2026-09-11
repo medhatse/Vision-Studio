@@ -232,8 +232,8 @@ add_action( 'wp_enqueue_scripts', function () {
 	foreach ( [ 'jquery', 'jquery-core', 'jquery-migrate' ] as $h ) {
 		wp_scripts()->add_data( $h, 'group', 1 );
 	}
-	// The theme styles page content itself (prose-vs); the block-library stylesheet is unused on every view.
-	foreach ( [ 'wp-block-library', 'wp-block-library-theme', 'global-styles', 'classic-theme-styles' ] as $h ) {
+	// The theme styles page content (prose-vs) and Contact Form 7 forms itself; these stylesheets are unused.
+	foreach ( [ 'wp-block-library', 'wp-block-library-theme', 'global-styles', 'classic-theme-styles', 'contact-form-7' ] as $h ) {
 		wp_dequeue_style( $h );
 	}
 }, 100 );
