@@ -1,0 +1,240 @@
+{
+  "_comment": "Editorial copy for studio and city pages. Written from the published specs only; pricing is left for the owner (set priceFrom per studio). Hand-maintained — fetch-data.mjs never overwrites this file.",
+  "sharedFaq": [
+    ["How do I book a studio?", "Email booking@vision-studios.net or call the local number on this page with your dates and a short brief. We reply with availability, a crew recommendation and a quote, usually within a working day."],
+    ["Can you provide a crew?", "Yes. We supply directors, cinematographers, producers, sound engineers, lighting and post-production specialists, so you can arrive with just your talent and script."],
+    ["Can you build a custom set?", "Yes. Our set design team handles everything from the initial concept to manufacturing and installation, on any scale."],
+    ["Can I hire extra equipment?", "Yes. Cameras, lenses, lighting, audio gear and post-production tools are available to hire alongside the studio."]
+  ],
+  "studios": {
+    "london-studio-1": {
+      "priceFrom": "",
+      "intro": [
+        "London Studio 1 is our flagship space in the capital: a 110 square metre floor with a dedicated 18 square metre gallery, built for multi-camera live television and podcast production at Kendal Avenue, W3.",
+        "Four Sony HSC-100R broadcast cameras on robotic pedestals feed the gallery through professional CCUs, with three Auto-Q prompter systems for presenters. LED studio lighting runs from a DMX-512 console on a dynamic ceiling grid, so a news set, a talk show and a product launch can be lit in the same day. Audio goes through a digital mixer with eight wireless neck microphones, six podcast microphones and two in-ear monitors.",
+        "Generator and UPS backup keep live programmes on air. The studio is a regular home for live broadcasts, talk shows, corporate presentations and radio-style podcasts recorded on video."
+      ],
+      "faq": [
+        ["What is London Studio 1 best suited to?", "Multi-camera live television, talk shows, interviews, podcasts and corporate presentations. Four robotic Sony cameras, three prompters and a full gallery make it our most complete live set-up in London."],
+        ["Is there a gallery / control room?", "Yes, an 18 square metre gallery with a digital audio mixer, camera control units and prompting, staffed by our engineers or yours."],
+        ["Is the power backed up?", "Yes. The studio runs on generator and UPS backup so live programmes are not interrupted."]
+      ]
+    },
+    "london-studio-2": {
+      "priceFrom": "",
+      "intro": [
+        "London Studio 2 is a compact 61 square metre broadcast studio with its own 15 square metre gallery, in the same Kendal Avenue building as Studio 1. It suits interviews, news inserts, two- and three-camera shows and photography sessions where a smaller, quick-to-light space is an advantage.",
+        "Three Sony HSC-100R cameras on robotic-head pedestals, two Auto-Q prompters, DMX-512 controlled LED lighting on a dynamic ceiling grid, a digital audio mixer, five wireless neck microphones and two in-ear monitors are all included. Generator and UPS backup power is standard.",
+        "Because it shares the building with Studio 1, productions can run a main programme in one studio and a second unit, green room interviews or a live stream from the other."
+      ],
+      "faq": [
+        ["How many cameras does London Studio 2 have?", "Three Sony HSC-100R broadcast cameras with professional CCUs, on pedestals with robotic heads."],
+        ["Can I use both London studios together?", "Yes. Studios 1 and 2 are in the same building and are often booked together for a main show plus a second unit or a live stream."],
+        ["Is the studio suitable for photography?", "Yes. The DMX-controlled LED lighting gives precise, repeatable set-ups for fashion, portrait and product photography."]
+      ]
+    },
+    "dublin-studio": {
+      "priceFrom": "",
+      "intro": [
+        "Our Dublin studio is a fully decorated 144 square metre broadcast floor in Dundrum, with an 18 square metre gallery and a large, fully controllable LED screen backed by three groups of 2×2 55-inch video wall panels.",
+        "Four Sony Full HD cameras with professional CCUs sit on pedestals with robotic heads, with an Auto-Q system driving two prompter reflectors and a jimmy jib that reaches from three to seven metres for sweeping opening shots. Lighting is LED on a dynamic ceiling grid, controlled from a DMX-512 console; sound runs through a digital mixer with eight wireless neck and hand microphones.",
+        "The studio is used for live news and current affairs, streamed events, podcasts with video, corporate broadcasts and virtual events for Irish and international clients."
+      ],
+      "faq": [
+        ["Where is the Dublin studio?", "IT Media Limited, 3rd Floor North, North Block, Rockfields, Dundrum, Dublin D16 W7W3."],
+        ["Does the Dublin studio have an LED wall?", "Yes. A large fully controlled LED screen plus three groups of 2×2 55-inch video wall panels, so backdrops, graphics and remote guests can be shown behind presenters."],
+        ["Is there a jib?", "Yes, a jimmy jib adjustable from three to seven metres."]
+      ]
+    },
+    "paris-studio": {
+      "priceFrom": "",
+      "intro": [
+        "The Paris studio is an 84 square metre fully decorated broadcast set with LED video wall screens and a 10 square metre gallery, designed for news desks, talk shows and live streamed events in the French capital.",
+        "Four Blackmagic Full HD cameras, an Auto-Q system driving two prompter reflectors and a three-to-seven metre jimmy jib give a full multi-camera set-up. LED studio lighting on a dynamic ceiling grid is controlled from a DMX-512 console, and a digital audio mixer handles eight wireless neck and hand microphones.",
+        "It suits television broadcasting, live streaming, film and corporate productions, virtual events, photography sessions and podcast or radio recording."
+      ],
+      "faq": [
+        ["Which cameras are in the Paris studio?", "Four Blackmagic Full HD cameras, with an Auto-Q prompting system and a jimmy jib."],
+        ["Is the Paris studio decorated?", "Yes. It is a fully decorated set with LED video wall screens, ready for news and talk show formats without a set build."],
+        ["Who do I contact for Paris bookings?", "Email booking@vision-studios.net or call our European line, +353 (0) 8961 14641."]
+      ]
+    },
+    "istanbul-dtl-room": {
+      "priceFrom": "",
+      "intro": [
+        "The Istanbul DTL (Direct-To-Link) room is a single-camera contribution studio for live guests and correspondents. A presenter or expert sits in front of a custom background and goes straight to air on a broadcaster's programme anywhere in the world.",
+        "It supports every common live-feed route, from SNG satellite uplink to internet contribution over TVU, LiveU, RTMP and SRT, so the receiving newsroom can take the feed on whatever they already use. Generator and UPS power keeps the link up.",
+        "The room is used for daily news hits, panel contributions, remote interviews and live inserts into programmes produced elsewhere. It shares the Mahmutbey Media City building with Istanbul Studios 1 to 4."
+      ],
+      "faq": [
+        ["What is a DTL room?", "A Direct-To-Link room: a small single-camera studio where a guest is put live into a programme produced elsewhere, via satellite or internet contribution."],
+        ["Which live feed formats are supported?", "SNG satellite uplink and internet streaming protocols including TVU, LiveU, RTMP and SRT."],
+        ["Can the background be branded?", "Yes. The room uses a custom background that can be set for your channel or programme."]
+      ]
+    },
+    "istanbul-studio-1": {
+      "priceFrom": "",
+      "intro": [
+        "Istanbul Studio 1 is our largest flagship: 215 square metres, fully decorated and fully sound-isolated to television standard, with a 72-screen colour-calibrated video wall of 55-inch and 46-inch panels wrapping the set.",
+        "Four Sony HDC-P1 Full HD cameras with CCU control sit on heavy-duty pedestals, alongside a three-to-seven metre jimmy jib and an Auto-Q system with reflectors on the main cameras. The 18 square metre gallery is built on a modular workflow with two four-channel playout systems and two single-channel CG systems for on-air graphics. TV-standard cool LED lighting runs from a DMX-512 console on a dynamic ceiling grid, and a 32-input digital mixer handles eight wireless neck and hand microphones.",
+        "An 18 square metre reception area welcomes guests, and generator plus UPS power gives a 24/7 supply with a 99.9% uptime guarantee. It is the studio for daily news programmes, large-format talk shows and long-running series."
+      ],
+      "faq": [
+        ["How big is the video wall in Istanbul Studio 1?", "72 colour-calibrated screens, a mix of 55-inch and 46-inch panels, spanning the set."],
+        ["Is the studio sound-isolated?", "Yes, fully isolated with professional audio isolation, so it is suitable for live broadcasting and drama recording."],
+        ["Does the gallery include playout and graphics?", "Yes. Two four-channel playout systems and two single-channel CG systems for on-air graphics are part of the gallery."]
+      ]
+    },
+    "istanbul-studio-2": {
+      "priceFrom": "",
+      "intro": [
+        "Istanbul Studio 2 is a 185 square metre ground-floor soundstage with an 18 square metre gallery and a 20 square metre LED screen, a favourite for television series, live events and webinars.",
+        "Four Grass Valley Full HD cameras with professional CCUs, an Auto-Q system and a three-to-seven metre jimmy jib cover the floor. LED lighting on a dynamic ceiling grid is controlled from a DMX-512 console, and a digital audio mixer takes six wireless neck and hand microphones. The 18 square metre reception area doubles as a green room.",
+        "Ground-floor access makes set builds and vehicle load-ins straightforward. Recent productions here include the drama series Yalı Çapkını, live webinars and corporate broadcasts. Generator and UPS power is included."
+      ],
+      "faq": [
+        ["Is Istanbul Studio 2 on the ground floor?", "Yes. The 185 square metre floor is at ground level, which makes set construction and equipment load-in simple."],
+        ["How large is the LED screen?", "20 square metres of LED screen in total."],
+        ["What has been filmed in Studio 2?", "Television series including Yalı Çapkını, live broadcasts and webinars for corporate and medical clients."]
+      ]
+    },
+    "istanbul-studio-3": {
+      "priceFrom": "",
+      "intro": [
+        "Istanbul Studio 3 is a 175 square metre blank-canvas space on the ground floor of Media City, kept free of fixed decoration so productions can build any set they need, from a drama interior to a product launch or an art exhibition.",
+        "A dynamic ceiling lighting grid is in place, generator power is included, and a 14 square metre reception area serves cast and crew. Cameras, lighting and sound can be specified per production from our equipment hire inventory, or brought in by your own crew.",
+        "It is regularly used for documentary shoots, photography, videography, dance rehearsal, workshops and set builds for neighbouring Studios 1 and 2."
+      ],
+      "faq": [
+        ["Does Istanbul Studio 3 come with a set?", "No, and that is the point: it is a free space for building any customised decoration, with a dynamic ceiling lighting grid already installed."],
+        ["Can I bring my own equipment?", "Yes. Studio 3 is often hired as an empty stage. Cameras, lighting and audio can also be hired from us."],
+        ["What has been produced here?", "Documentary production for an Al Jazeera channel, photography sessions and custom set builds."]
+      ]
+    },
+    "istanbul-studio-4": {
+      "priceFrom": "",
+      "intro": [
+        "Istanbul Studio 4 is a 37.5 square metre first-floor studio with an unusually large 28 square metre gallery, ideal for interviews, podcasts, small live shows and recordings that need a proper control room without a big floor.",
+        "Three Sony HD cameras with professional CCUs on pedestals, an Auto-Q prompter, a digital audio mixer and four wireless neck and hand microphones are included.",
+        "Productions use it for live broadcasts, podcasts, music recordings, promotional and educational videos, virtual events, product demonstrations and photography sessions."
+      ],
+      "faq": [
+        ["How many people fit in Istanbul Studio 4?", "It is designed for one to three on-camera guests, with a three-camera set-up and four wireless microphones."],
+        ["Why is the gallery so large?", "The 28 square metre gallery is bigger than the floor, so directors, producers and clients can all follow a recording in comfort."],
+        ["Which floor is it on?", "The first floor of the Mahmutbey Media City building."]
+      ]
+    },
+    "istanbul-studio-5": {
+      "priceFrom": "",
+      "intro": [
+        "Istanbul Studio 5 is a 196 square metre fully decorated broadcast studio at the Deposite complex in Başakşehir, with a 36-screen video wall of 55-inch and 46-inch panels, an 18 square metre gallery and a generous 56 square metre reception area.",
+        "Four Sony Full HD cameras with professional CCUs, an Auto-Q system with two reflectors, and a three-to-seven metre jimmy jib give a full live set-up. LED lighting on a dynamic ceiling grid is controlled from a DMX-512 console, and the digital audio mixer handles ten wireless neck and hand microphones. Generator and UPS power is included.",
+        "The studio hosts commercial shoots, live broadcasts, photo sessions and podcasts, and its large reception makes it a comfortable base for audience shows and events."
+      ],
+      "faq": [
+        ["Where is Istanbul Studio 5?", "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, A1 Blok, İkitelli OSB, Başakşehir, Istanbul, alongside Studios 6 and 7."],
+        ["How many microphones are available?", "Ten wireless neck and hand microphones through a digital audio mixer."],
+        ["Is there space for guests and audiences?", "Yes, a 56 square metre reception area next to the studio floor."]
+      ]
+    },
+    "istanbul-studio-6": {
+      "priceFrom": "",
+      "intro": [
+        "Istanbul Studio 6 is a 196 square metre, fully decorated and fully sound-isolated studio at the Deposite complex, equipped for 4K production with four Sony PXW-FS7 cameras and a ten-screen 55-inch video wall.",
+        "An Auto-Q system with two reflectors, a three-to-seven metre jimmy jib, LED lighting from a DMX-512 console on a dynamic ceiling grid, a 23-channel digital audio mixer and eight wireless neck and hand microphones are all included, with an 18 square metre gallery and a 56 square metre reception. Generator and UPS supply is 24/7 with a 99.9% uptime guarantee.",
+        "Choose Studio 6 for film production, live streaming, virtual events, photography, podcasts, educational content, exhibitions and product demonstrations where 4K acquisition matters."
+      ],
+      "faq": [
+        ["Does Istanbul Studio 6 shoot 4K?", "Yes. Four Sony PXW-FS7 4K cameras are installed."],
+        ["Is the studio sound-isolated?", "Yes, fully isolated to TV-standard audio isolation."],
+        ["What backup power is there?", "24/7 generator and UPS supply with a 99.9% uptime guarantee."]
+      ]
+    },
+    "istanbul-studio-7": {
+      "priceFrom": "",
+      "intro": [
+        "Istanbul Studio 7 is a 196 square metre decorated studio built around a stage inside a real office setting, blending wood and glass finishes to give several distinct looks in one space, from a boardroom to a lounge to a presenter stage.",
+        "The whole floor accepts SDI and NDI video in and out, with analogue and digital audio, through input and output outlets at the front, back, floor and ceiling, so cameras can be placed anywhere without cables in shot. Modular tables and presenter seating reconfigure quickly. A dynamic ceiling lighting grid and 24/7 generator plus UPS power with a 99.9% uptime guarantee are standard.",
+        "It suits corporate broadcasts, panel programmes, podcasts, virtual events, educational content and film or television scenes that need an authentic office environment."
+      ],
+      "faq": [
+        ["What makes Istanbul Studio 7 different?", "It is a working office-style set with a stage inside it, offering several shooting areas with different feelings in one 196 square metre space."],
+        ["Does it support NDI?", "Yes. The studio is wired for both SDI and NDI video plus analogue and digital audio, with outlets in multiple positions around the floor."],
+        ["Where is it?", "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, Başakşehir, Istanbul, with Studios 5 and 6."]
+      ]
+    },
+    "istanbul-studio-8": {
+      "priceFrom": "",
+      "intro": [
+        "Istanbul Studio 8 is a 90 square metre broadcast studio at the İSTOÇ site in Bağcılar, equipped with four Sony HSC-100R cameras with professional CCUs, a dynamic ceiling lighting grid with DMX-512 controlled LED lighting, a digital audio mixer and generator plus UPS power.",
+        "The size makes it fast to light and staff, so it is well suited to daily programmes, talk shows, interviews and live broadcasts, as well as music performances, podcasts and corporate presentations.",
+        "Studio 9 next door has the same specification, so two productions can run side by side or one production can use both floors."
+      ],
+      "faq": [
+        ["What cameras are in Istanbul Studio 8?", "Four Sony HSC-100R broadcast cameras with professional CCUs."],
+        ["Where is Studio 8?", "Göztepe, İSTOÇ Oto Ticaret Merkezi, Bağcılar, Istanbul, next to Studio 9."],
+        ["Is there backup power?", "Yes, generator and UPS electricity."]
+      ]
+    },
+    "istanbul-studio-9": {
+      "priceFrom": "",
+      "intro": [
+        "Istanbul Studio 9 is the twin of Studio 8: a 90 square metre broadcast floor at the İSTOÇ site with four Sony HSC-100R cameras and CCUs, DMX-512 controlled LED lighting on a dynamic ceiling grid, a digital audio mixer and generator plus UPS backup power.",
+        "It handles film and television recording, live events and broadcasts, music videos and performances, podcasts and radio shows recorded on video, and corporate videos and presentations.",
+        "Book Studios 8 and 9 together for productions that need a second set, a rehearsal floor or a parallel live stream."
+      ],
+      "faq": [
+        ["How big is Istanbul Studio 9?", "90 square metres, the same size and specification as Studio 8."],
+        ["Can Studios 8 and 9 be booked together?", "Yes. They are next to each other at the İSTOÇ site and are often hired as a pair."],
+        ["What is it suited to?", "Television and film recording, live broadcasts, music performances, podcasts and corporate videos."]
+      ]
+    }
+  },
+  "cities": {
+    "london": {
+      "intro": [
+        "Vision Studios London is our headquarters, at Kendal Avenue in West London (W3 0XA). Two broadcast studios share one building: the 110 square metre Studio 1 with four robotic Sony HSC-100R cameras and a full gallery, and the 61 square metre Studio 2 with three cameras and its own control room.",
+        "Both studios have DMX-512 controlled LED lighting on dynamic ceiling grids, Auto-Q prompting, digital audio mixing and generator plus UPS backup power, and both can be booked with our crew, equipment hire and set design services. Podcast microphones and in-ear monitors make Studio 1 a natural home for video podcasts.",
+        "Recent London productions include a shoot with former Chelsea and England footballer Joe Cole and multi-camera entertainment recordings for independent producers."
+      ],
+      "faq": [
+        ["Where are the London studios?", "Vision Studios, Kendal Avenue, London W3 0XA. Call +44 (0) 7920 745134 or email booking@vision-studios.net."],
+        ["Which London studio should I choose?", "Studio 1 (110 m², four cameras, three prompters) for full programmes and podcasts; Studio 2 (61 m², three cameras) for interviews, inserts and photography. They can be booked together."]
+      ]
+    },
+    "dublin": {
+      "intro": [
+        "Vision Studios Dublin is a 144 square metre fully decorated broadcast studio in Dundrum, operated with IT Media Limited. A large controllable LED screen and 2×2 video wall groups give a modern news and talk show backdrop without a set build.",
+        "Four Sony Full HD cameras with robotic heads, an Auto-Q prompting system, a jimmy jib, DMX-512 LED lighting and a digital audio mixer with eight wireless microphones are all in place, with an 18 square metre gallery. Broadcast services, equipment hire and crew hire are available for the studio and for on-location work across Ireland.",
+        "The studio hosts live news, streamed events, video podcasts, corporate broadcasts and virtual events for Irish and international broadcasters."
+      ],
+      "faq": [
+        ["Where is the Dublin studio?", "IT Media Limited, 3rd Floor North, North Block, Rockfields, Dundrum, Dublin D16 W7W3. Call +353 (0) 8961 14641."],
+        ["Is the Dublin studio decorated?", "Yes, fully decorated, with a large LED screen and video wall groups ready for news and talk show formats."]
+      ]
+    },
+    "paris": {
+      "intro": [
+        "Vision Studios Paris is an 84 square metre fully decorated broadcast studio with LED video wall screens and a 10 square metre gallery, built for news desks, talk shows and live streaming in the French capital.",
+        "Four Blackmagic Full HD cameras, Auto-Q prompting, a jimmy jib, DMX-512 LED lighting on a dynamic ceiling grid and a digital audio mixer with eight wireless microphones come as standard. Broadcast services, equipment hire and crew hire complete the offer.",
+        "It is used for television broadcasting, live streamed events, film and corporate production, virtual events, photography and podcast recording."
+      ],
+      "faq": [
+        ["How do I book the Paris studio?", "Email booking@vision-studios.net or call our European line, +353 (0) 8961 14641, with your dates and a short brief."],
+        ["What equipment is included in Paris?", "Four Blackmagic Full HD cameras, an Auto-Q prompter, a jimmy jib, DMX-controlled LED lighting and a digital audio mixer with eight wireless microphones."]
+      ]
+    },
+    "istanbul": {
+      "intro": [
+        "Istanbul is our largest operation: ten spaces across three sites. Media City in Mahmutbey, Bağcılar holds the 215 square metre flagship Studio 1 with its 72-screen video wall, the 185 square metre ground-floor Studio 2, the blank-canvas Studio 3, the compact Studio 4 and the Direct-To-Link contribution room. The Deposite complex in Başakşehir has three 196 square metre studios, including the 4K Studio 6 and the office-set Studio 7. The İSTOÇ site in Bağcılar adds twin 90 square metre Studios 8 and 9.",
+        "All Istanbul studios run on generator and UPS backup power, with Sony, Grass Valley and Blackmagic camera chains, Auto-Q prompting, DMX-512 LED lighting and full galleries where the format needs one. Crew, equipment hire, set design and broadcast services are available across every site.",
+        "Productions filmed here range from Turkish drama series such as Yalı Çapkını, Aldatmak and Taş Kağıt Makas to Al Jazeera programmes, Greenpeace campaigns, live corporate events and medical webinars."
+      ],
+      "faq": [
+        ["Where are the Istanbul studios?", "Three sites: Media City at Mahmutbey, 2623 Sokak No 3, Bağcılar (Studios 1–4 and the DTL room); Deposite İş Merkezi, Atatürk Blv. No:204A, Başakşehir (Studios 5–7); and İSTOÇ, Göztepe, Bağcılar (Studios 8–9). Call +90 212 988 10 45."],
+        ["Which Istanbul studio is best for a TV series?", "Studio 2 (185 m² ground-floor soundstage) and Studio 1 (215 m², sound-isolated, 72-screen wall) are the usual choices; Studio 3 is a free space for custom set builds."],
+        ["Can you put a guest live into a foreign channel?", "Yes. The DTL room sends a single-camera feed by SNG satellite or over TVU, LiveU, RTMP and SRT to any broadcaster."]
+      ]
+    }
+  }
+}

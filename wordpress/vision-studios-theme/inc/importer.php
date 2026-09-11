@@ -133,8 +133,11 @@ function vs_run_import( array $opts = [] ): array {
 	foreach ( $data['cities'] as $c ) {
 		$t = term_exists( $c['slug'], 'city' );
 		$t = $t ? (int) $t['term_id'] : (int) wp_insert_term( $c['name'], 'city', [ 'slug' => $c['slug'] ] )['term_id'];
-		foreach ( [ 'country', 'tagline', 'heading', 'phone', 'address', 'map_query', 'coords' ] as $k ) {
+		foreach ( [ 'country', 'tagline', 'heading', 'phone', 'address', 'map_query', 'coords', 'faq' ] as $k ) {
 			update_term_meta( $t, "_vs_$k", $c[ $k ] ?? '' );
+		}
+		if ( ! empty( $c['description'] ) ) {
+			wp_update_term( $t, 'city', [ 'description' => $c['description'] ] );
 		}
 		update_term_meta( $t, '_vs_image', $img( $c['image'] ) );
 		$term_ids[ $c['slug'] ] = $t;
@@ -144,10 +147,19 @@ function vs_run_import( array $opts = [] ): array {
 	// Studios.
 	foreach ( $data['studios'] as $s ) {
 		$gallery = array_filter( array_map( $img, $s['gallery'] ) );
-		$id = vs_import_upsert( [ 'post_type' => 'studio', 'post_name' => $s['slug'], 'post_title' => $s['title'], 'post_status' => 'publish', 'post_excerpt' => $s['excerpt'], 'menu_order' => $s['order'] ] );
+		$args = [ 'post_type' => 'studio', 'post_name' => $s['slug'], 'post_title' => $s['title'], 'post_status' => 'publish', 'post_excerpt' => $s['excerpt'], 'menu_order' => $s['order'] ];
+		if ( ! empty( $s['content'] ) ) {
+			$args['post_content'] = vs_import_blocks( $s['content'] );
+		}
+		$id = vs_import_upsert( $args );
 		wp_set_object_terms( $id, [ $term_ids[ $s['city'] ] ], 'city' );
-		foreach ( [ 'tagline', 'area', 'specs', 'highlights', 'use_cases_heading', 'use_cases', 'phone', 'address', 'map_query' ] as $k ) {
-			update_post_meta( $id, "_vs_$k", $s[ $k ] );
+		foreach ( [ 'tagline', 'area', 'specs', 'highlights', 'use_cases_heading', 'use_cases', 'phone', 'address', 'map_query', 'faq' ] as $k ) {
+			if ( isset( $s[ $k ] ) ) {
+				update_post_meta( $id, "_vs_$k", $s[ $k ] );
+			}
+		}
+		if ( ! empty( $s['price_from'] ) || '' === vs_meta( $id, 'price_from' ) ) {
+			update_post_meta( $id, '_vs_price_from', $s['price_from'] ?? '' );
 		}
 		foreach ( array_values( $gallery ) as $gi => $aid ) {
 			if ( ! get_post_meta( $aid, '_wp_attachment_image_alt', true ) ) {

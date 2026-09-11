@@ -9,6 +9,8 @@ function vs_studio_fields(): array {
 	return [
 		'tagline'           => [ __( 'Tag line', 'vision-studios' ), 'text', __( 'Short label shown above the title on cards, e.g. "Flagship · 72-screen video wall".', 'vision-studios' ) ],
 		'area'              => [ __( 'Studio area (sq. mt.)', 'vision-studios' ), 'number', '' ],
+		'price_from'        => [ __( 'Price from', 'vision-studios' ), 'text', __( 'Shown as "From …" on the page, e.g. "£1,200 / day". Leave empty to hide.', 'vision-studios' ) ],
+		'faq'               => [ __( 'FAQ', 'vision-studios' ), 'textarea', __( 'One per line as "Question | Answer". Shown at the bottom of the page with FAQ structured data.', 'vision-studios' ) ],
 		'specs'             => [ __( 'Full specification', 'vision-studios' ), 'textarea', __( 'One item per line.', 'vision-studios' ) ],
 		'highlights'        => [ __( 'Highlights', 'vision-studios' ), 'textarea', __( 'Up to six short lines shown as icon tiles under the hero.', 'vision-studios' ) ],
 		'use_cases_heading' => [ __( '"What to shoot here" heading', 'vision-studios' ), 'text', '' ],
@@ -38,6 +40,7 @@ function vs_city_fields(): array {
 		'map_query' => [ __( 'Google Maps query', 'vision-studios' ), 'text' ],
 		'coords'    => [ __( 'Coordinates label', 'vision-studios' ), 'text' ],
 		'image'     => [ __( 'Hero / card image', 'vision-studios' ), 'image' ],
+		'faq'       => [ __( 'FAQ (one per line: Question | Answer)', 'vision-studios' ), 'textarea' ],
 	];
 }
 
@@ -137,7 +140,8 @@ add_action( 'city_edit_form_fields', function ( WP_Term $term ) {
 $vs_save_term = function ( int $term_id ) {
 	foreach ( vs_city_fields() as $key => $def ) {
 		if ( isset( $_POST[ "vs_$key" ] ) ) {
-			update_term_meta( $term_id, "_vs_$key", sanitize_text_field( wp_unslash( $_POST[ "vs_$key" ] ) ) );
+			$raw = wp_unslash( $_POST[ "vs_$key" ] );
+			update_term_meta( $term_id, "_vs_$key", 'textarea' === $def[1] ? sanitize_textarea_field( $raw ) : sanitize_text_field( $raw ) );
 		}
 	}
 };

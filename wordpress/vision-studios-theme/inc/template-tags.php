@@ -162,6 +162,31 @@ function vs_lightbox(): string {
 	return '<div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="' . esc_attr__( 'Image viewer', 'vision-studios' ) . '"><button id="lightbox-close" class="absolute top-5 right-6 text-white/70 hover:text-white text-3xl" aria-label="' . esc_attr__( 'Close', 'vision-studios' ) . '">&times;</button><button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-accent text-3xl px-3" aria-label="' . esc_attr__( 'Previous', 'vision-studios' ) . '">&#8249;</button><img id="lightbox-img" src="" alt="" class="max-h-[88vh] max-w-full object-contain"/><button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-accent text-3xl px-3" aria-label="' . esc_attr__( 'Next', 'vision-studios' ) . '">&#8250;</button><p id="lightbox-caption" class="absolute bottom-5 inset-x-0 text-center font-mono-tag text-xs lg:text-[11px] uppercase tracking-[0.2em] text-white/50"></p></div>';
 }
 
+/** Parse "Question | Answer" lines. */
+function vs_faq_items( $text ): array {
+	$out = [];
+	foreach ( vs_lines( $text ) as $line ) {
+		$parts = array_map( 'trim', explode( '|', $line, 2 ) );
+		if ( count( $parts ) === 2 && $parts[0] && $parts[1] ) {
+			$out[] = $parts;
+		}
+	}
+	return $out;
+}
+
+/** FAQ section (accordion) + FAQPage JSON-LD. */
+function vs_faq_section( array $items, string $heading = '' ): string {
+	if ( ! $items ) {
+		return '';
+	}
+	$html = '<section class="bg-black py-20 border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-3 gap-10"><div class="fade-up">' . vs_eyebrow( __( 'FAQ', 'vision-studios' ) ) . vs_h2( $heading ?: __( 'Questions We Get Asked.', 'vision-studios' ) ) . '</div><div class="lg:col-span-2 divide-y divide-white/10 fade-up">';
+	foreach ( $items as [ $q, $a ] ) {
+		$html .= '<details class="group py-4"><summary class="flex justify-between items-start gap-6 cursor-pointer list-none font-display uppercase text-lg"><span>' . esc_html( $q ) . '</span><span class="text-accent shrink-0 transition-transform group-open:rotate-45">' . vs_icon( 'plus' ) . '</span></summary><p class="text-white/70 text-sm leading-relaxed mt-3 max-w-2xl">' . esc_html( $a ) . '</p></details>';
+	}
+	$ld = [ '@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => array_map( fn( $i ) => [ '@type' => 'Question', 'name' => $i[0], 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => $i[1] ] ], $items ) ];
+	return $html . '</div></div><script type="application/ld+json">' . wp_json_encode( $ld, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script></section>';
+}
+
 /** Services / reasons by type. */
 function vs_services( string $type = 'service' ): array {
 	return get_posts( [ 'post_type' => 'vs_service', 'posts_per_page' => -1, 'orderby' => [ 'menu_order' => 'ASC', 'title' => 'ASC' ], 'meta_query' => [ [ 'key' => '_vs_type', 'value' => $type ] ] ] );

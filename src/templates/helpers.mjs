@@ -34,6 +34,7 @@ const ICONS = {
   lightbulb: '<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.6 1 1.3 1 2.5h6c0-1.2.3-1.9 1-2.5A6 6 0 0 0 12 3z"/>',
   globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
   map: '<path d="M12 21s7-6.5 7-11a7 7 0 0 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+  plus: '<path d="M12 5v14M5 12h14"/>',
 }
 export const icon = (name, cls = '') => `<svg class="vs-icon ${cls}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ICONS[name.replace(/^fa-/, '')] || ICONS.circle}</svg>`
 export const arrow = icon('arrow-up-right', 'text-[10px]')
@@ -110,6 +111,16 @@ export function orgLd(ctx) {
   ]
 }
 export const parseCoords = (s = '') => { const m = s.match(/(-?[\d.]+)°?\s*([NS])?\s*\/\s*(-?[\d.]+)°?\s*([EW])?/); return m ? { '@type': 'GeoCoordinates', latitude: +m[1] * (m[2] === 'S' ? -1 : 1), longitude: +m[3] * (m[4] === 'W' ? -1 : 1) } : undefined }
+
+/** Intro paragraphs in prose style. */
+export const prose = (paras = []) => paras.length ? `<div class="fade-up prose-vs max-w-3xl">${paras.map((p) => `<p>${esc(p)}</p>`).join('')}</div>` : ''
+
+/** FAQ accordion + FAQPage JSON-LD. */
+export function faqSection(items = [], heading = 'Questions We Get Asked.') {
+  if (!items.length) return ''
+  const ld = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: items.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }
+  return `<section class="bg-black py-20 border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-3 gap-10"><div class="fade-up">${eyebrow('FAQ')}${h2(esc(heading))}</div><div class="lg:col-span-2 divide-y divide-white/10 fade-up">${items.map(([q, a]) => `<details class="group py-4"><summary class="flex justify-between items-start gap-6 cursor-pointer list-none font-display uppercase text-lg"><span>${esc(q)}</span><span class="text-accent shrink-0 transition-transform group-open:rotate-45">${icon('plus')}</span></summary><p class="text-white/70 text-sm leading-relaxed mt-3 max-w-2xl">${esc(a)}</p></details>`).join('')}</div></div><script type="application/ld+json">${JSON.stringify(ld)}</script></section>`
+}
 
 export function mapFacade(query, title) {
   const src = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&t=m&z=16&output=embed&iwloc=near`

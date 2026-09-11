@@ -76,3 +76,7 @@ select option { background: #000; }
 .hero-dot::after { content: ''; position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: rgba(255,255,255,.3); }
 .hero-dot.is-active::after { background: var(--vs-orange); }
 @media (min-width: 1024px) { .wpcf7 label > span, .vs-form label > span { font-size: 10px; } }
+/* FAQ accordion */
+details > summary::-webkit-details-marker { display: none; }
+details > summary { list-style: none; }
+.group[open] .group-open\:rotate-45 { transform: rotate(45deg); }

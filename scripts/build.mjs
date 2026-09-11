@@ -22,7 +22,7 @@ const rebase = (html) => BASE_PATH ? html.replace(/((?:href|src|content|data-src
 async function readJson(name) { return JSON.parse(await fs.readFile(path.join(ROOT, 'data', name), 'utf8')) }
 
 async function main() {
-  const names = ['site', 'studios', 'cities', 'home', 'about', 'contact', 'news', 'curated']
+  const names = ['site', 'studios', 'cities', 'home', 'about', 'contact', 'news', 'curated', 'copy']
   const data = Object.fromEntries(await Promise.all(names.map(async (n) => [n, await readJson(n + '.json')])))
   data.news.sort((a, b) => b.date.localeCompare(a.date))
   // Order studios: London, Dublin, Paris, Istanbul; numeric within city.

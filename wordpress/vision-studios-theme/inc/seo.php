@@ -300,7 +300,7 @@ add_action( 'wp_head', function () {
 			'description' => vs_seo_description(), 'image' => array_values( array_filter( array_map( fn( $a ) => vs_img_url( $a, 'vs-wide' ), array_slice( vs_studio_gallery_ids( $id ), 0, 5 ) ) ) ),
 			'telephone' => vs_meta( $id, 'phone', vs_term_meta( $cid, 'phone' ) ), 'email' => vs_opt( 'email' ),
 			'address' => [ '@type' => 'PostalAddress', 'streetAddress' => vs_meta( $id, 'address', vs_term_meta( $cid, 'address' ) ), 'addressLocality' => $city ? $city->name : '', 'addressCountry' => vs_term_meta( $cid, 'country' ) ],
-			'parentOrganization' => [ '@id' => $org_id ], 'priceRange' => '$$', 'openingHours' => vs_opt( 'opening_hours' ),
+			'parentOrganization' => [ '@id' => $org_id ], 'priceRange' => vs_meta( $id, 'price_from' ) ? sprintf( __( 'from %s', 'vision-studios' ), vs_meta( $id, 'price_from' ) ) : '$$', 'openingHours' => vs_opt( 'opening_hours' ),
 			'hasMap' => 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode( vs_meta( $id, 'map_query', vs_term_meta( $cid, 'map_query' ) ) ),
 			'geo' => ( $g = vs_parse_coords( vs_term_meta( $cid, 'coords' ) ) ) ? [ '@type' => 'GeoCoordinates', 'latitude' => $g[0], 'longitude' => $g[1] ] : null,
 			'amenityFeature' => array_map( fn( $h ) => [ '@type' => 'LocationFeatureSpecification', 'name' => $h, 'value' => true ], vs_lines( vs_meta( $id, 'highlights' ) ) ),

@@ -23,11 +23,12 @@ $email   = vs_opt( 'email' );
 <div class="flex items-center justify-between font-mono-tag text-xs lg:text-[11px] uppercase tracking-[0.2em] text-white/60 mb-6"><span><?php echo esc_html( vs_term_meta( $cid, 'tagline' ) ); ?></span><span class="hidden sm:inline text-accent"><?php echo esc_html( $country ); ?></span><span class="hidden sm:inline"><?php echo esc_html( vs_term_meta( $cid, 'coords' ) ); ?></span></div>
 <h1 class="font-display uppercase leading-[0.95] text-[clamp(2.4rem,8vw,5.5rem)]"><?php echo esc_html( $parts[0] ); ?><?php if ( isset( $parts[1] ) ) : ?><br/><span class="text-white/55"><?php esc_html_e( 'in', 'vision-studios' ); ?> </span><?php echo esc_html( $parts[1] ); ?><?php endif; ?></h1>
 <p class="mt-6 max-w-xl text-white/70"><?php echo esc_html( sprintf( _n( '%d studio', '%d studios', count( $studios ), 'vision-studios' ), count( $studios ) ) . ( $address ? ' · ' . $address : '' ) ); ?></p>
-<?php if ( $term->description ) : ?><p class="mt-4 max-w-xl text-white/60 text-sm"><?php echo esc_html( $term->description ); ?></p><?php endif; ?>
+
 </div></section>
 <?php echo vs_breadcrumbs(); // phpcs:ignore ?>
 
 <section class="bg-black py-16 lg:py-24"><div class="max-w-7xl mx-auto px-6 lg:px-10">
+<?php if ( $term->description ) : ?><div class="fade-up prose-vs max-w-3xl mb-16"><?php echo wpautop( wp_kses_post( $term->description ) ); ?></div><?php endif; ?>
 <div class="fade-up mb-4"><?php echo vs_eyebrow( sprintf( __( 'Our Studios In %s', 'vision-studios' ), $term->name ) ) . vs_h2( __( 'Choose Your Space.', 'vision-studios' ), 'max-w-3xl' ); // phpcs:ignore ?></div>
 <?php foreach ( $studios as $i => $s ) : $img = vs_img_url( vs_studio_gallery_ids( $s->ID )[0] ?? 0, 'vs-wide' ); ?>
 <article class="fade-up grid md:grid-cols-2 gap-8 items-center py-12 <?php echo $i ? 'border-t border-white/10' : ''; ?>">
@@ -52,5 +53,6 @@ $email   = vs_opt( 'email' );
 <div class="mt-6 flex items-center gap-4 flex-wrap"><span class="font-mono-tag text-xs lg:text-[10px] uppercase tracking-[0.2em] text-white/50"><?php esc_html_e( 'Other cities', 'vision-studios' ); ?></span><?php foreach ( $others as $o ) : ?><a href="<?php echo esc_url( get_term_link( $o ) ); ?>" class="nav-link font-mono-tag text-xs uppercase tracking-[0.15em] text-white/70 hover:text-accent"><?php echo esc_html( $o->name ); ?></a><?php endforeach; ?></div></div>
 <?php if ( $mq = vs_term_meta( $cid, 'map_query', $address ) ) : ?><div class="fade-up aspect-[16/9] bg-white/5 overflow-hidden"><?php echo vs_map( $mq, 'Vision Studios ' . $term->name ); // phpcs:ignore ?></div><?php endif; ?>
 </div></section>
+<?php echo vs_faq_section( vs_faq_items( vs_term_meta( $cid, 'faq' ) ), sprintf( __( 'Filming In %s.', 'vision-studios' ), $term->name ) ); // phpcs:ignore ?>
 <?php echo vs_cta_band( sprintf( __( 'Book A Studio<br/><span class="text-accent">In %s.</span>', 'vision-studios' ), esc_html( $term->name ) ) ); // phpcs:ignore ?>
 <?php get_footer();

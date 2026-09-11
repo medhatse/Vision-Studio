@@ -27,6 +27,7 @@ function vs_icon( string $name, string $class = '' ): string {
 		'bolt'           => '<path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/>',
 		'arrows-up-down-left-right' => '<path d="M12 2v20M2 12h20M8 6l4-4 4 4M8 18l4 4 4-4M6 8l-4 4 4 4M18 8l4 4-4 4"/>',
 		'lightbulb'      => '<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.6 1 1.3 1 2.5h6c0-1.2.3-1.9 1-2.5A6 6 0 0 0 12 3z"/>',
+		'plus'           => '<path d="M12 5v14M5 12h14"/>',
 		'map'            => '<path d="M12 21s7-6.5 7-11a7 7 0 0 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',
 	];
 	$p = $paths[ $name ] ?? $paths['circle'];

@@ -1,7 +1,8 @@
-import { esc, eyebrow, h2, layout, ctaBand, telHref, btnGhost, img, heroImg, breadcrumbs, mapFacade, parseCoords, cityName } from './helpers.mjs'
+import { esc, eyebrow, h2, layout, ctaBand, telHref, btnGhost, img, heroImg, breadcrumbs, mapFacade, parseCoords, cityName, prose, faqSection } from './helpers.mjs'
 
 export function renderCity(city, ctx) {
-  const { studios, cities, curated } = ctx.data
+  const { studios, cities, curated, copy } = ctx.data
+  const cc = copy.cities[city.slug] || { intro: [], faq: [] }
   const meta = curated.cities[city.slug]
   const cs = studios.filter((s) => s.city === city.slug)
   const blurbs = new Map(city.studioBlurbs.map((b) => [b.title, b.description]))
@@ -33,6 +34,7 @@ ${heroImg(ctx, hero, `Vision Studios ${city.name}`)}
 ${breadcrumbs(crumbs)}
 
 <section class="bg-black py-16 lg:py-24"><div class="max-w-7xl mx-auto px-6 lg:px-10">
+${cc.intro.length ? `<div class="mb-16">${prose(cc.intro)}</div>` : ''}
 <div class="fade-up mb-4">${eyebrow('Our Studios In ' + city.name)}${h2('Choose Your Space.', 'max-w-3xl')}</div>
 ${studioList}
 </div></section>
@@ -47,6 +49,7 @@ ${studioList}
 <div class="fade-up aspect-[16/9] bg-white/5 overflow-hidden">${mapFacade(meta.mapQuery, 'Map of Vision Studios ' + city.name)}</div>
 </div></section>
 
+${faqSection([...cc.faq, ...copy.sharedFaq], `Filming In ${city.name}.`)}
 ${ctaBand(ctx, { heading: `Book A Studio<br/><span class="text-accent">In ${esc(city.name)}.</span>` })}`
 
   ctx.preloadHero = true

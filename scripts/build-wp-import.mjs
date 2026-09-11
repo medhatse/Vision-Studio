@@ -8,7 +8,8 @@ import { fileURLToPath } from 'node:url'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const OUT = path.join(ROOT, 'wordpress/vision-studios-theme/data/import.json')
 const read = async (n) => JSON.parse(await fs.readFile(path.join(ROOT, 'data', n + '.json'), 'utf8'))
-const [site, studios, cities, home, about, contact, news, curated] = await Promise.all(['site', 'studios', 'cities', 'home', 'about', 'contact', 'news', 'curated'].map(read))
+const [site, studios, cities, home, about, contact, news, curated, copy] = await Promise.all(['site', 'studios', 'cities', 'home', 'about', 'contact', 'news', 'curated', 'copy'].map(read))
+const faqLines = (own = [], shared = true) => [...own, ...(shared ? copy.sharedFaq : [])].map(([q, a]) => `${q} | ${a}`).join('\n')
 
 // /static/img/remote/2024/05/x.webp → https://vision-studios.net/wp-content/uploads/2024/05/x.webp
 const remote = (p) => (p && p.startsWith('/static/img/remote/') ? site.origin + '/wp-content/uploads/' + p.slice('/static/img/remote/'.length) : p || '')
@@ -28,11 +29,14 @@ const payload = {
   },
   cities: cities.sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug)).map((c) => {
     const m = curated.cities[c.slug]
-    return { slug: c.slug, name: c.name, heading: c.heading, country: m.country, tagline: m.tag, phone: m.phone, address: m.address, map_query: m.mapQuery, coords: m.coords, image: remote(m.image) }
+    const cc = copy.cities[c.slug] || { intro: [], faq: [] }
+    return { slug: c.slug, name: c.name, heading: c.heading, country: m.country, tagline: m.tag, phone: m.phone, address: m.address, map_query: m.mapQuery, coords: m.coords, image: remote(m.image), description: cc.intro.join('\n\n'), faq: faqLines(cc.faq) }
   }),
   studios: studios.sort((a, b) => order.indexOf(a.city) - order.indexOf(b.city) || a.slug.localeCompare(b.slug, undefined, { numeric: true })).map((s, i) => {
     const blurb = cities.find((c) => c.slug === s.city)?.studioBlurbs.find((b) => b.title === s.title)?.description || ''
+    const sc = copy.studios[s.slug] || { intro: [], faq: [], priceFrom: '' }
     return {
+      content: sc.intro.map((t) => ['p', t]), faq: faqLines(sc.faq), price_from: sc.priceFrom || '',
       slug: s.slug, title: s.title, city: s.city, order: i + 1, excerpt: blurb,
       tagline: curated.studioTags[s.slug] || '', area: s.areaSqm || '', specs: s.specs.join('\n'), highlights: s.highlights.join('\n'),
       use_cases_heading: s.useCasesHeading, use_cases: s.useCases.map((u) => `${u.title} | ${u.description}`).join('\n'),

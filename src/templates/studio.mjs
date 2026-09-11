@@ -1,11 +1,13 @@
-import { esc, eyebrow, h2, layout, studioCard, telHref, cityName, btnPrimary, btnGhost, icon, img, heroImg, breadcrumbs, mapFacade, parseCoords } from './helpers.mjs'
+import { esc, eyebrow, h2, layout, studioCard, telHref, cityName, btnPrimary, btnGhost, icon, img, heroImg, breadcrumbs, mapFacade, parseCoords, prose, faqSection } from './helpers.mjs'
 
 const ICONS = [/sq\.? ?mt|area/i, /decorat|isolat|stage|customi/i, /video wall|LED screen|screen/i, /gallery|control room/i, /camera/i, /generator|UPS|electric/i, /mixer|audio|microphone/i, /jib|jip|tripod/i, /light/i]
 const ICON_CLASS = ['fa-vector-square', 'fa-couch', 'fa-tv', 'fa-sliders', 'fa-video', 'fa-bolt', 'fa-microphone-lines', 'fa-arrows-up-down-left-right', 'fa-lightbulb']
 const iconFor = (text) => { const i = ICONS.findIndex((re) => re.test(text)); return ICON_CLASS[i >= 0 ? i : 0] }
 
 export function renderStudio(s, ctx) {
-  const { studios, curated, site } = ctx.data
+  const { studios, curated, site, copy } = ctx.data
+  const sc = copy.studios[s.slug] || { intro: [], faq: [], priceFrom: '' }
+  const faq = [...sc.faq, ...copy.sharedFaq]
   const meta = curated.cities[s.city]
   const tag = curated.studioTags[s.slug] || ''
   const phone = s.contact.phone && s.contact.phone.length > 8 ? s.contact.phone : meta.phone
@@ -40,7 +42,7 @@ ${slides}
 <div class="relative z-10 max-w-7xl w-full mx-auto px-6 lg:px-10 pt-40 pb-14">
 <div class="flex items-center justify-between font-mono-tag text-xs lg:text-[11px] uppercase tracking-[0.2em] text-white/60 mb-6"><a href="/${s.city}/" class="hover:text-accent">← ${cityName(s.city)} studios</a><span class="hidden sm:inline text-accent">${esc(tag)}</span><span class="hidden sm:inline">${esc(meta.coords)}</span></div>
 <h1 class="font-display uppercase leading-[0.95] text-[clamp(2.4rem,8vw,5.5rem)]">${esc(s.title)}</h1>
-<p class="mt-5 max-w-xl text-white/70">${s.areaSqm ? `${s.areaSqm} sq. mt. studio area · ` : ''}${esc(cityName(s.city))}, ${esc(meta.country)}</p>
+<p class="mt-5 max-w-xl text-white/70">${s.areaSqm ? `${s.areaSqm} sq. mt. studio area · ` : ''}${esc(cityName(s.city))}, ${esc(meta.country)}${sc.priceFrom ? ` <span class="text-accent font-mono-tag text-xs uppercase tracking-[0.15em] ml-2">From ${esc(sc.priceFrom)}</span>` : ''}</p>
 <div class="mt-8 flex flex-wrap items-center gap-6">${btnPrimary('#book', 'Book This Studio')}<div class="flex items-center gap-2">${dots}</div></div>
 </div></section>
 ${breadcrumbs(crumbs)}
@@ -48,7 +50,7 @@ ${breadcrumbs(crumbs)}
 <section class="bg-black border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10 py-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">${highlights}</div></section>
 
 <section class="bg-black py-20"><div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-5 gap-14">
-<div class="lg:col-span-3 fade-up">${eyebrow('Description')}${h2('Full Specification.', 'mb-8')}${s.specs.length ? `<ul>${specs}</ul>` : `<ul>${specs}</ul><p class="text-white/55 text-sm mt-6">Need a longer equipment list for this studio? <a href="mailto:${site.email}" class="text-accent">Email us</a> and we will send the full inventory.</p>`}</div>
+<div class="lg:col-span-3 fade-up">${eyebrow('Description')}${h2('Full Specification.', 'mb-8')}${sc.intro.length ? `<div class="prose-vs mb-10">${sc.intro.map((p) => `<p>${esc(p)}</p>`).join('')}</div>` : ''}${s.specs.length ? `<ul>${specs}</ul>` : `<ul>${specs}</ul><p class="text-white/55 text-sm mt-6">Need a longer equipment list for this studio? <a href="mailto:${site.email}" class="text-accent">Email us</a> and we will send the full inventory.</p>`}</div>
 <div class="lg:col-span-2 space-y-10">${plan}
 <div class="fade-up border border-white/10 p-6"><p class="font-mono-tag text-xs uppercase tracking-[0.25em] text-accent mb-4">Contact</p><p class="font-display uppercase text-2xl"><a href="${telHref(phone)}" class="hover:text-accent">${esc(phone)}</a></p><p class="text-white/60 text-sm mt-2"><a href="mailto:${site.email}" class="hover:text-accent">${site.email}</a></p><p class="text-white/60 text-sm mt-3 leading-relaxed">${esc(address)}</p></div>
 </div></div></section>
@@ -58,6 +60,8 @@ ${breadcrumbs(crumbs)}
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3">${thumbs}</div></div></section>
 
 ${useCases}
+
+${faqSection(faq, `About ${s.title}.`)}
 
 <section id="book" class="bg-black py-24 border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14">
 <div class="fade-up">${eyebrow('Book ' + esc(s.title))}${h2('Tell Us About<br/><span class="text-accent">Your Production.</span>')}<p class="mt-6 text-white/60 max-w-md">Send us your dates and a short brief. We reply with availability, a crew recommendation and a quote — usually within a working day.</p>
@@ -76,7 +80,7 @@ ${field('checkin', 'Check-in', 'date')}${field('checkout', 'Check-out', 'date')}
 
   ctx.preloadHero = true
   const abs = (u) => (ctx.baseUrl || '') + (ctx.basePath || '') + u
-  const jsonLd = { '@type': ['LocalBusiness', 'Place'], '@id': abs(ctx.path) + '#studio', name: `Vision Studios — ${s.title}`, url: abs(ctx.path), description: `${s.title} for hire in ${cityName(s.city)}.`, image: gallery.slice(0, 5).map(abs), telephone: phone, email: site.email, address: { '@type': 'PostalAddress', streetAddress: address, addressLocality: cityName(s.city), addressCountry: meta.country }, parentOrganization: { '@id': abs('/#organization') }, priceRange: '$$', openingHours: site.openingHours, hasMap: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(mapQuery), geo: parseCoords(meta.coords), amenityFeature: s.highlights.map((h) => ({ '@type': 'LocationFeatureSpecification', name: h, value: true })) }
+  const jsonLd = { '@type': ['LocalBusiness', 'Place'], '@id': abs(ctx.path) + '#studio', name: `Vision Studios — ${s.title}`, url: abs(ctx.path), description: `${s.title} for hire in ${cityName(s.city)}.`, image: gallery.slice(0, 5).map(abs), telephone: phone, email: site.email, address: { '@type': 'PostalAddress', streetAddress: address, addressLocality: cityName(s.city), addressCountry: meta.country }, parentOrganization: { '@id': abs('/#organization') }, priceRange: sc.priceFrom ? `from ${sc.priceFrom}` : '$$', openingHours: site.openingHours, hasMap: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(mapQuery), geo: parseCoords(meta.coords), amenityFeature: s.highlights.map((h) => ({ '@type': 'LocationFeatureSpecification', name: h, value: true })) }
   return layout(ctx, { title: `${s.title} — TV Studio Hire in ${cityName(s.city)} | Vision Studios`, description: `${s.title} for hire in ${cityName(s.city)}: ${(s.specs.length ? s.specs : s.highlights).slice(0, 4).join(' ')}`.slice(0, 158), body, image: gallery[0], jsonLd, crumbs })
 }
 

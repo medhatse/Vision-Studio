@@ -17,6 +17,8 @@ $specs   = vs_lines( vs_meta( $id, 'specs' ) );
 $highs   = vs_lines( vs_meta( $id, 'highlights' ) );
 $gallery = vs_studio_gallery_ids( $id );
 $plan    = vs_img_url( vs_meta( $id, 'floor_plan' ), 'large' );
+$price   = vs_meta( $id, 'price_from' );
+$faq     = vs_faq_items( vs_meta( $id, 'faq' ) );
 $uses    = array_map( fn( $l ) => array_map( 'trim', explode( '|', $l, 2 ) ), vs_lines( vs_meta( $id, 'use_cases' ) ) );
 $email   = vs_opt( 'email' );
 $icons   = [ '/sq\.? ?mt|area/i' => 'fa-vector-square', '/decorat|isolat|stage|customi/i' => 'fa-couch', '/video wall|LED screen|screen/i' => 'fa-tv', '/gallery|control room/i' => 'fa-sliders', '/camera/i' => 'fa-video', '/generator|UPS|electric/i' => 'fa-bolt', '/mixer|audio|microphone/i' => 'fa-microphone-lines', '/jib|jip|tripod/i' => 'fa-arrows-up-down-left-right', '/light/i' => 'fa-lightbulb' ];
@@ -28,7 +30,7 @@ $icon_for = function ( string $t ) use ( $icons ) { foreach ( $icons as $re => $
 <div class="relative z-10 max-w-7xl w-full mx-auto px-6 lg:px-10 pt-40 pb-14">
 <div class="flex items-center justify-between font-mono-tag text-xs lg:text-[11px] uppercase tracking-[0.2em] text-white/60 mb-6"><?php if ( $city ) : ?><a href="<?php echo esc_url( get_term_link( $city ) ); ?>" class="hover:text-accent">← <?php echo esc_html( sprintf( __( '%s studios', 'vision-studios' ), $city->name ) ); ?></a><?php endif; ?><span class="hidden sm:inline text-accent"><?php echo esc_html( $tag ); ?></span><span class="hidden sm:inline"><?php echo esc_html( $coords ); ?></span></div>
 <h1 class="font-display uppercase leading-[0.95] text-[clamp(2.4rem,8vw,5.5rem)]"><?php the_title(); ?></h1>
-<p class="mt-5 max-w-xl text-white/70"><?php echo esc_html( ( $area ? sprintf( __( '%s sq. mt. studio area · ', 'vision-studios' ), $area ) : '' ) . ( $city ? $city->name . ( vs_term_meta( $cid, 'country' ) ? ', ' . vs_term_meta( $cid, 'country' ) : '' ) : '' ) ); ?></p>
+<p class="mt-5 max-w-xl text-white/70"><?php echo esc_html( ( $area ? sprintf( __( '%s sq. mt. studio area · ', 'vision-studios' ), $area ) : '' ) . ( $city ? $city->name . ( vs_term_meta( $cid, 'country' ) ? ', ' . vs_term_meta( $cid, 'country' ) : '' ) : '' ) ); ?><?php if ( $price ) : ?> <span class="text-accent font-mono-tag text-xs uppercase tracking-[0.15em] ml-2"><?php echo esc_html( sprintf( __( 'From %s', 'vision-studios' ), $price ) ); ?></span><?php endif; ?></p>
 <div class="mt-8 flex flex-wrap items-center gap-6"><?php echo vs_btn( '#book', __( 'Book This Studio', 'vision-studios' ) ); // phpcs:ignore ?><div class="flex items-center gap-2"><?php foreach ( $gallery as $i => $aid ) : ?><button type="button" class="hero-dot <?php echo $i ? '' : 'is-active'; ?>" data-goto="<?php echo (int) $i; ?>" aria-label="<?php echo esc_attr( sprintf( __( 'Show image %d', 'vision-studios' ), $i + 1 ) ); ?>"></button><?php endforeach; ?></div></div>
 </div></section>
 <?php echo vs_breadcrumbs(); // phpcs:ignore ?>
@@ -41,7 +43,7 @@ $icon_for = function ( string $t ) use ( $icons ) { foreach ( $icons as $re => $
 
 <section class="bg-black py-20"><div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-5 gap-14">
 <div class="lg:col-span-3 fade-up"><?php echo vs_eyebrow( __( 'Description', 'vision-studios' ) ) . vs_h2( __( 'Full Specification.', 'vision-studios' ), 'mb-8' ); // phpcs:ignore ?>
-<?php if ( get_the_content() ) : ?><div class="prose-vs mb-8"><?php the_content(); ?></div><?php endif; ?>
+<?php if ( get_the_content() ) : ?><div class="prose-vs mb-10"><?php the_content(); ?></div><?php endif; ?>
 <ul><?php foreach ( $specs ?: $highs as $sp ) : ?><li class="flex gap-3 py-2.5 border-b border-white/10 text-sm text-white/75"><span class="text-accent font-mono-tag text-xs pt-0.5">—</span><?php echo esc_html( rtrim( $sp, '.' ) ); ?></li><?php endforeach; ?></ul>
 <?php if ( ! $specs ) : ?><p class="text-white/55 text-sm mt-6"><?php esc_html_e( 'Need a longer equipment list for this studio?', 'vision-studios' ); ?> <a href="mailto:<?php echo esc_attr( $email ); ?>" class="text-accent"><?php esc_html_e( 'Email us', 'vision-studios' ); ?></a>.</p><?php endif; ?>
 </div>
@@ -65,6 +67,8 @@ $icon_for = function ( string $t ) use ( $icons ) { foreach ( $icons as $re => $
 <?php foreach ( $uses as $i => $u ) : ?><div class="fade-up service-card bg-black p-8"><p class="font-mono-tag text-xs lg:text-[10px] text-white/50 mb-3"><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></p><h3 class="font-display uppercase text-lg"><?php echo esc_html( $u[0] ); ?></h3><p class="text-white/60 text-sm leading-relaxed mt-3"><?php echo esc_html( $u[1] ?? '' ); ?></p></div><?php endforeach; ?>
 </div></div></section>
 <?php endif; ?>
+
+<?php echo vs_faq_section( $faq, sprintf( __( 'About %s.', 'vision-studios' ), get_the_title() ) ); // phpcs:ignore ?>
 
 <section id="book" class="bg-black py-24 border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14">
 <div class="fade-up"><?php echo vs_eyebrow( sprintf( __( 'Book %s', 'vision-studios' ), get_the_title() ) ) . vs_h2( __( 'Tell Us About<br/><span class="text-accent">Your Production.</span>', 'vision-studios' ) ); // phpcs:ignore ?><p class="mt-6 text-white/60 max-w-md"><?php esc_html_e( 'Send us your dates and a short brief. We reply with availability, a crew recommendation and a quote — usually within a working day.', 'vision-studios' ); ?></p>
