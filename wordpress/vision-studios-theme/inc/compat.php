@@ -177,50 +177,34 @@ add_filter( 'shortcode_atts_wpcf7', function ( $out, $pairs, $atts ) {
 
 // ----- Contact Form 7 + reCAPTCHA: load on demand -----
 // Google's reCAPTCHA script is the heaviest asset on studio pages and only matters once someone reaches
-// the booking form. The scripts are enqueued while the form renders, so intercept them just before the
-// footer scripts print, drop them from the queue, and inject them when the form scrolls near the viewport
-// or the visitor interacts with the page. Supports both CF7's built-in v3 integration and the
+// the booking form. WordPress prints the script tags (and the plugin's inline config) as usual, but the
+// tags are neutralised (type="text/plain") and re-created by the loader below when the form scrolls near
+// the viewport or the visitor interacts with the page. Works with CF7's built-in v3 integration and the
 // "ReCaptcha v2 for Contact Form 7" plugin.
+add_filter( 'script_loader_tag', function ( $tag, $handle, $src ) {
+	$order = [ 'wpcf7-recaptcha-controls' => 1, 'wpcf7-recaptcha' => 1, 'google-recaptcha' => 2 ];
+	if ( is_admin() || ! isset( $order[ $handle ] ) ) {
+		return $tag;
+	}
+	// The v2 plugin's controls script defines the api.js onload callback, so it must load before api.js.
+	return '<script type="text/plain" data-vs-lazy-src="' . esc_url( $src ) . '" data-vs-order="' . $order[ $handle ] . '"></script>' . "\n";
+}, 10, 3 );
 add_action( 'wp_print_footer_scripts', function () {
 	if ( is_admin() ) {
 		return;
 	}
-	$scripts = wp_scripts();
-	if ( empty( $scripts->registered['google-recaptcha'] ) || ! in_array( 'google-recaptcha', $scripts->queue, true ) ) {
-		return;
-	}
-	$v2   = ! empty( $scripts->registered['wpcf7-recaptcha-controls'] );
-	$glue = $v2 ? 'wpcf7-recaptcha-controls' : 'wpcf7-recaptcha';
-	$api  = $scripts->registered['google-recaptcha']->src;
-	$glue_src = ! empty( $scripts->registered[ $glue ] ) ? $scripts->registered[ $glue ]->src : '';
-	$inline   = '';
-	foreach ( [ 'google-recaptcha', $glue ] as $h ) {
-		foreach ( [ 'data', 'before' ] as $k ) {
-			$d = $scripts->get_data( $h, $k );
-			if ( is_array( $d ) ) {
-				$d = implode( "\n", array_filter( $d, 'is_string' ) );
-			}
-			if ( is_string( $d ) && '' !== trim( $d ) ) {
-				$inline .= $d . "\n";
-			}
-		}
-	}
-	wp_dequeue_script( 'google-recaptcha' );
-	wp_dequeue_script( $glue );
-	// v2 plugin: its controls script defines the api.js onload callback, so it must come first.
-	$order = $v2 ? [ $glue_src, $api ] : [ $api, $glue_src ];
 	?>
 <script>
-(function(){var done=false,srcs=<?php echo wp_json_encode( array_values( array_filter( $order ) ) ); ?>;
-function add(i){if(i>=srcs.length)return;var s=document.createElement('script');s.src=srcs[i];s.async=true;s.onload=function(){add(i+1);};document.head.appendChild(s);}
-function load(){if(done)return;done=true;var d=<?php echo wp_json_encode( $inline ); ?>;if(d){var t=document.createElement('script');t.text=d;document.head.appendChild(t);}add(0);}
-var forms=document.querySelectorAll('.wpcf7');if(!forms.length)return;
+(function(){var done=false;
+function load(){if(done)return;done=true;var tags=[].slice.call(document.querySelectorAll('script[data-vs-lazy-src]')).sort(function(a,b){return a.dataset.vsOrder-b.dataset.vsOrder;});
+(function next(i){if(i>=tags.length)return;var s=document.createElement('script');s.src=tags[i].dataset.vsLazySrc;s.async=true;s.onload=function(){next(i+1);};document.head.appendChild(s);})(0);}
+var forms=document.querySelectorAll('.wpcf7');if(!forms.length||!document.querySelector('script[data-vs-lazy-src]'))return;
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){load();io.disconnect();}});},{rootMargin:'600px'});forms.forEach(function(f){io.observe(f);});}else{load();}
 ['pointerdown','keydown','touchstart'].forEach(function(ev){window.addEventListener(ev,load,{once:true,passive:true});});
 })();
 </script>
 	<?php
-}, 1 );
+}, 100 );
 
 // ----- Front-end weight -----
 // jQuery is only needed by plugin scripts that print in the footer; loading it in <head> blocks the first
