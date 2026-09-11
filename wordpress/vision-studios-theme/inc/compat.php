@@ -84,3 +84,60 @@ add_filter( 'rank_math/json_ld', function ( $data ) {
 	};
 	return $fix( $data );
 }, 99 );
+
+// Elementor / PRO Elements enqueue kit, theme-builder and font styles later than wp_enqueue_scripts,
+// so repeat the clean-up right before styles and scripts are printed.
+function vs_dequeue_elementor_late(): void {
+	if ( is_admin() || vs_is_elementor_view() ) {
+		return;
+	}
+	$pattern = '/^(elementor|e-|widget-|font-awesome|eicons|swiper|elementor-gf-)/';
+	foreach ( (array) wp_styles()->queue as $handle ) {
+		if ( preg_match( $pattern, $handle ) ) {
+			wp_dequeue_style( $handle );
+		}
+	}
+	foreach ( (array) wp_scripts()->queue as $handle ) {
+		if ( preg_match( $pattern, $handle ) ) {
+			wp_dequeue_script( $handle );
+		}
+	}
+}
+add_action( 'wp_print_styles', 'vs_dequeue_elementor_late', 100 );
+add_action( 'wp_print_scripts', 'vs_dequeue_elementor_late', 100 );
+add_action( 'wp_print_footer_scripts', 'vs_dequeue_elementor_late', 1 );
+
+// ----- Nginx FastCGI page cache -----
+// The Nginx Helper plugin only deletes cache files from the path in RT_WP_NGINX_HELPER_CACHE_PATH, which on
+// this host points at an empty folder. Until wp-config.php is corrected, purge the real cache directory
+// (aaPanel default: /www/server/fastcgi_cache) whenever Nginx Helper purges, or a studio/page/post changes.
+if ( ! defined( 'VS_NGINX_CACHE_PATH' ) ) {
+	define( 'VS_NGINX_CACHE_PATH', '/www/server/fastcgi_cache' );
+}
+function vs_purge_nginx_cache(): int {
+	$dir = VS_NGINX_CACHE_PATH;
+	if ( ! is_dir( $dir ) || ! is_writable( $dir ) ) {
+		return 0;
+	}
+	$n = 0;
+	try {
+		$it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ), RecursiveIteratorIterator::CHILD_FIRST );
+		foreach ( $it as $file ) {
+			if ( $file->isFile() && @unlink( $file->getPathname() ) ) {
+				$n++;
+			}
+		}
+	} catch ( Exception $e ) {
+		return $n;
+	}
+	return $n;
+}
+add_action( 'rt_nginx_helper_after_purge_all', 'vs_purge_nginx_cache' );
+add_action( 'rt_nginx_helper_after_fastcgi_purge_all', 'vs_purge_nginx_cache' );
+add_action( 'transition_post_status', function ( $new, $old, $post ) {
+	if ( in_array( $post->post_type, [ 'studio', 'page', 'post', 'vs_service', 'vs_client' ], true ) && ( 'publish' === $new || 'publish' === $old ) && ! wp_is_post_autosave( $post ) ) {
+		vs_purge_nginx_cache();
+	}
+}, 10, 3 );
+add_action( 'customize_save_after', 'vs_purge_nginx_cache' );
+add_action( 'after_switch_theme', 'vs_purge_nginx_cache' );
