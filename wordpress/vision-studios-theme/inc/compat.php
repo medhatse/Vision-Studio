@@ -284,3 +284,20 @@ add_action( 'admin_init', function () {
 	echo $next < count( $ids ) ? 'next: ' . admin_url( '?vs_regen=1&offset=' . $next ) : 'done', "\n";
 	exit;
 } );
+
+// Admin-only performance snapshot: /wp-admin/?vs_perf_diag=1
+add_action( 'admin_init', function () {
+	if ( empty( $_GET['vs_perf_diag'] ) || ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	header( 'Content-Type: text/plain' );
+	$oc = function_exists( 'opcache_get_status' ) ? opcache_get_status( false ) : false;
+	echo 'php: ', PHP_VERSION, ' sapi: ', PHP_SAPI, "\n";
+	echo 'opcache extension: ', extension_loaded( 'Zend OPcache' ) ? 'loaded' : 'MISSING', ' | opcache.enable=', ini_get( 'opcache.enable' ), ' | status: ', $oc ? ( $oc['opcache_enabled'] ? 'enabled, ' . $oc['opcache_statistics']['num_cached_scripts'] . ' scripts cached, hit rate ' . round( $oc['opcache_statistics']['opcache_hit_rate'] ) . '%' : 'disabled' ) : 'n/a', "\n";
+	echo 'time to admin_init: ', timer_stop( 0, 3 ), 's | db queries so far: ', get_num_queries(), ' | peak memory: ', round( memory_get_peak_usage() / 1048576 ), 'M', "\n";
+	echo 'object cache: ', wp_using_ext_object_cache() ? 'persistent' : 'none (default)', "\n";
+	$t = microtime( true ); wp_remote_get( 'https://www.google.com/generate_204', [ 'timeout' => 5 ] ); echo 'outbound http test: ', round( microtime( true ) - $t, 2 ), 's', "\n";
+	$t = microtime( true ); global $wpdb; $wpdb->get_var( 'SELECT COUNT(*) FROM ' . $wpdb->posts ); echo 'db roundtrip: ', round( ( microtime( true ) - $t ) * 1000 ), 'ms', "\n";
+	echo 'active plugins: ', implode( ', ', array_map( fn( $p ) => dirname( $p ), (array) get_option( 'active_plugins' ) ) ), "\n";
+	exit;
+} );
