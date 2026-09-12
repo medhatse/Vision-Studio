@@ -423,11 +423,7 @@ add_action( 'admin_init', function () {
 	};
 	header( 'Content-Type: text/plain; charset=utf-8' );
 	echo $apply ? "APPLYING\n" : "DRY RUN (add &apply=1 to write)\n";
-	$needle = array_key_first( $pairs ) ? array_keys( $pairs ) : [];
-	$like   = '%' . $wpdb->esc_like( 'IT Media' ) . '%';
-	if ( ! empty( $_GET['from'] ) ) {
-		$like = '%' . $wpdb->esc_like( wp_unslash( $_GET['from'] ) ) . '%';
-	}
+	$like = '%' . $wpdb->esc_like( ! empty( $_GET['from'] ) ? wp_unslash( $_GET['from'] ) : 'IT Media' ) . '%';
 	// Posts (any type, any status).
 	$posts = $wpdb->get_results( $wpdb->prepare( "SELECT ID, post_title, post_content, post_excerpt, post_type FROM {$wpdb->posts} WHERE post_title LIKE %s OR post_content LIKE %s OR post_excerpt LIKE %s", $like, $like, $like ) );
 	foreach ( $posts as $p ) {
@@ -438,8 +434,8 @@ add_action( 'admin_init', function () {
 			clean_post_cache( $p->ID );
 		}
 	}
-	// Post meta (theme fields, Rank Math, Elementor).
-	$metas = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id, post_id, meta_key FROM {$wpdb->postmeta} WHERE meta_value LIKE %s AND ( meta_key LIKE '\\_vs\\_%%' OR meta_key LIKE 'rank\\_math\\_%%' OR meta_key = '_elementor_data' )", $like ) );
+	// Post meta (theme fields, Rank Math, Elementor). Unescaped underscores in LIKE are single-character wildcards, which is harmless here.
+	$metas = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id, post_id, meta_key FROM {$wpdb->postmeta} WHERE meta_value LIKE %s AND ( meta_key LIKE '_vs_%%' OR meta_key LIKE 'rank_math_%%' OR meta_key = '_elementor_data' )", $like ) );
 	foreach ( $metas as $m ) {
 		echo "postmeta {$m->post_id} {$m->meta_key}\n";
 		if ( $apply ) {
@@ -473,8 +469,9 @@ add_action( 'admin_init', function () {
 	}
 	if ( $apply ) {
 		vs_purge_nginx_cache();
-		if ( class_exists( '\RankMath\Sitemap\Cache' ) && method_exists( '\RankMath\Sitemap\Cache', 'invalidate_storage' ) ) {
-			\RankMath\Sitemap\Cache::invalidate_storage();
+		$rm_cache = 'RankMath\Sitemap\Cache';
+		if ( class_exists( $rm_cache ) && method_exists( $rm_cache, 'invalidate_storage' ) ) {
+			call_user_func( [ $rm_cache, 'invalidate_storage' ] );
 		}
 		echo "done, cache purged\n";
 	}
