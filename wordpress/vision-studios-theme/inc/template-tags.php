@@ -185,7 +185,9 @@ function vs_faq_section( array $items, string $heading = '' ): string {
 	}
 	$html = '<section class="bg-black py-20 border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-3 gap-10"><div class="fade-up">' . vs_eyebrow( __( 'FAQ', 'vision-studios' ) ) . vs_h2( $heading ?: __( 'Questions We Get Asked.', 'vision-studios' ) ) . '</div><div class="lg:col-span-2 divide-y divide-white/10 fade-up">';
 	foreach ( $items as [ $q, $a ] ) {
-		$html .= '<details class="group py-4"><summary class="flex justify-between items-start gap-6 cursor-pointer list-none font-display uppercase text-lg"><span>' . esc_html( $q ) . '</span><span class="text-accent shrink-0 transition-transform group-open:rotate-45">' . vs_icon( 'plus' ) . '</span></summary><p class="text-white/70 text-sm leading-relaxed mt-3 max-w-2xl">' . esc_html( $a ) . '</p></details>';
+		// Email addresses become links (and are shielded from Cloudflare's obfuscation, which crawlers see as 404s).
+		$answer = preg_replace( '/([\w.+-]+@[\w-]+(?:\.[\w-]+)+)/', '<!--email_off--><a href="mailto:$1" class="text-accent">$1</a><!--/email_off-->', esc_html( $a ) );
+		$html .= '<details class="group py-4"><summary class="flex justify-between items-start gap-6 cursor-pointer list-none font-display uppercase text-lg"><span>' . esc_html( $q ) . '</span><span class="text-accent shrink-0 transition-transform group-open:rotate-45">' . vs_icon( 'plus' ) . '</span></summary><p class="text-white/70 text-sm leading-relaxed mt-3 max-w-2xl">' . $answer . '</p></details>';
 	}
 	$ld = [ '@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => array_map( fn( $i ) => [ '@type' => 'Question', 'name' => $i[0], 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => $i[1] ] ], $items ) ];
 	return $html . '</div></div><script type="application/ld+json">' . wp_json_encode( $ld, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script></section>';
