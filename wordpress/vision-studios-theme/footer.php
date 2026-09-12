@@ -1,4 +1,4 @@
-</main>
+<!--/email_off--></main>
 <?php $vs_email = vs_opt( 'email' ); ?>
 <footer class="bg-black border-t border-white/10 pt-16 pb-8">
 <div class="max-w-7xl mx-auto px-6 lg:px-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-12">

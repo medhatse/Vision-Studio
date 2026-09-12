@@ -32,4 +32,4 @@ $vs_logo = VS_URI . '/assets/img/logo-mark.png';
 </nav>
 <div id="mobile-menu" class="lg:hidden max-h-0 overflow-hidden bg-black/95 border-t border-white/10"><ul class="flex flex-col px-6 py-4 gap-4 font-mono-tag text-sm uppercase tracking-[0.15em] text-white/85"><?php echo $vs_mobile; // phpcs:ignore ?><li><a href="<?php echo esc_url( vs_page_url( 'contact' ) ); ?>" class="inline-flex items-center gap-2 bg-accent text-black px-4 py-3 rounded-sm mt-2"><?php esc_html_e( 'Book a Studio', 'vision-studios' ); ?> <?php echo vs_icon( 'arrow-right', 'text-xs lg:text-[10px]' ); ?></a></li></ul></div>
 </header>
-<main id="content">
+<main id="content"><!--email_off-->
