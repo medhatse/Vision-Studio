@@ -23,6 +23,11 @@ function vs_legacy_target( string $slug ): string {
 		$page = $map[ $slug ] ? get_page_by_path( $map[ $slug ] ) : null;
 		return $page ? (string) get_permalink( $page ) : home_url( '/' );
 	}
+	// Renamed posts (old slug => new slug).
+	$renamed = [ 'hosting-an-irish-podcast-inside-it-media' => 'hosting-an-irish-podcast-at-vision-studios-dublin' ];
+	if ( isset( $renamed[ $slug ] ) && ( $np = get_page_by_path( $renamed[ $slug ], OBJECT, 'post' ) ) ) {
+		return (string) get_permalink( $np );
+	}
 	return '';
 }
 

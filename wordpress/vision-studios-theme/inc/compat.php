@@ -444,6 +444,16 @@ add_action( 'admin_init', function () {
 			wp_cache_delete( $m->post_id, 'post_meta' );
 		}
 	}
+	// Elementor's rendered-element cache holds a copy of the old text: drop it so it regenerates.
+	foreach ( $wpdb->get_results( $wpdb->prepare( "SELECT meta_id, post_id, meta_key FROM {$wpdb->postmeta} WHERE meta_value LIKE %s AND meta_key IN ( '_elementor_element_cache', '_elementor_css' )", $like ) ) as $m ) {
+		echo "postmeta {$m->post_id} {$m->meta_key} (cache, will be deleted)\n";
+		if ( $apply ) {
+			delete_metadata_by_mid( 'post', $m->meta_id );
+		}
+	}
+	foreach ( $wpdb->get_results( $wpdb->prepare( "SELECT post_id, meta_key FROM {$wpdb->postmeta} WHERE meta_value LIKE %s AND meta_key NOT LIKE '_vs_%%' AND meta_key NOT LIKE 'rank_math_%%' AND meta_key NOT IN ( '_elementor_data', '_elementor_element_cache', '_elementor_css' )", $like ) ) as $m ) {
+		echo "NOTE untouched postmeta {$m->post_id} {$m->meta_key}\n";
+	}
 	// Terms + term meta.
 	foreach ( $wpdb->get_results( $wpdb->prepare( "SELECT term_id, description FROM {$wpdb->term_taxonomy} WHERE description LIKE %s", $like ) ) as $t ) {
 		echo "term description {$t->term_id}\n";
