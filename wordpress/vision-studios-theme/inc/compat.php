@@ -385,3 +385,98 @@ add_filter( 'robots_txt', function ( $output, $public ) {
 	$lines[] = 'Sitemap: ' . $sitemap;
 	return implode( "\n", $lines ) . "\n";
 }, 99, 2 );
+
+// ----- One-off text replacement across content (admin only) -----
+// /wp-admin/?vs_replace=1&from=Old%20text&to=New%20text[&slug_from=old-slug&slug_to=new-slug]
+// Replaces plain text in post titles, content, excerpts, Elementor data, theme/Rank Math meta and city terms.
+// Dry run unless &apply=1 is added. Old post slugs keep working through WordPress's old-slug redirect.
+add_action( 'admin_init', function () {
+	if ( empty( $_GET['vs_replace'] ) || ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	global $wpdb;
+	$pairs = [];
+	if ( ! empty( $_GET['from'] ) ) {
+		$pairs[ wp_unslash( $_GET['from'] ) ] = wp_unslash( $_GET['to'] ?? '' );
+	}
+	if ( ! empty( $_GET['preset'] ) && 'itmedia' === $_GET['preset'] ) {
+		$pairs = [
+			'Irish Podcast program, IT Media, right here' => 'Irish Podcast programme right here',
+			'Dundrum · IT Media'                 => 'Dundrum · South Dublin',
+			'IT Media Limited, 3rd Floor North'  => '3rd Floor North',
+			'IT Media Limited 3rd Floor North'   => '3rd Floor North',
+			', operated with IT Media Limited'   => '',
+			' operated with IT Media Limited'    => '',
+			'inside IT Media'                    => 'at Vision Studios Dublin',
+			'Inside IT Media'                    => 'at Vision Studios Dublin',
+			'IT Media Limited'                   => 'Vision Studios Dublin',
+			'IT Media'                           => 'Vision Studios Dublin',
+		];
+	}
+	$apply = ! empty( $_GET['apply'] );
+	$swap  = function ( $text ) use ( $pairs ) {
+		foreach ( $pairs as $from => $to ) {
+			$text = str_replace( $from, $to, $text );
+			$text = str_replace( wp_json_encode( $from ), wp_json_encode( $to ), $text ); // JSON-escaped copies (Elementor data)
+		}
+		return $text;
+	};
+	header( 'Content-Type: text/plain; charset=utf-8' );
+	echo $apply ? "APPLYING\n" : "DRY RUN (add &apply=1 to write)\n";
+	$needle = array_key_first( $pairs ) ? array_keys( $pairs ) : [];
+	$like   = '%' . $wpdb->esc_like( 'IT Media' ) . '%';
+	if ( ! empty( $_GET['from'] ) ) {
+		$like = '%' . $wpdb->esc_like( wp_unslash( $_GET['from'] ) ) . '%';
+	}
+	// Posts (any type, any status).
+	$posts = $wpdb->get_results( $wpdb->prepare( "SELECT ID, post_title, post_content, post_excerpt, post_type FROM {$wpdb->posts} WHERE post_title LIKE %s OR post_content LIKE %s OR post_excerpt LIKE %s", $like, $like, $like ) );
+	foreach ( $posts as $p ) {
+		$new = [ 'post_title' => $swap( $p->post_title ), 'post_content' => $swap( $p->post_content ), 'post_excerpt' => $swap( $p->post_excerpt ) ];
+		echo "post {$p->ID} ({$p->post_type}): {$p->post_title} -> {$new['post_title']}\n";
+		if ( $apply ) {
+			$wpdb->update( $wpdb->posts, $new, [ 'ID' => $p->ID ] );
+			clean_post_cache( $p->ID );
+		}
+	}
+	// Post meta (theme fields, Rank Math, Elementor).
+	$metas = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id, post_id, meta_key FROM {$wpdb->postmeta} WHERE meta_value LIKE %s AND ( meta_key LIKE '\\_vs\\_%%' OR meta_key LIKE 'rank\\_math\\_%%' OR meta_key = '_elementor_data' )", $like ) );
+	foreach ( $metas as $m ) {
+		echo "postmeta {$m->post_id} {$m->meta_key}\n";
+		if ( $apply ) {
+			$v = $wpdb->get_var( $wpdb->prepare( "SELECT meta_value FROM {$wpdb->postmeta} WHERE meta_id = %d", $m->meta_id ) );
+			$wpdb->update( $wpdb->postmeta, [ 'meta_value' => $swap( $v ) ], [ 'meta_id' => $m->meta_id ] );
+			wp_cache_delete( $m->post_id, 'post_meta' );
+		}
+	}
+	// Terms + term meta.
+	foreach ( $wpdb->get_results( $wpdb->prepare( "SELECT term_id, description FROM {$wpdb->term_taxonomy} WHERE description LIKE %s", $like ) ) as $t ) {
+		echo "term description {$t->term_id}\n";
+		if ( $apply ) {
+			$wpdb->update( $wpdb->term_taxonomy, [ 'description' => $swap( $t->description ) ], [ 'term_id' => $t->term_id ] );
+			clean_term_cache( $t->term_id );
+		}
+	}
+	foreach ( $wpdb->get_results( $wpdb->prepare( "SELECT meta_id, term_id, meta_key, meta_value FROM {$wpdb->termmeta} WHERE meta_value LIKE %s", $like ) ) as $m ) {
+		echo "termmeta {$m->term_id} {$m->meta_key}: " . mb_substr( $m->meta_value, 0, 80 ) . "\n";
+		if ( $apply ) {
+			$wpdb->update( $wpdb->termmeta, [ 'meta_value' => $swap( $m->meta_value ) ], [ 'meta_id' => $m->meta_id ] );
+			wp_cache_delete( $m->term_id, 'term_meta' );
+		}
+	}
+	// Optional slug rename (WordPress remembers the old slug and redirects it).
+	if ( ! empty( $_GET['slug_from'] ) && ! empty( $_GET['slug_to'] ) ) {
+		$p = get_page_by_path( sanitize_title( wp_unslash( $_GET['slug_from'] ) ), OBJECT, 'post' );
+		echo 'slug: ', $p ? "{$p->post_name} -> " . sanitize_title( wp_unslash( $_GET['slug_to'] ) ) : 'post not found', "\n";
+		if ( $p && $apply ) {
+			wp_update_post( [ 'ID' => $p->ID, 'post_name' => sanitize_title( wp_unslash( $_GET['slug_to'] ) ) ] );
+		}
+	}
+	if ( $apply ) {
+		vs_purge_nginx_cache();
+		if ( class_exists( '\RankMath\Sitemap\Cache' ) && method_exists( '\RankMath\Sitemap\Cache', 'invalidate_storage' ) ) {
+			\RankMath\Sitemap\Cache::invalidate_storage();
+		}
+		echo "done, cache purged\n";
+	}
+	exit;
+} );

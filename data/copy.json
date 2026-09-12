@@ -41,7 +41,7 @@
         "The studio is used for live news and current affairs, streamed events, podcasts with video, corporate broadcasts and virtual events for Irish and international clients."
       ],
       "faq": [
-        ["Where is the Dublin studio?", "IT Media Limited, 3rd Floor North, North Block, Rockfields, Dundrum, Dublin D16 W7W3."],
+        ["Where is the Dublin studio?", "3rd Floor North, North Block, Rockfields, Dundrum, Dublin D16 W7W3."],
         ["Does the Dublin studio have an LED wall?", "Yes. A large fully controlled LED screen plus three groups of 2×2 55-inch video wall panels, so backdrops, graphics and remote guests can be shown behind presenters."],
         ["Is there a jib?", "Yes, a jimmy jib adjustable from three to seven metres."]
       ]
@@ -204,12 +204,12 @@
     },
     "dublin": {
       "intro": [
-        "Vision Studios Dublin is a 144 square metre fully decorated broadcast studio in Dundrum, operated with IT Media Limited. A large controllable LED screen and 2×2 video wall groups give a modern news and talk show backdrop without a set build.",
+        "Vision Studios Dublin is a 144 square metre fully decorated broadcast studio in Dundrum. A large controllable LED screen and 2×2 video wall groups give a modern news and talk show backdrop without a set build.",
         "Four Sony Full HD cameras with robotic heads, an Auto-Q prompting system, a jimmy jib, DMX-512 LED lighting and a digital audio mixer with eight wireless microphones are all in place, with an 18 square metre gallery. Broadcast services, equipment hire and crew hire are available for the studio and for on-location work across Ireland.",
         "The studio hosts live news, streamed events, video podcasts, corporate broadcasts and virtual events for Irish and international broadcasters."
       ],
       "faq": [
-        ["Where is the Dublin studio?", "IT Media Limited, 3rd Floor North, North Block, Rockfields, Dundrum, Dublin D16 W7W3. Call +353 (0) 8961 14641."],
+        ["Where is the Dublin studio?", "3rd Floor North, North Block, Rockfields, Dundrum, Dublin D16 W7W3. Call +353 (0) 8961 14641."],
         ["Is the Dublin studio decorated?", "Yes, fully decorated, with a large LED screen and video wall groups ready for news and talk show formats."]
       ]
     },
