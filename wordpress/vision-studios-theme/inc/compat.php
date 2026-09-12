@@ -365,3 +365,23 @@ add_action( 'template_redirect', function () {
 	echo implode( "\n", $lines ), "\n";
 	exit;
 } );
+
+// ----- robots.txt -----
+// One group for everyone (admin blocked, admin-ajax allowed, Cloudflare and search-result URLs kept out of
+// the crawl budget), an explicit welcome for AI search crawlers, and the sitemap last. Indexing control
+// for real pages stays with noindex tags, never here.
+add_filter( 'robots_txt', function ( $output, $public ) {
+	if ( ! $public ) {
+		return $output;
+	}
+	$sitemap = defined( 'RANK_MATH_VERSION' ) ? home_url( '/sitemap_index.xml' ) : home_url( '/wp-sitemap.xml' );
+	$ai      = [ 'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User', 'anthropic-ai', 'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot-Extended', 'Bingbot', 'DuckAssistBot' ];
+	$lines   = [ 'User-agent: *', 'Disallow: /wp-admin/', 'Allow: /wp-admin/admin-ajax.php', 'Disallow: /cdn-cgi/', 'Disallow: /?s=', 'Disallow: /search/', 'Disallow: /*?s=', '', '# AI search crawlers are welcome' ];
+	foreach ( $ai as $bot ) {
+		$lines[] = 'User-agent: ' . $bot;
+	}
+	$lines[] = 'Allow: /';
+	$lines[] = '';
+	$lines[] = 'Sitemap: ' . $sitemap;
+	return implode( "\n", $lines ) . "\n";
+}, 99, 2 );
