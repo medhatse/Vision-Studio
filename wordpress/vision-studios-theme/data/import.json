@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-13T18:38:42.545Z",
+ "generated": "2026-09-13T19:12:08.785Z",
  "options": {
   "email": "booking@vision-studios.net",
   "instagram": "https://www.instagram.com/visionstudioslondon/",
@@ -278,7 +278,7 @@
     ]
    ],
    "faq": "What is a DTL room? | A Direct-To-Link room: a small single-camera studio where a guest is put live into a programme produced elsewhere, via satellite or internet contribution.\nWhich live feed formats are supported? | SNG satellite uplink and internet streaming protocols including TVU, LiveU, RTMP and SRT.\nCan the background be branded? | Yes. The room uses a custom background that can be set for your channel or programme.\nHow do I book a studio? | Email booking@vision-studios.net or call the local number on this page with your dates and a short brief. We reply with availability, a crew recommendation and a quote, usually within a working day.\nCan you provide a crew? | Yes. We supply directors, cinematographers, producers, sound engineers, lighting and post-production specialists, so you can arrive with just your talent and script.\nCan you build a custom set? | Yes. Our set design team handles everything from the initial concept to manufacturing and installation, on any scale.\nCan I hire extra equipment? | Yes. Cameras, lenses, lighting, audio gear and post-production tools are available to hire alongside the studio.",
-   "price_from": "€1,500 / day",
+   "price_from": "€500 / day",
    "slug": "istanbul-dtl-room",
    "title": "Istanbul DTL Room",
    "city": "istanbul",
