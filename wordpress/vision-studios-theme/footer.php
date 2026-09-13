@@ -18,7 +18,7 @@
 <?php foreach ( [ 'phone_uk' => __( 'United Kingdom', 'vision-studios' ), 'phone_eu' => __( 'Europe', 'vision-studios' ), 'phone_tr' => __( 'Turkey', 'vision-studios' ) ] as $k => $label ) : if ( $p = vs_opt( $k ) ) : ?>
 <li><a href="<?php echo esc_attr( vs_tel( $p ) ); ?>" class="hover:text-accent"><?php echo esc_html( $label . ' · ' . $p ); ?></a></li>
 <?php endif; endforeach; ?>
-<li class="text-white/55 pt-1"><?php echo esc_html( vs_opt( 'hq_address' ) ); ?></li><li class="text-white/55"><?php echo esc_html( vs_opt( 'opening_hours' ) ); ?></li></ul>
+<?php if ( vs_show_addresses() ) : ?><li class="text-white/55 pt-1"><?php echo esc_html( vs_opt( 'hq_address' ) ); ?></li><?php endif; ?><li class="text-white/55 pt-1"><?php echo esc_html( vs_opt( 'opening_hours' ) ); ?></li></ul>
 <div class="flex gap-3 mt-4">
 <?php foreach ( [ 'instagram' => 'ig', 'linkedin' => 'in' ] as $k => $short ) : if ( $u = vs_opt( $k ) ) : ?><a href="<?php echo esc_url( $u ); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( ucfirst( $k ) ); ?>" class="w-9 h-9 flex items-center justify-center border border-white/20 text-xs lg:text-[10px] font-mono-tag uppercase hover:border-accent hover:text-accent"><?php echo esc_html( $short ); ?></a><?php endif; endforeach; ?>
 </div></div></div>

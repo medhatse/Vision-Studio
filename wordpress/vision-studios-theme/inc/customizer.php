@@ -12,6 +12,7 @@ function vs_settings(): array {
 			'phone_eu'      => [ __( 'Phone — Europe', 'vision-studios' ), 'text', '+353 (0) 8961 14641' ],
 			'phone_tr'      => [ __( 'Phone — Turkey', 'vision-studios' ), 'text', '+90 212 988 10 45' ],
 			'hq_address'    => [ __( 'HQ address', 'vision-studios' ), 'text', 'Vision Studios, Kendal Avenue, London W3 0XA' ],
+			'show_addresses' => [ __( 'Show street addresses and maps on the site (off: addresses stay in the search-engine schema only)', 'vision-studios' ), 'checkbox', '' ],
 			'opening_hours' => [ __( 'Opening hours', 'vision-studios' ), 'text', 'Mon–Sun 09:00–17:00' ],
 			'instagram'     => [ __( 'Instagram URL', 'vision-studios' ), 'url', 'https://www.instagram.com/visionstudioslondon/' ],
 			'linkedin'      => [ __( 'LinkedIn URL', 'vision-studios' ), 'url', 'https://www.linkedin.com/company/vision-studios-london/' ],
@@ -44,6 +45,11 @@ function vs_settings(): array {
 	];
 }
 
+/** Street addresses and maps are hidden from visitors unless switched on; structured data keeps them for search engines. */
+function vs_show_addresses(): bool {
+	return (bool) vs_opt( 'show_addresses' );
+}
+
 /** Get a theme setting with its default. */
 function vs_opt( string $key ) {
 	static $defaults = null;
@@ -68,7 +74,7 @@ add_action( 'customize_register', function ( WP_Customize_Manager $wp ) {
 				$wp->add_control( "vs_$key", [ 'section' => "vs_$sid", 'type' => 'hidden', 'description' => $label ] );
 				continue;
 			}
-			$sanitizers = [ 'url' => 'esc_url_raw', 'image' => 'absint', 'number' => 'absint', 'textarea' => 'wp_kses_post' ];
+			$sanitizers = [ 'url' => 'esc_url_raw', 'image' => 'absint', 'number' => 'absint', 'textarea' => 'wp_kses_post', 'checkbox' => 'rest_sanitize_boolean' ];
 			$sanitize   = $sanitizers[ $type ] ?? 'sanitize_text_field';
 			$wp->add_setting( "vs_$key", [ 'default' => $default, 'sanitize_callback' => $sanitize ] );
 			if ( 'image' === $type ) {

@@ -350,7 +350,7 @@ add_action( 'template_redirect', function () {
 	header( 'Cache-Control: public, max-age=86400' );
 	$lines   = [ '# ' . get_bloginfo( 'name' ), '', '> ' . ( vs_opt( 'hero_intro' ) ?: get_bloginfo( 'description' ) ), '', 'Broadcast and production studio hire in London, Dublin, Paris and Istanbul. Booking: ' . vs_opt( 'email' ) . '.', '', '## Cities', '' ];
 	foreach ( vs_cities() as $c ) {
-		$lines[] = '- [' . $c->name . ' studios](' . get_term_link( $c ) . '): ' . count( vs_city_studios( $c ) ) . ' studios, ' . vs_term_meta( $c->term_id, 'address' );
+		$lines[] = '- [' . $c->name . ' studios](' . get_term_link( $c ) . '): ' . count( vs_city_studios( $c ) ) . ' studios, ' . ( vs_show_addresses() ? vs_term_meta( $c->term_id, 'address' ) : vs_term_meta( $c->term_id, 'country' ) );
 	}
 	$lines[] = ''; $lines[] = '## Studios'; $lines[] = '';
 	foreach ( get_posts( [ 'post_type' => 'studio', 'posts_per_page' => -1, 'orderby' => [ 'menu_order' => 'ASC', 'title' => 'ASC' ] ] ) as $s ) {
@@ -413,6 +413,9 @@ add_action( 'admin_init', function () {
 			'IT Media'                           => 'Vision Studios Dublin',
 		];
 	}
+	if ( ! empty( $_GET['preset'] ) && 'addresses' === $_GET['preset'] ) {
+		$pairs = vs_address_free_copy();
+	}
 	$apply = ! empty( $_GET['apply'] );
 	$swap  = function ( $text ) use ( $pairs ) {
 		foreach ( $pairs as $from => $to ) {
@@ -424,8 +427,16 @@ add_action( 'admin_init', function () {
 	header( 'Content-Type: text/plain; charset=utf-8' );
 	echo $apply ? "APPLYING\n" : "DRY RUN (add &apply=1 to write)\n";
 	$like = '%' . $wpdb->esc_like( ! empty( $_GET['from'] ) ? wp_unslash( $_GET['from'] ) : 'IT Media' ) . '%';
+	if ( count( $pairs ) > 1 ) { // presets: match any of the needles.
+		$like = array_map( fn( $f ) => '%' . $wpdb->esc_like( $f ) . '%', array_keys( $pairs ) );
+	}
+	$any = function ( string $col ) use ( $like, $wpdb ) { // "(col LIKE %s OR col LIKE %s …)" with the needles bound.
+		return '(' . implode( ' OR ', array_fill( 0, count( (array) $like ), "$col LIKE %s" ) ) . ')';
+	};
+	$bind = fn( int $n ) => array_merge( ...array_fill( 0, $n, (array) $like ) );
+	$keep = [ '_vs_address', '_vs_map_query', '_vs_hq_address' ]; // stored addresses feed the schema and stay untouched.
 	// Posts (any type, any status).
-	$posts = $wpdb->get_results( $wpdb->prepare( "SELECT ID, post_title, post_content, post_excerpt, post_type FROM {$wpdb->posts} WHERE post_title LIKE %s OR post_content LIKE %s OR post_excerpt LIKE %s", $like, $like, $like ) );
+	$posts = $wpdb->get_results( $wpdb->prepare( "SELECT ID, post_title, post_content, post_excerpt, post_type FROM {$wpdb->posts} WHERE {$any('post_title')} OR {$any('post_content')} OR {$any('post_excerpt')}", ...$bind( 3 ) ) );
 	foreach ( $posts as $p ) {
 		$new = [ 'post_title' => $swap( $p->post_title ), 'post_content' => $swap( $p->post_content ), 'post_excerpt' => $swap( $p->post_excerpt ) ];
 		echo "post {$p->ID} ({$p->post_type}): {$p->post_title} -> {$new['post_title']}\n";
@@ -435,8 +446,12 @@ add_action( 'admin_init', function () {
 		}
 	}
 	// Post meta (theme fields, Rank Math, Elementor). Unescaped underscores in LIKE are single-character wildcards, which is harmless here.
-	$metas = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id, post_id, meta_key FROM {$wpdb->postmeta} WHERE meta_value LIKE %s AND ( meta_key LIKE '_vs_%%' OR meta_key LIKE 'rank_math_%%' OR meta_key = '_elementor_data' )", $like ) );
+	$metas = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id, post_id, meta_key FROM {$wpdb->postmeta} WHERE {$any('meta_value')} AND ( meta_key LIKE '_vs_%%' OR meta_key LIKE 'rank_math_%%' OR meta_key = '_elementor_data' )", ...$bind( 1 ) ) );
 	foreach ( $metas as $m ) {
+		if ( in_array( $m->meta_key, $keep, true ) ) {
+			echo "postmeta {$m->post_id} {$m->meta_key} (kept)\n";
+			continue;
+		}
 		echo "postmeta {$m->post_id} {$m->meta_key}\n";
 		if ( $apply ) {
 			$v = $wpdb->get_var( $wpdb->prepare( "SELECT meta_value FROM {$wpdb->postmeta} WHERE meta_id = %d", $m->meta_id ) );
@@ -445,24 +460,28 @@ add_action( 'admin_init', function () {
 		}
 	}
 	// Elementor's rendered-element cache holds a copy of the old text: drop it so it regenerates.
-	foreach ( $wpdb->get_results( $wpdb->prepare( "SELECT meta_id, post_id, meta_key FROM {$wpdb->postmeta} WHERE meta_value LIKE %s AND meta_key IN ( '_elementor_element_cache', '_elementor_css' )", $like ) ) as $m ) {
+	foreach ( $wpdb->get_results( $wpdb->prepare( "SELECT meta_id, post_id, meta_key FROM {$wpdb->postmeta} WHERE {$any('meta_value')} AND meta_key IN ( '_elementor_element_cache', '_elementor_css' )", ...$bind( 1 ) ) ) as $m ) {
 		echo "postmeta {$m->post_id} {$m->meta_key} (cache, will be deleted)\n";
 		if ( $apply ) {
 			delete_metadata_by_mid( 'post', $m->meta_id );
 		}
 	}
-	foreach ( $wpdb->get_results( $wpdb->prepare( "SELECT post_id, meta_key FROM {$wpdb->postmeta} WHERE meta_value LIKE %s AND meta_key NOT LIKE '_vs_%%' AND meta_key NOT LIKE 'rank_math_%%' AND meta_key NOT IN ( '_elementor_data', '_elementor_element_cache', '_elementor_css' )", $like ) ) as $m ) {
+	foreach ( $wpdb->get_results( $wpdb->prepare( "SELECT post_id, meta_key FROM {$wpdb->postmeta} WHERE {$any('meta_value')} AND meta_key NOT LIKE '_vs_%%' AND meta_key NOT LIKE 'rank_math_%%' AND meta_key NOT IN ( '_elementor_data', '_elementor_element_cache', '_elementor_css' )", ...$bind( 1 ) ) ) as $m ) {
 		echo "NOTE untouched postmeta {$m->post_id} {$m->meta_key}\n";
 	}
 	// Terms + term meta.
-	foreach ( $wpdb->get_results( $wpdb->prepare( "SELECT term_id, description FROM {$wpdb->term_taxonomy} WHERE description LIKE %s", $like ) ) as $t ) {
+	foreach ( $wpdb->get_results( $wpdb->prepare( "SELECT term_id, description FROM {$wpdb->term_taxonomy} WHERE {$any('description')}", ...$bind( 1 ) ) ) as $t ) {
 		echo "term description {$t->term_id}\n";
 		if ( $apply ) {
 			$wpdb->update( $wpdb->term_taxonomy, [ 'description' => $swap( $t->description ) ], [ 'term_id' => $t->term_id ] );
 			clean_term_cache( $t->term_id );
 		}
 	}
-	foreach ( $wpdb->get_results( $wpdb->prepare( "SELECT meta_id, term_id, meta_key, meta_value FROM {$wpdb->termmeta} WHERE meta_value LIKE %s", $like ) ) as $m ) {
+	foreach ( $wpdb->get_results( $wpdb->prepare( "SELECT meta_id, term_id, meta_key, meta_value FROM {$wpdb->termmeta} WHERE {$any('meta_value')}", ...$bind( 1 ) ) ) as $m ) {
+		if ( in_array( $m->meta_key, $keep, true ) ) {
+			echo "termmeta {$m->term_id} {$m->meta_key} (kept)\n";
+			continue;
+		}
 		echo "termmeta {$m->term_id} {$m->meta_key}: " . mb_substr( $m->meta_value, 0, 80 ) . "\n";
 		if ( $apply ) {
 			$wpdb->update( $wpdb->termmeta, [ 'meta_value' => $swap( $m->meta_value ) ], [ 'meta_id' => $m->meta_id ] );
@@ -487,3 +506,19 @@ add_action( 'admin_init', function () {
 	}
 	exit;
 } );
+
+// Visible copy without street addresses (used by the `addresses` preset above and by the repo's data files).
+function vs_address_free_copy(): array {
+	return [
+		'Vision Studios, Kendal Avenue, London W3 0XA. Call' => 'West London. Full address and directions are sent with every booking confirmation. Call',
+		'at Kendal Avenue in West London (W3 0XA)' => 'in West London',
+		'podcast production at Kendal Avenue, W3.' => 'podcast production in West London.',
+		'in the same Kendal Avenue building as Studio 1' => 'in the same West London building as Studio 1',
+		'HQ · Kendal Avenue' => 'HQ · West London',
+		'3rd Floor North, North Block, Rockfields, Dundrum, Dublin D16 W7W3' => 'In Dundrum, South Dublin. Full address and directions are sent with every booking confirmation',
+		'Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, A1 Blok, İkitelli OSB, Başakşehir, Istanbul, alongside Studios 6 and 7.' => 'At our Deposite site in Başakşehir, Istanbul, alongside Studios 6 and 7. Full address and directions are sent with every booking confirmation.',
+		'Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, Başakşehir, Istanbul, with Studios 5 and 6.' => 'At our Deposite site in Başakşehir, Istanbul, with Studios 5 and 6. Full address and directions are sent with every booking confirmation.',
+		'Göztepe, İSTOÇ Oto Ticaret Merkezi, Bağcılar, Istanbul, next to Studio 9.' => 'At our İSTOÇ site in Bağcılar, Istanbul, next to Studio 9. Full address and directions are sent with every booking confirmation.',
+		'Three sites: Media City at Mahmutbey, 2623 Sokak No 3, Bağcılar (Studios 1–4 and the DTL room); Deposite İş Merkezi, Atatürk Blv. No:204A, Başakşehir (Studios 5–7); and İSTOÇ, Göztepe, Bağcılar (Studios 8–9). Call' => 'Three sites: Media City in Mahmutbey, Bağcılar (Studios 1–4 and the DTL room); the Deposite complex in Başakşehir (Studios 5–7); and the İSTOÇ site in Bağcılar (Studios 8–9). Full addresses and directions are sent with every booking confirmation. Call',
+	];
+}

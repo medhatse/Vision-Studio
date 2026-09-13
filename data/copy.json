@@ -10,7 +10,7 @@
     "london-studio-1": {
       "priceFrom": "",
       "intro": [
-        "London Studio 1 is our flagship space in the capital: a 110 square metre floor with a dedicated 18 square metre gallery, built for multi-camera live television and podcast production at Kendal Avenue, W3.",
+        "London Studio 1 is our flagship space in the capital: a 110 square metre floor with a dedicated 18 square metre gallery, built for multi-camera live television and podcast production in West London.",
         "Four Sony HSC-100R broadcast cameras on robotic pedestals feed the gallery through professional CCUs, with three Auto-Q prompter systems for presenters. LED studio lighting runs from a DMX-512 console on a dynamic ceiling grid, so a news set, a talk show and a product launch can be lit in the same day. Audio goes through a digital mixer with eight wireless neck microphones, six podcast microphones and two in-ear monitors.",
         "Generator and UPS backup keep live programmes on air. The studio is a regular home for live broadcasts, talk shows, corporate presentations and radio-style podcasts recorded on video."
       ],
@@ -23,7 +23,7 @@
     "london-studio-2": {
       "priceFrom": "",
       "intro": [
-        "London Studio 2 is a compact 61 square metre broadcast studio with its own 15 square metre gallery, in the same Kendal Avenue building as Studio 1. It suits interviews, news inserts, two- and three-camera shows and photography sessions where a smaller, quick-to-light space is an advantage.",
+        "London Studio 2 is a compact 61 square metre broadcast studio with its own 15 square metre gallery, in the same West London building as Studio 1. It suits interviews, news inserts, two- and three-camera shows and photography sessions where a smaller, quick-to-light space is an advantage.",
         "Three Sony HSC-100R cameras on robotic-head pedestals, two Auto-Q prompters, DMX-512 controlled LED lighting on a dynamic ceiling grid, a digital audio mixer, five wireless neck microphones and two in-ear monitors are all included. Generator and UPS backup power is standard.",
         "Because it shares the building with Studio 1, productions can run a main programme in one studio and a second unit, green room interviews or a live stream from the other."
       ],
@@ -41,7 +41,7 @@
         "The studio is used for live news and current affairs, streamed events, podcasts with video, corporate broadcasts and virtual events for Irish and international clients."
       ],
       "faq": [
-        ["Where is the Dublin studio?", "3rd Floor North, North Block, Rockfields, Dundrum, Dublin D16 W7W3."],
+        ["Where is the Dublin studio?", "In Dundrum, South Dublin. Full address and directions are sent with every booking confirmation."],
         ["Does the Dublin studio have an LED wall?", "Yes. A large fully controlled LED screen plus three groups of 2×2 55-inch video wall panels, so backdrops, graphics and remote guests can be shown behind presenters."],
         ["Is there a jib?", "Yes, a jimmy jib adjustable from three to seven metres."]
       ]
@@ -132,7 +132,7 @@
         "The studio hosts commercial shoots, live broadcasts, photo sessions and podcasts, and its large reception makes it a comfortable base for audience shows and events."
       ],
       "faq": [
-        ["Where is Istanbul Studio 5?", "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, A1 Blok, İkitelli OSB, Başakşehir, Istanbul, alongside Studios 6 and 7."],
+        ["Where is Istanbul Studio 5?", "At our Deposite site in Başakşehir, Istanbul, alongside Studios 6 and 7. Full address and directions are sent with every booking confirmation."],
         ["How many microphones are available?", "Ten wireless neck and hand microphones through a digital audio mixer."],
         ["Is there space for guests and audiences?", "Yes, a 56 square metre reception area next to the studio floor."]
       ]
@@ -160,7 +160,7 @@
       "faq": [
         ["What makes Istanbul Studio 7 different?", "It is a working office-style set with a stage inside it, offering several shooting areas with different feelings in one 196 square metre space."],
         ["Does it support NDI?", "Yes. The studio is wired for both SDI and NDI video plus analogue and digital audio, with outlets in multiple positions around the floor."],
-        ["Where is it?", "Deposite İş Merkezi, Ziya Gökalp, Atatürk Blv. No:204A, Başakşehir, Istanbul, with Studios 5 and 6."]
+        ["Where is it?", "At our Deposite site in Başakşehir, Istanbul, with Studios 5 and 6. Full address and directions are sent with every booking confirmation."]
       ]
     },
     "istanbul-studio-8": {
@@ -172,7 +172,7 @@
       ],
       "faq": [
         ["What cameras are in Istanbul Studio 8?", "Four Sony HSC-100R broadcast cameras with professional CCUs."],
-        ["Where is Studio 8?", "Göztepe, İSTOÇ Oto Ticaret Merkezi, Bağcılar, Istanbul, next to Studio 9."],
+        ["Where is Studio 8?", "At our İSTOÇ site in Bağcılar, Istanbul, next to Studio 9. Full address and directions are sent with every booking confirmation."],
         ["Is there backup power?", "Yes, generator and UPS electricity."]
       ]
     },
@@ -193,12 +193,12 @@
   "cities": {
     "london": {
       "intro": [
-        "Vision Studios London is our headquarters, at Kendal Avenue in West London (W3 0XA). Two broadcast studios share one building: the 110 square metre Studio 1 with four robotic Sony HSC-100R cameras and a full gallery, and the 61 square metre Studio 2 with three cameras and its own control room.",
+        "Vision Studios London is our headquarters, in West London. Two broadcast studios share one building: the 110 square metre Studio 1 with four robotic Sony HSC-100R cameras and a full gallery, and the 61 square metre Studio 2 with three cameras and its own control room.",
         "Both studios have DMX-512 controlled LED lighting on dynamic ceiling grids, Auto-Q prompting, digital audio mixing and generator plus UPS backup power, and both can be booked with our crew, equipment hire and set design services. Podcast microphones and in-ear monitors make Studio 1 a natural home for video podcasts.",
         "Recent London productions include a shoot with former Chelsea and England footballer Joe Cole and multi-camera entertainment recordings for independent producers."
       ],
       "faq": [
-        ["Where are the London studios?", "Vision Studios, Kendal Avenue, London W3 0XA. Call +44 (0) 7920 745134 or email booking@vision-studios.net."],
+        ["Where are the London studios?", "West London. Full address and directions are sent with every booking confirmation. Call +44 (0) 7920 745134 or email booking@vision-studios.net."],
         ["Which London studio should I choose?", "Studio 1 (110 m², four cameras, three prompters) for full programmes and podcasts; Studio 2 (61 m², three cameras) for interviews, inserts and photography. They can be booked together."]
       ]
     },
@@ -209,7 +209,7 @@
         "The studio hosts live news, streamed events, video podcasts, corporate broadcasts and virtual events for Irish and international broadcasters."
       ],
       "faq": [
-        ["Where is the Dublin studio?", "3rd Floor North, North Block, Rockfields, Dundrum, Dublin D16 W7W3. Call +353 (0) 8961 14641."],
+        ["Where is the Dublin studio?", "In Dundrum, South Dublin. Full address and directions are sent with every booking confirmation. Call +353 (0) 8961 14641."],
         ["Is the Dublin studio decorated?", "Yes, fully decorated, with a large LED screen and video wall groups ready for news and talk show formats."]
       ]
     },
@@ -231,7 +231,7 @@
         "Productions filmed here range from Turkish drama series such as Yalı Çapkını, Aldatmak and Taş Kağıt Makas to Al Jazeera programmes, Greenpeace campaigns, live corporate events and medical webinars."
       ],
       "faq": [
-        ["Where are the Istanbul studios?", "Three sites: Media City at Mahmutbey, 2623 Sokak No 3, Bağcılar (Studios 1–4 and the DTL room); Deposite İş Merkezi, Atatürk Blv. No:204A, Başakşehir (Studios 5–7); and İSTOÇ, Göztepe, Bağcılar (Studios 8–9). Call +90 212 988 10 45."],
+        ["Where are the Istanbul studios?", "Three sites: Media City in Mahmutbey, Bağcılar (Studios 1–4 and the DTL room); the Deposite complex in Başakşehir (Studios 5–7); and the İSTOÇ site in Bağcılar (Studios 8–9). Full addresses and directions are sent with every booking confirmation. Call +90 212 988 10 45."],
         ["Which Istanbul studio is best for a TV series?", "Studio 2 (185 m² ground-floor soundstage) and Studio 1 (215 m², sound-isolated, 72-screen wall) are the usual choices; Studio 3 is a free space for custom set builds."],
         ["Can you put a guest live into a foreign channel?", "Yes. The DTL room sends a single-camera feed by SNG satellite or over TVU, LiveU, RTMP and SRT to any broadcaster."]
       ]

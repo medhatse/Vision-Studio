@@ -10,9 +10,9 @@ $cid     = $city ? $city->term_id : 0;
 $tag     = vs_meta( $id, 'tagline' );
 $area    = vs_meta( $id, 'area' );
 $phone   = vs_meta( $id, 'phone', vs_term_meta( $cid, 'phone', vs_opt( 'phone_uk' ) ) );
-$address = vs_meta( $id, 'address', vs_term_meta( $cid, 'address' ) );
-$map     = vs_meta( $id, 'map_query', $address ?: vs_term_meta( $cid, 'map_query' ) );
-$coords  = vs_term_meta( $cid, 'coords' );
+$address = vs_show_addresses() ? vs_meta( $id, 'address', vs_term_meta( $cid, 'address' ) ) : '';
+$map     = vs_show_addresses() ? vs_meta( $id, 'map_query', $address ?: vs_term_meta( $cid, 'map_query' ) ) : '';
+$coords  = vs_show_addresses() ? vs_term_meta( $cid, 'coords' ) : ( $city ? $city->name : '' );
 $specs   = vs_lines( vs_meta( $id, 'specs' ) );
 $highs   = vs_lines( vs_meta( $id, 'highlights' ) );
 $gallery = vs_studio_gallery_ids( $id );
@@ -49,7 +49,7 @@ $icon_for = function ( string $t ) use ( $icons ) { foreach ( $icons as $re => $
 </div>
 <div class="lg:col-span-2 space-y-10">
 <?php if ( $plan ) : ?><div class="fade-up"><?php echo vs_eyebrow( __( 'Floor Plan', 'vision-studios' ) ); // phpcs:ignore ?><button type="button" data-lightbox="plan" data-src="<?php echo esc_url( $plan ); ?>" data-caption="<?php echo esc_attr( get_the_title() . ' — ' . __( 'floor plan', 'vision-studios' ) ); ?>" class="block w-full bg-white/5 p-4"><img src="<?php echo esc_url( $plan ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?> floor plan" loading="lazy" class="w-full h-auto"/></button></div><?php endif; ?>
-<div class="fade-up border border-white/10 p-6"><?php echo vs_eyebrow( __( 'Contact', 'vision-studios' ) ); // phpcs:ignore ?><p class="font-display uppercase text-2xl"><a href="<?php echo esc_attr( vs_tel( $phone ) ); ?>" class="hover:text-accent"><?php echo esc_html( $phone ); ?></a></p><p class="text-white/60 text-sm mt-2"><!--email_off--><a href="mailto:<?php echo esc_attr( $email ); ?>" class="hover:text-accent"><?php echo esc_html( $email ); ?></a><!--/email_off--></p><p class="text-white/60 text-sm mt-3 leading-relaxed"><?php echo esc_html( $address ); ?></p></div>
+<div class="fade-up border border-white/10 p-6"><?php echo vs_eyebrow( __( 'Contact', 'vision-studios' ) ); // phpcs:ignore ?><p class="font-display uppercase text-2xl"><a href="<?php echo esc_attr( vs_tel( $phone ) ); ?>" class="hover:text-accent"><?php echo esc_html( $phone ); ?></a></p><p class="text-white/60 text-sm mt-2"><!--email_off--><a href="mailto:<?php echo esc_attr( $email ); ?>" class="hover:text-accent"><?php echo esc_html( $email ); ?></a><!--/email_off--></p><?php if ( $address ) : ?><p class="text-white/60 text-sm mt-3 leading-relaxed"><?php echo esc_html( $address ); ?></p><?php endif; ?></div>
 </div></div></section>
 
 <?php if ( count( $gallery ) > 1 ) : ?>
