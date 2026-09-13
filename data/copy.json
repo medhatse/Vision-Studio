@@ -8,7 +8,7 @@
   ],
   "studios": {
     "london-studio-1": {
-      "priceFrom": "",
+      "priceFrom": "£2,500 / day",
       "intro": [
         "London Studio 1 is our flagship space in the capital: a 110 square metre floor with a dedicated 18 square metre gallery, built for multi-camera live television and podcast production in West London.",
         "Four Sony HSC-100R broadcast cameras on robotic pedestals feed the gallery through professional CCUs, with three Auto-Q prompter systems for presenters. LED studio lighting runs from a DMX-512 console on a dynamic ceiling grid, so a news set, a talk show and a product launch can be lit in the same day. Audio goes through a digital mixer with eight wireless neck microphones, six podcast microphones and two in-ear monitors.",
@@ -21,7 +21,7 @@
       ]
     },
     "london-studio-2": {
-      "priceFrom": "",
+      "priceFrom": "£2,500 / day",
       "intro": [
         "London Studio 2 is a compact 61 square metre broadcast studio with its own 15 square metre gallery, in the same West London building as Studio 1. It suits interviews, news inserts, two- and three-camera shows and photography sessions where a smaller, quick-to-light space is an advantage.",
         "Three Sony HSC-100R cameras on robotic-head pedestals, two Auto-Q prompters, DMX-512 controlled LED lighting on a dynamic ceiling grid, a digital audio mixer, five wireless neck microphones and two in-ear monitors are all included. Generator and UPS backup power is standard.",
@@ -34,7 +34,7 @@
       ]
     },
     "dublin-studio": {
-      "priceFrom": "",
+      "priceFrom": "€3,000 / day",
       "intro": [
         "Our Dublin studio is a fully decorated 144 square metre broadcast floor in Dundrum, with an 18 square metre gallery and a large, fully controllable LED screen backed by three groups of 2×2 55-inch video wall panels.",
         "Four Sony Full HD cameras with professional CCUs sit on pedestals with robotic heads, with an Auto-Q system driving two prompter reflectors and a jimmy jib that reaches from three to seven metres for sweeping opening shots. Lighting is LED on a dynamic ceiling grid, controlled from a DMX-512 console; sound runs through a digital mixer with eight wireless neck and hand microphones.",
@@ -47,7 +47,7 @@
       ]
     },
     "paris-studio": {
-      "priceFrom": "",
+      "priceFrom": "€1,500 / day",
       "intro": [
         "The Paris studio is an 84 square metre fully decorated broadcast set with LED video wall screens and a 10 square metre gallery, designed for news desks, talk shows and live streamed events in the French capital.",
         "Four Blackmagic Full HD cameras, an Auto-Q system driving two prompter reflectors and a three-to-seven metre jimmy jib give a full multi-camera set-up. LED studio lighting on a dynamic ceiling grid is controlled from a DMX-512 console, and a digital audio mixer handles eight wireless neck and hand microphones.",
@@ -60,7 +60,7 @@
       ]
     },
     "istanbul-dtl-room": {
-      "priceFrom": "",
+      "priceFrom": "€1,500 / day",
       "intro": [
         "The Istanbul DTL (Direct-To-Link) room is a single-camera contribution studio for live guests and correspondents. A presenter or expert sits in front of a custom background and goes straight to air on a broadcaster's programme anywhere in the world.",
         "It supports every common live-feed route, from SNG satellite uplink to internet contribution over TVU, LiveU, RTMP and SRT, so the receiving newsroom can take the feed on whatever they already use. Generator and UPS power keeps the link up.",
@@ -73,7 +73,7 @@
       ]
     },
     "istanbul-studio-1": {
-      "priceFrom": "",
+      "priceFrom": "€1,500 / day",
       "intro": [
         "Istanbul Studio 1 is our largest flagship: 215 square metres, fully decorated and fully sound-isolated to television standard, with a 72-screen colour-calibrated video wall of 55-inch and 46-inch panels wrapping the set.",
         "Four Sony HDC-P1 Full HD cameras with CCU control sit on heavy-duty pedestals, alongside a three-to-seven metre jimmy jib and an Auto-Q system with reflectors on the main cameras. The 18 square metre gallery is built on a modular workflow with two four-channel playout systems and two single-channel CG systems for on-air graphics. TV-standard cool LED lighting runs from a DMX-512 console on a dynamic ceiling grid, and a 32-input digital mixer handles eight wireless neck and hand microphones.",
@@ -86,7 +86,7 @@
       ]
     },
     "istanbul-studio-2": {
-      "priceFrom": "",
+      "priceFrom": "€1,500 / day",
       "intro": [
         "Istanbul Studio 2 is a 185 square metre ground-floor soundstage with an 18 square metre gallery and a 20 square metre LED screen, a favourite for television series, live events and webinars.",
         "Four Grass Valley Full HD cameras with professional CCUs, an Auto-Q system and a three-to-seven metre jimmy jib cover the floor. LED lighting on a dynamic ceiling grid is controlled from a DMX-512 console, and a digital audio mixer takes six wireless neck and hand microphones. The 18 square metre reception area doubles as a green room.",
@@ -99,7 +99,7 @@
       ]
     },
     "istanbul-studio-3": {
-      "priceFrom": "",
+      "priceFrom": "€1,500 / day",
       "intro": [
         "Istanbul Studio 3 is a 175 square metre blank-canvas space on the ground floor of Media City, kept free of fixed decoration so productions can build any set they need, from a drama interior to a product launch or an art exhibition.",
         "A dynamic ceiling lighting grid is in place, generator power is included, and a 14 square metre reception area serves cast and crew. Cameras, lighting and sound can be specified per production from our equipment hire inventory, or brought in by your own crew.",
@@ -112,7 +112,7 @@
       ]
     },
     "istanbul-studio-4": {
-      "priceFrom": "",
+      "priceFrom": "€1,500 / day",
       "intro": [
         "Istanbul Studio 4 is a 37.5 square metre first-floor studio with an unusually large 28 square metre gallery, ideal for interviews, podcasts, small live shows and recordings that need a proper control room without a big floor.",
         "Three Sony HD cameras with professional CCUs on pedestals, an Auto-Q prompter, a digital audio mixer and four wireless neck and hand microphones are included.",
@@ -125,7 +125,7 @@
       ]
     },
     "istanbul-studio-5": {
-      "priceFrom": "",
+      "priceFrom": "€1,500 / day",
       "intro": [
         "Istanbul Studio 5 is a 196 square metre fully decorated broadcast studio at the Deposite complex in Başakşehir, with a 36-screen video wall of 55-inch and 46-inch panels, an 18 square metre gallery and a generous 56 square metre reception area.",
         "Four Sony Full HD cameras with professional CCUs, an Auto-Q system with two reflectors, and a three-to-seven metre jimmy jib give a full live set-up. LED lighting on a dynamic ceiling grid is controlled from a DMX-512 console, and the digital audio mixer handles ten wireless neck and hand microphones. Generator and UPS power is included.",
@@ -138,7 +138,7 @@
       ]
     },
     "istanbul-studio-6": {
-      "priceFrom": "",
+      "priceFrom": "€1,500 / day",
       "intro": [
         "Istanbul Studio 6 is a 196 square metre, fully decorated and fully sound-isolated studio at the Deposite complex, equipped for 4K production with four Sony PXW-FS7 cameras and a ten-screen 55-inch video wall.",
         "An Auto-Q system with two reflectors, a three-to-seven metre jimmy jib, LED lighting from a DMX-512 console on a dynamic ceiling grid, a 23-channel digital audio mixer and eight wireless neck and hand microphones are all included, with an 18 square metre gallery and a 56 square metre reception. Generator and UPS supply is 24/7 with a 99.9% uptime guarantee.",
@@ -151,7 +151,7 @@
       ]
     },
     "istanbul-studio-7": {
-      "priceFrom": "",
+      "priceFrom": "€1,500 / day",
       "intro": [
         "Istanbul Studio 7 is a 196 square metre decorated studio built around a stage inside a real office setting, blending wood and glass finishes to give several distinct looks in one space, from a boardroom to a lounge to a presenter stage.",
         "The whole floor accepts SDI and NDI video in and out, with analogue and digital audio, through input and output outlets at the front, back, floor and ceiling, so cameras can be placed anywhere without cables in shot. Modular tables and presenter seating reconfigure quickly. A dynamic ceiling lighting grid and 24/7 generator plus UPS power with a 99.9% uptime guarantee are standard.",
@@ -164,7 +164,7 @@
       ]
     },
     "istanbul-studio-8": {
-      "priceFrom": "",
+      "priceFrom": "€1,500 / day",
       "intro": [
         "Istanbul Studio 8 is a 90 square metre broadcast studio at the İSTOÇ site in Bağcılar, equipped with four Sony HSC-100R cameras with professional CCUs, a dynamic ceiling lighting grid with DMX-512 controlled LED lighting, a digital audio mixer and generator plus UPS power.",
         "The size makes it fast to light and staff, so it is well suited to daily programmes, talk shows, interviews and live broadcasts, as well as music performances, podcasts and corporate presentations.",
@@ -177,7 +177,7 @@
       ]
     },
     "istanbul-studio-9": {
-      "priceFrom": "",
+      "priceFrom": "€1,500 / day",
       "intro": [
         "Istanbul Studio 9 is the twin of Studio 8: a 90 square metre broadcast floor at the İSTOÇ site with four Sony HSC-100R cameras and CCUs, DMX-512 controlled LED lighting on a dynamic ceiling grid, a digital audio mixer and generator plus UPS backup power.",
         "It handles film and television recording, live events and broadcasts, music videos and performances, podcasts and radio shows recorded on video, and corporate videos and presentations.",
