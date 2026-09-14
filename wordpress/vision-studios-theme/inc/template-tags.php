@@ -92,15 +92,20 @@ function vs_cities(): array {
 }
 
 // ----- Cards -----
+/** Excerpt of a studio for cards and lists (translated where a translation exists). */
+function vs_post_excerpt( WP_Post $p ): string {
+	return (string) apply_filters( 'vs_post_excerpt', $p->post_excerpt ?: wp_trim_words( wp_strip_all_tags( $p->post_content ), 40 ), $p );
+}
+
 function vs_studio_card( WP_Post $s, string $ratio = 'aspect-[3/4]' ): string {
 	$city  = vs_studio_city( $s->ID );
 	$tag   = vs_meta( $s->ID, 'tagline', $city ? $city->name : '' );
 	$area  = vs_meta( $s->ID, 'area' );
 	$sub   = $area ? sprintf( __( '%s sq. mt. studio', 'vision-studios' ), $area ) : ( vs_lines( vs_meta( $s->ID, 'highlights' ) )[0] ?? '' );
-	$img   = wp_get_attachment_image( vs_studio_gallery_ids( $s->ID )[0] ?? 0, 'vs-card', false, [ 'alt' => sprintf( __( '%1$s, %2$s', 'vision-studios' ), $s->post_title, $city ? $city->name : '' ), 'loading' => 'lazy', 'class' => 'absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500' ] );
+	$img   = wp_get_attachment_image( vs_studio_gallery_ids( $s->ID )[0] ?? 0, 'vs-card', false, [ 'alt' => sprintf( __( '%1$s, %2$s', 'vision-studios' ), get_the_title( $s ), $city ? $city->name : '' ), 'loading' => 'lazy', 'class' => 'absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500' ] );
 	return '<a href="' . esc_url( get_permalink( $s ) ) . '" class="group fade-up img-zoom relative ' . esc_attr( $ratio ) . ' block overflow-hidden bg-white/5">' . $img
 		. '<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>'
-		. '<div class="absolute bottom-0 left-0 p-4"><p class="font-mono-tag text-xs lg:text-[10px] uppercase tracking-[0.15em] text-accent mb-1">' . esc_html( $tag ) . '</p><h3 class="font-display uppercase text-2xl leading-none">' . esc_html( $s->post_title ) . '</h3><p class="font-mono-tag text-xs lg:text-[10px] text-white/50 mt-1">' . esc_html( $sub ) . '</p></div></a>';
+		. '<div class="absolute bottom-0 left-0 p-4"><p class="font-mono-tag text-xs lg:text-[10px] uppercase tracking-[0.15em] text-accent mb-1">' . esc_html( $tag ) . '</p><h3 class="font-display uppercase text-2xl leading-none">' . esc_html( get_the_title( $s ) ) . '</h3><p class="font-mono-tag text-xs lg:text-[10px] text-white/50 mt-1">' . esc_html( $sub ) . '</p></div></a>';
 }
 
 function vs_news_card( WP_Post $p ): string {
@@ -135,7 +140,11 @@ function vs_map( string $query, string $title ): string {
 
 /** Booking / contact form: CF7 shortcode when configured, otherwise the built-in mailto form. */
 function vs_form( string $which, string $studio = '' ): string {
-	$shortcode = vs_opt( 'booking' === $which ? 'cf7_booking' : 'cf7_contact' );
+	$key = 'booking' === $which ? 'cf7_booking' : 'cf7_contact';
+	if ( function_exists( 'vs_is_tr' ) && vs_is_tr() && vs_opt( $key . '_tr' ) ) {
+		$key .= '_tr'; // Turkish form where one is configured.
+	}
+	$shortcode = vs_opt( $key );
 	if ( $shortcode && shortcode_exists( 'contact-form-7' ) ) {
 		// Pass the studio name to Contact Form 7 so a "[text studio default:shortcode_attr]" field is prefilled.
 		if ( $studio && false === strpos( $shortcode, 'studio=' ) ) {
@@ -153,7 +162,7 @@ function vs_form( string $which, string $studio = '' ): string {
 	} else {
 		$out .= '<label class="sm:col-span-2 block"><span>' . esc_html__( 'Studio / city', 'vision-studios' ) . '</span><select name="studio"><option value="">' . esc_html__( 'Not sure yet', 'vision-studios' ) . '</option>';
 		foreach ( $studios as $s ) {
-			$out .= '<option>' . esc_html( $s->post_title ) . '</option>';
+			$out .= '<option>' . esc_html( get_the_title( $s ) ) . '</option>';
 		}
 		$out .= '</select></label>';
 	}

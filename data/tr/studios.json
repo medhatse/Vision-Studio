@@ -1,0 +1,505 @@
+{
+  "istanbul-dtl-room": {
+    "title": "İstanbul DTL Odası",
+    "tagline": "Direct-To-Link canlı bağlantı",
+    "price_from": "€500 / gün",
+    "excerpt": "Bu oda Direct-To-Link (DTL) canlı bağlantılar için kullanılır.",
+    "intro": [
+      "İstanbul DTL (Direct-To-Link) odası, canlı konuklar ve muhabirler için tek kameralı bir bağlantı stüdyosudur. Sunucu veya uzman, özel bir arka planın önüne oturur ve dünyanın herhangi bir yerindeki bir yayıncının programına doğrudan canlı bağlanır.",
+      "SNG uydu uplink'ten TVU, LiveU, RTMP ve SRT üzerinden internet bağlantısına kadar yaygın tüm canlı yayın yöntemlerini destekler; böylece karşı taraftaki haber merkezi yayını hâlihazırda kullandığı sistemle alabilir. Jeneratör ve UPS gücü bağlantının kesilmemesini sağlar.",
+      "Oda; günlük haber bağlantıları, panel katılımları, uzaktan röportajlar ve başka yerde üretilen programlara canlı girişler için kullanılır. Mahmutbey Media City binasını İstanbul Stüdyo 1–4 ile paylaşır."
+    ],
+    "highlights": [
+      "SNG'den TVU, LiveU, RTMP, SRT gibi internet yayın protokollerine kadar tüm canlı bağlantı tekniklerini destekler",
+      "Özel arka planlı 1 kamera",
+      "Jeneratör ve UPS elektrik"
+    ],
+    "specs": [],
+    "use_cases_heading": "",
+    "use_cases": [],
+    "faq": [
+      [
+        "DTL odası nedir?",
+        "Direct-To-Link odası: bir konuğun uydu veya internet bağlantısıyla başka yerde üretilen bir programa canlı bağlandığı küçük, tek kameralı bir stüdyo."
+      ],
+      [
+        "Hangi canlı yayın formatları destekleniyor?",
+        "SNG uydu uplink ile TVU, LiveU, RTMP ve SRT dahil internet yayın protokolleri."
+      ],
+      [
+        "Arka plan markalanabilir mi?",
+        "Evet. Oda, kanalınıza veya programınıza göre ayarlanabilen özel bir arka plan kullanır."
+      ]
+    ],
+    "seo_title": "İstanbul DTL Canlı Bağlantı Odası | Vision Studios",
+    "seo_description": "İstanbul'da canlı bağlantı stüdyosu: SNG uydu, TVU, LiveU, RTMP ve SRT ile dünyanın her yerindeki kanala tek kameralı canlı yayın. Günlük €500'dan itibaren."
+  },
+  "istanbul-studio-1": {
+    "title": "İstanbul Stüdyo 1",
+    "tagline": "Amiral gemisi · 72 ekranlı video wall",
+    "price_from": "€1.500 / gün",
+    "excerpt": "Bu stüdyo televizyon ve film prodüksiyonu, canlı yayın, online video içerik üretimi, fotoğraf çekimi, yayıncılık, podcast ve sanal etkinlikler için uygundur. Profesyonel kameralar, aydınlatma, ses ekipmanı ve ileri teknolojiyle tam donanımlı bir alan sunar.",
+    "intro": [
+      "İstanbul Stüdyo 1 en büyük amiral gemimiz: 215 metrekare, tam dekorlu ve televizyon standardında tam ses yalıtımlı; seti çevreleyen 55 ve 46 inç panellerden oluşan 72 ekranlı, renk kalibrasyonlu bir video wall'a sahip.",
+      "CCU kontrollü dört Sony HDC-P1 Full HD kamera ağır hizmet tipi pedestal tripodlar üzerinde; yanlarında 3–7 metre jimmy jib ve ana kameralara reflektörleri takılı bir Auto-Q prompter sistemi bulunur. 18 metrekarelik reji, modüler iş akışı üzerine kurulu olup iki adet 4 kanallı playout sistemi ve yayın grafikleri için iki adet tek kanallı CG sistemi içerir. TV standardında soğuk LED aydınlatma, dinamik tavan ışık gridinde DMX-512 konsoldan kontrol edilir; 32 girişli dijital ses mikseri sekiz kablosuz yaka ve el mikrofonunu yönetir.",
+      "18 metrekarelik resepsiyon alanı konukları karşılar; jeneratör ve UPS gücü %99,9 çalışma garantisiyle 7/24 kesintisiz elektrik sağlar. Günlük haber programları, büyük formatlı talk show'lar ve uzun soluklu diziler için ideal stüdyodur."
+    ],
+    "highlights": [
+      "215 m² stüdyo alanı",
+      "Tam dekorlu",
+      "Modüler iş akışına göre profesyonelce tasarlanmış 18 m² reji odası",
+      "Profesyonel CCU'lu (HDC-P1) ve CCU kontrollü 4 x Sony Full HD kamera",
+      "%99,9 çalışma garantili 7/24 jeneratör ve UPS elektrik",
+      "Profesyonel ses yalıtımıyla tam yalıtımlı"
+    ],
+    "specs": [
+      "215 m² stüdyo alanı.",
+      "Tam dekorlu.",
+      "Profesyonel ses yalıtımıyla tam yalıtımlı.",
+      "55 ve 46 inç arası toplam 72 video wall ekranı, tamamı renk kalibrasyonlu.",
+      "Modüler iş akışına göre profesyonelce tasarlanmış 18 m² reji odası.",
+      "Profesyonel CCU'lu (Model HDC-P1) ve CCU kontrollü 4 x Sony Full HD kamera.",
+      "3 x ağır hizmet tipi pedestal tripod.",
+      "1 x jimmy jib (3 m'den 7 m'ye kadar uzunluk).",
+      "1 x Auto-Q sistemi, ana kameralara takılı 2 Auto-Q reflektörünü kontrol eder.",
+      "2 x 4 kanallı playout sistemi.",
+      "Yayın grafikleri için 2 x tek kanallı CG sistemi.",
+      "DMX-512 ışık konsolundan kontrol edilen TV standardında soğuk ışık LED stüdyo aydınlatması.",
+      "Dinamik tavan stüdyo ışık gridi.",
+      "32 giriş kanallı dijital ses mikseri.",
+      "8 x kablosuz yaka mikrofonu ve kablosuz el mikrofonu.",
+      "18 m² stüdyo resepsiyon alanı.",
+      "%99,9 çalışma garantili 7/24 jeneratör ve UPS elektrik."
+    ],
+    "use_cases_heading": "",
+    "use_cases": [],
+    "faq": [
+      [
+        "İstanbul Stüdyo 1'deki video wall ne kadar büyük?",
+        "Seti çevreleyen, 55 ve 46 inç panellerden oluşan, renk kalibrasyonlu 72 ekran."
+      ],
+      [
+        "Stüdyo ses yalıtımlı mı?",
+        "Evet, profesyonel ses yalıtımıyla tam yalıtımlıdır; canlı yayın ve dizi kaydı için uygundur."
+      ],
+      [
+        "Rejide playout ve grafik sistemi var mı?",
+        "Evet. İki adet 4 kanallı playout sistemi ve yayın grafikleri için iki adet tek kanallı CG sistemi rejinin parçasıdır."
+      ]
+    ],
+    "seo_title": "İstanbul Stüdyo 1 | 215 m² TV Stüdyosu Kiralama | Vision Studios",
+    "seo_description": "İstanbul'da 215 m² tam dekorlu, ses yalıtımlı TV stüdyosu kiralama: 72 ekranlı video wall, 4 Sony HD kamera, tam reji, jimmy jib. Günlük €1.500'dan itibaren."
+  },
+  "istanbul-studio-2": {
+    "title": "İstanbul Stüdyo 2",
+    "tagline": "Zemin kat plato",
+    "price_from": "€1.500 / gün",
+    "excerpt": "Bu stüdyo film çekimleri, yayınlar ve canlı etkinlikler dahil çeşitli multimedya prodüksiyonları için donatılmıştır. Yüksek kaliteli kameralar, aydınlatma, ses ekipmanı ve izleme için bir reji odası içerir. Geniş çekim alanı, LED ekran arka planı ve çok yönlü aydınlatma seçenekleriyle farklı yaratıcı ihtiyaçlara esneklik sunar.",
+    "intro": [
+      "İstanbul Stüdyo 2, 18 metrekarelik reji ve 20 metrekarelik LED ekrana sahip 185 metrekarelik bir zemin kat platosudur; diziler, canlı etkinlikler ve webinarlar için sıkça tercih edilir.",
+      "Profesyonel CCU'lu dört Grass Valley Full HD kamera, bir Auto-Q sistemi ve 3–7 metre jimmy jib sahneyi kapsar. Dinamik tavan gridindeki LED aydınlatma DMX-512 konsoldan kontrol edilir; dijital ses mikseri altı kablosuz yaka ve el mikrofonunu alır. 18 metrekarelik resepsiyon alanı aynı zamanda bekleme odası olarak kullanılır.",
+      "Zemin kat erişimi, dekor kurulumlarını ve araçla yükleme-boşaltmayı kolaylaştırır. Burada gerçekleşen son yapımlar arasında Yalı Çapkını dizisi, canlı webinarlar ve kurumsal yayınlar yer alır. Jeneratör ve UPS gücü dahildir."
+    ],
+    "highlights": [
+      "185 m² stüdyo alanı",
+      "18 m² reji odası",
+      "Toplam 20 m² LED ekran",
+      "Profesyonel CCU'lu 4 x Grass Valley Full HD kamera",
+      "Jeneratör ve UPS elektrik",
+      "Dijital ses mikseri"
+    ],
+    "specs": [
+      "185 m² zemin kat stüdyo alanı.",
+      "18 m² reji odası.",
+      "Toplam 20 m² LED ekran alanı.",
+      "Profesyonel CCU'lu 4 x Grass Valley Full HD kamera.",
+      "3 x pedestal tripod.",
+      "1 x Auto-Q sistemi.",
+      "1 x jimmy jib (3–7 m uzunluk).",
+      "DMX-512 ışık konsolundan kontrol edilen LED stüdyo aydınlatması.",
+      "Tavan stüdyo ışık gridi (dinamik).",
+      "Dijital ses mikseri.",
+      "6 x kablosuz yaka mikrofonu ve kablosuz el mikrofonu.",
+      "18 m² stüdyo resepsiyon alanı.",
+      "Jeneratör ve UPS elektrik."
+    ],
+    "use_cases_heading": "",
+    "use_cases": [],
+    "faq": [
+      [
+        "İstanbul Stüdyo 2 zemin katta mı?",
+        "Evet. 185 metrekarelik plato zemin seviyesindedir; bu da dekor kurulumunu ve ekipman yüklemesini kolaylaştırır."
+      ],
+      [
+        "LED ekran ne kadar büyük?",
+        "Toplam 20 metrekare LED ekran."
+      ],
+      [
+        "Stüdyo 2'de neler çekildi?",
+        "Yalı Çapkını dahil televizyon dizileri, canlı yayınlar ile kurumsal ve tıbbi müşteriler için webinarlar."
+      ]
+    ],
+    "seo_title": "İstanbul Stüdyo 2 | 185 m² Zemin Kat Plato Kiralama | Vision Studios",
+    "seo_description": "İstanbul'da 185 m² zemin kat plato kiralama: 20 m² LED ekran, 4 Grass Valley HD kamera, reji, jimmy jib. Dizi ve canlı yayın için. Günlük €1.500'dan itibaren."
+  },
+  "istanbul-studio-3": {
+    "title": "İstanbul Stüdyo 3",
+    "tagline": "Boş sahne · Özel dekor alanı",
+    "price_from": "€1.500 / gün",
+    "excerpt": "Bu stüdyo fotoğraf, video çekimi, sanat üretimi, dans provası veya atölye çalışmaları için idealdir. Farklı çekimler için aydınlatma düzenini özelleştirme, özel efekt ve ortam kontrolü imkânı sunar.",
+    "intro": [
+      "İstanbul Stüdyo 3, Media City'nin zemin katında 175 metrekarelik boş bir sahnedir; sabit dekor bulundurulmaz, böylece yapımlar dizi iç mekânından ürün lansmanına veya sanat sergisine kadar ihtiyaç duydukları her dekoru kurabilir.",
+      "Dinamik tavan ışık gridi hazırdır, jeneratör gücü dahildir ve 14 metrekarelik resepsiyon alanı oyuncu ve ekibe hizmet eder. Kamera, ışık ve ses, ekipman kiralama envanterimizden yapıma göre belirlenebilir veya kendi ekibinizle getirilebilir.",
+      "Belgesel çekimleri, fotoğraf, video, dans provası, atölyeler ve komşu Stüdyo 1 ve 2 için dekor kurulumlarında düzenli olarak kullanılır."
+    ],
+    "highlights": [
+      "175 m² stüdyo alanı",
+      "Her türlü özel dekor kurulumu için serbest alan",
+      "14 m² stüdyo resepsiyon alanı",
+      "Jeneratör ve UPS elektrik",
+      "Tavan stüdyo ışık gridi (dinamik)"
+    ],
+    "specs": [
+      "175 m² zemin kat stüdyo alanı.",
+      "Her türlü özel dekor kurulumu için serbest alan.",
+      "Jeneratör elektrik.",
+      "14 m² stüdyo resepsiyon alanı.",
+      "Tavan stüdyo ışık gridi (dinamik)."
+    ],
+    "use_cases_heading": "",
+    "use_cases": [],
+    "faq": [
+      [
+        "İstanbul Stüdyo 3 dekorlu mu geliyor?",
+        "Hayır, amaç da bu: dinamik tavan ışık gridi kurulu, her türlü özel dekor kurulumu için boş bir alandır."
+      ],
+      [
+        "Kendi ekipmanımı getirebilir miyim?",
+        "Evet. Stüdyo 3 genellikle boş sahne olarak kiralanır. Kamera, ışık ve ses ekipmanı bizden de kiralanabilir."
+      ],
+      [
+        "Burada neler üretildi?",
+        "Bir Al Jazeera kanalı için belgesel yapımı, fotoğraf çekimleri ve özel dekor kurulumları."
+      ]
+    ],
+    "seo_title": "İstanbul Stüdyo 3 | 175 m² Boş Sahne Kiralama | Vision Studios",
+    "seo_description": "İstanbul'da 175 m² boş stüdyo kiralama: dinamik ışık gridi, zemin kat erişim, özel dekor kurulumu için serbest alan. Günlük €1.500'dan itibaren."
+  },
+  "istanbul-studio-4": {
+    "title": "İstanbul Stüdyo 4",
+    "tagline": "Birinci kat stüdyo",
+    "price_from": "€1.500 / gün",
+    "excerpt": "Bu stüdyoda canlı yayın, podcast, müzik kaydı, tanıtım veya eğitim videoları, sanal etkinlikler, ürün tanıtımları ve fotoğraf çekimleri dahil çeşitli içerikler üretebilirsiniz. Profesyonel ekipman, farklı medya formatlarında yüksek kaliteli prodüksiyon sağlar.",
+    "intro": [
+      "İstanbul Stüdyo 4, alışılmadık derecede büyük 28 metrekarelik rejiye sahip 37,5 metrekarelik bir birinci kat stüdyosudur; büyük bir plato gerektirmeden gerçek bir kontrol odasına ihtiyaç duyan röportajlar, podcastler, küçük canlı programlar ve kayıtlar için idealdir.",
+      "Pedestal üzerinde profesyonel CCU'lu üç Sony HD kamera, Auto-Q prompter, dijital ses mikseri ve dört kablosuz yaka ve el mikrofonu dahildir.",
+      "Yapımlar burayı canlı yayın, podcast, müzik kaydı, tanıtım ve eğitim videoları, sanal etkinlikler, ürün tanıtımları ve fotoğraf çekimleri için kullanır."
+    ],
+    "highlights": [
+      "37,5 m² stüdyo alanı",
+      "28 m² reji odası",
+      "1 x Auto-Q sistemi",
+      "Profesyonel CCU'lu 3 x Sony HD kamera",
+      "Jeneratör ve UPS elektrik",
+      "Dijital ses mikseri"
+    ],
+    "specs": [
+      "37,5 m² birinci kat stüdyo alanı.",
+      "28 m² reji odası.",
+      "Profesyonel CCU'lu 3 x Sony HD kamera.",
+      "3 x pedestal tripod.",
+      "1 x Auto-Q sistemi.",
+      "Dijital ses mikseri.",
+      "4 x kablosuz yaka mikrofonu ve kablosuz el mikrofonu."
+    ],
+    "use_cases_heading": "",
+    "use_cases": [],
+    "faq": [
+      [
+        "İstanbul Stüdyo 4'e kaç kişi sığar?",
+        "Üç kameralı kurulum ve dört kablosuz mikrofonla bir ila üç kamera önü konuk için tasarlanmıştır."
+      ],
+      [
+        "Reji neden bu kadar büyük?",
+        "28 metrekarelik reji platodan daha büyüktür; yönetmen, yapımcı ve müşteriler kaydı rahatça takip edebilir."
+      ],
+      [
+        "Hangi katta?",
+        "Mahmutbey Media City binasının birinci katında."
+      ]
+    ],
+    "seo_title": "İstanbul Stüdyo 4 | Röportaj ve Podcast Stüdyosu Kiralama | Vision Studios",
+    "seo_description": "İstanbul'da kompakt stüdyo kiralama: 37,5 m² plato, 28 m² reji, 3 Sony HD kamera, prompter. Röportaj ve podcast için. Günlük €1.500'dan itibaren."
+  },
+  "istanbul-studio-5": {
+    "title": "İstanbul Stüdyo 5",
+    "tagline": "36 ekranlı video wall",
+    "price_from": "€1.500 / gün",
+    "excerpt": "Bu stüdyo yaratıcı projeler için sınırsız olanak sunar. Reklam videosu üretiminden canlı yayına, fotoğraf çekiminden podcast imkânlarına kadar içerik üretimi ve profesyonel girişimler için çok yönlü bir merkezdir.",
+    "intro": [
+      "İstanbul Stüdyo 5, Başakşehir'deki Deposite kompleksinde yer alan 196 metrekarelik tam dekorlu bir yayın stüdyosudur; 55 ve 46 inç panellerden oluşan 36 ekranlı video wall, 18 metrekarelik reji ve 56 metrekarelik geniş bir resepsiyon alanına sahiptir.",
+      "Profesyonel CCU'lu dört Sony Full HD kamera, iki reflektörlü Auto-Q sistemi ve 3–7 metre jimmy jib eksiksiz bir canlı yayın kurulumu sağlar. Dinamik tavan gridindeki LED aydınlatma DMX-512 konsoldan kontrol edilir; dijital ses mikseri on kablosuz yaka ve el mikrofonunu yönetir. Jeneratör ve UPS gücü dahildir.",
+      "Stüdyo reklam çekimleri, canlı yayınlar, fotoğraf çekimleri ve podcastlere ev sahipliği yapar; geniş resepsiyonu seyircili programlar ve etkinlikler için konforlu bir üs sağlar."
+    ],
+    "highlights": [
+      "196 m² stüdyo alanı",
+      "Tam dekorlu",
+      "Toplam 36 video wall ekranı",
+      "Profesyonel CCU'lu 4 x Sony Full HD kamera",
+      "Jeneratör ve UPS elektrik",
+      "10 x kablosuz yaka mikrofonu ve kablosuz el mikrofonu"
+    ],
+    "specs": [
+      "196 m² stüdyo alanı.",
+      "Tam dekorlu.",
+      "Toplam 36 video wall ekranı (55 ve 46 inç).",
+      "18 m² reji odası.",
+      "Profesyonel CCU'lu 4 x Sony Full HD kamera.",
+      "3 x pedestal tripod.",
+      "1 x Auto-Q sistemi, 2 Auto-Q reflektörünü kontrol eder.",
+      "1 x jimmy jib (3–7 m uzunluk).",
+      "DMX-512 ışık konsolundan kontrol edilen LED stüdyo aydınlatması.",
+      "Tavan stüdyo ışık gridi (dinamik).",
+      "Dijital ses mikseri.",
+      "10 x kablosuz yaka mikrofonu ve kablosuz el mikrofonu.",
+      "56 m² stüdyo resepsiyon alanı.",
+      "Jeneratör ve UPS elektrik."
+    ],
+    "use_cases_heading": "",
+    "use_cases": [],
+    "faq": [
+      [
+        "İstanbul Stüdyo 5 nerede?",
+        "Başakşehir, İstanbul'daki Deposite lokasyonumuzda, Stüdyo 6 ve 7'nin yanında. Açık adres ve yol tarifi her rezervasyon onayıyla birlikte gönderilir."
+      ],
+      [
+        "Kaç mikrofon mevcut?",
+        "Dijital ses mikseri üzerinden on kablosuz yaka ve el mikrofonu."
+      ],
+      [
+        "Konuklar ve seyirciler için alan var mı?",
+        "Evet, stüdyo platosunun yanında 56 metrekarelik bir resepsiyon alanı."
+      ]
+    ],
+    "seo_title": "İstanbul Stüdyo 5 | 196 m² Video Wall Stüdyosu Kiralama | Vision Studios",
+    "seo_description": "Başakşehir, İstanbul'da 196 m² tam dekorlu TV stüdyosu: 36 ekranlı video wall, 4 Sony HD kamera, 10 kablosuz mikrofon. Günlük €1.500'dan itibaren."
+  },
+  "istanbul-studio-6": {
+    "title": "İstanbul Stüdyo 6",
+    "tagline": "Sony 4K · Ses yalıtımlı",
+    "price_from": "€1.500 / gün",
+    "excerpt": "Film prodüksiyonu, canlı yayın, sanal etkinlikler, fotoğraf çekimleri, podcast kaydı, eğitim videoları, sanat sergileri, ürün tanıtımları ve etkinlik alanı kiralama gibi çeşitli amaçlar için idealdir. Çok yönlülüğü ve yüksek kaliteli kurulumu geniş bir yaratıcı ve profesyonel yelpazeye hitap eder.",
+    "intro": [
+      "İstanbul Stüdyo 6, Deposite kompleksinde 196 metrekarelik, tam dekorlu ve tam ses yalıtımlı bir stüdyodur; dört Sony PXW-FS7 kamera ve on adet 55 inç ekranlı video wall ile 4K prodüksiyon için donatılmıştır.",
+      "İki reflektörlü Auto-Q sistemi, 3–7 metre jimmy jib, dinamik tavan gridinde DMX-512 konsoldan kontrol edilen LED aydınlatma, 23 kanallı dijital ses mikseri ve sekiz kablosuz yaka ve el mikrofonu, 18 metrekarelik reji ve 56 metrekarelik resepsiyonla birlikte dahildir. Jeneratör ve UPS gücü %99,9 çalışma garantisiyle 7/24 sağlanır.",
+      "4K çekimin önemli olduğu film prodüksiyonu, canlı yayın, sanal etkinlikler, fotoğraf, podcast, eğitim içerikleri, sergiler ve ürün tanıtımları için Stüdyo 6'yı seçin."
+    ],
+    "highlights": [
+      "196 m² stüdyo alanı",
+      "Tam dekorlu",
+      "DMX-512 ışık konsolundan kontrol edilen LED stüdyo aydınlatması",
+      "4 x Sony 4K kamera",
+      "%99,9 çalışma garantili 7/24 jeneratör ve UPS elektrik",
+      "23 kanal girişli dijital ses mikseri"
+    ],
+    "specs": [
+      "196 m² stüdyo alanı",
+      "Tam dekorlu, TV standardında ses yalıtımıyla tam yalıtımlı",
+      "Tamamı 55 inç toplam 10 video wall ekranı",
+      "18 m² reji odası",
+      "4 x Sony 4K kamera (Model Sony PXW-FS7)",
+      "3 x pedestal tripod",
+      "1 x Auto-Q sistemi, 2 Auto-Q reflektörünü kontrol eder",
+      "1 x jimmy jib (3–7 m uzunluk)",
+      "DMX-512 ışık konsolundan kontrol edilen LED stüdyo aydınlatması",
+      "Dinamik tavan stüdyo ışık gridi",
+      "23 kanal girişli dijital ses mikseri",
+      "8 x kablosuz yaka mikrofonu ve kablosuz el mikrofonu",
+      "56 m² stüdyo resepsiyon alanı",
+      "%99,9 çalışma garantili 7/24 jeneratör ve UPS elektrik"
+    ],
+    "use_cases_heading": "",
+    "use_cases": [],
+    "faq": [
+      [
+        "İstanbul Stüdyo 6 4K çekiyor mu?",
+        "Evet. Dört Sony PXW-FS7 4K kamera kuruludur."
+      ],
+      [
+        "Stüdyo ses yalıtımlı mı?",
+        "Evet, TV standardında ses yalıtımıyla tam yalıtımlıdır."
+      ],
+      [
+        "Yedek güç var mı?",
+        "%99,9 çalışma garantili 7/24 jeneratör ve UPS gücü."
+      ]
+    ],
+    "seo_title": "İstanbul Stüdyo 6 | 4K Ses Yalıtımlı Stüdyo Kiralama | Vision Studios",
+    "seo_description": "İstanbul'da 196 m² 4K stüdyo kiralama: 4 Sony PXW-FS7 kamera, tam ses yalıtımı, 10 ekranlı video wall, 23 kanallı mikser. Günlük €1.500'dan itibaren."
+  },
+  "istanbul-studio-7": {
+    "title": "İstanbul Stüdyo 7",
+    "tagline": "Ofis dekoru · SDI ve NDI",
+    "price_from": "€1.500 / gün",
+    "excerpt": "Bu stüdyo film ve TV prodüksiyonu, canlı yayın, fotoğraf, sanal etkinlikler, podcast ve eğitim içeriği üretimi için mükemmel, çok yönlü bir alandır. İleri teknolojisi, esnek tasarımı ve estetik görünümüyle geniş bir multimedya prodüksiyon yelpazesine hitap eder.",
+    "intro": [
+      "İstanbul Stüdyo 7, gerçek bir ofis ortamının içine kurulmuş bir sahne etrafında tasarlanmış 196 metrekarelik dekorlu bir stüdyodur; ahşap ve cam dokuları harmanlayarak tek alanda toplantı odasından lounge'a ve sunucu sahnesine kadar birbirinden farklı görünümler sunar.",
+      "Tüm plato ön, arka, zemin ve tavandaki giriş-çıkış prizleri üzerinden SDI ve NDI video giriş-çıkışı ile analog ve dijital sesi destekler; böylece kameralar, kadraja kablo girmeden her yere yerleştirilebilir. Modüler masalar ve sunucu koltukları hızla yeniden düzenlenir. Dinamik tavan ışık gridi ile %99,9 çalışma garantili 7/24 jeneratör ve UPS gücü standarttır.",
+      "Kurumsal yayınlar, panel programları, podcastler, sanal etkinlikler, eğitim içerikleri ve gerçek bir ofis ortamı gerektiren film veya televizyon sahneleri için uygundur."
+    ],
+    "highlights": [
+      "196 m² stüdyo alanı",
+      "Tam dekorlu",
+      "Dinamik tavan stüdyo ışık gridi",
+      "Tamamen farklı hisler veren farklı çekim alanları",
+      "%99,9 çalışma garantili 7/24 jeneratör ve UPS elektrik",
+      "Farklı noktalarda giriş/çıkış prizleri"
+    ],
+    "specs": [
+      "196 m² stüdyo alanı.",
+      "Ofis alanının içinde sahneyle tam dekorlu; ahşap ve cam dekor bir arada.",
+      "Dinamik tavan stüdyo ışık gridi.",
+      "%99,9 çalışma garantili 7/24 jeneratör ve UPS elektrik.",
+      "Tüm alan hem SDI hem NDI video giriş-çıkış standartlarını, analog ve dijital ses standartlarını kabul etmeye hazırdır.",
+      "Sanat yönetmenine kameraları kadraja kablo girme sorunu olmadan istediği yere koyma esnekliği vermek için farklı noktalarda (ön, arka, zemin ve tavan) giriş/çıkış prizleri.",
+      "Tamamen farklı hisler veren farklı çekim alanları.",
+      "Sunucular için modüler masalar ve sandalyeler."
+    ],
+    "use_cases_heading": "",
+    "use_cases": [],
+    "faq": [
+      [
+        "İstanbul Stüdyo 7'yi farklı kılan ne?",
+        "İçinde sahne bulunan çalışan bir ofis tarzı dekordur; 196 metrekarelik tek alanda farklı hisler veren birden fazla çekim alanı sunar."
+      ],
+      [
+        "NDI destekliyor mu?",
+        "Evet. Stüdyo hem SDI hem NDI video ile analog ve dijital ses için kablolanmıştır; plato çevresinde birden fazla noktada priz bulunur."
+      ],
+      [
+        "Nerede?",
+        "Başakşehir, İstanbul'daki Deposite lokasyonumuzda, Stüdyo 5 ve 6 ile birlikte. Açık adres ve yol tarifi her rezervasyon onayıyla birlikte gönderilir."
+      ]
+    ],
+    "seo_title": "İstanbul Stüdyo 7 | Ofis Dekorlu Stüdyo Kiralama | Vision Studios",
+    "seo_description": "İstanbul'da 196 m² ofis dekorlu stüdyo kiralama: SDI ve NDI altyapısı, birden fazla çekim alanı, modüler mobilya. Günlük €1.500'dan itibaren."
+  },
+  "istanbul-studio-8": {
+    "title": "İstanbul Stüdyo 8",
+    "tagline": "Sony HSC-100R stüdyosu",
+    "price_from": "€1.500 / gün",
+    "excerpt": "",
+    "intro": [
+      "İstanbul Stüdyo 8, Bağcılar'daki İSTOÇ lokasyonunda 90 metrekarelik bir yayın stüdyosudur; profesyonel CCU'lu dört Sony HSC-100R kamera, DMX-512 kontrollü LED aydınlatmalı dinamik tavan ışık gridi, dijital ses mikseri ve jeneratör ile UPS gücüyle donatılmıştır.",
+      "Boyutu sayesinde hızla ışıklandırılır ve ekip kurulur; bu yüzden günlük programlar, talk show'lar, röportajlar ve canlı yayınların yanı sıra müzik performansları, podcastler ve kurumsal sunumlar için de çok uygundur.",
+      "Hemen yanındaki Stüdyo 9 aynı özelliklere sahiptir; böylece iki yapım yan yana çalışabilir veya tek bir yapım her iki platoyu da kullanabilir."
+    ],
+    "highlights": [
+      "90 m² stüdyo alanı",
+      "Tavan stüdyo ışık gridi (dinamik)",
+      "DMX-512 ışık konsolundan kontrol edilen LED stüdyo aydınlatması",
+      "Profesyonel CCU'lu 4 x Sony HSC-100R kamera",
+      "Jeneratör ve UPS elektrik",
+      "Dijital ses mikseri"
+    ],
+    "specs": [],
+    "use_cases_heading": "Bu stüdyo, aşağıdakiler dahil geniş bir yaratıcı proje ve yapım yelpazesine uygundur:",
+    "use_cases": [
+      [
+        "Film ve Televizyon Yapımları",
+        "Yüksek kaliteli kameralar, profesyonel aydınlatma ve ses ekipmanıyla bu stüdyo film, TV programı ve reklam çekimi için mükemmeldir."
+      ],
+      [
+        "Canlı Etkinlikler ve Yayınlar",
+        "Esnek alan ve ileri teknoloji, canlı etkinlikler, talk show'lar, röportajlar ve yayınlar için uygundur."
+      ],
+      [
+        "Müzik Videoları ve Performanslar",
+        "Profesyonel ses ekipmanı ve çok yönlü aydınlatma seçenekleri, müzik videosu kaydı ve canlı performans çekimi için mükemmel bir seçim sunar."
+      ],
+      [
+        "Podcast ve Radyo Programları",
+        "Podcast mikrofonları, kablosuz yaka mikrofonları ve kulak içi monitörlerle podcast, radyo programı ve sesli röportaj kaydı için idealdir."
+      ],
+      [
+        "Kurumsal Videolar ve Sunumlar",
+        "Profesyonel kurulum ve reji odası, yüksek kaliteli görüntü ve sesle kurumsal video, eğitim ve sunum üretimi için idealdir."
+      ]
+    ],
+    "faq": [
+      [
+        "İstanbul Stüdyo 8'de hangi kameralar var?",
+        "Profesyonel CCU'lu dört Sony HSC-100R yayın kamerası."
+      ],
+      [
+        "Stüdyo 8 nerede?",
+        "Bağcılar, İstanbul'daki İSTOÇ lokasyonumuzda, Stüdyo 9'un yanında. Açık adres ve yol tarifi her rezervasyon onayıyla birlikte gönderilir."
+      ],
+      [
+        "Yedek güç var mı?",
+        "Evet, jeneratör ve UPS elektrik."
+      ]
+    ],
+    "seo_title": "İstanbul Stüdyo 8 | 90 m² Yayın Stüdyosu Kiralama | Vision Studios",
+    "seo_description": "Bağcılar, İstanbul'da 90 m² yayın stüdyosu kiralama: 4 Sony HSC-100R kamera, DMX-512 LED aydınlatma, dijital mikser. Günlük €1.500'dan itibaren."
+  },
+  "istanbul-studio-9": {
+    "title": "İstanbul Stüdyo 9",
+    "tagline": "Sony HSC-100R stüdyosu",
+    "price_from": "€1.500 / gün",
+    "excerpt": "",
+    "intro": [
+      "İstanbul Stüdyo 9, Stüdyo 8'in ikizidir: İSTOÇ lokasyonunda 90 metrekarelik bir yayın platosu; CCU'lu dört Sony HSC-100R kamera, dinamik tavan gridinde DMX-512 kontrollü LED aydınlatma, dijital ses mikseri ve jeneratör ile UPS yedek gücü.",
+      "Film ve televizyon kaydı, canlı etkinlikler ve yayınlar, müzik videoları ve performanslar, videoya kaydedilen podcast ve radyo programları ile kurumsal video ve sunumları karşılar.",
+      "İkinci bir set, prova alanı veya paralel canlı yayın gerektiren yapımlar için Stüdyo 8 ve 9'u birlikte kiralayın."
+    ],
+    "highlights": [
+      "90 m² stüdyo alanı",
+      "Tavan stüdyo ışık gridi (dinamik)",
+      "DMX-512 ışık konsolundan kontrol edilen LED stüdyo aydınlatması",
+      "Profesyonel CCU'lu 4 x Sony HSC-100R kamera",
+      "Jeneratör ve UPS elektrik",
+      "Dijital ses mikseri"
+    ],
+    "specs": [],
+    "use_cases_heading": "Bu stüdyo, aşağıdakiler dahil geniş bir yaratıcı proje ve yapım yelpazesine uygundur:",
+    "use_cases": [
+      [
+        "Film ve Televizyon Yapımları",
+        "Yüksek kaliteli kameralar, profesyonel aydınlatma ve ses ekipmanıyla bu stüdyo film, TV programı ve reklam çekimi için mükemmeldir."
+      ],
+      [
+        "Canlı Etkinlikler ve Yayınlar",
+        "Esnek alan ve ileri teknoloji, canlı etkinlikler, talk show'lar, röportajlar ve yayınlar için uygundur."
+      ],
+      [
+        "Müzik Videoları ve Performanslar",
+        "Profesyonel ses ekipmanı ve çok yönlü aydınlatma seçenekleri, müzik videosu kaydı ve canlı performans çekimi için mükemmel bir seçim sunar."
+      ],
+      [
+        "Podcast ve Radyo Programları",
+        "Podcast mikrofonları, kablosuz yaka mikrofonları ve kulak içi monitörlerle podcast, radyo programı ve sesli röportaj kaydı için idealdir."
+      ],
+      [
+        "Kurumsal Videolar ve Sunumlar",
+        "Profesyonel kurulum ve reji odası, yüksek kaliteli görüntü ve sesle kurumsal video, eğitim ve sunum üretimi için idealdir."
+      ]
+    ],
+    "faq": [
+      [
+        "İstanbul Stüdyo 9 ne kadar büyük?",
+        "90 metrekare; Stüdyo 8 ile aynı boyut ve özelliklerde."
+      ],
+      [
+        "Stüdyo 8 ve 9 birlikte kiralanabilir mi?",
+        "Evet. İSTOÇ lokasyonunda yan yanadırlar ve sıklıkla çift olarak kiralanır."
+      ],
+      [
+        "Nelere uygun?",
+        "Televizyon ve film kaydı, canlı yayınlar, müzik performansları, podcastler ve kurumsal videolar."
+      ]
+    ],
+    "seo_title": "İstanbul Stüdyo 9 | 90 m² Yayın Stüdyosu Kiralama | Vision Studios",
+    "seo_description": "İSTOÇ, İstanbul'da 90 m² yayın stüdyosu kiralama: 4 Sony HSC-100R kamera, LED aydınlatma; Stüdyo 8 ile birlikte kiralanabilir. Günlük €1.500'dan itibaren."
+  }
+}

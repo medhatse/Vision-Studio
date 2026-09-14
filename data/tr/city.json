@@ -1,0 +1,45 @@
+{
+  "slug": "istanbul",
+  "name": "İstanbul",
+  "heading": "İstanbul'da TV ve Prodüksiyon Stüdyosu Kiralama",
+  "tagline": "Media City · Bağcılar",
+  "seo_title": "İstanbul TV Stüdyosu Kiralama | 10 Yayın Stüdyosu | Vision Studios",
+  "seo_description": "İstanbul'da stüdyo kiralama: Media City, Deposite ve İSTOÇ'ta 10 tam donanımlı TV ve yayın stüdyosu. Video wall, reji, ekip ve ekipman kiralama.",
+  "intro": [
+    "İstanbul, en büyük operasyonumuz: üç ayrı lokasyonda on stüdyo. Mahmutbey, Bağcılar'daki Media City'de 72 ekranlı video wall'a sahip 215 metrekarelik amiral gemimiz Stüdyo 1, 185 metrekarelik zemin kat Stüdyo 2, boş sahne olarak kullanılan Stüdyo 3, kompakt Stüdyo 4 ve Direct-To-Link canlı bağlantı odası bulunuyor. Başakşehir'deki Deposite kompleksinde, 4K Stüdyo 6 ve ofis dekorlu Stüdyo 7 dahil üç adet 196 metrekarelik stüdyo yer alıyor. Bağcılar'daki İSTOÇ lokasyonu ise 90'ar metrekarelik ikiz Stüdyo 8 ve 9'u ekliyor.",
+    "İstanbul'daki tüm stüdyolar jeneratör ve UPS yedek güçle çalışır; Sony, Grass Valley ve Blackmagic kamera zincirleri, Auto-Q prompter, DMX-512 kontrollü LED aydınlatma ve formatın gerektirdiği yerlerde tam donanımlı reji odaları bulunur. Ekip, ekipman kiralama, dekor tasarımı ve yayın hizmetleri her lokasyonda sunulur.",
+    "Burada çekilen yapımlar Yalı Çapkını, Aldatmak ve Taş Kağıt Makas gibi Türk dizilerinden Al Jazeera programlarına, Greenpeace kampanyalarından canlı kurumsal etkinliklere ve tıbbi webinarlara uzanıyor."
+  ],
+  "faq": [
+    [
+      "İstanbul stüdyoları nerede?",
+      "Üç lokasyon: Mahmutbey, Bağcılar'daki Media City (Stüdyo 1–4 ve DTL odası); Başakşehir'deki Deposite kompleksi (Stüdyo 5–7); ve Bağcılar'daki İSTOÇ lokasyonu (Stüdyo 8–9). Açık adres ve yol tarifi her rezervasyon onayıyla birlikte gönderilir. +90 212 988 10 45 numaralı telefonu arayabilirsiniz."
+    ],
+    [
+      "Dizi çekimi için en uygun İstanbul stüdyosu hangisi?",
+      "Genellikle Stüdyo 2 (185 m² zemin kat plato) ve Stüdyo 1 (215 m², ses yalıtımlı, 72 ekranlı video wall) tercih edilir; Stüdyo 3 ise özel dekor kurulumları için boş bir alandır."
+    ],
+    [
+      "Bir konuğu yabancı bir kanala canlı bağlayabilir misiniz?",
+      "Evet. DTL odası tek kameralı yayını SNG uydu ile veya TVU, LiveU, RTMP ve SRT üzerinden dünyanın her yerindeki yayıncıya iletir."
+    ]
+  ],
+  "shared_faq": [
+    [
+      "Stüdyo rezervasyonu nasıl yapılır?",
+      "Tarihlerinizi ve kısa bir özetle booking@vision-studios.net adresine e-posta gönderin veya bu sayfadaki yerel numarayı arayın. Müsaitlik, ekip önerisi ve fiyat teklifiyle genellikle bir iş günü içinde dönüş yapıyoruz."
+    ],
+    [
+      "Ekip sağlıyor musunuz?",
+      "Evet. Yönetmen, görüntü yönetmeni, yapımcı, ses mühendisi, ışık ve post prodüksiyon uzmanları sağlıyoruz; siz yalnızca sunucunuz ve metninizle gelebilirsiniz."
+    ],
+    [
+      "Özel dekor yapabilir misiniz?",
+      "Evet. Dekor tasarım ekibimiz ilk konseptten üretim ve kuruluma kadar her ölçekte tüm süreci üstlenir."
+    ],
+    [
+      "Ek ekipman kiralayabilir miyim?",
+      "Evet. Kamera, lens, ışık, ses ekipmanı ve post prodüksiyon araçları stüdyoyla birlikte kiralanabilir."
+    ]
+  ]
+}

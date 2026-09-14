@@ -40,6 +40,7 @@ function vs_settings(): array {
 		'forms' => [ __( 'Forms', 'vision-studios' ), [
 			'cf7_booking' => [ __( 'Contact Form 7 shortcode — studio booking form', 'vision-studios' ), 'text', '' ],
 			'cf7_contact' => [ __( 'Contact Form 7 shortcode — contact page form', 'vision-studios' ), 'text', '' ],
+			'cf7_booking_tr' => [ __( 'Contact Form 7 shortcode — Turkish booking form (used on /tr/ pages)', 'vision-studios' ), 'text', '' ],
 			'forms_help'  => [ __( 'Leave both empty to use the built-in forms, which open the visitor\'s email client with a pre-filled message.', 'vision-studios' ), 'note', '' ],
 		] ],
 	];

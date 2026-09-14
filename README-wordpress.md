@@ -58,6 +58,18 @@ Admin: http://localhost:8080/wp-admin (admin / admin).
 `npm run fetch` pulls fresh content from vision-studios.net; `npm run theme:import-data` rebuilds
 `data/import.json` inside the theme. Re-running the importer updates existing items instead of duplicating.
 
+## Turkish section (`/tr/`)
+
+The Istanbul city page and its ten studios also exist in Turkish at `/tr/city/istanbul/` and
+`/tr/studios/<slug>/` (`/tr/` itself is the Istanbul page). No multilingual plugin: `inc/turkish.php`
+renders the same templates with Turkish content from `_vs_tr_*` meta and swaps interface strings through
+the `gettext` filter. Both language versions carry `hreflang` links, the Turkish pages have their own
+canonical, titles and descriptions, and `/sitemap-tr.xml` (listed in robots.txt) covers them for Search
+Console. Translations live in `data/tr/` (`city.json`, `studios.json`, `ui.json`); `npm run
+theme:import-data` compiles them into the theme's `data/tr.json`, which the theme imports by itself the
+next time wp-admin is opened after the file changes (or on demand at `/wp-admin/?vs_tr_import=1`). A
+Turkish Contact Form 7 form can be set under Customize → Vision Studios → Forms.
+
 ## SEO
 
 What the theme does on its own (verified with `npm run seo:audit -- <site url>`):

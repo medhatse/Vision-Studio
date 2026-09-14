@@ -38,6 +38,7 @@ function vs_seo_description(): string {
 		$d = sprintf( __( 'Photographs from every Vision Studios broadcast and production studio in London, Dublin, Paris and Istanbul — %d studios, filterable by city.', 'vision-studios' ), (int) wp_count_posts( 'studio' )->publish );
 	}
 	$d = trim( preg_replace( '/\s+/', ' ', wp_strip_all_tags( $d ?: get_bloginfo( 'description' ) ) ) );
+	$d = apply_filters( 'vs_seo_description', $d );
 	return mb_strlen( $d ) > 158 ? mb_substr( $d, 0, 155 ) . '…' : $d;
 }
 

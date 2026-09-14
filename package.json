@@ -10,7 +10,7 @@
     "dev": "node scripts/build.mjs && node scripts/serve.mjs",
     "serve": "node scripts/serve.mjs",
     "theme:css": "cd wordpress && npx -y tailwindcss@3.4.17 -c tailwind.config.js -i tailwind.input.css -o vision-studios-theme/assets/app.css --minify",
-    "theme:import-data": "node scripts/build-wp-import.mjs",
+    "theme:import-data": "node scripts/build-wp-import.mjs && node scripts/build-wp-tr.mjs",
     "theme:zip": "npm run theme:import-data && npm run theme:css && cd wordpress && rm -f vision-studios-theme.zip && zip -qr vision-studios-theme.zip vision-studios-theme -x '*.DS_Store' && ls -la vision-studios-theme.zip",
     "wp:up": "cd wordpress && docker compose up -d",
     "wp:down": "cd wordpress && docker compose down",

@@ -4,7 +4,7 @@
  */
 defined( 'ABSPATH' ) || exit;
 
-define( 'VS_VERSION', '1.1.0' );
+define( 'VS_VERSION', '1.2.0' );
 
 if ( ! function_exists( 'str_starts_with' ) ) { // PHP < 8
 	function str_starts_with( $haystack, $needle ) {
@@ -29,6 +29,7 @@ require VS_DIR . '/inc/seo.php';
 require VS_DIR . '/inc/icons.php';
 require VS_DIR . '/inc/compat.php';
 require VS_DIR . '/inc/rankmath.php';
+require VS_DIR . '/inc/turkish.php';
 
 add_action( 'after_setup_theme', function () {
 	add_theme_support( 'title-tag' );
