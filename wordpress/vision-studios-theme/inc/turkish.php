@@ -77,11 +77,16 @@ add_action( 'init', function () {
 	}
 } );
 
-// A /tr/ URL for something without Turkish content goes back to the English page.
+// The sitemap answers before WordPress's canonical redirect can add a trailing slash to its URL.
 add_action( 'template_redirect', function () {
 	if ( get_query_var( 'vs_sitemap_tr' ) ) {
 		vs_tr_sitemap();
 	}
+}, 0 );
+add_filter( 'redirect_canonical', fn( $url ) => get_query_var( 'vs_sitemap_tr' ) ? false : $url );
+
+// A /tr/ URL for something without Turkish content goes back to the English page.
+add_action( 'template_redirect', function () {
 	if ( ! vs_is_tr() || is_404() ) {
 		return;
 	}
