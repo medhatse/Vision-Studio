@@ -48,6 +48,8 @@ $studio_count = (int) wp_count_posts( 'studio' )->publish;
 </div></div></section>
 <?php endif; ?>
 
+<?php echo vs_post_production_section(); // phpcs:ignore ?>
+
 <?php
 // Gallery: first photo of the six largest studios.
 $gallery_studios = get_posts( [ 'post_type' => 'studio', 'posts_per_page' => 6, 'meta_key' => '_vs_area', 'orderby' => 'meta_value_num', 'order' => 'DESC' ] );

@@ -205,3 +205,48 @@ function vs_faq_section( array $items, string $heading = '' ): string {
 function vs_services( string $type = 'service' ): array {
 	return get_posts( [ 'post_type' => 'vs_service', 'posts_per_page' => -1, 'orderby' => [ 'menu_order' => 'ASC', 'title' => 'ASC' ], 'meta_query' => [ [ 'key' => '_vs_type', 'value' => $type ] ] ] );
 }
+
+/**
+ * "Post Production" home page section (between #services and #gallery): edit, motion graphics, green
+ * screen and AI video. Copy and reel images are theme assets, not a CPT — this is a single fixed section,
+ * unlike vs_services() above. See assets/post-production.css (enqueued only where this prints).
+ */
+function vs_post_production_section(): string {
+	$reels = [
+		__( 'Vertical reel artwork with clocks and Every Second Doesn\'t Stop typography', 'vision-studios' ),
+		__( 'Motion graphics composition and editing timeline', 'vision-studios' ),
+		__( 'Vertical composite over an editing timeline', 'vision-studios' ),
+		__( 'After Effects animation timeline with a cinematic scene', 'vision-studios' ),
+		__( 'Motion graphics editing timeline with cinematic footage', 'vision-studios' ),
+		__( 'Warm studio scene over an animation timeline', 'vision-studios' ),
+	];
+	$items = [
+		[ __( 'Video Editing', 'vision-studios' ), __( 'Build the pace, story and structure that keep your audience watching.', 'vision-studios' ) ],
+		[ __( 'Motion Graphics', 'vision-studios' ), __( 'Give ideas movement through titles, graphics and animated visual elements.', 'vision-studios' ) ],
+		[ __( 'Green Screen', 'vision-studios' ), __( 'Combine captured footage with new settings and layered visuals.', 'vision-studios' ) ],
+		[ __( 'AI Video', 'vision-studios' ), __( 'Explore AI-assisted visuals as part of a considered production process.', 'vision-studios' ) ],
+	];
+
+	wp_enqueue_style( 'vs-post-production', VS_URI . '/assets/post-production.css', [ 'vs-app' ], VS_VERSION );
+
+	$html = '<section class="vs-post" id="post-production" aria-labelledby="vs-post-title"><div class="vs-post__wrap">';
+	$html .= '<div class="vs-post__intro"><div><p class="vs-post__eyebrow">' . esc_html__( 'Beyond the studio / Services', 'vision-studios' ) . '</p><h2 id="vs-post-title"><span>' . esc_html__( 'Post', 'vision-studios' ) . '</span><span>' . esc_html__( 'Production', 'vision-studios' ) . '</span></h2></div>'
+		. '<p class="vs-post__headline">' . esc_html__( 'From first cut', 'vision-studios' ) . '<br>' . esc_html__( 'to final frame.', 'vision-studios' ) . '</p>'
+		. '<p class="vs-post__summary">' . esc_html__( 'The story continues after the cameras stop. Shape your footage with editing, motion graphics, green screen workflows and AI-assisted video production.', 'vision-studios' ) . '</p></div>';
+
+	$html .= '<div class="vs-post__feature"><div class="vs-post__reels" aria-label="' . esc_attr__( 'Six examples of vertical editing and motion graphics work', 'vision-studios' ) . '">';
+	foreach ( $reels as $i => $alt ) {
+		$n = $i + 1;
+		$html .= '<figure class="vs-post__reel"><img src="' . esc_url( VS_URI . "/assets/img/post-production/reel-$n.webp" ) . '" alt="' . esc_attr( $alt ) . '" loading="lazy" decoding="async" width="360" height="640"></figure>';
+	}
+	$html .= '</div><div class="vs-post__feature-copy"><div><p class="vs-post__tag">' . esc_html__( 'The next stage of your production', 'vision-studios' ) . '</p><h3>' . esc_html__( 'Make every', 'vision-studios' ) . '<br>' . esc_html__( 'frame count.', 'vision-studios' ) . '</h3><p>' . esc_html__( 'From shaping the narrative to building the finishing touches, bring every part of your project together in one clear creative workflow.', 'vision-studios' ) . '</p></div>'
+		. '<a href="' . esc_url( vs_page_url( 'contact' ) ) . '" aria-label="' . esc_attr__( 'Enquire about post-production services', 'vision-studios' ) . '">' . esc_html__( 'Talk to our team', 'vision-studios' ) . ' ' . vs_arrow() . '</a></div></div>';
+
+	$html .= '<div class="vs-post__grid" aria-label="' . esc_attr__( 'Post-production services', 'vision-studios' ) . '">';
+	foreach ( $items as $i => [ $title, $text ] ) {
+		$html .= '<article class="vs-post__item"><span class="vs-post__index">' . esc_html( sprintf( '%02d / %02d', $i + 2, count( $items ) + 1 ) ) . '</span><h3>' . esc_html( $title ) . '</h3><p>' . esc_html( $text ) . '</p></article>';
+	}
+	$html .= '</div><div class="vs-post__foot"><strong>' . esc_html__( 'One vision. Every stage.', 'vision-studios' ) . '</strong><span>' . esc_html__( 'London · Dublin · Paris · Istanbul', 'vision-studios' ) . '</span></div>';
+
+	return $html . '</div></section>';
+}
