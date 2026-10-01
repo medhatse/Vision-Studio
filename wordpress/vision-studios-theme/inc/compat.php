@@ -522,3 +522,47 @@ function vs_address_free_copy(): array {
 		'Three sites: Media City at Mahmutbey, 2623 Sokak No 3, Bağcılar (Studios 1–4 and the DTL room); Deposite İş Merkezi, Atatürk Blv. No:204A, Başakşehir (Studios 5–7); and İSTOÇ, Göztepe, Bağcılar (Studios 8–9). Call' => 'Three sites: Media City in Mahmutbey, Bağcılar (Studios 1–4 and the DTL room); the Deposite complex in Başakşehir (Studios 5–7); and the İSTOÇ site in Bağcılar (Studios 8–9). Full addresses and directions are sent with every booking confirmation. Call',
 	];
 }
+
+
+// ----- One-off: give the SEO <title> its own text where it was set identical to the H1 -----
+// /wp-admin/?vs_fix_dup_titles=1 — dry run unless &apply=1 is added. Edits rank_math_title only, never
+// the post_title/H1, so the heading on the page itself is untouched.
+add_action( 'admin_init', function () {
+	if ( empty( $_GET['vs_fix_dup_titles'] ) || ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	$map = [
+		'joe-live-event-with-human-appeal-produced-at-vision-studio-istanbul' => 'JOE Live Event with Human Appeal - Vision Studios',
+		'valens-research-live-broadcast-vision-studios-istanbul' => 'Valens Research Live Broadcast - Vision Studios',
+		'the-polluted-pays-powerful-environmental-clip-vision-studios' => 'The Polluted Pays | Vision Studios',
+		'vision-studios-istanbul-al-shabakah-aj360-production' => 'Al Shabakah (AJ360) Production - Vision Studios',
+		'yali-capkini-filmed-at-vision-studios-studio-2-istanbul' => 'Yalı Çapkını - Vision Studios',
+		'vision-studios-top-choice-for-tv-series-production-in-istanbul' => 'Top Choice for TV Series Production - Vision Studios',
+		'rock-paper-scissors' => 'Rock Paper Scissors - Vision Studios',
+		'exclusive-shoot-with-joe-cole-at-vision-studios-london' => 'Exclusive Shoot with Joe Cole - Vision Studios',
+		'hosting-funny-hands-productions-inside-vision-studios' => 'Funny Hands Productions - Vision Studios',
+		'hosting-an-irish-podcast-at-vision-studios-dublin' => 'Hosting an Irish Podcast at Vision Studios Dublin - Vision Studios',
+		'hosting-al-wataniya-tv-inside-media-city-for-training' => 'Al Wataniya TV Training - Vision Studios',
+	];
+	$apply = ! empty( $_GET['apply'] );
+	header( 'Content-Type: text/plain; charset=utf-8' );
+	echo $apply ? "APPLYING\n" : "DRY RUN (add &apply=1 to write)\n";
+	foreach ( $map as $slug => $new_title ) {
+		$p = get_page_by_path( $slug, OBJECT, 'post' );
+		if ( ! $p ) {
+			echo "missing: $slug\n";
+			continue;
+		}
+		$old = get_post_meta( $p->ID, 'rank_math_title', true );
+		echo "{$p->ID} {$slug}: " . ( $old ?: '(none)' ) . " -> $new_title\n";
+		if ( $apply ) {
+			update_post_meta( $p->ID, 'rank_math_title', $new_title );
+			clean_post_cache( $p->ID );
+		}
+	}
+	if ( $apply ) {
+		vs_purge_nginx_cache();
+		echo "done, cache purged\n";
+	}
+	exit;
+} );
