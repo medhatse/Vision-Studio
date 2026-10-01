@@ -566,3 +566,32 @@ add_action( 'admin_init', function () {
 	}
 	exit;
 } );
+
+// ----- One-off: Rank Math auto-generated these two studio descriptions once and never refreshed them
+// after their post_excerpt changed, so they stayed byte-identical to each other. Set directly. -----
+// /wp-admin/?vs_fix_studio_desc=1 — dry run unless &apply=1 is added.
+add_action( 'admin_init', function () {
+	if ( empty( $_GET['vs_fix_studio_desc'] ) || ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	$map = [
+		3780 => 'A fully decorated 144 square metre broadcast floor in Dundrum, Dublin, with an 18 square metre gallery, LED video wall and robotic Sony cameras.',
+		3781 => 'An 84 square metre fully decorated broadcast set in Paris, with LED video walls, a 10 square metre gallery and four Blackmagic Full HD cameras.',
+	];
+	$apply = ! empty( $_GET['apply'] );
+	header( 'Content-Type: text/plain; charset=utf-8' );
+	echo $apply ? "APPLYING\n" : "DRY RUN (add &apply=1 to write)\n";
+	foreach ( $map as $id => $new_desc ) {
+		$old = get_post_meta( $id, 'rank_math_description', true );
+		echo "$id: " . ( $old ?: '(none)' ) . " -> $new_desc\n";
+		if ( $apply ) {
+			update_post_meta( $id, 'rank_math_description', $new_desc );
+			clean_post_cache( $id );
+		}
+	}
+	if ( $apply ) {
+		vs_purge_nginx_cache();
+		echo "done, cache purged\n";
+	}
+	exit;
+} );
