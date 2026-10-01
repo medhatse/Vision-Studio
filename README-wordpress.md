@@ -57,6 +57,9 @@ Admin: http://localhost:8080/wp-admin (admin / admin).
 
 `npm run fetch` pulls fresh content from vision-studios.net; `npm run theme:import-data` rebuilds
 `data/import.json` inside the theme. Re-running the importer updates existing items instead of duplicating.
+`app.js` and `post-production.css` are hand-written; `npm run theme:minify` (folded into `theme:zip`) produces
+the minified files the theme actually serves from their `.src.js` / `.src.css` sources — edit the `.src.*`
+files, never the generated ones.
 
 ## Turkish section (`/tr/`)
 
