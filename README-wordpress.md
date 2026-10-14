@@ -1,5 +1,7 @@
 # Vision Studios — WordPress theme
 
+> For repository-wide architecture, installation, and deployment documentation, see the [Root README](README.md) and the [Documentation Index](README.md#documentation-index).
+
 `wordpress/vision-studios-theme/` is a classic WordPress theme in the same design as the static site, for
 installing on the existing vision-studios.net WordPress. It adds:
 
@@ -116,3 +118,18 @@ settings decide the final mobile performance number.
 
 Not covered by a theme (do these on the host): HTTPS, a caching/CDN layer (Cloudflare is already in front),
 WebP originals (already the case) and a page-speed check with PageSpeed Insights after launch.
+
+---
+
+## Related Documentation
+
+- [Root README](README.md)
+- [System Architecture](docs/ARCHITECTURE.md)
+- [Installation Guide](docs/INSTALLATION.md)
+- [Configuration Reference](docs/CONFIGURATION.md)
+- [Deployment Guide](docs/DEPLOYMENT.md)
+- [Operations & Maintenance](docs/OPERATIONS.md)
+- [Troubleshooting Guide](docs/TROUBLESHOOTING.md)
+- [Development & Contribution](docs/DEVELOPMENT.md)
+- [Security Policy](docs/SECURITY.md)
+
