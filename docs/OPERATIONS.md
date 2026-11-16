@@ -125,3 +125,17 @@ docker compose down -v
 docker compose up -d
 # Follow docs/INSTALLATION.md for initial WP-CLI installation
 ```
+
+---
+
+## 5. Production Notes (live WordPress site)
+
+These are the behaviours that are easy to miss when changing the live site at `vision-studios.net`.
+
+- **Release process:** the live site is the WordPress theme (Track 2). Run `npm run theme:zip`, upload the zip under *Appearance → Themes → Add New → Upload*, then purge the cache by opening `/?vs_cache_purge=1` while logged in as an admin.
+- **Cache-busting:** CSS and JS are enqueued with `VS_VERSION` (`functions.php`). Bump it whenever `app.css`, `app.js` or `post-production.css` change, otherwise returning visitors can combine new HTML with old cached styles.
+- **Content import:** *Studios → Import Content* updates studios, cities, pages and options from `data/import.json`, but only **inserts** news posts whose slug does not exist yet. Changing the text of an existing post needs an edit in wp-admin (or the `?vs_replace=1` tool below). Renaming a slug in `data/news.json` creates a duplicate post.
+- **Rank Math:** auto-generated `rank_math_title` / `rank_math_description` are stored as post meta and are not refreshed by the importer. Use the admin tools below to correct them.
+- **Admin-only maintenance tools** (`inc/compat.php`, dry-run by default; add `&apply=1` to write): `?vs_replace=1` (find/replace across content, with `&preset=` shortcuts), `?vs_cache_purge=1`, `?vs_perf_diag=1`, `?vs_tr_import=1`, `?vs_fix_dup_titles=1`, `?vs_fix_studio_desc=1`, `?vs_remove_dublin=1`, `?vs_swap_share_image=1`. Always run the dry run first and read the output.
+- **Styling:** the site uses a "Glass" look (`.glass`, `.glass-strong` in `wordpress/tailwind.input.css`) with fallbacks for browsers without `backdrop-filter` and for `prefers-reduced-transparency`. The image viewer is a native `<dialog id="lightbox">`.
+- **Hidden content:** Dublin and the Europe `+353` number were removed from the site; old Dublin URLs redirect to the studios archive (`inc/redirects.php`).
