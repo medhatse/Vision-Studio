@@ -39,7 +39,10 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 #hero-slider .hero-slide.opacity-100 img { animation: kenburns 9s ease-out forwards; }
 @keyframes kenburns { from { transform: scale(1.02); } to { transform: scale(1.1); } }
 @media (prefers-reduced-motion: reduce) { #hero-slider .hero-slide.opacity-100 img { animation: none; } }
-#lightbox.is-open { display: flex; }
+/* Lightbox is a native modal <dialog>: dark ::backdrop, and scroll containment instead of locking body overflow */
+#lightbox::backdrop { background: rgba(0, 0, 0, 0.95); }
+dialog:modal { overscroll-behavior: contain; }
+dialog::backdrop { overflow: hidden; overscroll-behavior: contain; }
 input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: .6; }
 select option { background: #000; }
 .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
@@ -80,3 +83,27 @@ select option { background: #000; }
 details > summary::-webkit-details-marker { display: none; }
 details > summary { list-style: none; }
 .group[open] .group-open\:rotate-45 { transform: rotate(45deg); }
+
+/* ---- Glass style: frosted translucent panels over a soft ambient glow ---- */
+html { background: #000; }
+body.bg-black { background: transparent; }
+/* Fixed colour field behind the page, so the blur has something to refract */
+body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(60vmax 45vmax at 12% 8%, rgba(242, 112, 58, 0.30), transparent 60%),
+    radial-gradient(55vmax 45vmax at 92% 38%, rgba(70, 110, 220, 0.26), transparent 60%),
+    radial-gradient(60vmax 45vmax at 30% 95%, rgba(242, 112, 58, 0.20), transparent 60%),
+    #050505; }
+main section.bg-black, footer.bg-black { background-color: transparent; }
+.glass, .glass-strong { border: 1px solid rgba(255, 255, 255, 0.14); border-top-color: rgba(255, 255, 255, 0.24);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  -webkit-backdrop-filter: blur(16px) saturate(150%); backdrop-filter: blur(16px) saturate(150%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 10px 32px rgba(0, 0, 0, 0.35); }
+.glass-strong { background: linear-gradient(145deg, rgba(30, 30, 34, 0.72), rgba(10, 10, 12, 0.62)); border-width: 0 0 1px; border-bottom-color: rgba(255, 255, 255, 0.14); }
+#mobile-menu.glass-strong { border-width: 1px 0 0; border-top-color: rgba(255, 255, 255, 0.14); }
+.service-card.glass { border-top-color: rgba(255, 255, 255, 0.24); }
+.glass:hover { border-color: rgba(255, 255, 255, 0.22); }
+.glass-input, .wpcf7 input:not([type=submit]), .wpcf7 textarea, .wpcf7 select, .vs-form input, .vs-form textarea, .vs-form select { background: rgba(255, 255, 255, 0.06) !important; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.gallery-filter { -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); background: rgba(255, 255, 255, 0.04); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .glass { background: rgba(24, 24, 28, 0.92); } .glass-strong { background: rgba(10, 10, 12, 0.95); } }
+@media (prefers-reduced-transparency: reduce) { .glass, .glass-strong { background: #121214; -webkit-backdrop-filter: none; backdrop-filter: none; } .glass-input, .wpcf7 input:not([type=submit]), .wpcf7 textarea, .wpcf7 select, .vs-form input, .vs-form textarea, .vs-form select { background: #000 !important; -webkit-backdrop-filter: none; backdrop-filter: none; } }

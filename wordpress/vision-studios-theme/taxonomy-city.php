@@ -43,8 +43,8 @@ $email   = vs_opt( 'email' );
 <?php $services = vs_services( 'service' ); if ( $services ) : ?>
 <section class="bg-black py-24 border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10">
 <div class="fade-up mb-12"><?php echo vs_eyebrow( __( 'Our Services', 'vision-studios' ) ) . vs_h2( __( 'Everything Around The Studio.', 'vision-studios' ), 'max-w-3xl' ); // phpcs:ignore ?></div>
-<div class="grid md:grid-cols-3 gap-px bg-white/10">
-<?php foreach ( array_slice( $services, 0, 3 ) as $i => $s ) : ?><div class="fade-up service-card bg-black p-8"><p class="font-mono-tag text-xs lg:text-[10px] text-white/50 mb-3"><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></p><h3 class="font-display uppercase text-lg"><?php echo esc_html( $s->post_title ); ?></h3><p class="text-white/60 text-sm leading-relaxed mt-3"><?php echo esc_html( wp_strip_all_tags( $s->post_content ?: $s->post_excerpt ) ); ?></p></div><?php endforeach; ?>
+<div class="grid md:grid-cols-3 gap-4">
+<?php foreach ( array_slice( $services, 0, 3 ) as $i => $s ) : ?><div class="fade-up service-card glass p-8"><p class="font-mono-tag text-xs lg:text-[10px] text-white/50 mb-3"><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></p><h3 class="font-display uppercase text-lg"><?php echo esc_html( $s->post_title ); ?></h3><p class="text-white/60 text-sm leading-relaxed mt-3"><?php echo esc_html( wp_strip_all_tags( $s->post_content ?: $s->post_excerpt ) ); ?></p></div><?php endforeach; ?>
 </div></div></section>
 <?php endif; ?>
 

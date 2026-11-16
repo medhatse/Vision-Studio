@@ -1,76 +1,5 @@
 [
   {
-    "slug": "dublin-studio",
-    "title": "Dublin Studio",
-    "city": "dublin",
-    "areaSqm": 144,
-    "specs": [
-      "144 sq. mt. studio area.",
-      "Fully decorated.",
-      "Huge LED screen, Fully controlled.",
-      "3 Groups, 2×2 video wall screens (55-inch).",
-      "18 sq. mt. gallery control room.",
-      "4 x Sony Full HD cameras with professional CCU.",
-      "4 x Pedestal tripods, Robotic Heads.",
-      "1 x Auto-Q system, Controls 2 auto-Q reflectors.",
-      "LED studio lightning controlled by DMX-512 lightning console.",
-      "Ceiling studio Lightning grid (Dynamic).",
-      "Digital Audio Mixer.",
-      "8 x wireless Neck microphone and wireless Hand microphones."
-    ],
-    "highlights": [
-      "144sq mt studio area",
-      "Fully decorated",
-      "Huge LED screen, Fully controlled",
-      "4 x sony Full HD cameras",
-      "1 x jimmy jip (3m to 7m length)",
-      "Digital Audio Mixer"
-    ],
-    "useCasesHeading": "",
-    "useCases": [],
-    "gallery": [
-      "/static/img/remote/2025/10/3-scaled.webp",
-      "/static/img/remote/2025/11/1.webp",
-      "/static/img/remote/2025/11/2.webp",
-      "/static/img/remote/2025/11/3.webp",
-      "/static/img/remote/2025/11/4.webp",
-      "/static/img/remote/2025/11/5.webp",
-      "/static/img/remote/2025/11/6.webp",
-      "/static/img/remote/2025/11/7.webp",
-      "/static/img/remote/2025/11/8.webp",
-      "/static/img/remote/2025/11/9.webp",
-      "/static/img/remote/2025/11/10.webp",
-      "/static/img/remote/2025/11/11.webp",
-      "/static/img/remote/2025/11/12.webp"
-    ],
-    "carousel": [
-      {
-        "image": "/static/img/remote/2024/05/Deposit-Studio-1-8.webp",
-        "alt": "Production Studios"
-      },
-      {
-        "image": "/static/img/remote/2024/05/Vipro-1.webp",
-        "alt": "Production Studios"
-      },
-      {
-        "image": "/static/img/remote/2024/05/Vipro-2.webp",
-        "alt": "Production Studios"
-      },
-      {
-        "image": "/static/img/remote/2024/05/Vipro-3.webp",
-        "alt": "Production Studios"
-      }
-    ],
-    "floorPlan": "/static/img/remote/2024/05/dublin-Layoutl.webp",
-    "contact": {
-      "phone": "+353 (0) 8961 14641",
-      "address": "3rd Floor North, North Block Rockfields Dundrum Dublin D16 W7W3"
-    },
-    "address": "3rd Floor North, North Block Rockfields  Dundrum Dublin D16 W7W3",
-    "sourceUrl": "https://vision-studios.net/dublin-studio/",
-    "modified": "2025-11-04T14:16:12"
-  },
-  {
     "slug": "istanbul-dtl-room",
     "title": "Istanbul DTL Room",
     "city": "istanbul",
@@ -953,7 +882,7 @@
     ],
     "floorPlan": "",
     "contact": {
-      "phone": "+3530896114641",
+      "phone": "",
       "address": ""
     },
     "address": "",

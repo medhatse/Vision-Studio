@@ -86,7 +86,7 @@ function vs_cities(): array {
 	if ( is_wp_error( $terms ) ) {
 		return [];
 	}
-	$order = [ 'london' => 0, 'dublin' => 1, 'paris' => 2, 'istanbul' => 3 ];
+	$order = [ 'london' => 0, 'paris' => 1, 'istanbul' => 2 ];
 	usort( $terms, fn( $a, $b ) => ( $order[ $a->slug ] ?? 9 ) <=> ( $order[ $b->slug ] ?? 9 ) );
 	return $terms;
 }
@@ -171,7 +171,7 @@ function vs_form( string $which, string $studio = '' ): string {
 }
 
 function vs_lightbox(): string {
-	return '<div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="' . esc_attr__( 'Image viewer', 'vision-studios' ) . '"><button id="lightbox-close" class="absolute top-5 right-6 text-white/70 hover:text-white text-3xl" aria-label="' . esc_attr__( 'Close', 'vision-studios' ) . '">&times;</button><button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-accent text-3xl px-3" aria-label="' . esc_attr__( 'Previous', 'vision-studios' ) . '">&#8249;</button><img id="lightbox-img" src="" alt="" class="max-h-[88vh] max-w-full object-contain"/><button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-accent text-3xl px-3" aria-label="' . esc_attr__( 'Next', 'vision-studios' ) . '">&#8250;</button><p id="lightbox-caption" class="absolute bottom-5 inset-x-0 text-center font-mono-tag text-xs lg:text-[11px] uppercase tracking-[0.2em] text-white/50"></p></div>';
+	return '<dialog id="lightbox" closedby="any" class="m-auto p-0 border-0 bg-transparent text-white overflow-visible max-w-[96vw] max-h-[96vh]" aria-label="' . esc_attr__( 'Image viewer', 'vision-studios' ) . '"><button type="button" id="lightbox-close" class="glass absolute top-2 right-2 z-10 text-white/80 hover:text-white text-3xl leading-none px-3 py-1" aria-label="' . esc_attr__( 'Close', 'vision-studios' ) . '">&times;</button><button type="button" id="lightbox-prev" class="glass absolute left-2 top-1/2 -translate-y-1/2 z-10 text-white/70 hover:text-accent text-3xl leading-none px-3 py-2" aria-label="' . esc_attr__( 'Previous', 'vision-studios' ) . '">&#8249;</button><img id="lightbox-img" src="" alt="" class="block max-h-[84vh] max-w-[96vw] object-contain"/><button type="button" id="lightbox-next" class="glass absolute right-2 top-1/2 -translate-y-1/2 z-10 text-white/70 hover:text-accent text-3xl leading-none px-3 py-2" aria-label="' . esc_attr__( 'Next', 'vision-studios' ) . '">&#8250;</button><p id="lightbox-caption" class="mt-3 text-center font-mono-tag text-xs lg:text-[11px] uppercase tracking-[0.2em] text-white/60"></p></dialog>';
 }
 
 /** Parse "Question | Answer" lines. */
@@ -195,7 +195,7 @@ function vs_faq_section( array $items, string $heading = '' ): string {
 	foreach ( $items as [ $q, $a ] ) {
 		// Email addresses become links (and are shielded from Cloudflare's obfuscation, which crawlers see as 404s).
 		$answer = preg_replace( '/([\w.+-]+@[\w-]+(?:\.[\w-]+)+)/', '<!--email_off--><a href="mailto:$1" class="text-accent">$1</a><!--/email_off-->', esc_html( $a ) );
-		$html .= '<details class="group py-4"><summary class="flex justify-between items-start gap-6 cursor-pointer list-none font-display uppercase text-lg"><span>' . esc_html( $q ) . '</span><span class="text-accent shrink-0 transition-transform group-open:rotate-45">' . vs_icon( 'plus' ) . '</span></summary><p class="text-white/70 text-sm leading-relaxed mt-3 max-w-2xl">' . $answer . '</p></details>';
+		$html .= '<details class="group glass px-5 py-4 mb-3"><summary class="flex justify-between items-start gap-6 cursor-pointer list-none font-display uppercase text-lg"><span>' . esc_html( $q ) . '</span><span class="text-accent shrink-0 transition-transform group-open:rotate-45">' . vs_icon( 'plus' ) . '</span></summary><p class="text-white/70 text-sm leading-relaxed mt-3 max-w-2xl">' . $answer . '</p></details>';
 	}
 	$ld = [ '@context' => 'https://schema.org', '@type' => 'FAQPage', 'mainEntity' => array_map( fn( $i ) => [ '@type' => 'Question', 'name' => $i[0], 'acceptedAnswer' => [ '@type' => 'Answer', 'text' => $i[1] ] ], $items ) ];
 	return $html . '</div></div><script type="application/ld+json">' . wp_json_encode( $ld, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . '</script></section>';
@@ -246,7 +246,7 @@ function vs_post_production_section(): string {
 	foreach ( $items as $i => [ $title, $text ] ) {
 		$html .= '<article class="vs-post__item"><span class="vs-post__index">' . esc_html( sprintf( '%02d / %02d', $i + 2, count( $items ) + 1 ) ) . '</span><h3>' . esc_html( $title ) . '</h3><p>' . esc_html( $text ) . '</p></article>';
 	}
-	$html .= '</div><div class="vs-post__foot"><strong>' . esc_html__( 'One vision. Every stage.', 'vision-studios' ) . '</strong><span>' . esc_html__( 'London · Dublin · Paris · Istanbul', 'vision-studios' ) . '</span></div>';
+	$html .= '</div><div class="vs-post__foot"><strong>' . esc_html__( 'One vision. Every stage.', 'vision-studios' ) . '</strong><span>' . esc_html__( 'London · Paris · Istanbul', 'vision-studios' ) . '</span></div>';
 
 	return $html . '</div></section>';
 }

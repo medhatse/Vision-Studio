@@ -197,7 +197,7 @@ function vs_run_import( array $opts = [] ): array {
 		'home'    => [ __( 'Home', 'vision-studios' ), '', [], '' ],
 		'about'   => [ __( 'About Us', 'vision-studios' ), 'template-about.php', $data['pages']['about']['blocks'], $data['pages']['about']['excerpt'], $data['pages']['about']['image'] ?? '' ],
 		'contact' => [ __( 'Contact Us', 'vision-studios' ), 'template-contact.php', $data['pages']['contact']['blocks'], $data['pages']['contact']['excerpt'] ],
-		'gallery' => [ __( 'Gallery', 'vision-studios' ), 'template-gallery.php', [], __( 'Photographs from every Vision Studios broadcast and production studio in London, Dublin, Paris and Istanbul.', 'vision-studios' ) ],
+		'gallery' => [ __( 'Gallery', 'vision-studios' ), 'template-gallery.php', [], __( 'Photographs from every Vision Studios broadcast and production studio in London, Paris and Istanbul.', 'vision-studios' ) ],
 		'news'    => [ __( 'News', 'vision-studios' ), '', [], '' ],
 	];
 	$page_ids = [];

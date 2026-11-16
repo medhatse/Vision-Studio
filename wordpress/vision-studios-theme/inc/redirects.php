@@ -11,6 +11,13 @@ function vs_legacy_target( string $slug ): string {
 	if ( '' === $slug ) {
 		return '';
 	}
+	// Dublin was removed from the site: its pages go to the studios list, its news post to the news page.
+	if ( in_array( $slug, [ 'dublin', 'dublin-studio', 'studios/dublin-studio', 'city/dublin', 'tr/dublin' ], true ) ) {
+		return (string) ( get_post_type_archive_link( 'studio' ) ?: home_url( '/' ) );
+	}
+	if ( in_array( $slug, [ 'hosting-an-irish-podcast-at-vision-studios-dublin', 'hosting-an-irish-podcast-inside-it-media' ], true ) ) {
+		return vs_news_url();
+	}
 	if ( $studio = get_page_by_path( $slug, OBJECT, 'studio' ) ) {
 		return (string) get_permalink( $studio );
 	}

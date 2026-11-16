@@ -14,12 +14,12 @@ const faqLines = (own = [], shared = true) => [...own, ...(shared ? copy.sharedF
 // /static/img/remote/2024/05/x.webp → https://vision-studios.net/wp-content/uploads/2024/05/x.webp
 const remote = (p) => (p && p.startsWith('/static/img/remote/') ? site.origin + '/wp-content/uploads/' + p.slice('/static/img/remote/'.length) : p || '')
 
-const order = ['london', 'dublin', 'paris', 'istanbul']
+const order = ['london', 'paris', 'istanbul']
 const payload = {
   generated: new Date().toISOString(),
   options: {
     email: site.email, instagram: site.social.instagram, linkedin: site.social.linkedin,
-    phone_uk: contact.regions.find((r) => /Kingdom/.test(r.region))?.phone, phone_eu: contact.regions.find((r) => /Europe/.test(r.region))?.phone, phone_tr: contact.regions.find((r) => /Turkey/.test(r.region))?.phone,
+    phone_uk: contact.regions.find((r) => /Kingdom/.test(r.region))?.phone, phone_eu: contact.regions.find((r) => /Europe/.test(r.region))?.phone ?? '', phone_tr: contact.regions.find((r) => /Turkey/.test(r.region))?.phone,
     hq_address: site.hq.address, opening_hours: site.openingHours,
     hero_image: remote(curated.hero.image), hero_left: curated.hero.eyebrowLeft, hero_center: curated.hero.eyebrowCenter, hero_right: curated.hero.eyebrowRight,
     hero_intro: home.tagline + '. Fully equipped, modern studios for live news, TV shows, corporate advertising, virtual events and podcasts.',

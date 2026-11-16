@@ -63,7 +63,7 @@ The content and behavior of the static generator are defined across JSON files i
 This file is **never overwritten** by `npm run fetch`. It contains hand-curated presentation attributes:
 - `hero`: Top banner image, badges, and headline copy.
 - `stats`: Key homepage metrics (e.g., number of studios, square meters, European cities).
-- `cities`: Coordinates, tags, phone numbers, and display images for London, Dublin, Paris, and Istanbul.
+- `cities`: Coordinates, tags, phone numbers, and display images for London, Paris, and Istanbul.
 - `studioTags`: Marketing taglines for individual studios (e.g., "Flagship Soundstage", "Virtual Production Hub").
 - `services`: Service cards displayed on homepage and city pages.
 - `why`: "Why Vision" value propositions.
@@ -108,7 +108,7 @@ When using the WordPress theme (`wordpress/vision-studios-theme/`), configure gl
 | Setting Key | Label / Section | Purpose |
 |---|---|---|
 | `vs_phone_uk` | Contact → UK Phone | Contact telephone for UK operations. |
-| `vs_phone_eu` | Contact → EU Phone | Contact telephone for European operations (Dublin, Paris). |
+| `vs_phone_eu` | Contact → EU Phone | Contact telephone for European operations (Paris; not shown on the site at present). |
 | `vs_phone_tr` | Contact → Turkey Phone | Contact telephone for Istanbul operations. |
 | `vs_email` | Contact → Booking Email | Default recipient for booking inquiries. |
 | `vs_hq_address` | Contact → Headquarters | Primary postal address displayed in footer and schema. |

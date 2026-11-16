@@ -7,7 +7,7 @@ export function renderCity(city, ctx) {
   const cs = studios.filter((s) => s.city === city.slug)
   const blurbs = new Map(city.studioBlurbs.map((b) => [b.title, b.description]))
   const hero = meta.image
-  // London/Istanbul have no services block on the source site; reuse the shared copy from Dublin/Paris.
+  // London/Istanbul have no services block on the source site; reuse the shared copy from Paris.
   const services = city.services.length ? city.services : (cities.find((c) => c.services.length)?.services || [])
 
   const studioList = cs.map((s, i) => `<article class="fade-up grid md:grid-cols-2 gap-8 items-center py-12 ${i ? 'border-t border-white/10' : ''}">

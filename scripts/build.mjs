@@ -25,8 +25,8 @@ async function main() {
   const names = ['site', 'studios', 'cities', 'home', 'about', 'contact', 'news', 'curated', 'copy']
   const data = Object.fromEntries(await Promise.all(names.map(async (n) => [n, await readJson(n + '.json')])))
   data.news.sort((a, b) => b.date.localeCompare(a.date))
-  // Order studios: London, Dublin, Paris, Istanbul; numeric within city.
-  const order = ['london', 'dublin', 'paris', 'istanbul']
+  // Order studios: London, Paris, Istanbul; numeric within city.
+  const order = ['london', 'paris', 'istanbul']
   data.studios.sort((a, b) => order.indexOf(a.city) - order.indexOf(b.city) || a.slug.localeCompare(b.slug, undefined, { numeric: true }))
   data.cities.sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug))
 

@@ -1,6 +1,6 @@
 # Privacy Policy
 
-Vision Studios ("we", "us") operates broadcast and production studios in London, Dublin, Paris and Istanbul and the website vision-studios.net. This policy explains what personal data we collect through the website, why, and your rights. It applies under the UK GDPR, the EU GDPR (Ireland and France) and Türkiye's Personal Data Protection Law (KVKK).
+Vision Studios ("we", "us") operates broadcast and production studios in London, Paris and Istanbul and the website vision-studios.net. This policy explains what personal data we collect through the website, why, and your rights. It applies under the UK GDPR, the EU GDPR (France) and Türkiye's Personal Data Protection Law (KVKK).
 
 ## Who is responsible
 
@@ -28,7 +28,7 @@ Enquiries that do not lead to a booking: 12 months. Booking records: 6 years aft
 
 ## Your rights
 
-You can ask for a copy of your data, ask us to correct or delete it, restrict or object to its use, and ask for it in a portable format. Email booking@vision-studios.net. You can also complain to the Information Commissioner's Office (UK), the Data Protection Commission (Ireland), the CNIL (France) or the KVKK Board (Türkiye).
+You can ask for a copy of your data, ask us to correct or delete it, restrict or object to its use, and ask for it in a portable format. Email booking@vision-studios.net. You can also complain to the Information Commissioner's Office (UK), the CNIL (France) or the KVKK Board (Türkiye).
 
 ## Cookies
 

@@ -27,38 +27,6 @@
     "sourceUrl": "https://vision-studios.net/london/"
   },
   {
-    "slug": "dublin",
-    "name": "Dublin",
-    "heading": "Our TV & Production studios in Dublin",
-    "studioCards": [
-      {
-        "slug": "dublin-studio",
-        "image": "/static/img/remote/2024/05/PHOTO-2023-04-27-00-37-33.webp"
-      }
-    ],
-    "studioBlurbs": [
-      {
-        "title": "Dublin Studio",
-        "description": "A fully decorated 144 square metre broadcast floor in Dundrum, Dublin, with an 18 square metre gallery, LED video wall and robotic Sony cameras."
-      }
-    ],
-    "services": [
-      {
-        "title": "Broadcast Service",
-        "description": "At Vision Studios, we offer cutting-edge broadcast services designed to elevate your content delivery and engage your target audience like never before. Our comprehensive suite of broadcast solutions combines state-of-the-art technology with personalized support to ensure seamless transmission and maximum impact for your message."
-      },
-      {
-        "title": "Equipment Hire",
-        "description": "At Vision Studios, we recognize that having access to the right media production equipment is crucial for bringing your creative vision to life. From professional cameras and lenses to lighting equipment, audio gear, and post-production tools, our extensive inventory features a comprehensive range of equipment to support every aspect of your media production workflow. Whether you're working on a film, television show, commercial, documentary, or any other type of project, we've got the equipment you need to make it a success."
-      },
-      {
-        "title": "Crew Hire",
-        "description": "At Vision Studios, we understand that assembling the right team is essential for bringing your creative vision to life. From directors and cinematographers to producers, sound engineers, and post-production specialists, our network includes talented individuals with diverse skills and expertise across all aspects of media production. Whether you're working on a film, television show, commercial, documentary, or any other type of project, we've got the crew members you need to bring your vision to fruition."
-      }
-    ],
-    "sourceUrl": "https://vision-studios.net/dublin/"
-  },
-  {
     "slug": "paris",
     "name": "Paris",
     "heading": "Our TV & Production studios in Paris",

@@ -4,10 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('site-header')
   const onScroll = () => {
     const scrolled = window.scrollY > 40
-    header.classList.toggle('bg-black/90', scrolled)
-    header.classList.toggle('backdrop-blur', scrolled)
-    header.classList.toggle('border-b', scrolled)
-    header.classList.toggle('border-white/10', scrolled)
+    header.classList.toggle('glass-strong', scrolled)
   }
   onScroll()
   window.addEventListener('scroll', onScroll, { passive: true })
@@ -82,8 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const img = document.getElementById('lightbox-img')
     const cap = document.getElementById('lightbox-caption')
     let group = [], index = 0
-    const open = (items, i) => { group = items; index = i; render(); lb.classList.add('is-open'); document.body.style.overflow = 'hidden' }
-    const close = () => { lb.classList.remove('is-open'); document.body.style.overflow = '' }
+    const open = (items, i) => { group = items; index = i; render(); lb.showModal() }
+    const close = () => lb.close()
     const render = () => { const it = group[index]; img.src = it.dataset.src; img.alt = it.dataset.caption || ''; cap.textContent = it.dataset.caption || '' }
     const step = (d) => { if (!group.length) return; index = (index + d + group.length) % group.length; render() }
     document.querySelectorAll('[data-lightbox]').forEach((btn) => btn.addEventListener('click', () => {
@@ -93,10 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('lightbox-close').addEventListener('click', close)
     document.getElementById('lightbox-prev').addEventListener('click', () => step(-1))
     document.getElementById('lightbox-next').addEventListener('click', () => step(1))
-    lb.addEventListener('click', (e) => { if (e.target === lb) close() })
+    // Esc and click-outside are native (closedby="any"); Safari lacks closedby, so dismiss on a press + release outside the dialog box
+    if (!('closedBy' in HTMLDialogElement.prototype)) {
+      const outside = (e) => { const r = lb.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom }
+      let pressedOutside = false
+      lb.addEventListener('pointerdown', (e) => { pressedOutside = outside(e) })
+      lb.addEventListener('pointerup', (e) => { if (pressedOutside && outside(e)) close() })
+    }
     document.addEventListener('keydown', (e) => {
-      if (!lb.classList.contains('is-open')) return
-      if (e.key === 'Escape') close(); if (e.key === 'ArrowRight') step(1); if (e.key === 'ArrowLeft') step(-1)
+      if (!lb.open) return
+      if (e.key === 'ArrowRight') step(1); if (e.key === 'ArrowLeft') step(-1)
     })
   }
 
@@ -105,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const f = document.createElement('iframe')
     f.src = box.dataset.src; f.title = box.dataset.title || 'Map'; f.loading = 'lazy'; f.referrerPolicy = 'no-referrer-when-downgrade'
     f.className = 'grayscale invert-[.9] contrast-[.9]'
-    box.innerHTML = ''; box.appendChild(f)
+    box.replaceChildren(f)
   }))
 
   // Gallery filters

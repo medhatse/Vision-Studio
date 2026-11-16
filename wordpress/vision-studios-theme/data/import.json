@@ -1,24 +1,24 @@
 {
- "generated": "2026-10-01T13:57:44.500Z",
+ "generated": "2026-11-16T22:12:23.520Z",
  "options": {
   "email": "booking@vision-studios.net",
   "instagram": "https://www.instagram.com/visionstudioslondon/",
   "linkedin": "https://www.linkedin.com/company/vision-studios-london/",
   "phone_uk": "+44 (0) 7920 745134",
-  "phone_eu": "+353 (0) 8961 14641",
+  "phone_eu": "",
   "phone_tr": "+90 212 988 10 45",
   "hq_address": "Vision Studios, Kendal Avenue, London W3 0XA",
   "opening_hours": "Mon–Sun 09:00–17:00",
-  "hero_image": "https://vision-studios.net/wp-content/uploads/2025/11/1.webp",
-  "hero_left": "25+ Years — 4 Cities",
+  "hero_image": "https://vision-studios.net/wp-content/uploads/2024/05/PHOTO-2023-04-29-18-24-59-5.webp",
+  "hero_left": "25+ Years — 3 Cities",
   "hero_center": "Broadcast · Film · Podcast",
   "hero_right": "51.5074° N / -0.1278° W",
-  "hero_intro": "Premier Broadcast Studios Rentals in Four Iconic Cities. Fully equipped, modern studios for live news, TV shows, corporate advertising, virtual events and podcasts.",
+  "hero_intro": "Premier Broadcast Studios Rentals in Three Iconic Cities. Fully equipped, modern studios for live news, TV shows, corporate advertising, virtual events and podcasts.",
   "stat1_value": "25+",
   "stat1_label": "Years of Experience",
   "stat2_value": "215",
   "stat2_label": "Sq. Mt. Flagship Studio",
-  "stat3_value": "4",
+  "stat3_value": "3",
   "stat3_label": "Capital Cities",
   "stat4_value": "99.9%",
   "stat4_label": "Uptime Guarantee",
@@ -32,7 +32,7 @@
   "counter3_label": "Years of experience",
   "counter3_suffix": "",
   "why_intro": "At Vision Studios, our mission is to provide our clients with the highest-quality broadcast studio rentals in the industry. We strive to be a reliable and trusted partner to broadcasters, television producers, and other creative professionals, offering them state-of-the-art facilities, top-notch equipment, and exceptional customer service. Our goal is to help our clients bring their creative visions to life by providing them with the tools they need to produce exceptional content.",
-  "choose_intro": "Welcome to Vision Studios, your premier destination for top-notch broadcast studio rentals in four of the world’s most vibrant cities: London, Dublin, Paris, and Istanbul. Whether you’re producing a live television show, filming a commercial, hosting a virtual event, or recording a podcast, Vision Studios offers state-of-the-art facilities and unparalleled service to meet all your broadcasting needs. Our strategically located studios are equipped with the latest technology and designed to provide a professional, seamless experience from start to finish."
+  "choose_intro": "Welcome to Vision Studios, your premier destination for top-notch broadcast studio rentals in three of the world’s most vibrant cities: London, Paris, and Istanbul. Whether you’re producing a live television show, filming a commercial, hosting a virtual event, or recording a podcast, Vision Studios offers state-of-the-art facilities and unparalleled service to meet all your broadcasting needs. Our strategically located studios are equipped with the latest technology and designed to provide a professional, seamless experience from start to finish."
  },
  "cities": [
   {
@@ -50,32 +50,18 @@
    "faq": "Where are the London studios? | West London. Full address and directions are sent with every booking confirmation. Call +44 (0) 7920 745134 or email booking@vision-studios.net.\nWhich London studio should I choose? | Studio 1 (110 m², four cameras, three prompters) for full programmes and podcasts; Studio 2 (61 m², three cameras) for interviews, inserts and photography. They can be booked together.\nHow do I book a studio? | Email booking@vision-studios.net or call the local number on this page with your dates and a short brief. We reply with availability, a crew recommendation and a quote, usually within a working day.\nCan you provide a crew? | Yes. We supply directors, cinematographers, producers, sound engineers, lighting and post-production specialists, so you can arrive with just your talent and script.\nCan you build a custom set? | Yes. Our set design team handles everything from the initial concept to manufacturing and installation, on any scale.\nCan I hire extra equipment? | Yes. Cameras, lenses, lighting, audio gear and post-production tools are available to hire alongside the studio."
   },
   {
-   "slug": "dublin",
-   "name": "Dublin",
-   "heading": "Our TV & Production studios in Dublin",
-   "country": "Ireland",
-   "tagline": "Dundrum · South Dublin",
-   "phone": "+353 (0) 8961 14641",
-   "address": "3rd Floor North, North Block, Rockfields, Dundrum, Dublin D16 W7W3",
-   "map_query": "3rd Floor North, North Block Rockfields Dundrum Dublin D16 W7W3",
-   "coords": "53.2894° N / -6.2432° W",
-   "image": "https://vision-studios.net/wp-content/uploads/2025/11/3.webp",
-   "description": "Vision Studios Dublin is a 144 square metre fully decorated broadcast studio in Dundrum. A large controllable LED screen and 2×2 video wall groups give a modern news and talk show backdrop without a set build.\n\nFour Sony Full HD cameras with robotic heads, an Auto-Q prompting system, a jimmy jib, DMX-512 LED lighting and a digital audio mixer with eight wireless microphones are all in place, with an 18 square metre gallery. Broadcast services, equipment hire and crew hire are available for the studio and for on-location work across Ireland.\n\nThe studio hosts live news, streamed events, video podcasts, corporate broadcasts and virtual events for Irish and international broadcasters.",
-   "faq": "Where is the Dublin studio? | In Dundrum, South Dublin. Full address and directions are sent with every booking confirmation. Call +353 (0) 8961 14641.\nIs the Dublin studio decorated? | Yes, fully decorated, with a large LED screen and video wall groups ready for news and talk show formats.\nHow do I book a studio? | Email booking@vision-studios.net or call the local number on this page with your dates and a short brief. We reply with availability, a crew recommendation and a quote, usually within a working day.\nCan you provide a crew? | Yes. We supply directors, cinematographers, producers, sound engineers, lighting and post-production specialists, so you can arrive with just your talent and script.\nCan you build a custom set? | Yes. Our set design team handles everything from the initial concept to manufacturing and installation, on any scale.\nCan I hire extra equipment? | Yes. Cameras, lenses, lighting, audio gear and post-production tools are available to hire alongside the studio."
-  },
-  {
    "slug": "paris",
    "name": "Paris",
    "heading": "Our TV & Production studios in Paris",
    "country": "France",
    "tagline": "Broadcast Suite",
-   "phone": "+353 (0) 8961 14641",
+   "phone": "+44 (0) 7920 745134",
    "address": "Paris, France",
    "map_query": "Paris, France",
    "coords": "48.8566° N / 2.3522° E",
    "image": "https://vision-studios.net/wp-content/uploads/2024/05/Paris-5.webp",
    "description": "Vision Studios Paris is an 84 square metre fully decorated broadcast studio with LED video wall screens and a 10 square metre gallery, built for news desks, talk shows and live streaming in the French capital.\n\nFour Blackmagic Full HD cameras, Auto-Q prompting, a jimmy jib, DMX-512 LED lighting on a dynamic ceiling grid and a digital audio mixer with eight wireless microphones come as standard. Broadcast services, equipment hire and crew hire complete the offer.\n\nIt is used for television broadcasting, live streamed events, film and corporate production, virtual events, photography and podcast recording.",
-   "faq": "How do I book the Paris studio? | Email booking@vision-studios.net or call our European line, +353 (0) 8961 14641, with your dates and a short brief.\nWhat equipment is included in Paris? | Four Blackmagic Full HD cameras, an Auto-Q prompter, a jimmy jib, DMX-controlled LED lighting and a digital audio mixer with eight wireless microphones.\nHow do I book a studio? | Email booking@vision-studios.net or call the local number on this page with your dates and a short brief. We reply with availability, a crew recommendation and a quote, usually within a working day.\nCan you provide a crew? | Yes. We supply directors, cinematographers, producers, sound engineers, lighting and post-production specialists, so you can arrive with just your talent and script.\nCan you build a custom set? | Yes. Our set design team handles everything from the initial concept to manufacturing and installation, on any scale.\nCan I hire extra equipment? | Yes. Cameras, lenses, lighting, audio gear and post-production tools are available to hire alongside the studio."
+   "faq": "How do I book the Paris studio? | Email booking@vision-studios.net or call +44 (0) 7920 745134 with your dates and a short brief.\nWhat equipment is included in Paris? | Four Blackmagic Full HD cameras, an Auto-Q prompter, a jimmy jib, DMX-controlled LED lighting and a digital audio mixer with eight wireless microphones.\nHow do I book a studio? | Email booking@vision-studios.net or call the local number on this page with your dates and a short brief. We reply with availability, a crew recommendation and a quote, usually within a working day.\nCan you provide a crew? | Yes. We supply directors, cinematographers, producers, sound engineers, lighting and post-production specialists, so you can arrive with just your talent and script.\nCan you build a custom set? | Yes. Our set design team handles everything from the initial concept to manufacturing and installation, on any scale.\nCan I hire extra equipment? | Yes. Cameras, lenses, lighting, audio gear and post-production tools are available to hire alongside the studio."
   },
   {
    "slug": "istanbul",
@@ -180,54 +166,6 @@
    "content": [
     [
      "p",
-     "Our Dublin studio is a fully decorated 144 square metre broadcast floor in Dundrum, with an 18 square metre gallery and a large, fully controllable LED screen backed by three groups of 2×2 55-inch video wall panels."
-    ],
-    [
-     "p",
-     "Four Sony Full HD cameras with professional CCUs sit on pedestals with robotic heads, with an Auto-Q system driving two prompter reflectors and a jimmy jib that reaches from three to seven metres for sweeping opening shots. Lighting is LED on a dynamic ceiling grid, controlled from a DMX-512 console; sound runs through a digital mixer with eight wireless neck and hand microphones."
-    ],
-    [
-     "p",
-     "The studio is used for live news and current affairs, streamed events, podcasts with video, corporate broadcasts and virtual events for Irish and international clients."
-    ]
-   ],
-   "faq": "Where is the Dublin studio? | In Dundrum, South Dublin. Full address and directions are sent with every booking confirmation.\nDoes the Dublin studio have an LED wall? | Yes. A large fully controlled LED screen plus three groups of 2×2 55-inch video wall panels, so backdrops, graphics and remote guests can be shown behind presenters.\nIs there a jib? | Yes, a jimmy jib adjustable from three to seven metres.\nHow do I book a studio? | Email booking@vision-studios.net or call the local number on this page with your dates and a short brief. We reply with availability, a crew recommendation and a quote, usually within a working day.\nCan you provide a crew? | Yes. We supply directors, cinematographers, producers, sound engineers, lighting and post-production specialists, so you can arrive with just your talent and script.\nCan you build a custom set? | Yes. Our set design team handles everything from the initial concept to manufacturing and installation, on any scale.\nCan I hire extra equipment? | Yes. Cameras, lenses, lighting, audio gear and post-production tools are available to hire alongside the studio.",
-   "price_from": "€3,000 / day",
-   "slug": "dublin-studio",
-   "title": "Dublin Studio",
-   "city": "dublin",
-   "order": 3,
-   "excerpt": "A fully decorated 144 square metre broadcast floor in Dundrum, Dublin, with an 18 square metre gallery, LED video wall and robotic Sony cameras.",
-   "tagline": "LED video wall · Jimmy jib",
-   "area": 144,
-   "specs": "144 sq. mt. studio area.\nFully decorated.\nHuge LED screen, Fully controlled.\n3 Groups, 2×2 video wall screens (55-inch).\n18 sq. mt. gallery control room.\n4 x Sony Full HD cameras with professional CCU.\n4 x Pedestal tripods, Robotic Heads.\n1 x Auto-Q system, Controls 2 auto-Q reflectors.\nLED studio lightning controlled by DMX-512 lightning console.\nCeiling studio Lightning grid (Dynamic).\nDigital Audio Mixer.\n8 x wireless Neck microphone and wireless Hand microphones.",
-   "highlights": "144sq mt studio area\nFully decorated\nHuge LED screen, Fully controlled\n4 x sony Full HD cameras\n1 x jimmy jip (3m to 7m length)\nDigital Audio Mixer",
-   "use_cases_heading": "",
-   "use_cases": "",
-   "gallery": [
-    "https://vision-studios.net/wp-content/uploads/2025/10/3-scaled.webp",
-    "https://vision-studios.net/wp-content/uploads/2025/11/1.webp",
-    "https://vision-studios.net/wp-content/uploads/2025/11/2.webp",
-    "https://vision-studios.net/wp-content/uploads/2025/11/3.webp",
-    "https://vision-studios.net/wp-content/uploads/2025/11/4.webp",
-    "https://vision-studios.net/wp-content/uploads/2025/11/5.webp",
-    "https://vision-studios.net/wp-content/uploads/2025/11/6.webp",
-    "https://vision-studios.net/wp-content/uploads/2025/11/7.webp",
-    "https://vision-studios.net/wp-content/uploads/2025/11/8.webp",
-    "https://vision-studios.net/wp-content/uploads/2025/11/9.webp",
-    "https://vision-studios.net/wp-content/uploads/2025/11/10.webp",
-    "https://vision-studios.net/wp-content/uploads/2025/11/11.webp",
-    "https://vision-studios.net/wp-content/uploads/2025/11/12.webp"
-   ],
-   "floor_plan": "https://vision-studios.net/wp-content/uploads/2024/05/dublin-Layoutl.webp",
-   "phone": "+353 (0) 8961 14641",
-   "address": "3rd Floor North, North Block Rockfields Dundrum Dublin D16 W7W3",
-   "map_query": "3rd Floor North, North Block Rockfields  Dundrum Dublin D16 W7W3"
-  },
-  {
-   "content": [
-    [
-     "p",
      "The Paris studio is an 84 square metre fully decorated broadcast set with LED video wall screens and a 10 square metre gallery, designed for news desks, talk shows and live streamed events in the French capital."
     ],
     [
@@ -239,12 +177,12 @@
      "It suits television broadcasting, live streaming, film and corporate productions, virtual events, photography sessions and podcast or radio recording."
     ]
    ],
-   "faq": "Which cameras are in the Paris studio? | Four Blackmagic Full HD cameras, with an Auto-Q prompting system and a jimmy jib.\nIs the Paris studio decorated? | Yes. It is a fully decorated set with LED video wall screens, ready for news and talk show formats without a set build.\nWho do I contact for Paris bookings? | Email booking@vision-studios.net or call our European line, +353 (0) 8961 14641.\nHow do I book a studio? | Email booking@vision-studios.net or call the local number on this page with your dates and a short brief. We reply with availability, a crew recommendation and a quote, usually within a working day.\nCan you provide a crew? | Yes. We supply directors, cinematographers, producers, sound engineers, lighting and post-production specialists, so you can arrive with just your talent and script.\nCan you build a custom set? | Yes. Our set design team handles everything from the initial concept to manufacturing and installation, on any scale.\nCan I hire extra equipment? | Yes. Cameras, lenses, lighting, audio gear and post-production tools are available to hire alongside the studio.",
+   "faq": "Which cameras are in the Paris studio? | Four Blackmagic Full HD cameras, with an Auto-Q prompting system and a jimmy jib.\nIs the Paris studio decorated? | Yes. It is a fully decorated set with LED video wall screens, ready for news and talk show formats without a set build.\nWho do I contact for Paris bookings? | Email booking@vision-studios.net or call +44 (0) 7920 745134.\nHow do I book a studio? | Email booking@vision-studios.net or call the local number on this page with your dates and a short brief. We reply with availability, a crew recommendation and a quote, usually within a working day.\nCan you provide a crew? | Yes. We supply directors, cinematographers, producers, sound engineers, lighting and post-production specialists, so you can arrive with just your talent and script.\nCan you build a custom set? | Yes. Our set design team handles everything from the initial concept to manufacturing and installation, on any scale.\nCan I hire extra equipment? | Yes. Cameras, lenses, lighting, audio gear and post-production tools are available to hire alongside the studio.",
    "price_from": "€1,500 / day",
    "slug": "paris-studio",
    "title": "Paris Studio",
    "city": "paris",
-   "order": 4,
+   "order": 3,
    "excerpt": "An 84 square metre fully decorated broadcast set in Paris, with LED video walls, a 10 square metre gallery and four Blackmagic Full HD cameras.",
    "tagline": "BlackMagic 4-cam suite",
    "area": 84,
@@ -258,7 +196,7 @@
     "https://vision-studios.net/wp-content/uploads/2024/05/tvstu_canal-22-paris-6_1920x1079.webp"
    ],
    "floor_plan": "",
-   "phone": "+3530896114641",
+   "phone": "",
    "address": "",
    "map_query": ""
   },
@@ -282,7 +220,7 @@
    "slug": "istanbul-dtl-room",
    "title": "Istanbul DTL Room",
    "city": "istanbul",
-   "order": 5,
+   "order": 4,
    "excerpt": "This studio is used for Direct-To-Link (DTL)",
    "tagline": "Direct-To-Link live feeds",
    "area": "",
@@ -319,7 +257,7 @@
    "slug": "istanbul-studio-1",
    "title": "Istanbul Studio 1",
    "city": "istanbul",
-   "order": 6,
+   "order": 5,
    "excerpt": "This studio is suitable for television and film production, live streaming, online video content creation, photography, broadcasting, podcasting, and virtual events. It offers a fully-equipped space with professional-grade cameras, lighting, audio equipment, and advanced technology for a wide range of multimedia production needs.",
    "tagline": "Flagship · 72-screen video wall",
    "area": 215,
@@ -367,7 +305,7 @@
    "slug": "istanbul-studio-2",
    "title": "Istanbul Studio 2",
    "city": "istanbul",
-   "order": 7,
+   "order": 6,
    "excerpt": "This studio is equipped for various multimedia productions, including film shoots, broadcasts, and live events. It features high-quality cameras, lighting, audio equipment, and a control room for monitoring. With a spacious shooting area, LED screen backdrop, and versatile lighting options, it offers flexibility for different creative needs.",
    "tagline": "Ground-floor soundstage",
    "area": 185,
@@ -410,7 +348,7 @@
    "slug": "istanbul-studio-3",
    "title": "Istanbul Studio 3",
    "city": "istanbul",
-   "order": 8,
+   "order": 7,
    "excerpt": "This studio is ideal for photography, videography, art creation, dance practice, or hosting workshops. In addition to ability of customizing lighting setups for various shoots, special effects, and ambiance control.",
    "tagline": "Blank-canvas build space",
    "area": 175,
@@ -449,7 +387,7 @@
    "slug": "istanbul-studio-4",
    "title": "Istanbul Studio 4",
    "city": "istanbul",
-   "order": 9,
+   "order": 8,
    "excerpt": "In this studio, you can create various types of content including live broadcasts, podcasts, music recordings, videos for promotions or education, virtual events, product demonstrations, and photography sessions. The professional equipment allows for high-quality production across different media formats.",
    "tagline": "First-floor studio",
    "area": 37.5,
@@ -491,7 +429,7 @@
    "slug": "istanbul-studio-5",
    "title": "Istanbul Studio 5",
    "city": "istanbul",
-   "order": 10,
+   "order": 9,
    "excerpt": "This studio offers endless possibilities for creative endeavours. From producing commercial videos and hosting live broadcasts to conducting photo shoots and offering podcasting facilities, the studio serves as a versatile hub for content creation and professional ventures.",
    "tagline": "36-screen video wall",
    "area": 196,
@@ -540,7 +478,7 @@
    "slug": "istanbul-studio-6",
    "title": "Istanbul Studio 6",
    "city": "istanbul",
-   "order": 11,
+   "order": 10,
    "excerpt": "It is ideal for diverse purposes such as film production, live streaming, virtual events, photography sessions, podcast recording, educational videos, art exhibitions, product demonstrations, and event space rental. Its versatility and high-quality setup cater to a wide range of creative and professional endeavors.",
    "tagline": "Sony 4K · Audio isolated",
    "area": 196,
@@ -580,7 +518,7 @@
    "slug": "istanbul-studio-7",
    "title": "Istanbul Studio 7",
    "city": "istanbul",
-   "order": 12,
+   "order": 11,
    "excerpt": "This studio is a versatile space perfect for film and TV production, live broadcasting, photography, virtual events, podcasts, and educational content creation. With advanced technology, flexible design, and aesthetic appeal, it caters to a wide range of multimedia production needs.",
    "tagline": "Office-set · SDI & NDI",
    "area": 196,
@@ -618,7 +556,7 @@
    "slug": "istanbul-studio-8",
    "title": "Istanbul Studio 8",
    "city": "istanbul",
-   "order": 13,
+   "order": 12,
    "excerpt": "",
    "tagline": "Sony HSC-100R studio",
    "area": 90,
@@ -662,7 +600,7 @@
    "slug": "istanbul-studio-9",
    "title": "Istanbul Studio 9",
    "city": "istanbul",
-   "order": 14,
+   "order": 13,
    "excerpt": "",
    "tagline": "Sony HSC-100R studio",
    "area": 90,
@@ -710,7 +648,7 @@
    "icon": "fa-people-group",
    "type": "service",
    "order": 3,
-   "excerpt": "Directors, cinematographers, producers, sound engineers and post-production specialists, on call across all four cities.",
+   "excerpt": "Directors, cinematographers, producers, sound engineers and post-production specialists, on call across all three cities.",
    "content": "At Vision Studios, we understand that assembling the right team is essential for bringing your creative vision to life. From directors and cinematographers to producers, sound engineers, and post-production specialists, our network includes talented individuals with diverse skills and expertise across all aspects of media production. Whether you're working on a film, television show, commercial, documentary, or any other type of project, we've got the crew members you need to bring your vision to fruition."
   },
   {
@@ -746,12 +684,12 @@
    "content": "A reputation built on the quality of our facilities and our customer service."
   },
   {
-   "title": "Four Capital Cities",
+   "title": "Three Capital Cities",
    "icon": "",
    "type": "reason",
    "order": 2,
-   "excerpt": "London, Dublin, Paris and Istanbul — one consistent production standard.",
-   "content": "London, Dublin, Paris and Istanbul — one consistent production standard."
+   "excerpt": "London, Paris and Istanbul — one consistent production standard.",
+   "content": "London, Paris and Istanbul — one consistent production standard."
   },
   {
    "title": "State-of-the-Art Equipment",
@@ -832,7 +770,7 @@
  ],
  "pages": {
   "about": {
-   "excerpt": "Vision Studios, your premier destination for high-quality broadcast studio rentals in London, Dublin, Paris and Istanbul. We are proud to offer fully equipped, modern studios for a wide range of broadcast productions.",
+   "excerpt": "Vision Studios, your premier destination for high-quality broadcast studio rentals in London, Paris and Istanbul. We are proud to offer fully equipped, modern studios for a wide range of broadcast productions.",
    "image": "https://vision-studios.net/wp-content/uploads/2024/05/4Z9A7701-1-scaled-1.webp",
    "blocks": [
     [
@@ -893,7 +831,7 @@
     ],
     [
      "p",
-     "We invite you to come and experience our broadcast studios for yourself and see why so many creative professionals choose our studios as their go-to destination for high-quality studio spaces. Contact us today to schedule a tour or to learn more about our rental options in London, Dublin, and Istanbul."
+     "We invite you to come and experience our broadcast studios for yourself and see why so many creative professionals choose our studios as their go-to destination for high-quality studio spaces. Contact us today to schedule a tour or to learn more about our rental options in London, Paris and Istanbul."
     ],
     [
      "h3",
@@ -1225,7 +1163,7 @@
    "paragraphs": [
     "Major international studio and facilities enterprise Vision Studios was chosen by Domino Productions to host a powerful four minute video for Greenpeace MENA. The production was hosted in the MediaCity Studios in Istanbul.",
     "The video is a rap battle between an industrialist and an environmentalist, arguing about the way that energy exploitation has a hugely unfair impact on the poorer countries of the global south. The video smoothly transitions between the television studio, boardroom, and city streets. All in Arabic, it is aimed at the Middle East and North Africa region.",
-    "Vision Studios has fully equipped broadcast studios in London, Dublin, Paris and Istanbul. Available for long-term rent or for one-off projects, they are fully crewed and equipped with the latest technology. Operating for 25 years, Vision Studios serves more than 1000 productions each year.",
+    "Vision Studios has fully equipped broadcast studios in London, Paris and Istanbul. Available for long-term rent or for one-off projects, they are fully crewed and equipped with the latest technology. Operating for 25 years, Vision Studios serves more than 1000 productions each year.",
     "“I had worked with Vision Studios in Istanbul, Dublin and London,” said Ali Shehata, the project’s producer at Domino Production. “I knew the sort of quality they could deliver. The Istanbul MediaCity location gave us a lot of options in one place, including many locations as well as the studio set. If you work in media production, you should collaborate with Vision Studios.”",
     "Gerard Kirwan, Director of Sales at Vision Studios added “We have huge experience in video production, so we work very comfortably with creative businesses like Domino Production. Our in-house technical, design and craft services support them, so we deliver the best results, on time and on budget. This video for Greenpeace MENA looks and sounds great – it is a really arresting way to get over an important message.”",
     "Domino Production is based in Istanbul, Turkey and Doha, Qatar. Greenpeace MENA is the newest element in the Greenpeace network, which now numbers 27 independent national and regional organisations working with the joint co-ordinating organisation, Greenpeace International.",
@@ -1274,24 +1212,6 @@
     "Our dedicated and highly skilled team played a pivotal role in ensuring the success of this collaboration. Their expertise and unwavering dedication ensured that Funny Hands Productions had all the support and resources necessary to execute their vision flawlessly.",
     "This collaboration is not just an isolated event; it is a testament to our ongoing dedication to nurturing creativity and driving innovation in the ever-evolving world of media and broadcasting. We firmly believe that such partnerships pave the way for groundbreaking content and foster a culture of excellence.",
     "As we reflect on this achievement, we look forward to an exciting future filled with more dynamic collaborations, pushing the boundaries of what is possible in the world of media and broadcasting. Stay tuned for more remarkable ventures and transformative experiences as we continue on this exciting journey together."
-   ]
-  },
-  {
-   "slug": "hosting-an-irish-podcast-at-vision-studios-dublin",
-   "title": "Hosting an Irish Podcast at Vision Studios Dublin",
-   "date": "2024-05-11",
-   "excerpt": "We’re delighted to announce our hosting of the Irish Podcast programme right here in the vibrant city of Dublin.",
-   "image": "https://vision-studios.net/wp-content/uploads/2024/05/Iresh-Production1-e1708468884604.webp",
-   "images": [
-    "https://vision-studios.net/wp-content/uploads/2024/05/Iresh-Production1-e1708468884604.webp",
-    "https://vision-studios.net/wp-content/uploads/2024/05/Iresh-Production2-e1708468961894.webp",
-    "https://vision-studios.net/wp-content/uploads/2024/05/Iresh-Production3.webp",
-    "https://vision-studios.net/wp-content/uploads/2024/05/Iresh-Production.webp"
-   ],
-   "videos": [],
-   "paragraphs": [
-    "We’re delighted to announce our hosting of the Irish Podcast programme right here in the vibrant city of Dublin. The Irish Podcast found its home in our dedicated Dublin Studio, where it now thrives and continues to provide engaging and informative content to its audience.",
-    "This collaboration marks another exciting chapter in our commitment to supporting and facilitating creative ventures in the world of media and broadcasting. We look forward to more enriching partnerships and the continued success of the Irish Podcast in our Dublin Studio.The Irish Podcast was hosted in Dublin Studio."
    ]
   },
   {
@@ -1423,7 +1343,6 @@
  "legacy_pages": [
   "london-studio-1",
   "london-studio-2",
-  "dublin-studio",
   "paris-studio",
   "istanbul-dtl-room",
   "istanbul-studio-1",
@@ -1436,7 +1355,6 @@
   "istanbul-studio-8",
   "istanbul-studio-9",
   "london",
-  "dublin",
   "paris",
   "istanbul",
   "about-us",

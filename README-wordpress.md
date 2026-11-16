@@ -22,7 +22,7 @@ installing on the existing vision-studios.net WordPress. It adds:
 3. In WordPress admin: **Appearance → Themes → Add New → Upload Theme**, upload the zip, click **Activate**.
 4. **Settings → Permalinks → Save Changes** (flushes URL rules for `/studios/…` and `/city/…`).
 5. **Studios → Import Content → Run import**. Leave "Also import news posts" unticked on the live site
-   (the posts already exist). This creates the 14 studios, 4 cities, services, clients, the Home / About /
+   (the posts already exist). This creates the 13 studios, 3 cities, services, clients, the Home / About /
    Contact / Gallery / News pages, sets the front page, and drafts the old Elementor pages so their URLs
    redirect. It matches images by URL in your media library, so it does not re-upload anything.
 6. Check the site. If anything is wrong, **Appearance → Themes → activate the previous theme** and

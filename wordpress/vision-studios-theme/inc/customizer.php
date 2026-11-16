@@ -9,7 +9,7 @@ function vs_settings(): array {
 		'contact' => [ __( 'Contact details', 'vision-studios' ), [
 			'email'         => [ __( 'Booking email', 'vision-studios' ), 'text', 'booking@vision-studios.net' ],
 			'phone_uk'      => [ __( 'Phone — United Kingdom', 'vision-studios' ), 'text', '+44 (0) 7920 745134' ],
-			'phone_eu'      => [ __( 'Phone — Europe', 'vision-studios' ), 'text', '+353 (0) 8961 14641' ],
+			'phone_eu'      => [ __( 'Phone — Europe', 'vision-studios' ), 'text', '' ],
 			'phone_tr'      => [ __( 'Phone — Turkey', 'vision-studios' ), 'text', '+90 212 988 10 45' ],
 			'hq_address'    => [ __( 'HQ address', 'vision-studios' ), 'text', 'Vision Studios, Kendal Avenue, London W3 0XA' ],
 			'show_addresses' => [ __( 'Show street addresses and maps on the site (off: addresses stay in the search-engine schema only)', 'vision-studios' ), 'checkbox', '' ],
@@ -19,13 +19,13 @@ function vs_settings(): array {
 		] ],
 		'hero' => [ __( 'Home page hero', 'vision-studios' ), [
 			'hero_image'     => [ __( 'Hero image', 'vision-studios' ), 'image', '' ],
-			'hero_left'      => [ __( 'Eyebrow left', 'vision-studios' ), 'text', '25+ Years — 4 Cities' ],
+			'hero_left'      => [ __( 'Eyebrow left', 'vision-studios' ), 'text', '25+ Years — 3 Cities' ],
 			'hero_center'    => [ __( 'Eyebrow centre', 'vision-studios' ), 'text', 'Broadcast · Film · Podcast' ],
 			'hero_right'     => [ __( 'Eyebrow right', 'vision-studios' ), 'text', '51.5074° N / -0.1278° W' ],
-			'hero_intro'     => [ __( 'Intro paragraph', 'vision-studios' ), 'textarea', 'Premier Broadcast Studios Rentals in Four Iconic Cities. Fully equipped, modern studios for live news, TV shows, corporate advertising, virtual events and podcasts.' ],
+			'hero_intro'     => [ __( 'Intro paragraph', 'vision-studios' ), 'textarea', 'Premier Broadcast Studios Rentals in Three Iconic Cities. Fully equipped, modern studios for live news, TV shows, corporate advertising, virtual events and podcasts.' ],
 			'stat1_value'    => [ __( 'Stat 1 value', 'vision-studios' ), 'text', '25+' ],  'stat1_label' => [ __( 'Stat 1 label', 'vision-studios' ), 'text', 'Years of Experience' ],
 			'stat2_value'    => [ __( 'Stat 2 value', 'vision-studios' ), 'text', '215' ],  'stat2_label' => [ __( 'Stat 2 label', 'vision-studios' ), 'text', 'Sq. Mt. Flagship Studio' ],
-			'stat3_value'    => [ __( 'Stat 3 value', 'vision-studios' ), 'text', '4' ],    'stat3_label' => [ __( 'Stat 3 label', 'vision-studios' ), 'text', 'Capital Cities' ],
+			'stat3_value'    => [ __( 'Stat 3 value', 'vision-studios' ), 'text', '3' ],    'stat3_label' => [ __( 'Stat 3 label', 'vision-studios' ), 'text', 'Capital Cities' ],
 			'stat4_value'    => [ __( 'Stat 4 value', 'vision-studios' ), 'text', '99.9%' ],'stat4_label' => [ __( 'Stat 4 label', 'vision-studios' ), 'text', 'Uptime Guarantee' ],
 		] ],
 		'home' => [ __( 'Home page sections', 'vision-studios' ), [

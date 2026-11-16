@@ -194,14 +194,14 @@ async function main() {
 
   // ---------- Cities ----------
   const cities = []
-  for (const slug of ['london', 'dublin', 'paris', 'istanbul']) {
+  for (const slug of ['london', 'paris', 'istanbul']) {
     console.log('  city', slug)
     const html = await get(`${ORIGIN}/${slug}/`)
     const main = mainOf(html)
     const lines = stripLines(main)
     const ctas = extractCtas(main)
     // studio cards: heading followed by description paragraph (Elementor heading + text-editor pairs)
-    const blurbs = [...main.matchAll(/elementor-heading-title[^>]*>(?:<a[^>]*>)?\s*((?:London|Dublin|Paris|Istanbul)[^<]*?)\s*(?:<\/a>)?<\/h\d>[\s\S]*?elementor-widget-text-editor[\s\S]*?<p>([\s\S]*?)<\/p>/g)].map((m) => ({ title: strip(m[1]), description: strip(m[2]) }))
+    const blurbs = [...main.matchAll(/elementor-heading-title[^>]*>(?:<a[^>]*>)?\s*((?:London|Paris|Istanbul)[^<]*?)\s*(?:<\/a>)?<\/h\d>[\s\S]*?elementor-widget-text-editor[\s\S]*?<p>([\s\S]*?)<\/p>/g)].map((m) => ({ title: strip(m[1]), description: strip(m[2]) }))
     const services = []
     const sIdx = lines.indexOf('Our Services')
     if (sIdx >= 0) for (let i = sIdx + 1; i + 1 < lines.length; i += 2) if (/Service|Hire/.test(lines[i])) services.push({ title: lines[i], description: lines[i + 1] })
@@ -230,7 +230,7 @@ async function main() {
     tagline: homeLines[1],
     intro: homeLines.slice(3, 5),
     whyChoose: extractIconBoxes(homeMain),
-    facilities: extractCtas(homeMain).filter((c) => /\/(london|dublin|paris|istanbul)\//.test(c.href)).map((c) => ({ city: c.title, country: c.description, image: c.image })),
+    facilities: extractCtas(homeMain).filter((c) => /\/(london|paris|istanbul)\//.test(c.href)).map((c) => ({ city: c.title, country: c.description, image: c.image })),
     sustainability: homeLines.slice(homeLines.indexOf('Sustainability') + 1, homeLines.indexOf('Get In Touch', homeLines.indexOf('Sustainability'))),
     bestPractices: homeLines.slice(homeLines.indexOf('Practices') + 1, homeLines.indexOf('Sustainablility')),
     counters,

@@ -36,8 +36,8 @@ $icon_for = function ( string $t ) use ( $icons ) { foreach ( $icons as $re => $
 <?php echo vs_breadcrumbs(); // phpcs:ignore ?>
 
 <?php if ( $highs ) : ?>
-<section class="bg-black border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10 py-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
-<?php foreach ( $highs as $h ) : ?><div class="fade-up flex items-start gap-4 p-6 bg-black"><?php echo vs_icon( str_replace( 'fa-', '', $icon_for( $h ) ), 'text-accent text-xl mt-1 shrink-0' ); ?><p class="text-sm text-white/80 leading-snug"><?php echo esc_html( $h ); ?></p></div><?php endforeach; ?>
+<section class="bg-black border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10 py-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<?php foreach ( $highs as $h ) : ?><div class="fade-up glass flex items-start gap-4 p-6"><?php echo vs_icon( str_replace( 'fa-', '', $icon_for( $h ) ), 'text-accent text-xl mt-1 shrink-0' ); ?><p class="text-sm text-white/80 leading-snug"><?php echo esc_html( $h ); ?></p></div><?php endforeach; ?>
 </div></section>
 <?php endif; ?>
 
@@ -48,8 +48,8 @@ $icon_for = function ( string $t ) use ( $icons ) { foreach ( $icons as $re => $
 <?php if ( ! $specs ) : ?><p class="text-white/55 text-sm mt-6"><?php esc_html_e( 'Need a longer equipment list for this studio?', 'vision-studios' ); ?> <a href="mailto:<?php echo esc_attr( $email ); ?>" class="text-accent"><?php esc_html_e( 'Email us', 'vision-studios' ); ?></a>.</p><?php endif; ?>
 </div>
 <div class="lg:col-span-2 space-y-10">
-<?php if ( $plan ) : ?><div class="fade-up"><?php echo vs_eyebrow( __( 'Floor Plan', 'vision-studios' ) ); // phpcs:ignore ?><button type="button" data-lightbox="plan" data-src="<?php echo esc_url( $plan ); ?>" data-caption="<?php echo esc_attr( get_the_title() . ' — ' . __( 'floor plan', 'vision-studios' ) ); ?>" class="block w-full bg-white/5 p-4"><img src="<?php echo esc_url( $plan ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?> floor plan" loading="lazy" class="w-full h-auto"/></button></div><?php endif; ?>
-<div class="fade-up border border-white/10 p-6"><?php echo vs_eyebrow( __( 'Contact', 'vision-studios' ) ); // phpcs:ignore ?><p class="font-display uppercase text-2xl"><a href="<?php echo esc_attr( vs_tel( $phone ) ); ?>" class="hover:text-accent"><?php echo esc_html( $phone ); ?></a></p><p class="text-white/60 text-sm mt-2"><!--email_off--><a href="mailto:<?php echo esc_attr( $email ); ?>" class="hover:text-accent"><?php echo esc_html( $email ); ?></a><!--/email_off--></p><?php if ( $address ) : ?><p class="text-white/60 text-sm mt-3 leading-relaxed"><?php echo esc_html( $address ); ?></p><?php endif; ?></div>
+<?php if ( $plan ) : ?><div class="fade-up"><?php echo vs_eyebrow( __( 'Floor Plan', 'vision-studios' ) ); // phpcs:ignore ?><button type="button" data-lightbox="plan" data-src="<?php echo esc_url( $plan ); ?>" data-caption="<?php echo esc_attr( get_the_title() . ' — ' . __( 'floor plan', 'vision-studios' ) ); ?>" class="glass block w-full p-4"><img src="<?php echo esc_url( $plan ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?> floor plan" loading="lazy" class="w-full h-auto"/></button></div><?php endif; ?>
+<div class="fade-up glass p-6"><?php echo vs_eyebrow( __( 'Contact', 'vision-studios' ) ); // phpcs:ignore ?><p class="font-display uppercase text-2xl"><a href="<?php echo esc_attr( vs_tel( $phone ) ); ?>" class="hover:text-accent"><?php echo esc_html( $phone ); ?></a></p><p class="text-white/60 text-sm mt-2"><!--email_off--><a href="mailto:<?php echo esc_attr( $email ); ?>" class="hover:text-accent"><?php echo esc_html( $email ); ?></a><!--/email_off--></p><?php if ( $address ) : ?><p class="text-white/60 text-sm mt-3 leading-relaxed"><?php echo esc_html( $address ); ?></p><?php endif; ?></div>
 </div></div></section>
 
 <?php if ( count( $gallery ) > 1 ) : ?>
@@ -63,8 +63,8 @@ $icon_for = function ( string $t ) use ( $icons ) { foreach ( $icons as $re => $
 <?php if ( $uses ) : ?>
 <section class="bg-black py-20 border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10">
 <div class="fade-up mb-10"><?php echo vs_eyebrow( __( 'What To Shoot Here', 'vision-studios' ) ) . vs_h2( esc_html( vs_meta( $id, 'use_cases_heading', __( 'Built for a wide range of productions.', 'vision-studios' ) ) ), 'max-w-4xl text-[clamp(1.6rem,3.5vw,2.5rem)]' ); // phpcs:ignore ?></div>
-<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10">
-<?php foreach ( $uses as $i => $u ) : ?><div class="fade-up service-card bg-black p-8"><p class="font-mono-tag text-xs lg:text-[10px] text-white/50 mb-3"><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></p><h3 class="font-display uppercase text-lg"><?php echo esc_html( $u[0] ); ?></h3><p class="text-white/60 text-sm leading-relaxed mt-3"><?php echo esc_html( $u[1] ?? '' ); ?></p></div><?php endforeach; ?>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<?php foreach ( $uses as $i => $u ) : ?><div class="fade-up service-card glass p-8"><p class="font-mono-tag text-xs lg:text-[10px] text-white/50 mb-3"><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></p><h3 class="font-display uppercase text-lg"><?php echo esc_html( $u[0] ); ?></h3><p class="text-white/60 text-sm leading-relaxed mt-3"><?php echo esc_html( $u[1] ?? '' ); ?></p></div><?php endforeach; ?>
 </div></div></section>
 <?php endif; ?>
 

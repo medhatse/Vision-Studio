@@ -39,7 +39,7 @@ ${heroImg(ctx, hero.image, hero.imageAlt)}
 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30"></div><div class="grain-overlay"></div>
 <div class="relative z-10 max-w-7xl w-full mx-auto px-6 lg:px-10 pt-40 pb-16">
 <div class="flex items-center justify-between font-mono-tag text-xs lg:text-[11px] uppercase tracking-[0.2em] text-white/60 mb-6"><span>${esc(hero.eyebrowLeft)}</span><span class="hidden sm:inline text-accent">${esc(hero.eyebrowCenter)}</span><span class="hidden sm:inline">${esc(hero.eyebrowRight)}</span></div>
-<h1 class="font-display uppercase leading-[0.95] text-[clamp(2.4rem,8vw,5.5rem)]">Broadcast &amp;<br/>Production Studios<br/><span class="text-white/55">London · Dublin ·</span> Paris ·<br class="hidden sm:block"/><span class="text-white/55">Istanbul</span></h1>
+<h1 class="font-display uppercase leading-[0.95] text-[clamp(2.4rem,8vw,5.5rem)]">Broadcast &amp;<br/>Production Studios<br/><span class="text-white/55">London ·</span> Paris ·<br class="hidden sm:block"/><span class="text-white/55">Istanbul</span></h1>
 <p class="mt-6 max-w-xl text-white/70 text-base sm:text-lg">${esc(home.tagline)}. Fully equipped, modern studios for live news, TV shows, corporate advertising, virtual events and podcasts.</p>
 <div class="mt-8 flex flex-wrap gap-4">${btnWhite('#studios', 'View Studios')}${btnPrimary('/contact/', 'Book a Studio')}</div>
 </div></section>
@@ -47,7 +47,7 @@ ${heroImg(ctx, hero.image, hero.imageAlt)}
 <section class="bg-black border-t border-white/10"><div class="max-w-7xl mx-auto px-6 lg:px-10 py-14 grid grid-cols-2 sm:grid-cols-4 gap-8">${stats}</div></section>
 
 <section id="studios" class="bg-black py-24 lg:py-32"><div class="max-w-7xl mx-auto px-6 lg:px-10">
-<div class="fade-up mb-14 flex items-end justify-between flex-wrap gap-4"><div>${eyebrow('Our Studios')}${h2('Four Cities. One Production Standard.', 'max-w-3xl')}</div><p class="font-mono-tag text-xs uppercase tracking-[0.15em] text-white/55">${studios.length} studios · ${cities.length} cities</p></div>
+<div class="fade-up mb-14 flex items-end justify-between flex-wrap gap-4"><div>${eyebrow('Our Studios')}${h2('Three Cities. One Production Standard.', 'max-w-3xl')}</div><p class="font-mono-tag text-xs uppercase tracking-[0.15em] text-white/55">${studios.length} studios · ${cities.length} cities</p></div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">${cityCards}</div>
 </div></section>
 

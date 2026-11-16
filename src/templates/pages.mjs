@@ -9,12 +9,12 @@ export function renderNewsIndex(ctx) {
   const [first, ...rest] = news
   ctx.preloadHero = true
   const crumbs = [['Home', '/'], ['News', '/news/']]
-  const body = `${pageHero(ctx, 'Our News.', 'Productions, live events and behind-the-scenes stories from our studios in London, Dublin, Paris and Istanbul.', first.image, `${news.length} stories`, crumbs)}
+  const body = `${pageHero(ctx, 'Our News.', 'Productions, live events and behind-the-scenes stories from our studios in London, Paris and Istanbul.', first.image, `${news.length} stories`, crumbs)}
 <section class="bg-black py-20"><div class="max-w-7xl mx-auto px-6 lg:px-10">
 <a href="/news/${first.slug}/" class="group fade-up grid lg:grid-cols-2 gap-10 items-center mb-20"><div class="img-zoom relative aspect-[16/10] overflow-hidden bg-white/5">${img(ctx, first.image, first.title, { sizes: '(min-width: 1024px) 50vw, 100vw', cls: 'absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500' })}</div><div>${eyebrow('Latest · ' + fmtDate(first.date))}<h2 class="font-display uppercase text-[clamp(1.8rem,4vw,3rem)] leading-[0.95] group-hover:text-accent transition-colors">${esc(first.title)}</h2><p class="text-white/60 mt-5 max-w-lg">${esc(first.excerpt)}</p></div></a>
 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">${rest.map((n) => newsCard(n, ctx)).join('')}</div></div></section>
 ${ctaBand(ctx)}`
-  return layout(ctx, { title: 'News | Vision Studios', description: 'Latest productions, live broadcasts and behind-the-scenes stories from Vision Studios in London, Dublin, Paris and Istanbul.', body, image: first.image, crumbs })
+  return layout(ctx, { title: 'News | Vision Studios', description: 'Latest productions, live broadcasts and behind-the-scenes stories from Vision Studios in London, Paris and Istanbul.', body, image: first.image, crumbs })
 }
 
 export function renderPost(n, ctx) {
@@ -80,17 +80,17 @@ export function renderGallery(ctx) {
   const filters = ['all', ...new Set(studios.map((s) => s.city))]
   ctx.preloadHero = true
   const crumbs = [['Home', '/'], ['Gallery', '/gallery/']]
-  const body = `${pageHero(ctx, 'From Behind<br/><span class="text-accent">The Lens.</span>', `${items.length} photographs from ${studios.length} studios across four cities.`, curated.gallery[2].image, 'Gallery', crumbs)}
+  const body = `${pageHero(ctx, 'From Behind<br/><span class="text-accent">The Lens.</span>', `${items.length} photographs from ${studios.length} studios across three cities.`, curated.gallery[2].image, 'Gallery', crumbs)}
 <section class="bg-black py-16"><div class="max-w-7xl mx-auto px-6 lg:px-10">
 <div class="fade-up flex flex-wrap gap-2 mb-10" id="gallery-filters">${filters.map((f, i) => `<button type="button" data-filter="${f}" class="gallery-filter font-mono-tag text-xs lg:text-[10px] uppercase tracking-[0.2em] px-4 py-2 border ${i ? 'border-white/15 text-white/60' : 'border-accent text-accent'}">${f === 'all' ? 'All cities' : f}</button>`).join('')}</div>
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" id="gallery-grid">${items.map(({ src, studio, i }) => `<button type="button" data-city="${studio.city}" data-lightbox="all" data-src="${src}" data-caption="${esc(studio.title)}" class="gallery-item fade-up img-zoom relative aspect-[4/3] overflow-hidden bg-white/5 group">${img(ctx, src, `${studio.title} — photo ${i + 1}`, { sizes: '(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw', cls: 'absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500' })}<span class="absolute bottom-2 left-3 font-mono-tag text-xs lg:text-[10px] uppercase tracking-[0.15em] text-white/70 opacity-0 group-hover:opacity-100 transition-opacity">${esc(studio.title)}</span></button>`).join('')}</div>
 </div></section>${ctaBand(ctx)}`
-  return layout(ctx, { title: 'Gallery | Vision Studios', description: `Photographs from every Vision Studios broadcast and production studio in London, Dublin, Paris and Istanbul — ${studios.length} studios, filterable by city.`, body, image: curated.gallery[2].image, crumbs })
+  return layout(ctx, { title: 'Gallery | Vision Studios', description: `Photographs from every Vision Studios broadcast and production studio in London, Paris and Istanbul — ${studios.length} studios, filterable by city.`, body, image: curated.gallery[2].image, crumbs })
 }
 
 export function render404(ctx) {
   const body = `<section class="min-h-[80vh] flex items-center"><div class="max-w-7xl mx-auto px-6 lg:px-10 pt-40 pb-20">${eyebrow('404')}<h1 class="font-display uppercase text-[clamp(2.4rem,8vw,5.5rem)] leading-[0.95]">Off Air.<br/><span class="text-white/55">Page Not Found.</span></h1><div class="mt-8">${btnWhite('/', 'Back to the studios')}</div></div></section>`
-  return layout(ctx, { title: 'Page not found | Vision Studios', description: 'This page is not on air. Find our studios in London, Dublin, Paris and Istanbul.', body, noindex: true })
+  return layout(ctx, { title: 'Page not found | Vision Studios', description: 'This page is not on air. Find our studios in London, Paris and Istanbul.', body, noindex: true })
 }
 
 export function renderStudios(ctx) {
@@ -98,6 +98,6 @@ export function renderStudios(ctx) {
   ctx.preloadHero = true
   const crumbs = [['Home', '/'], ['Studios', '/studios/']]
   const sections = cities.map((c) => { const cs = studios.filter((s) => s.city === c.slug); return `<div class="fade-up flex items-end justify-between mt-12 mb-6 flex-wrap gap-4"><h2 class="font-display uppercase text-3xl">${esc(c.name)}</h2>${btnGhost('/' + c.slug + '/', 'City page')}</div><div class="grid grid-cols-2 md:grid-cols-4 gap-4">${cs.map((s) => studioCard(s, ctx)).join('')}</div>` }).join('')
-  const body = `${pageHero(ctx, 'All Studios.', `${studios.length} broadcast and production studios across London, Dublin, Paris and Istanbul.`, curated.cities.london.image, 'Our Studios', crumbs)}<section class="bg-black py-16"><div class="max-w-7xl mx-auto px-6 lg:px-10">${sections}</div></section>${ctaBand(ctx)}`
+  const body = `${pageHero(ctx, 'All Studios.', `${studios.length} broadcast and production studios across London, Paris and Istanbul.`, curated.cities.london.image, 'Our Studios', crumbs)}<section class="bg-black py-16"><div class="max-w-7xl mx-auto px-6 lg:px-10">${sections}</div></section>${ctaBand(ctx)}`
   return layout(ctx, { title: 'All Studios | Vision Studios', description: `Every Vision Studios broadcast and production studio: ${studios.map((s) => s.title).join(', ')}.`.slice(0, 158), body, image: curated.cities.london.image, crumbs })
 }

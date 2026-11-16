@@ -28,14 +28,14 @@ function vs_seo_description(): string {
 		$p = get_queried_object();
 		$d = $p->post_excerpt ?: wp_trim_words( wp_strip_all_tags( strip_shortcodes( $p->post_content ) ), 30, '' );
 	} elseif ( is_home() ) {
-		$d = __( 'Productions, live events and behind-the-scenes stories from Vision Studios in London, Dublin, Paris and Istanbul.', 'vision-studios' );
+		$d = __( 'Productions, live events and behind-the-scenes stories from Vision Studios in London, Paris and Istanbul.', 'vision-studios' );
 	} elseif ( is_post_type_archive( 'studio' ) ) {
-		$d = __( 'Every Vision Studios broadcast and production studio in London, Dublin, Paris and Istanbul.', 'vision-studios' );
+		$d = __( 'Every Vision Studios broadcast and production studio in London, Paris and Istanbul.', 'vision-studios' );
 	} else {
 		$d = get_bloginfo( 'description' );
 	}
 	if ( ! trim( (string) $d ) && is_page_template( 'template-gallery.php' ) ) {
-		$d = sprintf( __( 'Photographs from every Vision Studios broadcast and production studio in London, Dublin, Paris and Istanbul — %d studios, filterable by city.', 'vision-studios' ), (int) wp_count_posts( 'studio' )->publish );
+		$d = sprintf( __( 'Photographs from every Vision Studios broadcast and production studio in London, Paris and Istanbul — %d studios, filterable by city.', 'vision-studios' ), (int) wp_count_posts( 'studio' )->publish );
 	}
 	$d = trim( preg_replace( '/\s+/', ' ', wp_strip_all_tags( $d ?: get_bloginfo( 'description' ) ) ) );
 	$d = apply_filters( 'vs_seo_description', $d );

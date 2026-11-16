@@ -100,13 +100,13 @@ add_action( 'admin_init', function () {
 	// Theme pages: [ keyword, post title containing it, SEO title, description ]. Page titles only show in
 	// the admin, breadcrumbs and the browser title, so they can carry the keyword.
 	$pages = [
-		'home'           => [ 'broadcast studio hire', 'Broadcast Studio Hire', 'Broadcast Studio Hire in London, Dublin, Paris & Istanbul | ' . $site, vs_opt( 'choose_intro' ) ?: vs_opt( 'hero_intro' ) ],
+		'home'           => [ 'broadcast studio hire', 'Broadcast Studio Hire', 'Broadcast Studio Hire in London, Paris & Istanbul | ' . $site, vs_opt( 'choose_intro' ) ?: vs_opt( 'hero_intro' ) ],
 		'about'          => [ 'about Vision Studios', 'About Vision Studios', 'About Vision Studios: 25 Years of Broadcast Studio Hire', '' ],
-		'contact'        => [ 'contact Vision Studios', 'Contact Vision Studios', 'Contact Vision Studios: Book a TV Studio in London, Dublin, Paris or Istanbul', '' ],
-		'gallery'        => [ 'TV studio gallery', 'TV Studio Gallery', 'TV Studio Gallery: Our Broadcast Studios in Pictures | ' . $site, 'Photographs from every Vision Studios broadcast and production studio in London, Dublin, Paris and Istanbul.' ],
-		'news'           => [ 'Vision Studios news', 'Vision Studios News', 'Vision Studios News: Productions, Live Events and Behind the Scenes', 'Productions, live events and behind-the-scenes stories from Vision Studios in London, Dublin, Paris and Istanbul.' ],
+		'contact'        => [ 'contact Vision Studios', 'Contact Vision Studios', 'Contact Vision Studios: Book a TV Studio in London, Paris or Istanbul', '' ],
+		'gallery'        => [ 'TV studio gallery', 'TV Studio Gallery', 'TV Studio Gallery: Our Broadcast Studios in Pictures | ' . $site, 'Photographs from every Vision Studios broadcast and production studio in London, Paris and Istanbul.' ],
+		'news'           => [ 'Vision Studios news', 'Vision Studios News', 'Vision Studios News: Productions, Live Events and Behind the Scenes', 'Productions, live events and behind-the-scenes stories from Vision Studios in London, Paris and Istanbul.' ],
 		'privacy-policy' => [ 'privacy policy', 'Privacy Policy', 'Privacy Policy | ' . $site, 'How Vision Studios collects, uses and protects personal data submitted through its website and booking forms.' ],
-		'terms'          => [ 'terms of studio hire', 'Terms of Studio Hire', 'Terms of Studio Hire | ' . $site, 'The terms that apply to every studio booking with Vision Studios in London, Dublin, Paris and Istanbul.' ],
+		'terms'          => [ 'terms of studio hire', 'Terms of Studio Hire', 'Terms of Studio Hire | ' . $site, 'The terms that apply to every studio booking with Vision Studios in London, Paris and Istanbul.' ],
 	];
 	foreach ( $pages as $slug => $row ) {
 		$p = get_page_by_path( $slug );
@@ -149,7 +149,7 @@ add_action( 'admin_init', function () {
 	}
 	// Titles over ~65 characters get cut off in search results: shorten the two long page titles and drop
 	// the site-name suffix from long post titles.
-	$short = [ 'home' => 'Broadcast Studio Hire | London, Dublin, Paris & Istanbul', 'contact' => 'Contact Vision Studios | Book a TV Studio' ];
+	$short = [ 'home' => 'Broadcast Studio Hire | London, Paris & Istanbul', 'contact' => 'Contact Vision Studios | Book a TV Studio' ];
 	foreach ( $short as $slug => $title ) {
 		$p = get_page_by_path( $slug );
 		if ( $p && mb_strlen( (string) get_post_meta( $p->ID, 'rank_math_title', true ) ) > 65 ) {
@@ -167,7 +167,7 @@ add_action( 'admin_init', function () {
 	// The News category archive: a real description instead of Rank Math's 48-character default.
 	$news_cat = get_term_by( 'slug', 'news', 'category' );
 	if ( $news_cat && '' === trim( (string) get_term_meta( $news_cat->term_id, 'rank_math_description', true ) ) ) {
-		update_term_meta( $news_cat->term_id, 'rank_math_description', 'Productions, live events and behind-the-scenes stories from Vision Studios in London, Dublin, Paris and Istanbul.' );
+		update_term_meta( $news_cat->term_id, 'rank_math_description', 'Productions, live events and behind-the-scenes stories from Vision Studios in London, Paris and Istanbul.' );
 		$report['descriptions']++;
 	}
 

@@ -1,9 +1,9 @@
 {
   "title": "THE VISION STUDIOS",
-  "tagline": "Premier Broadcast Studios Rentals in Four Iconic Cities",
+  "tagline": "Premier Broadcast Studios Rentals in Three Iconic Cities",
   "intro": [
-    "\"Where Can You Find the Best Broadcast Studio Rentals in London, Dublin, Paris and Istanbul?\"",
-    "Welcome to Vision Studios, your premier destination for top-notch broadcast studio rentals in four of the world’s most vibrant cities: London, Dublin, Paris, and Istanbul. Whether you’re producing a live television show, filming a commercial, hosting a virtual event, or recording a podcast, Vision Studios offers state-of-the-art facilities and unparalleled service to meet all your broadcasting needs. Our strategically located studios are equipped with the latest technology and designed to provide a professional, seamless experience from start to finish."
+    "\"Where Can You Find the Best Broadcast Studio Rentals in London, Paris and Istanbul?\"",
+    "Welcome to Vision Studios, your premier destination for top-notch broadcast studio rentals in three of the world’s most vibrant cities: London, Paris, and Istanbul. Whether you’re producing a live television show, filming a commercial, hosting a virtual event, or recording a podcast, Vision Studios offers state-of-the-art facilities and unparalleled service to meet all your broadcasting needs. Our strategically located studios are equipped with the latest technology and designed to provide a professional, seamless experience from start to finish."
   ],
   "whyChoose": [
     {
@@ -12,7 +12,7 @@
     },
     {
       "title": "Prime Locations",
-      "description": "Situated in the bustling cities of London, Dublin, Paris, and Istanbul, our studios offer convenient access to local amenities and transport links, making it easy for you and your team to reach us."
+      "description": "Situated in the bustling cities of London, Paris, and Istanbul, our studios offer convenient access to local amenities and transport links, making it easy for you and your team to reach us."
     },
     {
       "title": "Competitive Pricing",
@@ -37,11 +37,6 @@
       "city": "Istanbul",
       "country": "Turkey",
       "image": "https://media.istockphoto.com/id/1394387045/photo/turkish-flag-over-bosphorus-boats-mosques-and-minarets-of-istanbul-turkey.webp?b=1&#038;s=170667a&#038;w=0&#038;k=20&#038;c=EuDEnKV4_RS9G8RzndEpWdn-f8xqO8ohxbugUUWm3tU="
-    },
-    {
-      "city": "Dublin",
-      "country": "Ireland",
-      "image": "https://images.unsplash.com/photo-1549918864-48ac978761a4?ixlib=rb-4.0.3&#038;ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHVibGlufGVufDB8fDB8fHww&#038;w=1000&#038;q=80"
     },
     {
       "city": "London",

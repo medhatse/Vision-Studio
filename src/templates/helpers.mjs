@@ -82,12 +82,12 @@ export function footer(ctx) {
   const social = [['ig', site.social.instagram, 'Instagram'], ['in', site.social.linkedin, 'LinkedIn']].filter(([, href]) => href).map(([label, href, name]) => `<a href="${href}" target="_blank" rel="noopener" aria-label="${name}" class="w-9 h-9 flex items-center justify-center border border-white/20 text-xs lg:text-[10px] font-mono-tag uppercase hover:border-accent hover:text-accent">${label}</a>`).join('')
   return `<footer class="bg-black border-t border-white/10 pt-16 pb-8">
 <div class="max-w-7xl mx-auto px-6 lg:px-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
-<div><img src="/static/img/logo-full.png" alt="Vision Studios" width="1024" height="370" loading="lazy" class="h-9 w-auto mb-4"/><p class="text-white/50 text-sm max-w-xs">Your professional TV and film production studio space in London, Dublin, Paris and Istanbul. 25+ years of experience across four capital cities.</p></div>
+<div><img src="/static/img/logo-full.png" alt="Vision Studios" width="1024" height="370" loading="lazy" class="h-9 w-auto mb-4"/><p class="text-white/50 text-sm max-w-xs">Your professional TV and film production studio space in London, Paris and Istanbul. 25+ years of experience across four capital cities.</p></div>
 <div><p class="font-mono-tag text-xs lg:text-[11px] uppercase tracking-[0.2em] text-white/55 mb-4">Studios</p><ul class="space-y-2 text-sm text-white/70">${cityLinks}</ul></div>
 <div><p class="font-mono-tag text-xs lg:text-[11px] uppercase tracking-[0.2em] text-white/55 mb-4">Company</p><ul class="space-y-2 text-sm text-white/70"><li><a href="/#services" class="hover:text-accent">Services</a></li><li><a href="/gallery/" class="hover:text-accent">Gallery</a></li><li><a href="/news/" class="hover:text-accent">News</a></li><li><a href="/about/" class="hover:text-accent">About Us</a></li><li><a href="/contact/" class="hover:text-accent">Contact</a></li></ul></div>
 <div><p class="font-mono-tag text-xs lg:text-[11px] uppercase tracking-[0.2em] text-white/55 mb-4">Get In Touch</p><ul class="space-y-2 text-sm text-white/70"><li><a href="mailto:${site.email}" class="hover:text-accent">${site.email}</a></li>${phones}<li class="text-white/55 pt-1">${esc(site.hq.address)}</li><li class="text-white/55">${esc(site.openingHours)}</li></ul><div class="flex gap-3 mt-4">${social}</div></div>
 </div>
-<div class="max-w-7xl mx-auto px-6 lg:px-10 mt-12 pt-6 border-t border-white/10 flex flex-wrap justify-between gap-4 text-xs text-white/50"><p>© ${new Date().getFullYear()} Vision Studios. All rights reserved.</p><p>London · Dublin · Paris · Istanbul</p></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-10 mt-12 pt-6 border-t border-white/10 flex flex-wrap justify-between gap-4 text-xs text-white/50"><p>© ${new Date().getFullYear()} Vision Studios. All rights reserved.</p><p>London · Paris · Istanbul</p></div>
 </footer>`
 }
 

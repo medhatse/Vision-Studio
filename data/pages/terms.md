@@ -1,6 +1,6 @@
 # Terms of Studio Hire
 
-These terms apply to every studio booking with Vision Studios ("we", "us") in London, Dublin, Paris and Istanbul. A booking confirmed by us in writing forms a contract on these terms.
+These terms apply to every studio booking with Vision Studios ("we", "us") in London, Paris and Istanbul. A booking confirmed by us in writing forms a contract on these terms.
 
 ## Bookings and quotes
 
@@ -36,7 +36,7 @@ Personal data is handled as set out in our Privacy Policy.
 
 ## Law
 
-Bookings in London are governed by the law of England and Wales, in Dublin by Irish law, in Paris by French law and in Istanbul by Turkish law, with the courts of that country having jurisdiction.
+Bookings in London are governed by the law of England and Wales, in Paris by French law and in Istanbul by Turkish law, with the courts of that country having jurisdiction.
 
 ## Contact
 

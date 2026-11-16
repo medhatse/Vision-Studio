@@ -2,7 +2,7 @@
 /** All studios. */
 get_header();
 $studios = get_posts( [ 'post_type' => 'studio', 'posts_per_page' => -1, 'orderby' => [ 'menu_order' => 'ASC', 'title' => 'ASC' ] ] );
-echo vs_page_hero( esc_html__( 'All Studios.', 'vision-studios' ), sprintf( __( '%d studios across London, Dublin, Paris and Istanbul.', 'vision-studios' ), count( $studios ) ), vs_city_image_id( vs_cities()[0] ?? null ), __( 'Our Studios', 'vision-studios' ) ); // phpcs:ignore
+echo vs_page_hero( esc_html__( 'All Studios.', 'vision-studios' ), sprintf( __( '%d studios across London, Paris and Istanbul.', 'vision-studios' ), count( $studios ) ), vs_city_image_id( vs_cities()[0] ?? null ), __( 'Our Studios', 'vision-studios' ) ); // phpcs:ignore
 ?>
 <section class="bg-black py-16"><div class="max-w-7xl mx-auto px-6 lg:px-10">
 <?php foreach ( vs_cities() as $c ) : $cs = vs_city_studios( $c ); if ( ! $cs ) { continue; } ?>

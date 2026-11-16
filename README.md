@@ -48,7 +48,7 @@ All content originates from the live public WordPress and Elementor implementati
 - **Dual-Track Delivery**: Deploy as an immutable, lightning-fast static site on GitHub Pages/Netlify or as a full-featured theme on a live WordPress installation.
 - **Automated Content Ingestion**: `scripts/fetch-data.mjs` extracts pages, news posts, media assets, Elementor widgets, and gallery backgrounds from `vision-studios.net` into structured JSON records.
 - **Zero NPM Dependencies**: The static generator uses native Node.js standard libraries (`node:fs/promises`, `node:child_process`, `node:http`). CLI tools (`tailwindcss`, `esbuild`) execute via `npx -y` on demand.
-- **Multi-City Studio Catalog**: Complete studio pages for 14 facilities across London, Dublin, Paris, and Istanbul with technical specs, floor plans, photo galleries, and use-case guides.
+- **Multi-City Studio Catalog**: Complete studio pages for 13 facilities across London, Paris, and Istanbul with technical specs, floor plans, photo galleries, and use-case guides.
 - **Native Multilingual Subsystem (`/tr/`)**: Integrated Turkish localization for Istanbul studios and city landing pages without external translation plugins.
 - **Responsive Image Optimization**: Auto-detects `cwebp` to emit multi-density variants (`640w`, `1024w`, `1600w`) with automated dimension extraction directly from file byte headers.
 - **Click-to-Load Performance Facades**: Heavy third-party assets (such as Google Maps iframes) use interactive facades, eliminating ~1 MB of blocking scripts on initial load.
@@ -280,7 +280,7 @@ Vision-Studio/
 ├── data/                        # Structured content (JSON) & Turkish translations
 │   ├── curated.json             # Hand-maintained presentation overlay
 │   ├── studios.json             # 14 studio facility profiles
-│   ├── cities.json              # London, Dublin, Paris, Istanbul data
+│   ├── cities.json              # London, Paris, Istanbul data
 │   └── tr/                      # Turkish translations (city, studios, UI)
 ├── docs/                        # Complete technical documentation suite
 │   ├── ARCHITECTURE.md          # In-depth system architecture & diagrams

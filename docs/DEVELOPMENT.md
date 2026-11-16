@@ -27,7 +27,7 @@ Vision-Studio/
 │   ├── copy.json               # Introductions, FAQs, pricing guidelines
 │   ├── site.json               # Global metadata, addresses, contacts
 │   ├── studios.json            # Studio facilities data (14 studios)
-│   ├── cities.json             # City metadata (London, Dublin, Paris, Istanbul)
+│   ├── cities.json             # City metadata (London, Paris, Istanbul)
 │   ├── news.json               # Blog posts & updates (20 posts)
 │   ├── media-index.json        # Media library catalog
 │   └── tr/                     # Turkish translations for Istanbul facilities

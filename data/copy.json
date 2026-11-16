@@ -33,19 +33,6 @@
         ["Is the studio suitable for photography?", "Yes. The DMX-controlled LED lighting gives precise, repeatable set-ups for fashion, portrait and product photography."]
       ]
     },
-    "dublin-studio": {
-      "priceFrom": "€3,000 / day",
-      "intro": [
-        "Our Dublin studio is a fully decorated 144 square metre broadcast floor in Dundrum, with an 18 square metre gallery and a large, fully controllable LED screen backed by three groups of 2×2 55-inch video wall panels.",
-        "Four Sony Full HD cameras with professional CCUs sit on pedestals with robotic heads, with an Auto-Q system driving two prompter reflectors and a jimmy jib that reaches from three to seven metres for sweeping opening shots. Lighting is LED on a dynamic ceiling grid, controlled from a DMX-512 console; sound runs through a digital mixer with eight wireless neck and hand microphones.",
-        "The studio is used for live news and current affairs, streamed events, podcasts with video, corporate broadcasts and virtual events for Irish and international clients."
-      ],
-      "faq": [
-        ["Where is the Dublin studio?", "In Dundrum, South Dublin. Full address and directions are sent with every booking confirmation."],
-        ["Does the Dublin studio have an LED wall?", "Yes. A large fully controlled LED screen plus three groups of 2×2 55-inch video wall panels, so backdrops, graphics and remote guests can be shown behind presenters."],
-        ["Is there a jib?", "Yes, a jimmy jib adjustable from three to seven metres."]
-      ]
-    },
     "paris-studio": {
       "priceFrom": "€1,500 / day",
       "intro": [
@@ -56,7 +43,7 @@
       "faq": [
         ["Which cameras are in the Paris studio?", "Four Blackmagic Full HD cameras, with an Auto-Q prompting system and a jimmy jib."],
         ["Is the Paris studio decorated?", "Yes. It is a fully decorated set with LED video wall screens, ready for news and talk show formats without a set build."],
-        ["Who do I contact for Paris bookings?", "Email booking@vision-studios.net or call our European line, +353 (0) 8961 14641."]
+        ["Who do I contact for Paris bookings?", "Email booking@vision-studios.net or call +44 (0) 7920 745134."]
       ]
     },
     "istanbul-dtl-room": {
@@ -202,17 +189,6 @@
         ["Which London studio should I choose?", "Studio 1 (110 m², four cameras, three prompters) for full programmes and podcasts; Studio 2 (61 m², three cameras) for interviews, inserts and photography. They can be booked together."]
       ]
     },
-    "dublin": {
-      "intro": [
-        "Vision Studios Dublin is a 144 square metre fully decorated broadcast studio in Dundrum. A large controllable LED screen and 2×2 video wall groups give a modern news and talk show backdrop without a set build.",
-        "Four Sony Full HD cameras with robotic heads, an Auto-Q prompting system, a jimmy jib, DMX-512 LED lighting and a digital audio mixer with eight wireless microphones are all in place, with an 18 square metre gallery. Broadcast services, equipment hire and crew hire are available for the studio and for on-location work across Ireland.",
-        "The studio hosts live news, streamed events, video podcasts, corporate broadcasts and virtual events for Irish and international broadcasters."
-      ],
-      "faq": [
-        ["Where is the Dublin studio?", "In Dundrum, South Dublin. Full address and directions are sent with every booking confirmation. Call +353 (0) 8961 14641."],
-        ["Is the Dublin studio decorated?", "Yes, fully decorated, with a large LED screen and video wall groups ready for news and talk show formats."]
-      ]
-    },
     "paris": {
       "intro": [
         "Vision Studios Paris is an 84 square metre fully decorated broadcast studio with LED video wall screens and a 10 square metre gallery, built for news desks, talk shows and live streaming in the French capital.",
@@ -220,7 +196,7 @@
         "It is used for television broadcasting, live streamed events, film and corporate production, virtual events, photography and podcast recording."
       ],
       "faq": [
-        ["How do I book the Paris studio?", "Email booking@vision-studios.net or call our European line, +353 (0) 8961 14641, with your dates and a short brief."],
+        ["How do I book the Paris studio?", "Email booking@vision-studios.net or call +44 (0) 7920 745134 with your dates and a short brief."],
         ["What equipment is included in Paris?", "Four Blackmagic Full HD cameras, an Auto-Q prompter, a jimmy jib, DMX-controlled LED lighting and a digital audio mixer with eight wireless microphones."]
       ]
     },

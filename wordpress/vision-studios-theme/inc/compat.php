@@ -348,7 +348,7 @@ add_action( 'template_redirect', function () {
 	status_header( 200 ); // WordPress has already decided this URL is a 404.
 	header( 'Content-Type: text/plain; charset=utf-8' );
 	header( 'Cache-Control: public, max-age=86400' );
-	$lines   = [ '# ' . get_bloginfo( 'name' ), '', '> ' . ( vs_opt( 'hero_intro' ) ?: get_bloginfo( 'description' ) ), '', 'Broadcast and production studio hire in London, Dublin, Paris and Istanbul. Booking: ' . vs_opt( 'email' ) . '.', '', '## Cities', '' ];
+	$lines   = [ '# ' . get_bloginfo( 'name' ), '', '> ' . ( vs_opt( 'hero_intro' ) ?: get_bloginfo( 'description' ) ), '', 'Broadcast and production studio hire in London, Paris and Istanbul. Booking: ' . vs_opt( 'email' ) . '.', '', '## Cities', '' ];
 	foreach ( vs_cities() as $c ) {
 		$lines[] = '- [' . $c->name . ' studios](' . get_term_link( $c ) . '): ' . count( vs_city_studios( $c ) ) . ' studios, ' . ( vs_show_addresses() ? vs_term_meta( $c->term_id, 'address' ) : vs_term_meta( $c->term_id, 'country' ) );
 	}
@@ -415,6 +415,25 @@ add_action( 'admin_init', function () {
 	}
 	if ( ! empty( $_GET['preset'] ) && 'addresses' === $_GET['preset'] ) {
 		$pairs = vs_address_free_copy();
+	}
+	if ( ! empty( $_GET['preset'] ) && 'dublin' === $_GET['preset'] ) {
+		// Dublin was removed from the business: longest phrases first so the generic ones don't pre-empt them.
+		$pairs = [
+			'four of the world\u2019s most vibrant cities: London, Dublin, Paris, and Istanbul' => 'three of the world\u2019s most vibrant cities: London, Paris, and Istanbul',
+			'Welcom To London, Istanbul And Dublin TV Studios' => 'Welcome to London, Paris and Istanbul TV Studios',
+			'London, Dublin, Paris and Istanbul' => 'London, Paris and Istanbul',
+			'London, Dublin, Paris, and Istanbul' => 'London, Paris, and Istanbul',
+			'London, Dublin, Paris & Istanbul'   => 'London, Paris & Istanbul',
+			'London, Dublin, Paris or Istanbul'  => 'London, Paris or Istanbul',
+			'London, Dublin, and Istanbul'       => 'London, Paris and Istanbul',
+			'London \u00b7 Dublin \u00b7 Paris \u00b7 Istanbul' => 'London \u00b7 Paris \u00b7 Istanbul',
+			'Four Iconic Cities'                 => 'Three Iconic Cities',
+			'Four Capital Cities'                => 'Three Capital Cities',
+			'Four Cities. One Production Standard.' => 'Three Cities. One Production Standard.',
+			'the EU GDPR (Ireland and France)'   => 'the EU GDPR (France)',
+			'the Data Protection Commission (Ireland), ' => '',
+			'in Dublin by Irish law, '           => '',
+		];
 	}
 	$apply = ! empty( $_GET['apply'] );
 	$swap  = function ( $text ) use ( $pairs ) {
@@ -541,7 +560,6 @@ add_action( 'admin_init', function () {
 		'rock-paper-scissors' => 'Rock Paper Scissors - Vision Studios',
 		'exclusive-shoot-with-joe-cole-at-vision-studios-london' => 'Exclusive Shoot with Joe Cole - Vision Studios',
 		'hosting-funny-hands-productions-inside-vision-studios' => 'Funny Hands Productions - Vision Studios',
-		'hosting-an-irish-podcast-at-vision-studios-dublin' => 'Hosting an Irish Podcast at Vision Studios Dublin - Vision Studios',
 		'hosting-al-wataniya-tv-inside-media-city-for-training' => 'Al Wataniya TV Training - Vision Studios',
 	];
 	$apply = ! empty( $_GET['apply'] );
@@ -575,7 +593,6 @@ add_action( 'admin_init', function () {
 		return;
 	}
 	$map = [
-		3780 => 'A fully decorated 144 square metre broadcast floor in Dundrum, Dublin, with an 18 square metre gallery, LED video wall and robotic Sony cameras.',
 		3781 => 'An 84 square metre fully decorated broadcast set in Paris, with LED video walls, a 10 square metre gallery and four Blackmagic Full HD cameras.',
 	];
 	$apply = ! empty( $_GET['apply'] );
@@ -587,6 +604,142 @@ add_action( 'admin_init', function () {
 		if ( $apply ) {
 			update_post_meta( $id, 'rank_math_description', $new_desc );
 			clean_post_cache( $id );
+		}
+	}
+	if ( $apply ) {
+		vs_purge_nginx_cache();
+		echo "done, cache purged\n";
+	}
+	exit;
+} );
+
+// ----- One-off: remove Dublin from the live site -----
+// /wp-admin/?vs_remove_dublin=1 — dry run unless &apply=1 is added. Reversible: the studio goes to the Trash,
+// the news post back to Draft, and the city (with its fields) is recreated by the content importer if ever needed.
+// Also rewrites the site tagline and any other option that still names Dublin (recursively, so serialized
+// settings such as Rank Math's survive).
+add_action( 'admin_init', function () {
+	if ( empty( $_GET['vs_remove_dublin'] ) || ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	global $wpdb;
+	$apply = ! empty( $_GET['apply'] );
+	header( 'Content-Type: text/plain; charset=utf-8' );
+	echo $apply ? "APPLYING\n" : "DRY RUN (add &apply=1 to write)\n";
+
+	// Studios in the Dublin city.
+	$studios = get_posts( [ 'post_type' => 'studio', 'post_status' => 'any', 'posts_per_page' => -1, 'tax_query' => [ [ 'taxonomy' => 'city', 'field' => 'slug', 'terms' => 'dublin' ] ] ] );
+	foreach ( $studios as $p ) {
+		echo "studio {$p->ID} {$p->post_name} ({$p->post_status}) -> trash\n";
+		if ( $apply && 'trash' !== $p->post_status ) {
+			wp_trash_post( $p->ID );
+		}
+	}
+	// The Irish podcast news post.
+	$post = get_page_by_path( 'hosting-an-irish-podcast-at-vision-studios-dublin', OBJECT, 'post' );
+	if ( $post ) {
+		echo "post {$post->ID} {$post->post_name} ({$post->post_status}) -> draft\n";
+		if ( $apply && 'draft' !== $post->post_status ) {
+			wp_update_post( [ 'ID' => $post->ID, 'post_status' => 'draft' ] );
+		}
+	}
+	// The city.
+	$term = get_term_by( 'slug', 'dublin', 'city' );
+	if ( $term ) {
+		echo "city term {$term->term_id} dublin -> delete\n";
+		if ( $apply ) {
+			wp_delete_term( $term->term_id, 'city' );
+		}
+	}
+	// Options that still name Dublin (tagline, SEO plugin settings ...). Transients and caches are skipped.
+	$swap = null;
+	$swap = function ( $v ) use ( &$swap ) {
+		if ( is_string( $v ) ) {
+			return str_replace(
+				[ 'Welcom To London, Istanbul And Dublin TV Studios', 'London, Dublin, Paris and Istanbul', 'London, Dublin, Paris & Istanbul', 'London, Dublin, Paris, and Istanbul', 'London, Dublin, Paris or Istanbul' ],
+				[ 'Welcome to London, Paris and Istanbul TV Studios', 'London, Paris and Istanbul', 'London, Paris & Istanbul', 'London, Paris, and Istanbul', 'London, Paris or Istanbul' ],
+				$v
+			);
+		}
+		if ( is_array( $v ) ) {
+			return array_map( $swap, $v );
+		}
+		return $v;
+	};
+	$rows = $wpdb->get_results( $wpdb->prepare( "SELECT option_name FROM {$wpdb->options} WHERE option_value LIKE %s AND option_name NOT LIKE %s AND option_name NOT LIKE %s AND option_name NOT LIKE %s", '%Dublin%', '\_transient%', '\_site\_transient%', 'theme\_mods\_%' ) );
+	foreach ( $rows as $r ) {
+		$old = get_option( $r->option_name );
+		$new = $swap( $old );
+		echo 'option ' . $r->option_name . ( $new === $old ? ' (still names Dublin after the swap: check by hand)' : ' -> rewritten' ) . "\n";
+		if ( $apply && $new !== $old ) {
+			update_option( $r->option_name, $new );
+		}
+	}
+	if ( $apply ) {
+		vs_purge_nginx_cache();
+		flush_rewrite_rules();
+		$rm_cache = 'RankMath' . chr( 92 ) . 'Sitemap' . chr( 92 ) . 'Cache';
+		if ( class_exists( $rm_cache ) && method_exists( $rm_cache, 'invalidate_storage' ) ) {
+			call_user_func( [ $rm_cache, 'invalidate_storage' ] );
+		}
+		echo "done, cache purged\n";
+	}
+	exit;
+} );
+
+// ----- One-off: the share (Open Graph / Twitter) image was a photo of the removed Dublin studio -----
+// /wp-admin/?vs_swap_share_image=1 — dry run unless &apply=1 is added. Swaps the old hero photo for the new
+// one in Rank Math's per-page fields and its default image setting (URL and attachment ID together).
+add_action( 'admin_init', function () {
+	if ( empty( $_GET['vs_swap_share_image'] ) || ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	global $wpdb;
+	$apply   = ! empty( $_GET['apply'] );
+	$base    = wp_get_upload_dir()['baseurl'];
+	$old_url = $base . '/2025/11/1.webp';
+	$new_url = $base . '/2024/05/PHOTO-2023-04-29-18-24-59-5.webp';
+	$old_id  = (int) attachment_url_to_postid( $old_url );
+	$new_id  = (int) attachment_url_to_postid( $new_url );
+	header( 'Content-Type: text/plain; charset=utf-8' );
+	echo $apply ? "APPLYING\n" : "DRY RUN (add &apply=1 to write)\n";
+	echo "old $old_id $old_url\nnew $new_id $new_url\n";
+	if ( ! $old_id || ! $new_id ) {
+		echo "attachment not found, nothing to do\n";
+		exit;
+	}
+	$rows = $wpdb->get_results( $wpdb->prepare( "SELECT meta_id, post_id, meta_key, meta_value FROM {$wpdb->postmeta} WHERE meta_key LIKE %s AND ( meta_value = %s OR meta_value = %s )", 'rank\\_math\\_%', $old_url, (string) $old_id ) );
+	foreach ( $rows as $r ) {
+		$to = $r->meta_value === $old_url ? $new_url : (string) $new_id;
+		echo "postmeta {$r->post_id} {$r->meta_key}: {$r->meta_value} -> $to\n";
+		if ( $apply ) {
+			$wpdb->update( $wpdb->postmeta, [ 'meta_value' => $to ], [ 'meta_id' => $r->meta_id ] );
+			wp_cache_delete( $r->post_id, 'post_meta' );
+		}
+	}
+	$swap = null;
+	$swap = function ( $v ) use ( &$swap, $old_url, $new_url, $old_id, $new_id ) {
+		if ( is_array( $v ) ) {
+			foreach ( $v as $k => $x ) {
+				if ( is_array( $x ) ) {
+					$v[ $k ] = $swap( $x );
+				} elseif ( $x === $old_url ) {
+					$v[ $k ] = $new_url;
+				} elseif ( is_string( $k ) && '_id' === substr( $k, -3 ) && (string) $x === (string) $old_id ) {
+					$v[ $k ] = is_int( $x ) ? $new_id : (string) $new_id;
+				}
+			}
+		}
+		return $v;
+	};
+	foreach ( $wpdb->get_col( $wpdb->prepare( "SELECT option_name FROM {$wpdb->options} WHERE option_name LIKE %s", 'rank-math%' ) ) as $name ) {
+		$old = get_option( $name );
+		$new = $swap( $old );
+		if ( $new !== $old ) {
+			echo "option $name -> updated\n";
+			if ( $apply ) {
+				update_option( $name, $new );
+			}
 		}
 	}
 	if ( $apply ) {

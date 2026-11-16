@@ -15,7 +15,7 @@ foreach ( $studios as $s ) {
 }
 $cities = vs_cities();
 $hero   = get_post_thumbnail_id() ?: ( $items ? (int) $items[0][0] : 0 );
-echo vs_page_hero( __( 'From Behind<br/><span class="text-accent">The Lens.</span>', 'vision-studios' ), sprintf( __( '%1$d photographs from %2$d studios across four cities.', 'vision-studios' ), count( $items ), count( $studios ) ), $hero, __( 'Gallery', 'vision-studios' ) ); // phpcs:ignore
+echo vs_page_hero( __( 'From Behind<br/><span class="text-accent">The Lens.</span>', 'vision-studios' ), sprintf( __( '%1$d photographs from %2$d studios across three cities.', 'vision-studios' ), count( $items ), count( $studios ) ), $hero, __( 'Gallery', 'vision-studios' ) ); // phpcs:ignore
 ?>
 <section class="bg-black py-16"><div class="max-w-7xl mx-auto px-6 lg:px-10">
 <?php if ( get_the_content() ) : ?><div class="fade-up prose-vs max-w-3xl mb-10"><?php the_content(); ?></div><?php endif; ?>

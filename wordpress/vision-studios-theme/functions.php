@@ -4,7 +4,7 @@
  */
 defined( 'ABSPATH' ) || exit;
 
-define( 'VS_VERSION', '1.2.0' );
+define( 'VS_VERSION', '1.3.0' );
 
 if ( ! function_exists( 'str_starts_with' ) ) { // PHP < 8
 	function str_starts_with( $haystack, $needle ) {

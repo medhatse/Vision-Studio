@@ -6,7 +6,7 @@ This document describes the architectural design, system components, data pipeli
 
 ## 1. Architectural Overview
 
-The repository implements a **dual-track architecture** for Vision Studios, a multi-city broadcast and production studio provider with facilities in London, Dublin, Paris, and Istanbul:
+The repository implements a **dual-track architecture** for Vision Studios, a multi-city broadcast and production studio provider with facilities in London, Paris, and Istanbul:
 
 1. **Track 1: High-Performance Static Site Generator (SSG)**
    A standalone, zero-npm-dependency Node.js static site generator that compiles structured JSON data and modular templates into pre-rendered static HTML, optimized CSS, and responsive WebP images in `dist/`.
@@ -98,7 +98,7 @@ The rendering engine generates pure, dependency-free static HTML:
 - **Template System**:
   - `src/templates/helpers.mjs`: Core HTML shell, `<head>` metadata, Open Graph / Twitter Card tags, schema.org JSON-LD generators, header navigation, footer, and breadcrumbs.
   - `src/templates/home.mjs`: Homepage with hero section, stats counters, 4 city cards, services, gallery previews, client logo wall, latest news, and booking CTA.
-  - `src/templates/city.mjs`: Dedicated landing pages for London, Dublin, Paris, and Istanbul with localized studio listings, services, interactive map facade, and regional contact details.
+  - `src/templates/city.mjs`: Dedicated landing pages for London, Paris, and Istanbul with localized studio listings, services, interactive map facade, and regional contact details.
   - `src/templates/studio.mjs`: Studio specification pages (14 total) with hero slider, technical highlights, dimensions, floor plan modal, photo gallery, use-case matrix, and booking form.
   - `src/templates/pages.mjs`: Studio directory (`/studios/`), news index and article detail views (`/news/`, `/news/<slug>/`), About (`/about/`), Contact (`/contact/`), filterable Gallery (`/gallery/`), and `404.html`.
 - **CSS Compilation**: Executes `tailwindcss@3.4.17` via `npx -y` against `tailwind.config.js` and `src/tailwind.input.css` to emit minified `dist/static/app.css`.
