@@ -6,7 +6,7 @@
 [![PHP](https://img.shields.io/badge/PHP-8.3-777bb4.svg)](wordpress/docker-compose.yml)
 [![Deploy to GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Automated_Deploy-success.svg)](.github/workflows/deploy.yml)
 
-A high-performance static marketing website and production WordPress theme powering [Vision Studios](https://vision-studios.net) — a premier television, broadcast, and virtual production studio hire network operating in **London**, **Dublin**, **Paris**, and **Istanbul**.
+A high-performance static marketing website and production WordPress theme powering [Vision Studios](https://vision-studios.net) — a premier television, broadcast, and virtual production studio hire network operating in **London**, **Paris**, and **Istanbul**.
 
 ---
 
